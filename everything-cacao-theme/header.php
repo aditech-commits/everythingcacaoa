@@ -172,18 +172,23 @@
 
   <!-- Header Navigation Component -->
   <header class="glass-header border-b border-cacao-dark/10 sticky top-0 z-50 transition-all duration-300">
-    <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-12 py-5">
-      <!-- Brand Logo -->
-      <?php if (has_custom_logo()) : ?>
-        <?php the_custom_logo(); ?>
-      <?php else : ?>
-        <a href="<?php echo $link_home; ?>" class="flex items-center gap-3">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand/logo.png" alt="<?php bloginfo('name'); ?>" class="h-10 md:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105" />
+    <nav class="flex items-center justify-between max-w-7xl mx-auto px-6 md:px-12 py-5">
+      <!-- Brand Logo & Name -->
+      <div class="flex items-center shrink-0">
+        <a href="<?php echo $link_home; ?>" class="flex items-center gap-3 group">
+          <?php if (has_custom_logo()) : ?>
+            <?php the_custom_logo(); ?>
+          <?php else : ?>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand/logo.png" alt="<?php bloginfo('name'); ?>" class="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+          <?php endif; ?>
+          <span class="font-serif-luxury text-base md:text-xl font-bold tracking-wider text-cacao-dark group-hover:text-accent-terracotta transition-colors uppercase whitespace-nowrap">
+            EVERYTHING CACAO
+          </span>
         </a>
-      <?php endif; ?>
+      </div>
 
-      <!-- Desktop Navigation Menu (Structure requested by Client) -->
-      <div class="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest">
+      <!-- Desktop Navigation Menu (Centered) -->
+      <div class="hidden md:flex items-center justify-center flex-1 mx-6 space-x-8 text-xs font-semibold uppercase tracking-widest">
         <!-- EXPERIENCE US Dropdown Menu -->
         <div class="relative group py-2">
           <button class="nav-link flex items-center gap-1.5 font-semibold uppercase tracking-widest text-xs <?php echo $is_craft ? 'active-page' : ''; ?>">
@@ -228,10 +233,8 @@
         </a>
       </div>
 
-
       <!-- Mobile Hamburger Button -->
-
-      <button id="mobile-menu-btn" class="md:hidden text-cacao-dark p-2 focus:outline-none" aria-label="Open Navigation Menu">
+      <button id="mobile-menu-btn" class="md:hidden text-cacao-dark p-2 focus:outline-none shrink-0" aria-label="Open Navigation Menu">
         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </nav>

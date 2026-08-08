@@ -1,4 +1,4 @@
-﻿# =============================================================
+# =============================================================
 #  Everything Cacao — .gitignore
 #  GitHub repo purpose: deploy `everything-cacao-theme/` to
 #  WordPress via GitHub integration (direct WP deployment).
@@ -28,6 +28,7 @@ wp-theme-structure.md
 # Design mockup folder — not deployed to WordPress
 everything_cacao_luxury_ui-ux/
 everything-cacao-theme/html-prototypes/
+html-prototypes/
 
 
 # --- RAW ASSET DUMP FOLDERS ----------------------------------
@@ -36,6 +37,7 @@ everything-cacao-theme/html-prototypes/
 everything_cacao_products/
 nahar_assets_folder/
 everything-cacao-theme/assets/images/products/
+assets/images/products/
 
 
 # --- LARGE FILE TYPES (inside the theme too, if any sneak in) -

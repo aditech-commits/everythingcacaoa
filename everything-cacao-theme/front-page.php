@@ -195,7 +195,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Product 1: Dark Ghanaian Forest -->
-        <div class="group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between">
+        <a href="<?php echo $link_collections; ?>" class="group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between hover:border-accent-gold/50 transition-colors duration-300">
           <div>
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
@@ -209,17 +209,13 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
               <p class="font-serif-luxury text-xl font-bold text-accent-gold pt-1">GHC 320</p>
             </div>
           </div>
-          <a href="https://wa.me/<?php echo esc_attr(get_option('ec_whatsapp_number', '233240000000')); ?>?text=Hi,%20I'd%20like%20to%20order%20the%20Dark%20Ghanaian%20Forest%20bar" 
-             target="_blank" 
-             rel="noopener noreferrer"
-             class="btn-whatsapp w-full rounded text-center block mt-4"
-             onclick="fbq('track', 'Lead', {content_name: 'Dark Ghanaian Forest 85%'});">
-            Order via WhatsApp
-          </a>
-        </div>
+          <span class="block mt-4 text-xs font-semibold uppercase tracking-widest text-accent-gold group-hover:text-white transition-colors">
+            View Product &rarr;
+          </span>
+        </a>
 
         <!-- Product 2: Heritage Sampler -->
-        <div class="group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between">
+        <a href="<?php echo $link_collections; ?>" class="group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between hover:border-accent-gold/50 transition-colors duration-300">
           <div>
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
@@ -233,17 +229,13 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
               <p class="font-serif-luxury text-xl font-bold text-accent-gold pt-1">GHC 480</p>
             </div>
           </div>
-          <a href="https://wa.me/<?php echo esc_attr(get_option('ec_whatsapp_number', '233240000000')); ?>?text=Hi,%20I'd%20like%20to%20order%20the%20Heritage%20Sampler" 
-             target="_blank" 
-             rel="noopener noreferrer"
-             class="btn-whatsapp w-full rounded text-center block mt-4"
-             onclick="fbq('track', 'Lead', {content_name: 'Heritage Sampler Box'});">
-            Order via WhatsApp
-          </a>
-        </div>
+          <span class="block mt-4 text-xs font-semibold uppercase tracking-widest text-accent-gold group-hover:text-white transition-colors">
+            View Product &rarr;
+          </span>
+        </a>
 
         <!-- Product 3: Ashanti Gold -->
-        <div class="group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between">
+        <a href="<?php echo $link_collections; ?>" class="group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between hover:border-accent-gold/50 transition-colors duration-300">
           <div>
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
@@ -257,17 +249,13 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
               <p class="font-serif-luxury text-xl font-bold text-accent-gold pt-1">GHC 305</p>
             </div>
           </div>
-          <a href="https://wa.me/<?php echo esc_attr(get_option('ec_whatsapp_number', '233240000000')); ?>?text=Hi,%20I'd%20like%20to%20order%20the%20Ashanti%20Gold%20Milk%20Bar" 
-             target="_blank" 
-             rel="noopener noreferrer"
-             class="btn-whatsapp w-full rounded text-center block mt-4"
-             onclick="fbq('track', 'Lead', {content_name: 'Ashanti Gold Milk Bar'});">
-            Order via WhatsApp
-          </a>
-        </div>
+          <span class="block mt-4 text-xs font-semibold uppercase tracking-widest text-accent-gold group-hover:text-white transition-colors">
+            View Product &rarr;
+          </span>
+        </a>
 
         <!-- Product 4: Nahar Private Reserve -->
-        <div class="group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between">
+        <a href="<?php echo $link_collections; ?>" class="group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between hover:border-accent-gold/50 transition-colors duration-300">
           <div>
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
@@ -281,14 +269,10 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
               <p class="font-serif-luxury text-xl font-bold text-accent-gold pt-1">GHC 1,250</p>
             </div>
           </div>
-          <a href="https://wa.me/<?php echo esc_attr(get_option('ec_whatsapp_number', '233240000000')); ?>?text=Hi,%20I'd%20like%20to%20order%20the%20Nahar%20Private%20Reserve%20Box" 
-             target="_blank" 
-             rel="noopener noreferrer"
-             class="btn-whatsapp w-full rounded text-center block mt-4"
-             onclick="fbq('track', 'Lead', {content_name: 'Nahar Private Reserve Box'});">
-            Order via WhatsApp
-          </a>
-        </div>
+          <span class="block mt-4 text-xs font-semibold uppercase tracking-widest text-accent-gold group-hover:text-white transition-colors">
+            View Product &rarr;
+          </span>
+        </a>
       </div>
     </div>
   </section>

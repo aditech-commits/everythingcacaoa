@@ -278,3 +278,54 @@
     </div>
   </div>
 
+  <!-- ✅ Mobile Drawer Toggle — Inline so it always works regardless of plugin/JS load order -->
+  <script>
+  (function() {
+    function ecInitMobileMenu() {
+      var btn    = document.getElementById('mobile-menu-btn');
+      var drawer = document.getElementById('mobile-drawer');
+      var close  = document.getElementById('close-drawer-btn');
+
+      if (btn && drawer) {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          drawer.classList.remove('translate-x-full');
+          drawer.classList.add('translate-x-0');
+          document.body.style.overflow = 'hidden';
+        });
+      }
+      if (close && drawer) {
+        close.addEventListener('click', function() {
+          drawer.classList.add('translate-x-full');
+          drawer.classList.remove('translate-x-0');
+          document.body.style.overflow = '';
+        });
+      }
+      // Close drawer when clicking backdrop (any link inside)
+      if (drawer) {
+        drawer.addEventListener('click', function(e) {
+          if (e.target.tagName === 'A') {
+            drawer.classList.add('translate-x-full');
+            drawer.classList.remove('translate-x-0');
+            document.body.style.overflow = '';
+          }
+        });
+      }
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && drawer) {
+          drawer.classList.add('translate-x-full');
+          drawer.classList.remove('translate-x-0');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', ecInitMobileMenu);
+    } else {
+      ecInitMobileMenu();
+    }
+  })();
+  </script>
+

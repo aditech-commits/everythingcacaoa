@@ -25,6 +25,44 @@ function ec_theme_setup() {
     ));
     add_theme_support('html5', array('search-form', 'comment-form', 'gallery', 'caption', 'style', 'script'));
 
+    // ── Block Editor & Page Builder Compatibility ───────────────────────────
+    // Enables Gutenberg full/wide alignment for blocks
+    add_theme_support('align-wide');
+
+    // Loads block editor CSS in the editor so blocks look correct
+    add_theme_support('wp-block-styles');
+
+    // Responsive embeds (YouTube, Vimeo, etc.) inside Gutenberg/Elementor
+    add_theme_support('responsive-embeds');
+
+    // Allows editor stylesheets so Elementor/Gutenberg match front-end
+    add_theme_support('editor-styles');
+    add_editor_style('assets/css/tailwind.css');
+
+    // Custom line-height and spacing controls in block editor
+    add_theme_support('custom-line-height');
+    add_theme_support('custom-spacing');
+
+    // Custom colour palette — exposed to Gutenberg, Elementor, WPBakery
+    add_theme_support('editor-color-palette', array(
+        array('name' => 'Cacao Dark',     'slug' => 'cacao-dark',     'color' => '#1A0F0A'),
+        array('name' => 'Canvas',         'slug' => 'canvas',         'color' => '#FAF7F2'),
+        array('name' => 'Accent Gold',    'slug' => 'accent-gold',    'color' => '#D4AF37'),
+        array('name' => 'Accent Terracotta','slug'=> 'accent-terracotta','color'=> '#C86D51'),
+        array('name' => 'Cherelle Caramel','slug'=> 'cherelle-caramel','color'=> '#B8854A'),
+        array('name' => 'Card BG',        'slug' => 'card-bg',        'color' => '#F5EDE4'),
+    ));
+
+    // Custom font size presets — exposed to Gutenberg & page builders
+    add_theme_support('editor-font-sizes', array(
+        array('name' => 'Small',    'size' => 12, 'slug' => 'small'),
+        array('name' => 'Regular',  'size' => 16, 'slug' => 'regular'),
+        array('name' => 'Large',    'size' => 24, 'slug' => 'large'),
+        array('name' => 'XL',       'size' => 36, 'slug' => 'x-large'),
+        array('name' => 'Headline', 'size' => 56, 'slug' => 'headline'),
+    ));
+    // ── End Block Editor & Page Builder Compatibility ───────────────────────
+
     // Register Navigation Menus
     register_nav_menus(array(
         'primary' => __('Primary Navigation (Header)', 'everything-cacao'),
@@ -33,6 +71,22 @@ function ec_theme_setup() {
     ));
 }
 add_action('after_setup_theme', 'ec_theme_setup');
+
+/**
+ * Elementor: Load theme fonts/CSS inside Elementor editor preview
+ * so it looks identical to the live front-end.
+ */
+add_action('elementor/editor/before_enqueue_scripts', function() {
+    wp_enqueue_style('ec-tailwind', get_template_directory_uri() . '/assets/css/tailwind.css', array(), '1.0.0');
+    wp_enqueue_style('ec-google-fonts', 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap', array(), null);
+});
+
+/**
+ * Elementor: Load theme CSS in Elementor front-end widgets view
+ */
+add_action('elementor/frontend/after_enqueue_scripts', function() {
+    wp_enqueue_style('ec-tailwind', get_template_directory_uri() . '/assets/css/tailwind.css', array(), '1.0.0');
+});
 
 /**
  * 2. Enqueue Scripts & Stylesheets

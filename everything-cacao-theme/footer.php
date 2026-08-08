@@ -53,7 +53,8 @@ $link_concierge  = ec_get_smart_page_link(array('stock-lists', 'concierge', 'con
             <a href="<?php echo $link_collections; ?>" class="block hover:text-accent-gold transition-colors">Our Collections</a>
             <a href="<?php echo $link_craft; ?>" class="block hover:text-accent-gold transition-colors">Our Craft</a>
             <a href="<?php echo $link_journal; ?>" class="block hover:text-accent-gold transition-colors">Cacao Journal</a>
-            <a href="<?php echo $link_concierge; ?>" class="block hover:text-accent-gold transition-colors">Concierge &amp; Stockists</a>
+            <a href="<?php echo $link_concierge; ?>" class="block hover:text-accent-gold transition-colors">Stockists</a>
+            <a href="<?php echo $link_concierge; ?>#contact" class="block hover:text-accent-gold transition-colors">Contact</a>
             <?php
         }
         ?>

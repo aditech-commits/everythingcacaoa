@@ -4,6 +4,28 @@
   <meta charset="<?php bloginfo('charset'); ?>"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+  <?php
+  // Reach 360 Marketing Group - SEO Meta Titles & Descriptions
+  $seo_title = 'Buy Ghanaian Chocolate Online | Everything Cacao GH';
+  $seo_desc  = 'Shop Nahar and Cherelle — premium chocolate made from Ghana\'s finest cacao. Milk and dark bars available across Accra and Ghana. FDA and GSA certified.';
+
+  if (is_front_page()) {
+      $seo_title = 'Buy Ghanaian Chocolate Online | Everything Cacao GH';
+      $seo_desc  = 'Shop Nahar and Cherelle — premium chocolate made from Ghana\'s finest cacao. Milk and dark bars available across Accra and Ghana. FDA and GSA certified.';
+  } elseif (is_page(array('craft', 'our-craft', 'about', 'about-us'))) {
+      $seo_title = 'About Everything Cacao GH | Ghana\'s Premium Chocolate Maker';
+      $seo_desc  = 'Learn the story behind Everything Cacao GH — a proudly Ghanaian chocolate company committed to quality, sustainability and supporting local cacao farmers.';
+  } elseif (is_page(array('collections', 'our-collections', 'shop'))) {
+      $seo_title = 'Buy Chocolate Online in Ghana | Everything Cacao GH Shop';
+      $seo_desc  = 'Shop Nahar and Cherelle chocolate bars online. Premium and everyday Ghanaian chocolate delivered across Accra and Ghana. Milk, dark and mini bars available.';
+  } elseif (is_page(array('concierge', 'stock-lists', 'stockists', 'contact'))) {
+      $seo_title = 'Contact Everything Cacao GH | Get in Touch';
+      $seo_desc  = 'Get in touch with Everything Cacao GH for orders, wholesale enquiries or general questions. We\'d love to hear from you.';
+  }
+  ?>
+  <title><?php echo esc_html($seo_title); ?></title>
+  <meta name="description" content="<?php echo esc_attr($seo_desc); ?>"/>
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -136,17 +158,16 @@
   $request_uri = $_SERVER['REQUEST_URI'];
   $is_home       = is_front_page() || $request_uri === '/' || strpos($request_uri, 'home') !== false;
   $is_collections= is_page('collections') || is_page('our-collections') || strpos($request_uri, 'collections') !== false;
-  $is_craft      = is_page('craft') || is_page('our-craft') || strpos($request_uri, 'craft') !== false;
+  $is_craft      = is_page('craft') || is_page('our-craft') || is_page('about') || strpos($request_uri, 'craft') !== false;
   $is_journal    = (is_home() && !is_front_page()) || is_singular('post') || strpos($request_uri, 'journal') !== false;
-  $is_concierge  = is_page('concierge') || is_page('stock-lists') || strpos($request_uri, 'stock') !== false || strpos($request_uri, 'concierge') !== false;
+  $is_concierge  = is_page('concierge') || is_page('stock-lists') || is_page('stockists') || strpos($request_uri, 'stock') !== false || strpos($request_uri, 'concierge') !== false;
 
-  // Smart URL resolver for header links (defined safely in functions.php)
-
+  // Smart URL resolver for header links
   $link_home       = esc_url(home_url('/'));
   $link_collections= ec_get_smart_page_link(array('our-collections', 'collections'), '/our-collections');
   $link_craft      = ec_get_smart_page_link(array('our-craft', 'craft'), '/our-craft');
   $link_journal    = ec_get_smart_page_link(array('cacao-journal', 'journal'), '/cacao-journal');
-  $link_concierge  = ec_get_smart_page_link(array('stock-lists', 'concierge', 'concierge-stockists'), '/stock-lists');
+  $link_concierge  = ec_get_smart_page_link(array('stock-lists', 'stockists', 'concierge'), '/stock-lists');
   ?>
 
   <!-- Header Navigation Component -->
@@ -161,38 +182,59 @@
         </a>
       <?php endif; ?>
 
-      <!-- Desktop Navigation Menu -->
-      <div class="hidden md:flex items-center space-x-10 text-xs font-semibold uppercase tracking-widest">
+      <!-- Desktop Navigation Menu (Structure requested by Client) -->
+      <div class="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest">
         <?php
         if (has_nav_menu('primary')) {
             wp_nav_menu(array(
                 'theme_location' => 'primary',
                 'container'      => false,
-                'menu_class'     => 'flex items-center space-x-10 text-xs font-semibold uppercase tracking-widest',
+                'menu_class'     => 'flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest',
                 'fallback_cb'    => false,
             ));
         } else {
-            // Default fallback navigation links with active indicators
             ?>
-            <a href="<?php echo $link_home; ?>" class="nav-link <?php echo $is_home && !$is_journal && !$is_collections && !$is_craft && !$is_concierge ? 'active-page' : ''; ?>">
-              <?php if ($is_home && !$is_journal && !$is_collections && !$is_craft && !$is_concierge) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
-              Home
-            </a>
-            <a href="<?php echo $link_collections; ?>" class="nav-link <?php echo $is_collections ? 'active-page' : ''; ?>">
-              <?php if ($is_collections) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
-              Our Collections
-            </a>
-            <a href="<?php echo $link_craft; ?>" class="nav-link <?php echo $is_craft ? 'active-page' : ''; ?>">
-              <?php if ($is_craft) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
-              Our Craft
-            </a>
+            <!-- EXPERIENCE US Dropdown Menu -->
+            <div class="relative group py-2">
+              <button class="nav-link flex items-center gap-1.5 font-semibold uppercase tracking-widest text-xs <?php echo $is_craft ? 'active-page' : ''; ?>">
+                <?php if ($is_craft) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1"></span><?php endif; ?>
+                EXPERIENCE US
+                <svg class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180 text-accent-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div class="absolute left-0 top-full hidden group-hover:flex flex-col bg-cacao-dark text-canvas min-w-[200px] py-3 rounded-lg shadow-2xl border border-canvas/15 transition-all z-50">
+                <a href="<?php echo $link_craft; ?>#about" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">ABOUT</a>
+                <a href="<?php echo $link_craft; ?>#team" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">MEET THE TEAM</a>
+                <a href="<?php echo $link_craft; ?>" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">OUR CRAFT</a>
+              </div>
+            </div>
+
+            <!-- CACAO JOURNAL -->
             <a href="<?php echo $link_journal; ?>" class="nav-link <?php echo $is_journal ? 'active-page' : ''; ?>">
               <?php if ($is_journal) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
-              Cacao Journal
+              CACAO JOURNAL
             </a>
+
+            <!-- OUR COLLECTIONS Dropdown Menu -->
+            <div class="relative group py-2">
+              <a href="<?php echo $link_collections; ?>" class="nav-link flex items-center gap-1.5 font-semibold uppercase tracking-widest text-xs <?php echo $is_collections ? 'active-page' : ''; ?>">
+                <?php if ($is_collections) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1"></span><?php endif; ?>
+                OUR COLLECTIONS
+                <svg class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180 text-accent-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </a>
+              <div class="absolute left-0 top-full hidden group-hover:flex flex-col bg-cacao-dark text-canvas min-w-[260px] py-3 rounded-lg shadow-2xl border border-canvas/15 transition-all z-50">
+                <a href="<?php echo $link_collections; ?>?lineage=gifting" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">CORPORATE &amp; CUSTOM GIFTING</a>
+              </div>
+            </div>
+
+            <!-- STOCKISTS (Replaced Stocklists) -->
             <a href="<?php echo $link_concierge; ?>" class="nav-link <?php echo $is_concierge ? 'active-page' : ''; ?>">
               <?php if ($is_concierge) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
-              Concierge &amp; Stockists
+              STOCKISTS
+            </a>
+
+            <!-- CONTACT -->
+            <a href="<?php echo $link_concierge; ?>#contact" class="nav-link">
+              CONTACT
             </a>
             <?php
         }
@@ -214,36 +256,58 @@
   </header>
 
   <!-- Mobile Drawer Menu -->
-  <div id="mobile-drawer" class="fixed inset-0 z-50 bg-cacao-dark text-canvas transform translate-x-full transition-transform duration-500 flex flex-col justify-between p-8 md:hidden">
+  <div id="mobile-drawer" class="fixed inset-0 z-50 bg-cacao-dark text-canvas transform translate-x-full transition-transform duration-500 flex flex-col justify-between p-8 md:hidden overflow-y-auto">
     <div class="space-y-8">
       <div class="flex justify-between items-center border-b border-canvas/20 pb-4">
-        <span class="font-serif-luxury text-xl font-bold">EVERYTHING CACAO GH</span>
-        <button id="close-drawer-btn" class="text-canvas text-2xl">&times;</button>
+        <span class="font-serif-luxury text-xl font-bold text-accent-gold">EVERYTHING CACAO GH</span>
+        <button id="close-drawer-btn" class="text-canvas text-3xl font-light">&times;</button>
       </div>
-      <div class="flex flex-col space-y-6 text-sm uppercase tracking-widest font-medium">
+      <div class="flex flex-col space-y-6 text-xs uppercase tracking-widest font-semibold">
         <?php
         if (has_nav_menu('mobile')) {
             wp_nav_menu(array(
                 'theme_location' => 'mobile',
                 'container'      => false,
-                'menu_class'     => 'flex flex-col space-y-6 text-sm uppercase tracking-widest font-medium',
+                'menu_class'     => 'flex flex-col space-y-6 text-xs uppercase tracking-widest font-semibold',
                 'fallback_cb'    => false,
             ));
         } else {
             ?>
-            <a href="<?php echo $link_home; ?>" class="<?php echo $is_home ? 'text-accent-gold font-bold' : ''; ?>">Home</a>
-            <a href="<?php echo $link_collections; ?>" class="<?php echo $is_collections ? 'text-accent-gold font-bold' : ''; ?>">Our Collections</a>
-            <a href="<?php echo $link_craft; ?>" class="<?php echo $is_craft ? 'text-accent-gold font-bold' : ''; ?>">Our Craft</a>
-            <a href="<?php echo $link_journal; ?>" class="<?php echo $is_journal ? 'text-accent-gold font-bold' : ''; ?>">Cacao Journal</a>
-            <a href="<?php echo $link_concierge; ?>" class="<?php echo $is_concierge ? 'text-accent-gold font-bold' : ''; ?>">Concierge &amp; Stockists</a>
+            <!-- EXPERIENCE US Submenu -->
+            <div class="space-y-3">
+              <span class="text-xs text-accent-gold font-bold uppercase tracking-widest block">EXPERIENCE US</span>
+              <div class="pl-4 flex flex-col space-y-2.5 text-xs text-canvas/80 font-normal">
+                <a href="<?php echo $link_craft; ?>#about" class="hover:text-accent-gold transition-colors block">ABOUT</a>
+                <a href="<?php echo $link_craft; ?>#team" class="hover:text-accent-gold transition-colors block">MEET THE TEAM</a>
+                <a href="<?php echo $link_craft; ?>" class="hover:text-accent-gold transition-colors block">OUR CRAFT</a>
+              </div>
+            </div>
+
+            <!-- CACAO JOURNAL -->
+            <a href="<?php echo $link_journal; ?>" class="<?php echo $is_journal ? 'text-accent-gold font-bold' : ''; ?> block">CACAO JOURNAL</a>
+
+            <!-- OUR COLLECTIONS Submenu -->
+            <div class="space-y-3">
+              <a href="<?php echo $link_collections; ?>" class="<?php echo $is_collections ? 'text-accent-gold font-bold' : ''; ?> block font-bold">OUR COLLECTIONS</a>
+              <div class="pl-4 flex flex-col space-y-2.5 text-xs text-canvas/80 font-normal">
+                <a href="<?php echo $link_collections; ?>?lineage=gifting" class="hover:text-accent-gold transition-colors block">CORPORATE &amp; CUSTOM GIFTING</a>
+              </div>
+            </div>
+
+            <!-- STOCKISTS -->
+            <a href="<?php echo $link_concierge; ?>" class="<?php echo $is_concierge ? 'text-accent-gold font-bold' : ''; ?> block">STOCKISTS</a>
+
+            <!-- CONTACT -->
+            <a href="<?php echo $link_concierge; ?>#contact" class="block">CONTACT</a>
             <?php
         }
         ?>
       </div>
     </div>
-    <div class="space-y-4">
+    <div class="space-y-4 pt-6">
       <a href="https://wa.me/<?php echo esc_attr(get_option('ec_whatsapp_number', '233240000000')); ?>?text=Hi%20Everything%20Cacao%20GH!" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-accent-whatsapp text-white font-semibold uppercase tracking-widest text-center block rounded">
         WhatsApp Concierge
       </a>
     </div>
   </div>
+

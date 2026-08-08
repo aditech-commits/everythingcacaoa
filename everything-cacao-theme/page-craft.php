@@ -34,12 +34,12 @@ get_header();
   </section>
 
   <!-- Brand Story & Core Pillars Section -->
-  <section class="py-24 max-w-7xl mx-auto px-6 md:px-12">
+  <section id="about" class="py-24 max-w-7xl mx-auto px-6 md:px-12">
     <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
       <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Our Journey</span>
-      <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">Everything Cacao GH Ltd. - Our Brand Story</h2>
+      <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">Ghana's Chocolate Story &mdash; Grown Here, Made Here</h2>
       <p class="text-text-muted text-base leading-relaxed">
-        At Everything Cacao GH Ltd., we celebrate the rich heritage of Ghana’s cacao and the art of transforming processed cocoa into premium chocolate. Nestled in the heart of Ghana, our journey began with a passion for creating exceptional chocolate that honors our land and the hardworking farmers who cultivate it.
+        Everything Cacao GH was born from a passion for Ghana's cacao and a belief that the world's finest chocolate starts right here. We transform premium Ghanaian cocoa into exceptional chocolate &mdash; honouring our land, our farmers and the traditions that make Ghanaian cacao among the best in the world.
       </p>
     </div>
 
@@ -150,7 +150,7 @@ get_header();
   </section>
 
   <!-- OUR TEAM Section -->
-  <section class="py-24 max-w-7xl mx-auto px-6 md:px-12">
+  <section id="team" class="py-24 max-w-7xl mx-auto px-6 md:px-12">
     <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
       <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Leadership &amp; Artisans</span>
       <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">OUR TEAM</h2>

@@ -17,25 +17,26 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
 ?>
 
   <!-- Hero Section -->
+  <!-- Hero Section -->
   <section class="relative min-h-[85vh] flex items-center overflow-hidden py-16">
     <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
       <!-- Text Content -->
       <div class="lg:col-span-6 z-10 space-y-8">
         <span class="inline-block font-sans text-xs font-semibold uppercase tracking-widest text-accent-terracotta bg-accent-terracotta/10 px-4 py-2 rounded-full">
-          EST. ACCRA, GHANA
+          FDA &amp; GSA CERTIFIED • EST. ACCRA, GHANA
         </span>
         
         <h1 class="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-cacao-dark">
-          From Ghanaian Soil to Pure Luxury: <span class="italic font-normal text-accent-terracotta">Pure Cacao,</span> Crafted at Home.
+          Ghana's Finest Chocolate &mdash; <span class="italic font-normal text-accent-terracotta">Crafted from Local Cacao</span>
         </h1>
 
         <p class="text-base sm:text-lg text-text-muted max-w-lg leading-relaxed font-normal">
-          100% locally sourced, bean-to-bar Ghanaian chocolate empowering local farming communities through artisanal excellence.
+          Everything Cacao GH makes premium chocolate from Ghana's finest locally sourced cacao. Our two iconic ranges &mdash; Nahar for luxury occasions and Cherelle for everyday delight &mdash; bring world-class Ghanaian chocolate to your table.
         </p>
 
         <div class="flex flex-wrap gap-4 pt-4">
           <a href="<?php echo $link_collections; ?>" class="px-8 py-4 bg-cacao-dark text-canvas font-semibold text-xs uppercase tracking-widest hover:bg-accent-terracotta transition-all duration-300 shadow-xl">
-            EXPLORE COLLECTIONS
+            SHOP ALL CHOCOLATE
           </a>
           <a href="<?php echo $link_craft; ?>" class="px-8 py-4 border border-cacao-dark text-cacao-dark font-semibold text-xs uppercase tracking-widest hover:bg-cacao-dark hover:text-canvas transition-all duration-300">
             OUR STORY
@@ -47,7 +48,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
       <div class="lg:col-span-6 relative aspect-square group">
         <div class="absolute inset-0 bg-cacao-dark/10 rounded-2xl transform rotate-3 scale-95 transition-transform duration-700 group-hover:rotate-0"></div>
         <img class="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-2xl z-0 transform -rotate-3 transition-transform duration-700 group-hover:rotate-0" 
-             alt="Everything Cacao GH Premium Bean-to-Bar Chocolate Box" 
+             alt="Buy Ghanaian Chocolate Online | Everything Cacao GH" 
              src="<?php echo esc_url(ec_get_smart_image_url('ec_hero_image', 'Cherelle milk choc long.png')); ?>" />
       </div>
     </div>
@@ -57,62 +58,68 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
   <section class="py-24 bg-card-bg border-t border-b border-cacao-dark/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       <div class="text-center mb-16 space-y-4 max-w-2xl mx-auto">
-        <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">Two Expressions of Ghanaian Soil</h2>
-        <p class="text-text-muted text-sm leading-relaxed">From daily indulgence to the pinnacle of artisanal luxury, discover the lineages of Everything Cacao.</p>
+        <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">Two Ranges. One Ghanaian Story.</h2>
+        <p class="text-text-muted text-sm leading-relaxed">Whether you're treating yourself, sharing with family or finding the perfect gift, Everything Cacao has a chocolate for every moment.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <!-- Card A: Cherelle -->
-        <div class="group relative overflow-hidden bg-canvas rounded-xl p-8 md:p-12 flex flex-col justify-between min-h-[580px] border border-cacao-dark/10 hover:border-cherelle-caramel/50 transition-all duration-500 subbrand-cherelle shadow-sm">
-          <div class="relative z-10 space-y-2">
-            <span class="text-xs font-semibold uppercase tracking-widest text-cherelle-caramel block">THE LIFESTYLE LINE</span>
-            <h3 class="font-serif-luxury text-4xl sm:text-5xl font-bold text-cacao-dark">Cherelle</h3>
-            <p class="font-serif-luxury text-xl text-accent-terracotta italic">Everyday Moments &amp; Joy</p>
-          </div>
-
-          <div class="relative z-10 space-y-6 pt-6">
-            <div class="w-full aspect-[4/3] bg-[#F5EFE6] rounded-lg overflow-hidden border border-cacao-dark/10 flex items-center justify-center">
-              <img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700" 
-                   alt="Cherelle Lifestyle Presentation" 
-                   src="<?php echo esc_url(ec_get_smart_image_url('ec_cherelle_image', 'Cherelle Milk Chocolate 90g.jpg')); ?>"
-                   loading="eager" />
-            </div>
-            
-            <div class="flex justify-between items-end w-full border-t border-cacao-dark/10 pt-4">
-              <div>
-                <span class="text-[10px] font-semibold text-text-muted uppercase tracking-wider block">PRICING</span>
-                <span class="font-serif-luxury text-2xl font-bold text-cacao-dark">GHC 305 &ndash; 640</span>
-              </div>
-              <a href="<?php echo $link_collections; ?>?lineage=cherelle" class="px-6 py-3.5 bg-cacao-dark text-canvas font-semibold text-xs uppercase tracking-widest hover:bg-cherelle-caramel transition-colors">
-                SHOP CHERELLE
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card B: Nahar -->
+        <!-- Card A: Nahar -->
         <div class="group relative overflow-hidden bg-cacao-dark text-canvas rounded-xl p-8 md:p-12 flex flex-col justify-between min-h-[580px] border border-cacao-dark/10 transition-all duration-500 subbrand-nahar shadow-sm">
           <div class="relative z-10 space-y-2">
-            <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold block">THE ARTISANAL LINE</span>
+            <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold block">THE ESSENCE OF LUXURY</span>
             <h3 class="font-serif-luxury text-4xl sm:text-5xl font-bold text-canvas">Nahar</h3>
-            <p class="font-serif-luxury text-xl text-accent-gold italic">Refined Artisanal Luxury</p>
+            <p class="font-serif-luxury text-xl text-accent-gold italic">Luxury Ghanaian Chocolate</p>
           </div>
 
           <div class="relative z-10 space-y-6 pt-6">
+            <p class="text-xs text-canvas/80 leading-relaxed">
+              Nahar is our premium chocolate range, crafted for discerning palates. Rich, complex flavours made from the finest Ghanaian cocoa, wrapped in elegant packaging. Perfect for gifts, special occasions and personal indulgence.
+            </p>
             <div class="w-full aspect-[4/3] bg-[#18110D] rounded-lg overflow-hidden border border-canvas/10 flex items-center justify-center">
               <img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" 
-                   alt="Nahar Obsidian Luxury Presentation" 
+                   alt="Nahar Luxury Ghanaian Chocolate" 
                    src="<?php echo esc_url(ec_get_smart_image_url('ec_nahar_image', 'Nahar dark choc long.png')); ?>"
                    loading="eager" />
             </div>
 
             <div class="flex justify-between items-end w-full border-t border-canvas/15 pt-4">
               <div>
-                <span class="text-[10px] font-semibold text-canvas/60 uppercase tracking-wider block">ESTIMATED VALUATION</span>
-                <span class="font-serif-luxury text-lg font-bold text-accent-gold italic">Inquire for Private Reserve</span>
+                <span class="text-[10px] font-semibold text-canvas/60 uppercase tracking-wider block">COLLECTION TYPE</span>
+                <span class="font-serif-luxury text-lg font-bold text-accent-gold italic">Luxury &amp; Bespoke Reserve</span>
               </div>
               <a href="<?php echo $link_collections; ?>?lineage=nahar" class="px-6 py-3.5 bg-accent-gold text-cacao-dark font-semibold text-xs uppercase tracking-widest hover:bg-white transition-colors">
-                DISCOVER NAHAR
+                SHOP NAHAR &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card B: Cherelle -->
+        <div class="group relative overflow-hidden bg-canvas rounded-xl p-8 md:p-12 flex flex-col justify-between min-h-[580px] border border-cacao-dark/10 hover:border-cherelle-caramel/50 transition-all duration-500 subbrand-cherelle shadow-sm">
+          <div class="relative z-10 space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-widest text-cherelle-caramel block">DELIGHT IN EVERY BITE</span>
+            <h3 class="font-serif-luxury text-4xl sm:text-5xl font-bold text-cacao-dark">Cherelle</h3>
+            <p class="font-serif-luxury text-xl text-accent-terracotta italic">Everyday Chocolate for Everyone</p>
+          </div>
+
+          <div class="relative z-10 space-y-6 pt-6">
+            <p class="text-xs text-text-muted leading-relaxed">
+              Cherelle is everyday chocolate for everyone. Affordable, joyful and bursting with the natural taste of Ghanaian cacao. Made for sharing, gifting and sweet everyday moments.
+            </p>
+            <div class="w-full aspect-[4/3] bg-[#F5EFE6] rounded-lg overflow-hidden border border-cacao-dark/10 flex items-center justify-center">
+              <img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700" 
+                   alt="Cherelle Everyday Ghanaian Chocolate" 
+                   src="<?php echo esc_url(ec_get_smart_image_url('ec_cherelle_image', 'Cherelle Milk Chocolate 90g.jpg')); ?>"
+                   loading="eager" />
+            </div>
+            
+            <div class="flex justify-between items-end w-full border-t border-cacao-dark/10 pt-4">
+              <div>
+                <span class="text-[10px] font-semibold text-text-muted uppercase tracking-wider block">COLLECTION TYPE</span>
+                <span class="font-serif-luxury text-2xl font-bold text-cacao-dark">Everyday Range</span>
+              </div>
+              <a href="<?php echo $link_collections; ?>?lineage=cherelle" class="px-6 py-3.5 bg-cacao-dark text-canvas font-semibold text-xs uppercase tracking-widest hover:bg-cherelle-caramel transition-colors">
+                SHOP CHERELLE &rarr;
               </a>
             </div>
           </div>
@@ -121,56 +128,56 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
     </div>
   </section>
 
-  <!-- Bean-to-Bar Impact Section -->
+  <!-- Why Choose Everything Cacao GH Section -->
   <section class="py-24 max-w-7xl mx-auto px-6 md:px-12">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
       <div class="max-w-2xl space-y-4">
-        <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark leading-tight">Crafting Change from the Root Up.</h2>
-        <p class="text-text-muted text-base leading-relaxed">We believe true luxury is ethical. By controlling every step from the soil to the bar, we ensure the highest quality while returning maximum value to our Ghanaian partners.</p>
+        <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark leading-tight">Why Choose Everything Cacao GH?</h2>
+        <p class="text-text-muted text-base leading-relaxed">From bean to bar, we celebrate our land, our farmers, and our heritage with every bite.</p>
       </div>
       <a class="font-semibold text-xs uppercase tracking-widest text-cacao-dark border-b-2 border-cacao-dark pb-1 hover:text-accent-terracotta hover:border-accent-terracotta transition-colors flex items-center gap-2" 
          href="<?php echo $link_craft; ?>">
-        READ THE SUSTAINABILITY PACT &rarr;
+        OUR STORY &rarr;
       </a>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-      <!-- Item 1: Direct Farmer Partnerships -->
+      <!-- Item 1: Locally sourced cacao -->
       <div class="space-y-6 group">
         <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
           <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-               alt="Ghanaian Cacao Farmer holding pod" 
+               alt="Locally Sourced Ghanaian Cacao Farmers" 
                src="<?php echo esc_url(ec_get_smart_image_url('ec_impact_image_1', '6.png')); ?>" />
         </div>
         <div class="space-y-2">
-          <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark">Direct Farmer Partnerships</h4>
-          <p class="text-xs text-text-muted leading-relaxed">We bypass the middleman, working directly with families in the Ashanti region to guarantee fair wages and regenerative agricultural education.</p>
+          <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Locally sourced cacao</h3>
+          <p class="text-xs text-text-muted leading-relaxed">We work directly with Ghanaian farmers and local suppliers to source the highest quality processed cocoa &mdash; supporting communities and ensuring exceptional flavour in every bar.</p>
         </div>
       </div>
 
-      <!-- Item 2: 100% Ghanaian Value Chain -->
+      <!-- Item 2: Certified quality -->
       <div class="space-y-6 group">
         <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
           <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-               alt="Ghanaian Chocolate Manufacturing Facility" 
+               alt="FDA and GSA Certified Quality Ghanaian Chocolate" 
                src="<?php echo esc_url(ec_get_smart_image_url('ec_impact_image_2', '3.png')); ?>" />
         </div>
         <div class="space-y-2">
-          <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark">100% Ghanaian Value Chain</h4>
-          <p class="text-xs text-text-muted leading-relaxed">Processing, roasting, tempering, and packaging all happen within Ghana's borders, keeping economic power where the cacao grows.</p>
+          <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Certified quality</h3>
+          <p class="text-xs text-text-muted leading-relaxed">Every Everything Cacao product is certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA). Quality and safety you can trust.</p>
         </div>
       </div>
 
-      <!-- Item 3: Sustainable Fair-Trade Craftsmanship -->
+      <!-- Item 3: Made in Ghana -->
       <div class="space-y-6 group">
         <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
           <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-               alt="Artisan Chocolate Bar Hand-wrapping with Wax Seal" 
+               alt="Made in Ghana Artisanal Chocolate Manufacturing" 
                src="<?php echo esc_url(ec_get_smart_image_url('ec_impact_image_3', '4.png')); ?>" />
         </div>
         <div class="space-y-2">
-          <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark">Sustainable Fair-Trade Craftsmanship</h4>
-          <p class="text-xs text-text-muted leading-relaxed">Our small-batch approach minimizes waste and utilizes organic methods that protect the biodiversity of our local tropical ecosystems.</p>
+          <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Made in Ghana</h3>
+          <p class="text-xs text-text-muted leading-relaxed">From bean to bar, our chocolate is made in Ghana &mdash; celebrating our land, our farmers and our heritage with every bite.</p>
         </div>
       </div>
     </div>

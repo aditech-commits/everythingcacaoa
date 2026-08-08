@@ -18,10 +18,10 @@ get_header();
   <!-- Page Banner -->
   <section class="py-16 bg-cacao-dark text-canvas border-b border-canvas/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12 text-center space-y-4">
-      <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Direct Inquiry Catalog</span>
-      <h1 class="font-serif-luxury text-4xl md:text-5xl font-bold">Our Collections</h1>
-      <p class="text-canvas/80 text-sm max-w-2xl mx-auto leading-relaxed">
-        Discover single-origin dark chocolate bars, caramel milk creations, and handcrafted gift hampers. Order directly via WhatsApp for instant client concierge service.
+      <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">FDA &amp; GSA CERTIFIED GHANAIAN CHOCOLATE</span>
+      <h1 class="font-serif-luxury text-4xl md:text-5xl font-bold">Shop Everything Cacao &mdash; Nahar &amp; Cherelle</h1>
+      <p class="text-canvas/80 text-sm max-w-3xl mx-auto leading-relaxed">
+        Browse our full range of Ghanaian chocolate bars. From Nahar's luxury dark and milk collections to Cherelle's affordable everyday bars &mdash; there's an Everything Cacao chocolate for every taste, budget and occasion.
       </p>
     </div>
   </section>
@@ -432,10 +432,20 @@ get_header();
       <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark">No products in this collection yet</h3>
       <p class="text-sm text-text-muted">Check back soon or browse all collections.</p>
       <button onclick="filterProducts('all', document.querySelector('[data-category=all]'))" class="px-8 py-3 bg-cacao-dark text-canvas font-semibold text-xs uppercase tracking-widest hover:bg-accent-terracotta transition-colors">
-        View All Collections
-      </button>
     </div>
   </section>
+
+  <!-- SEO Supporting Body Copy Section -->
+  <section class="py-16 bg-card-bg border-t border-cacao-dark/10">
+    <div class="max-w-4xl mx-auto px-6 md:px-12 text-center space-y-4">
+      <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Accra &amp; Nationwide Delivery</span>
+      <h2 class="font-serif-luxury text-3xl md:text-4xl font-bold text-cacao-dark">Ghana's Best Chocolate, Delivered to Your Door</h2>
+      <p class="text-text-muted text-sm leading-relaxed max-w-2xl mx-auto">
+        Everything Cacao GH delivers across Accra and major cities in Ghana. Whether you're ordering a single Cherelle bar or stocking up on Nahar for a special occasion, we make it easy to enjoy premium Ghanaian chocolate wherever you are.
+      </p>
+    </div>
+  </section>
+
 
   <!-- ════════════════════════════════════════════════ -->
   <!-- PRODUCT DETAIL MODAL                           -->

@@ -14,16 +14,45 @@ get_header();
   <!-- Hero Contact Banner -->
   <section class="py-20 bg-cacao-dark text-canvas border-b border-canvas/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12 text-center space-y-4">
-      <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Client Experience Desk</span>
-      <h1 class="font-serif-luxury text-4xl md:text-5xl font-bold">Let's Connect</h1>
-      <p class="text-canvas/80 text-sm max-w-2xl mx-auto leading-relaxed">
-        Whether you're looking to place a personal order, inquire about corporate gifting, or find our bars in a store near you, we are here.
+      <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Wholesale, Corporate Gifting &amp; Customer Support</span>
+      <h1 class="font-serif-luxury text-4xl md:text-5xl font-bold">Get in Touch with Everything Cacao GH</h1>
+      <p class="text-canvas/80 text-sm max-w-3xl mx-auto leading-relaxed">
+        Whether you're a chocolate lover with a question, a retailer interested in stocking our products or a business looking for corporate gifting solutions &mdash; we'd love to hear from you.
       </p>
     </div>
   </section>
 
+  <!-- 3 Enquiries Highlight Cards -->
+  <section class="py-12 bg-card-bg border-b border-cacao-dark/10">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="p-8 rounded-xl bg-canvas border border-cacao-dark/10 space-y-3">
+        <span class="text-xs font-semibold text-accent-terracotta uppercase tracking-wider block">Retail Partners</span>
+        <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Wholesale &amp; Retail Enquiries</h3>
+        <p class="text-xs text-text-muted leading-relaxed">
+          Interested in stocking Nahar or Cherelle in your store, supermarket or cafe? Get in touch with our team to discuss wholesale pricing and minimum orders.
+        </p>
+      </div>
+
+      <div class="p-8 rounded-xl bg-canvas border border-cacao-dark/10 space-y-3 border-t-4 border-accent-gold">
+        <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Bespoke Packages</span>
+        <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Corporate Gifting</h3>
+        <p class="text-xs text-text-muted leading-relaxed">
+          Looking for a premium Ghanaian chocolate gift for your team, clients or an event? Everything Cacao offers bespoke corporate gifting packages. Contact us to find out more.
+        </p>
+      </div>
+
+      <div class="p-8 rounded-xl bg-canvas border border-cacao-dark/10 space-y-3">
+        <span class="text-xs font-semibold text-accent-terracotta uppercase tracking-wider block">Questions &amp; Support</span>
+        <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">General Enquiries</h3>
+        <p class="text-xs text-text-muted leading-relaxed">
+          For any other questions about our chocolate, our brands or our story &mdash; reach out via the form below or contact us directly.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact & Concierge Form Section -->
-  <section class="py-24 max-w-7xl mx-auto px-6 md:px-12">
+  <section id="contact" class="py-24 max-w-7xl mx-auto px-6 md:px-12">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
       <!-- Column 1: Direct Concierge & Contact Form -->

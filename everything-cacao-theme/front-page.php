@@ -48,7 +48,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
         <div class="absolute inset-0 bg-cacao-dark/10 rounded-2xl transform rotate-3 scale-95 transition-transform duration-700 group-hover:rotate-0"></div>
         <img class="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-2xl z-0 transform -rotate-3 transition-transform duration-700 group-hover:rotate-0" 
              alt="Everything Cacao GH Premium Bean-to-Bar Chocolate Box" 
-             src="<?php echo get_template_directory_uri(); ?>/assets/images/products/Cherelle milk choc long.png" />
+             src="<?php echo esc_url(get_theme_mod('ec_hero_image', get_template_directory_uri() . '/assets/images/products/Cherelle milk choc long.png')); ?>" />
       </div>
     </div>
   </section>
@@ -74,7 +74,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
             <div class="w-full aspect-[4/3] bg-[#F5EFE6] rounded-lg overflow-hidden border border-cacao-dark/10 flex items-center justify-center">
               <img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700" 
                    alt="Cherelle Lifestyle Presentation" 
-                   src="<?php echo get_template_directory_uri(); ?>/assets/images/products/Cherelle Milk Chocolate 90g.jpg"
+                   src="<?php echo esc_url(get_theme_mod('ec_cherelle_image', get_template_directory_uri() . '/assets/images/products/Cherelle Milk Chocolate 90g.jpg')); ?>"
                    loading="eager" />
             </div>
             
@@ -102,7 +102,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
             <div class="w-full aspect-[4/3] bg-[#18110D] rounded-lg overflow-hidden border border-canvas/10 flex items-center justify-center">
               <img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" 
                    alt="Nahar Obsidian Luxury Presentation" 
-                   src="<?php echo get_template_directory_uri(); ?>/assets/images/products/Nahar dark choc long.png"
+                   src="<?php echo esc_url(get_theme_mod('ec_nahar_image', get_template_directory_uri() . '/assets/images/products/Nahar dark choc long.png')); ?>"
                    loading="eager" />
             </div>
 
@@ -140,7 +140,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
         <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
           <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                alt="Ghanaian Cacao Farmer holding pod" 
-               src="<?php echo get_template_directory_uri(); ?>/assets/images/products/6.png" />
+               src="<?php echo esc_url(get_theme_mod('ec_impact_image_1', get_template_directory_uri() . '/assets/images/products/6.png')); ?>" />
         </div>
         <div class="space-y-2">
           <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark">Direct Farmer Partnerships</h4>
@@ -153,7 +153,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
         <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
           <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                alt="Ghanaian Chocolate Manufacturing Facility" 
-               src="<?php echo get_template_directory_uri(); ?>/assets/images/products/3.png" />
+               src="<?php echo esc_url(get_theme_mod('ec_impact_image_2', get_template_directory_uri() . '/assets/images/products/3.png')); ?>" />
         </div>
         <div class="space-y-2">
           <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark">100% Ghanaian Value Chain</h4>
@@ -166,7 +166,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
         <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
           <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                alt="Artisan Chocolate Bar Hand-wrapping with Wax Seal" 
-               src="<?php echo get_template_directory_uri(); ?>/assets/images/products/4.png" />
+               src="<?php echo esc_url(get_theme_mod('ec_impact_image_3', get_template_directory_uri() . '/assets/images/products/4.png')); ?>" />
         </div>
         <div class="space-y-2">
           <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark">Sustainable Fair-Trade Craftsmanship</h4>
@@ -193,7 +193,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                    alt="Dark Ghanaian Forest 85% Cacao" 
-                   src="<?php echo get_template_directory_uri(); ?>/assets/images/products/1.png" />
+                   src="<?php echo esc_url(get_theme_mod('ec_seasonal_1', get_template_directory_uri() . '/assets/images/products/1.png')); ?>" />
               <span class="absolute top-3 left-3 text-[10px] font-semibold uppercase bg-accent-gold text-cacao-dark px-2.5 py-0.5 rounded">85% Cacao</span>
             </div>
             <div class="space-y-1">
@@ -217,7 +217,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                    alt="Heritage Sampler Minis Box" 
-                   src="<?php echo get_template_directory_uri(); ?>/assets/images/products/Cherelle Dark Chocolate 24x9g.jpg" />
+                   src="<?php echo esc_url(get_theme_mod('ec_seasonal_2', get_template_directory_uri() . '/assets/images/products/Cherelle Dark Chocolate 24x9g.jpg')); ?>" />
               <span class="absolute top-3 left-3 text-[10px] font-semibold uppercase bg-canvas text-cacao-dark px-2.5 py-0.5 rounded">Assorted</span>
             </div>
             <div class="space-y-1">
@@ -241,7 +241,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                    alt="Ashanti Gold Milk 45% Bar" 
-                   src="<?php echo get_template_directory_uri(); ?>/assets/images/products/Cherelle Milk Chocolate 50g.jpg" />
+                   src="<?php echo esc_url(get_theme_mod('ec_seasonal_3', get_template_directory_uri() . '/assets/images/products/Cherelle Milk Chocolate 50g.jpg')); ?>" />
               <span class="absolute top-3 left-3 text-[10px] font-semibold uppercase bg-cherelle-caramel text-white px-2.5 py-0.5 rounded">Milk 45%</span>
             </div>
             <div class="space-y-1">
@@ -265,7 +265,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                    alt="Nahar Private Reserve Luxury Gift Box" 
-                   src="<?php echo get_template_directory_uri(); ?>/assets/images/products/5.png" />
+                   src="<?php echo esc_url(get_theme_mod('ec_seasonal_4', get_template_directory_uri() . '/assets/images/products/5.png')); ?>" />
               <span class="absolute top-3 left-3 text-[10px] font-semibold uppercase bg-accent-gold text-cacao-dark px-2.5 py-0.5 rounded">Exclusive</span>
             </div>
             <div class="space-y-1">

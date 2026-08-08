@@ -158,49 +158,59 @@ get_header();
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div class="bg-card-bg rounded-xl overflow-hidden border border-cacao-dark/10 shadow-sm group hover:shadow-xl transition-all">
-        <div class="aspect-[4/5] bg-cacao-dark overflow-hidden relative">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/6.png" alt="Managing Director & Founder" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-        </div>
-        <div class="p-6 space-y-2">
-          <h4 class="font-serif-luxury text-lg font-bold text-cacao-dark">Managing Director &amp; Founder</h4>
-          <span class="text-[11px] font-semibold text-accent-terracotta uppercase tracking-wider block">Strategic Vision &amp; Heritage</span>
-          <p class="text-xs text-text-muted">Championing local Ghanaian cocoa transformation, fair-trade empowerment, and international brand expansion.</p>
-        </div>
-      </div>
+      <?php
+      $team_query = new WP_Query(array(
+          'post_type'      => 'ec_team_member',
+          'posts_per_page' => -1,
+          'orderby'        => 'menu_order',
+          'order'          => 'ASC',
+      ));
 
-      <div class="bg-card-bg rounded-xl overflow-hidden border border-cacao-dark/10 shadow-sm group hover:shadow-xl transition-all">
-        <div class="aspect-[4/5] bg-cacao-dark overflow-hidden relative">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/4.png" alt="Master Chocolatier & Product Lead" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-        </div>
-        <div class="p-6 space-y-2">
-          <h4 class="font-serif-luxury text-lg font-bold text-cacao-dark">Master Chocolatier &amp; Product Lead</h4>
-          <span class="text-[11px] font-semibold text-accent-gold uppercase tracking-wider block">Confection Craftsmanship</span>
-          <p class="text-xs text-text-muted">Over 12 years of experience in cocoa conching, micro-batch roasting, and signature flavor profiling.</p>
-        </div>
-      </div>
-
-      <div class="bg-card-bg rounded-xl overflow-hidden border border-cacao-dark/10 shadow-sm group hover:shadow-xl transition-all">
-        <div class="aspect-[4/5] bg-cacao-dark overflow-hidden relative">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/3.png" alt="Head of Quality & Compliance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-        </div>
-        <div class="p-6 space-y-2">
-          <h4 class="font-serif-luxury text-lg font-bold text-cacao-dark">Head of Quality &amp; FDA/GSA Compliance</h4>
-          <span class="text-[11px] font-semibold text-accent-terracotta uppercase tracking-wider block">Standards &amp; Regulatory Safety</span>
-          <p class="text-xs text-text-muted">Ensuring strict adherence to Ghana Standards Authority (GSA) and Food &amp; Drug Authority (FDA) certifications.</p>
-        </div>
-      </div>
-
-      <div class="bg-card-bg rounded-xl overflow-hidden border border-cacao-dark/10 shadow-sm group hover:shadow-xl transition-all">
-        <div class="aspect-[4/5] bg-cacao-dark overflow-hidden relative">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/Cherelle Milk Chocolate 90g.jpg" alt="Farmer Relations & Supply Officer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-        </div>
-        <div class="p-6 space-y-2">
-          <h4 class="font-serif-luxury text-lg font-bold text-cacao-dark">Farmer Relations &amp; Sourcing Lead</h4>
-          <span class="text-[11px] font-semibold text-accent-gold uppercase tracking-wider block">Community Engagement</span>
-          <p class="text-xs text-text-muted">Coordinating direct partnerships with cocoa farming co-operatives across Suhum, Assin Fosu, and Sefwi Wiawso.</p>
-        </div>
-      </div>
+      if ($team_query->have_posts()) :
+          while ($team_query->have_posts()) : $team_query->the_post();
+              $subtitle = get_post_meta(get_the_ID(), 'team_subtitle', true);
+              $bio      = get_post_meta(get_the_ID(), 'team_bio', true) ?: get_the_excerpt();
+              $img_url  = get_the_post_thumbnail_url(get_the_ID(), 'medium_large') ?: get_template_directory_uri() . '/assets/images/products/6.png';
+              ?>
+              <div class="bg-card-bg rounded-xl overflow-hidden border border-cacao-dark/10 shadow-sm group hover:shadow-xl transition-all">
+                <div class="aspect-[4/5] bg-cacao-dark overflow-hidden relative">
+                  <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                </div>
+                <div class="p-6 space-y-2">
+                  <h4 class="font-serif-luxury text-lg font-bold text-cacao-dark"><?php the_title(); ?></h4>
+                  <?php if ($subtitle) : ?>
+                    <span class="text-[11px] font-semibold text-accent-terracotta uppercase tracking-wider block"><?php echo esc_html($subtitle); ?></span>
+                  <?php endif; ?>
+                  <p class="text-xs text-text-muted"><?php echo esc_html($bio); ?></p>
+                </div>
+              </div>
+              <?php
+          endwhile;
+          wp_reset_postdata();
+      else :
+          // Default fallback team display until client adds team members in WP Admin
+          $default_team = array(
+              array('name' => 'Managing Director & Founder', 'subtitle' => 'Strategic Vision & Heritage', 'bio' => 'Championing local Ghanaian cocoa transformation, fair-trade empowerment, and international brand expansion.', 'img' => '/assets/images/products/6.png'),
+              array('name' => 'Master Chocolatier & Product Lead', 'subtitle' => 'Confection Craftsmanship', 'bio' => 'Over 12 years of experience in cocoa conching, micro-batch roasting, and signature flavor profiling.', 'img' => '/assets/images/products/4.png'),
+              array('name' => 'Head of Quality & FDA/GSA Compliance', 'subtitle' => 'Standards & Regulatory Safety', 'bio' => 'Ensuring strict adherence to Ghana Standards Authority (GSA) and Food & Drug Authority (FDA) certifications.', 'img' => '/assets/images/products/3.png'),
+              array('name' => 'Farmer Relations & Sourcing Lead', 'subtitle' => 'Community Engagement', 'bio' => 'Coordinating direct partnerships with cocoa farming co-operatives across Suhum, Assin Fosu, and Sefwi Wiawso.', 'img' => '/assets/images/products/Cherelle Milk Chocolate 90g.jpg'),
+          );
+          foreach ($default_team as $member) :
+              ?>
+              <div class="bg-card-bg rounded-xl overflow-hidden border border-cacao-dark/10 shadow-sm group hover:shadow-xl transition-all">
+                <div class="aspect-[4/5] bg-cacao-dark overflow-hidden relative">
+                  <img src="<?php echo esc_url(get_template_directory_uri() . $member['img']); ?>" alt="<?php echo esc_attr($member['name']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                </div>
+                <div class="p-6 space-y-2">
+                  <h4 class="font-serif-luxury text-lg font-bold text-cacao-dark"><?php echo esc_html($member['name']); ?></h4>
+                  <span class="text-[11px] font-semibold text-accent-terracotta uppercase tracking-wider block"><?php echo esc_html($member['subtitle']); ?></span>
+                  <p class="text-xs text-text-muted"><?php echo esc_html($member['bio']); ?></p>
+                </div>
+              </div>
+              <?php
+          endforeach;
+      endif;
+      ?>
     </div>
   </section>
 
@@ -215,7 +225,7 @@ get_header();
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/Nahar dark choc long.png" alt="Nahar 72% Dark Chocolate Long Bar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <img src="<?php echo esc_url(get_theme_mod('ec_gallery_1', get_template_directory_uri() . '/assets/images/products/Nahar dark choc long.png')); ?>" alt="Nahar 72% Dark Chocolate Long Bar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
           <div class="absolute inset-0 bg-cacao-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-canvas">
             <span class="text-xs text-accent-gold uppercase font-semibold">Nahar Collection</span>
             <h5 class="font-serif-luxury font-bold text-lg">72% Dark Obsidian Long Bar</h5>
@@ -223,7 +233,7 @@ get_header();
         </div>
 
         <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/Cherelle Milk Chocolate 90g.jpg" alt="Cherelle 45% Milk Chocolate Bar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <img src="<?php echo esc_url(get_theme_mod('ec_gallery_2', get_template_directory_uri() . '/assets/images/products/Cherelle Milk Chocolate 90g.jpg')); ?>" alt="Cherelle 45% Milk Chocolate Bar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
           <div class="absolute inset-0 bg-cacao-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-canvas">
             <span class="text-xs text-accent-gold uppercase font-semibold">Cherelle Collection</span>
             <h5 class="font-serif-luxury font-bold text-lg">45% Milk Chocolate Artisanal Bar</h5>
@@ -231,7 +241,7 @@ get_header();
         </div>
 
         <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/4.png" alt="Ashanti Gold Truffle Box" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <img src="<?php echo esc_url(get_theme_mod('ec_gallery_3', get_template_directory_uri() . '/assets/images/products/4.png')); ?>" alt="Ashanti Gold Truffle Box" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
           <div class="absolute inset-0 bg-cacao-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-canvas">
             <span class="text-xs text-accent-gold uppercase font-semibold">Bespoke Gifting</span>
             <h5 class="font-serif-luxury font-bold text-lg">Ashanti Gold Truffle Collection</h5>
@@ -239,7 +249,7 @@ get_header();
         </div>
 
         <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/5.png" alt="Royal Ghanaian Luxury Cacao Hamper" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <img src="<?php echo esc_url(get_theme_mod('ec_gallery_4', get_template_directory_uri() . '/assets/images/products/5.png')); ?>" alt="Royal Ghanaian Luxury Cacao Hamper" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
           <div class="absolute inset-0 bg-cacao-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-canvas">
             <span class="text-xs text-accent-gold uppercase font-semibold">Luxury Gifting</span>
             <h5 class="font-serif-luxury font-bold text-lg">Royal Ghanaian Luxury Hamper</h5>
@@ -247,7 +257,7 @@ get_header();
         </div>
 
         <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/Nahar dark choc small.png" alt="Nahar Executive Mini Box" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <img src="<?php echo esc_url(get_theme_mod('ec_gallery_5', get_template_directory_uri() . '/assets/images/products/Nahar dark choc small.png')); ?>" alt="Nahar Executive Mini Box" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
           <div class="absolute inset-0 bg-cacao-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-canvas">
             <span class="text-xs text-accent-gold uppercase font-semibold">Executive Collection</span>
             <h5 class="font-serif-luxury font-bold text-lg">Nahar 72% Mini Square Box</h5>
@@ -255,7 +265,7 @@ get_header();
         </div>
 
         <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/Cherelle Milk Chocolate 50g.jpg" alt="Cherelle Delights Snack Pouch" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <img src="<?php echo esc_url(get_theme_mod('ec_gallery_6', get_template_directory_uri() . '/assets/images/products/Cherelle Milk Chocolate 50g.jpg')); ?>" alt="Cherelle Delights Snack Pouch" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
           <div class="absolute inset-0 bg-cacao-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-canvas">
             <span class="text-xs text-accent-gold uppercase font-semibold">On-The-Go Snacking</span>
             <h5 class="font-serif-luxury font-bold text-lg">Cherelle Delights Standup Pouch</h5>

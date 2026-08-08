@@ -344,8 +344,131 @@ function ec_customize_register($wp_customize) {
         'section'     => 'ec_brand_settings',
         'type'        => 'email',
     ));
+
+    // 4. Homepage Images Section
+    $wp_customize->add_section('ec_homepage_images', array(
+        'title'       => __('Homepage Images', 'everything-cacao'),
+        'priority'    => 31,
+        'description' => __('Manage images displayed on the homepage. Upload or replace images directly from Media Library.', 'everything-cacao'),
+    ));
+
+    $hp_image_fields = array(
+        'ec_hero_image'      => __('Hero Main Product Image', 'everything-cacao'),
+        'ec_cherelle_image'  => __('Cherelle Brand Showcase Card Image', 'everything-cacao'),
+        'ec_nahar_image'     => __('Nahar Brand Showcase Card Image', 'everything-cacao'),
+        'ec_impact_image_1'  => __('Impact #1: Direct Farmer Partnerships', 'everything-cacao'),
+        'ec_impact_image_2'  => __('Impact #2: 100% Ghanaian Value Chain', 'everything-cacao'),
+        'ec_impact_image_3'  => __('Impact #3: Sustainable Fair-Trade', 'everything-cacao'),
+        'ec_seasonal_1'      => __('Seasonal #1: Dark Ghanaian Forest', 'everything-cacao'),
+        'ec_seasonal_2'      => __('Seasonal #2: Heritage Sampler', 'everything-cacao'),
+        'ec_seasonal_3'      => __('Seasonal #3: Ashanti Gold', 'everything-cacao'),
+        'ec_seasonal_4'      => __('Seasonal #4: Nahar Private Reserve', 'everything-cacao'),
+    );
+
+    foreach ($hp_image_fields as $setting_id => $label) {
+        $wp_customize->add_setting($setting_id, array(
+            'default'           => '',
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $setting_id, array(
+            'label'    => $label,
+            'section'  => 'ec_homepage_images',
+            'settings' => $setting_id,
+        )));
+    }
+
+    // 5. Our Craft Page Images Section
+    $wp_customize->add_section('ec_craft_images', array(
+        'title'       => __('Our Craft Page Images', 'everything-cacao'),
+        'priority'    => 32,
+        'description' => __('Manage gallery images displayed on the Our Craft page.', 'everything-cacao'),
+    ));
+
+    for ($i = 1; $i <= 6; $i++) {
+        $setting_id = "ec_gallery_$i";
+        $wp_customize->add_setting($setting_id, array(
+            'default'           => '',
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $setting_id, array(
+            'label'    => sprintf(__('Gallery Image #%d', 'everything-cacao'), $i),
+            'section'  => 'ec_craft_images',
+            'settings' => $setting_id,
+        )));
+    }
 }
 add_action('customize_register', 'ec_customize_register');
+
+/**
+ * 9b. Register Custom Post Type: ec_team_member (Team Members for Craft Page)
+ */
+function ec_register_team_cpt() {
+    $labels = array(
+        'name'               => _x('Team Members', 'Post Type General Name', 'everything-cacao'),
+        'singular_name'      => _x('Team Member', 'Post Type Singular Name', 'everything-cacao'),
+        'menu_name'          => __('Team Members', 'everything-cacao'),
+        'all_items'          => __('All Team Members', 'everything-cacao'),
+        'add_new_item'       => __('Add New Team Member', 'everything-cacao'),
+        'add_new'            => __('Add New', 'everything-cacao'),
+        'edit_item'          => __('Edit Team Member', 'everything-cacao'),
+        'update_item'        => __('Update Team Member', 'everything-cacao'),
+    );
+    $args = array(
+        'label'               => __('ec_team_member', 'everything-cacao'),
+        'labels'              => $labels,
+        'supports'            => array('title', 'thumbnail', 'page-attributes'),
+        'public'              => false,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'menu_position'       => 6,
+        'menu_icon'           => 'dashicons-groups',
+        'capability_type'     => 'post',
+        'hierarchical'        => false,
+    );
+    register_post_type('ec_team_member', $args);
+}
+add_action('init', 'ec_register_team_cpt');
+
+function ec_add_team_meta_boxes() {
+    add_meta_box(
+        'ec_team_details',
+        __('Team Member Details', 'everything-cacao'),
+        'ec_render_team_meta_box',
+        'ec_team_member',
+        'normal',
+        'high'
+    );
+}
+add_action('add_meta_boxes', 'ec_add_team_meta_boxes');
+
+function ec_render_team_meta_box($post) {
+    wp_nonce_field('ec_save_team_meta', 'ec_team_nonce');
+    $role     = get_post_meta($post->ID, 'team_role', true);
+    $subtitle = get_post_meta($post->ID, 'team_subtitle', true);
+    $bio      = get_post_meta($post->ID, 'team_bio', true);
+    ?>
+    <p>
+        <label><strong>Role / Subtitle Tag:</strong></label><br>
+        <input type="text" name="team_subtitle" value="<?php echo esc_attr($subtitle); ?>" style="width:100%;" placeholder="e.g. Strategic Vision & Heritage" />
+    </p>
+    <p>
+        <label><strong>Short Bio:</strong></label><br>
+        <textarea name="team_bio" rows="3" style="width:100%;" placeholder="Championing local Ghanaian cocoa transformation..."><?php echo esc_textarea($bio); ?></textarea>
+    </p>
+    <p style="color:#666; font-size:12px;"><strong>Tip:</strong> Set the team member's photo using the <em>Featured Image</em> box on the right side.</p>
+    <?php
+}
+
+function ec_save_team_meta($post_id) {
+    if (!isset($_POST['ec_team_nonce']) || !wp_verify_nonce($_POST['ec_team_nonce'], 'ec_save_team_meta')) return;
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if (isset($_POST['team_subtitle'])) update_post_meta($post_id, 'team_subtitle', sanitize_text_field($_POST['team_subtitle']));
+    if (isset($_POST['team_bio'])) update_post_meta($post_id, 'team_bio', sanitize_textarea_field($_POST['team_bio']));
+}
+add_action('save_post_ec_team_member', 'ec_save_team_meta');
+
 
 /**
  * 10. Theme Settings Admin Submenu (Appearance -> Theme Settings)

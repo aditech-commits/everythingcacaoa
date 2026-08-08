@@ -1,0 +1,494 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Collections | Everything Cacao GH</title>
+  <meta name="description" content="Discover single-origin dark chocolate bars, caramel milk creations, and handcrafted gift hampers from Everything Cacao GH." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'canvas': '#FBF8F3',
+            'card-bg': '#FFFFFF',
+            'cacao-dark': '#2C1A11',
+            'accent-gold': '#D4AF37',
+            'accent-terracotta': '#C86D51',
+            'accent-whatsapp': '#25D366',
+            'cherelle-caramel': '#E08E45',
+            'nahar-obsidian': '#18110D',
+            'text-primary': '#2C1A11',
+            'text-muted': '#7A685A',
+          },
+          fontFamily: {
+            'serif-luxury': ['Playfair Display', 'serif'],
+            'sans': ['Hanken Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../assets/css/tailwind.css" />
+
+  <!-- Meta Pixel Base Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID_HERE');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"/></noscript>
+
+  <script src="../assets/js/pixel-events.js" defer></script>
+  <script src="../assets/js/app.js" defer></script>
+  <script src="../functions.js" defer></script>
+</head>
+<body class="bg-canvas text-cacao-dark antialiased flex flex-col min-h-screen">
+
+  <!-- Header Navigation Component -->
+  <header class="glass-header border-b border-cacao-dark/10 sticky top-0 z-50 transition-all duration-300">
+    <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-12 py-5">
+      <a href="page-home.html" class="flex items-center gap-3">
+        <img src="../assets/images/brand/logo.png" alt="Everything Cacao GH" class="h-10 md:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105" />
+      </a>
+
+      <div class="hidden md:flex items-center space-x-10 text-xs font-semibold uppercase tracking-widest">
+        <a href="page-home.html" class="hover:text-accent-terracotta transition-colors py-1">Home</a>
+        <a href="page-collections.html" class="text-accent-terracotta font-bold border-b-2 border-accent-terracotta py-1">Our Collections</a>
+        <a href="page-craft.html" class="hover:text-accent-terracotta transition-colors py-1">Our Craft</a>
+        <a href="page-journal.html" class="hover:text-accent-terracotta transition-colors py-1">Cacao Journal</a>
+        <a href="page-concierge.html" class="hover:text-accent-terracotta transition-colors py-1">Concierge &amp; Stockists</a>
+      </div>
+
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="https://wa.me/233240000000?text=Hi!%20I'd%20like%20to%20order%20artisanal%20chocolate." target="_blank" rel="noopener noreferrer" class="btn-whatsapp rounded shadow-sm">
+          Order via WhatsApp
+        </a>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden text-cacao-dark p-2 focus:outline-none" aria-label="Open Navigation Menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="py-16 bg-cacao-dark text-canvas border-b border-canvas/10">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 text-center space-y-4">
+      <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Direct Inquiry Catalog</span>
+      <h1 class="font-serif-luxury text-4xl md:text-5xl font-bold">Our Collections</h1>
+      <p class="text-canvas/80 text-sm max-w-2xl mx-auto leading-relaxed">
+        Discover single-origin dark chocolate bars, caramel milk creations, and handcrafted gift hampers. Order directly via WhatsApp for instant client concierge service.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filter Tabs Header & Product Grid -->
+  <section class="py-16 max-w-7xl mx-auto px-6 md:px-12 flex-grow">
+    
+    <!-- Filter Tabs -->
+    <div class="flex flex-wrap items-center justify-center gap-3 mb-12 border-b border-cacao-dark/10 pb-6">
+      <button data-category="all" class="catalog-tab px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-cacao-dark text-canvas transition-all active" onclick="filterProducts('all', this)">
+        All Collections
+      </button>
+      <button data-category="cherelle" class="catalog-tab px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-card-bg text-cacao-dark hover:bg-cacao-dark/10 transition-all" onclick="filterProducts('cherelle', this)">
+        Cherelle
+      </button>
+      <button data-category="nahar" class="catalog-tab px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-card-bg text-cacao-dark hover:bg-cacao-dark/10 transition-all" onclick="filterProducts('nahar', this)">
+        Nahar
+      </button>
+      <button data-category="gifting" class="catalog-tab px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-card-bg text-cacao-dark hover:bg-cacao-dark/10 transition-all" onclick="filterProducts('gifting', this)">
+        Gift Boxes
+      </button>
+    </div>
+
+    <!-- Product Card Grid Container -->
+    <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Product 1: Cherelle 40% Milk Chocolate -->
+      <div class="product-card bg-card-bg rounded-lg overflow-hidden border border-cacao-dark/10 flex flex-col justify-between subbrand-cherelle shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="cherelle">
+        <div>
+          <div class="relative aspect-square overflow-hidden bg-canvas group cursor-pointer"
+               onclick="openProductModal(this)"
+               data-title="Cherelle 40% Milk Chocolate"
+               data-image="everything_cacao_products/Cherelle Milk Chocolate 90g.jpg"
+               data-price="305"
+               data-cacao="40% Milk Cacao"
+               data-origin="Everyday Lifestyle Line â€¢ Ghana"
+               data-notes="Creamy, rich Ghanaian milk chocolate crafted for your daily indulgence and sweet break."
+               data-description="Featured on @everythingcacaogh: Start your day with the rich taste of Cherelle 40% Milk Chocolate. Crafted with 100% local Ghanaian cacao, it is the sweetest way to ease into your week and satisfy daily chocolate cravings."
+               data-brand="Cherelle"
+               data-wa="https://wa.me/233240000000?text=Hi,%20I'd%20like%20to%20order%20the%20Cherelle%2040%25%20Milk%20Chocolate">
+            <img src="everything_cacao_products/Cherelle Milk Chocolate 90g.jpg" alt="Cherelle 40% Milk Chocolate" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <span class="absolute top-4 left-4 text-[10px] font-semibold uppercase tracking-wider bg-cacao-dark text-canvas px-3 py-1 z-10">40% Milk Cacao</span>
+            <span class="absolute top-4 right-4 text-[10px] font-semibold uppercase tracking-wider bg-white/90 text-cacao-dark px-3 py-1 rounded-full shadow-sm z-10">Cherelle</span>
+            <div class="absolute inset-0 bg-cacao-dark/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-20">
+              <span class="text-canvas font-serif-luxury text-lg font-bold mb-2">View Details</span>
+              <span class="w-12 h-0.5 bg-accent-gold"></span>
+            </div>
+          </div>
+          <div class="p-6 space-y-3">
+            <span class="text-[10px] font-semibold text-text-muted uppercase tracking-widest block">Everyday Lifestyle Line â€¢ Ghana</span>
+            <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Cherelle 40% Milk Chocolate</h3>
+            <p class="text-xs text-text-muted"><strong class="text-cacao-dark">Tasting Notes:</strong> Creamy, rich Ghanaian milk chocolate crafted for your daily indulgence and sweet break.</p>
+          </div>
+        </div>
+        <div class="p-6 pt-0 space-y-4">
+          <div class="flex justify-between items-center border-t border-cacao-dark/10 pt-4">
+            <span class="text-xs font-semibold text-text-muted">PRICE</span>
+            <span class="font-serif-luxury text-lg font-bold text-cacao-dark">GHC 305</span>
+          </div>
+          <a href="https://wa.me/233240000000?text=Hi,%20I'd%20like%20to%20order%20the%20Cherelle%2040%25%20Milk%20Chocolate" target="_blank" rel="noopener noreferrer" class="btn-whatsapp w-full rounded text-center block" onclick="event.stopPropagation(); fbq('track', 'Lead', {content_name: 'Cherelle 40% Milk Chocolate'});">
+            Order via WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 2: Cherelle 60% Dark Chocolate -->
+      <div class="product-card bg-card-bg rounded-lg overflow-hidden border border-cacao-dark/10 flex flex-col justify-between subbrand-cherelle shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="cherelle">
+        <div>
+          <div class="relative aspect-square overflow-hidden bg-canvas group cursor-pointer"
+               onclick="openProductModal(this)"
+               data-title="Cherelle 60% Dark Chocolate"
+               data-image="everything_cacao_products/Cherelle Dark Chocolate 24x9g.jpg"
+               data-price="350"
+               data-cacao="60% Dark Cacao"
+               data-origin="Single-Origin â€¢ Suhum Region"
+               data-notes="Smooth medium-dark chocolate with subtle red berry and caramel undertones."
+               data-description="Featured on @everythingcacaogh: The perfect balance of dark cocoa intensity and smooth sweetness. Cherelle 60% Dark delivers high antioxidant support, boosts mood, and provides a rewarding taste experience made right here in Ghana."
+               data-brand="Cherelle"
+               data-wa="https://wa.me/233240000000?text=Hi,%20I'd%20like%20to%20order%20the%20Cherelle%2060%25%20Dark%20Chocolate">
+            <img src="everything_cacao_products/Cherelle Dark Chocolate 24x9g.jpg" alt="Cherelle 60% Dark Chocolate" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <span class="absolute top-4 left-4 text-[10px] font-semibold uppercase tracking-wider bg-cacao-dark text-canvas px-3 py-1 z-10">60% Dark Cacao</span>
+            <span class="absolute top-4 right-4 text-[10px] font-semibold uppercase tracking-wider bg-white/90 text-cacao-dark px-3 py-1 rounded-full shadow-sm z-10">Cherelle</span>
+            <div class="absolute inset-0 bg-cacao-dark/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-20">
+              <span class="text-canvas font-serif-luxury text-lg font-bold mb-2">View Details</span>
+              <span class="w-12 h-0.5 bg-accent-gold"></span>
+            </div>
+          </div>
+          <div class="p-6 space-y-3">
+            <span class="text-[10px] font-semibold text-text-muted uppercase tracking-widest block">Single-Origin â€¢ Suhum Region</span>
+            <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Cherelle 60% Dark Chocolate</h3>
+            <p class="text-xs text-text-muted"><strong class="text-cacao-dark">Tasting Notes:</strong> Smooth medium-dark chocolate with subtle red berry and caramel undertones.</p>
+          </div>
+        </div>
+        <div class="p-6 pt-0 space-y-4">
+          <div class="flex justify-between items-center border-t border-cacao-dark/10 pt-4">
+            <span class="text-xs font-semibold text-text-muted">PRICE</span>
+            <span class="font-serif-luxury text-lg font-bold text-cacao-dark">GHC 350</span>
+          </div>
+          <a href="https://wa.me/233240000000?text=Hi,%20I'd%20like%20to%20order%20the%20Cherelle%2060%25%20Dark%20Chocolate" target="_blank" rel="noopener noreferrer" class="btn-whatsapp w-full rounded text-center block" onclick="event.stopPropagation(); fbq('track', 'Lead', {content_name: 'Cherelle 60% Dark Chocolate'});">
+            Order via WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 3: Cherelle Delights Snack Bites -->
+      <div class="product-card bg-card-bg rounded-lg overflow-hidden border border-cacao-dark/10 flex flex-col justify-between subbrand-cherelle shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="cherelle">
+        <div>
+          <div class="relative aspect-square overflow-hidden bg-canvas group cursor-pointer"
+               onclick="openProductModal(this)"
+               data-title="Cherelle Delights Snack Bites"
+               data-image="everything_cacao_products/Cherelle Milk Chocolate 50g.jpg"
+               data-price="280"
+               data-cacao="Bite-Sized Pack"
+               data-origin="On-The-Go Pouch â€¢ Accra"
+               data-notes="Delights in every bite â€” convenient re-sealable snack pouch of milk chocolate bites."
+               data-description="As seen on @everythingcacaogh: 'Delights in Every Bite!' Convenient, re-sealable standup pouch packed with bite-sized Cherelle chocolates. Perfect for snacking on the go, movie nights, or sharing with friends."
+               data-brand="Cherelle"
+               data-wa="https://wa.me/233240000000?text=Hi,%20I'd%20like%20to%20order%20the%20Cherelle%20Delights%20Snack%20Bites">
+            <img src="everything_cacao_products/Cherelle Milk Chocolate 50g.jpg" alt="Cherelle Delights Snack Bites" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <span class="absolute top-4 left-4 text-[10px] font-semibold uppercase tracking-wider bg-cacao-dark text-canvas px-3 py-1 z-10">Bite-Sized Pack</span>
+            <span class="absolute top-4 right-4 text-[10px] font-semibold uppercase tracking-wider bg-white/90 text-cacao-dark px-3 py-1 rounded-full shadow-sm z-10">Cherelle</span>
+            <div class="absolute inset-0 bg-cacao-dark/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-20">
+              <span class="text-canvas font-serif-luxury text-lg font-bold mb-2">View Details</span>
+              <span class="w-12 h-0.5 bg-accent-gold"></span>
+            </div>
+          </div>
+          <div class="p-6 space-y-3">
+            <span class="text-[10px] font-semibold text-text-muted uppercase tracking-widest block">On-The-Go Pouch â€¢ Accra</span>
+            <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Cherelle Delights Snack Bites</h3>
+            <p class="text-xs text-text-muted"><strong class="text-cacao-dark">Tasting Notes:</strong> Delights in every bite â€” convenient re-sealable snack pouch of milk chocolate bites.</p>
+          </div>
+        </div>
+        <div class="p-6 pt-0 space-y-4">
+          <div class="flex justify-between items-center border-t border-cacao-dark/10 pt-4">
+            <span class="text-xs font-semibold text-text-muted">PRICE</span>
+            <span class="font-serif-luxury text-lg font-bold text-cacao-dark">GHC 280</span>
+          </div>
+          <a href="https://wa.me/233240000000?text=Hi,%20I'd%20like%20to%20order%20the%20Cherelle%20Delights%20Snack%20Bites" target="_blank" rel="noopener noreferrer" class="btn-whatsapp w-full rounded text-center block" onclick="event.stopPropagation(); fbq('track', 'Lead', {content_name: 'Cherelle Delights Snack Bites'});">
+            Order via WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 4: Everything Cacao Celebration Bouquet & Gift Set -->
+      <div class="product-card bg-card-bg rounded-lg overflow-hidden border border-cacao-dark/10 flex flex-col justify-between border-t-4 border-accent-gold shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="gifting">
+        <div>
+          <div class="relative aspect-square overflow-hidden bg-canvas group cursor-pointer"
+               onclick="openProductModal(this)"
+               data-title="Everything Cacao Celebration Bouquet & Gift Set"
+               data-image="everything_cacao_products/5.png"
+               data-price="850"
+               data-cacao="Special Edition"
+               data-origin="Luxury Gift Arrangement"
+               data-notes="Handcrafted bouquet arrangement featuring Cherelle Milk & Dark bars with plush keepsake."
+               data-description="Official @everythingcacaogh Gift Edition: Celebrate special moments, birthdays, and anniversaries with our signature chocolate bouquet! Features an arrangement of Cherelle 40% Milk and 60% Dark bars paired with fresh roses and a luxury plush keepsake."
+               data-brand="Gift Box"
+               data-wa="https://wa.me/233240000000?text=Hi,%20I'd%20like%20to%20order%20the%20Celebration%20Bouquet%20and%20Gift%20Set">
+            <img src="everything_cacao_products/5.png" alt="Everything Cacao Celebration Bouquet & Gift Set" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <span class="absolute top-4 left-4 text-[10px] font-semibold uppercase tracking-wider bg-cacao-dark text-canvas px-3 py-1 z-10">Special Edition</span>
+            <span class="absolute top-4 right-4 text-[10px] font-semibold uppercase tracking-wider bg-white/90 text-cacao-dark px-3 py-1 rounded-full shadow-sm z-10">Gift Box</span>
+            <div class="absolute inset-0 bg-cacao-dark/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-20">
+              <span class="text-canvas font-serif-luxury text-lg font-bold mb-2">View Details</span>
+              <span class="w-12 h-0.5 bg-accent-gold"></span>
+            </div>
+          </div>
+          <div class="p-6 space-y-3">
+            <span class="text-[10px] font-semibold text-text-muted uppercase tracking-widest block">Luxury Gift Arrangement</span>
+            <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Everything Cacao Celebration Bouquet</h3>
+            <p class="text-xs text-text-muted"><strong class="text-cacao-dark">Tasting Notes:</strong> Handcrafted bouquet arrangement featuring Cherelle Milk & Dark bars with plush keepsake.</p>
+          </div>
+        </div>
+        <div class="p-6 pt-0 space-y-4">
+          <div class="flex justify-between items-center border-t border-cacao-dark/10 pt-4">
+            <span class="text-xs font-semibold text-text-muted">PRICE</span>
+            <span class="font-serif-luxury text-lg font-bold text-cacao-dark">GHC 850</span>
+          </div>
+          <a href="https://wa.me/233240000000?text=Hi,%20I'd%20like%20to%20order%20the%20Celebration%20Bouquet%20and%20Gift%20Set" target="_blank" rel="noopener noreferrer" class="btn-whatsapp w-full rounded text-center block" onclick="event.stopPropagation(); fbq('track', 'Lead', {content_name: 'Celebration Bouquet'});">
+            Order via WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 5: Nahar 72% Artisanal Dark Chocolate -->
+      <div class="product-card bg-card-bg rounded-lg overflow-hidden border border-cacao-dark/10 flex flex-col justify-between subbrand-nahar shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="nahar">
+        <div>
+          <div class="relative aspect-square overflow-hidden bg-canvas group cursor-pointer"
+               onclick="openProductModal(this)"
+               data-title="Nahar 72% Artisanal Dark Chocolate"
+               data-image="everything_cacao_products/1.png"
+               data-price="450"
+               data-cacao="72% Cacao"
+               data-origin="Single-Origin â€¢ Sefwi Wiawso"
+               data-notes="Deep cocoa intensity with a satisfying snap, roasted nib crunch, and sophisticated finish."
+               data-description="Featured on @everythingcacaogh: Positioned as our pinnacle artisanal line, Nahar 72% Dark is crafted for connoisseurs seeking an elevated chocolate experience. Made from single-origin Ghanaian cacao, stone-conched for 72 hours."
+               data-brand="Nahar"
+               data-wa="https://wa.me/233240000000?text=Hi,%20I'd%20like%20to%20order%20the%20Nahar%2072%25%20Artisanal%20Dark">
+            <img src="everything_cacao_products/1.png" alt="Nahar 72% Artisanal Dark Chocolate" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <span class="absolute top-4 left-4 text-[10px] font-semibold uppercase tracking-wider bg-cacao-dark text-canvas px-3 py-1 z-10">72% Cacao</span>
+            <span class="absolute top-4 right-4 text-[10px] font-semibold uppercase tracking-wider bg-white/90 text-cacao-dark px-3 py-1 rounded-full shadow-sm z-10">Nahar</span>
+            <div class="absolute inset-0 bg-cacao-dark/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-20">
+              <span class="text-canvas font-serif-luxury text-lg font-bold mb-2">View Details</span>
+              <span class="w-12 h-0.5 bg-accent-gold"></span>
+            </div>
+          </div>
+          <div class="p-6 space-y-3">
+            <span class="text-[10px] font-semibold text-text-muted uppercase tracking-widest block">Single-Origin â€¢ Sefwi Wiawso</span>
+            <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Nahar 72% Artisanal Dark</h3>
+            <p class="text-xs text-text-muted"><strong class="text-cacao-dark">Tasting Notes:</strong> Deep cocoa intensity with a satisfying snap, roasted nib crunch, and sophisticated finish.</p>
+          </div>
+        </div>
+        <div class="p-6 pt-0 space-y-4">
+          <div class="flex justify-between items-center border-t border-cacao-dark/10 pt-4">
+            <span class="text-xs font-semibold text-text-muted">PRICE</span>
+            <span class="font-serif-luxury text-lg font-bold text-cacao-dark">GHC 450</span>
+          </div>
+          <a href="https://wa.me/233240000000?text=Hi,%20I'd%20like%20to%20order%20the%20Nahar%2072%25%20Artisanal%20Dark" target="_blank" rel="noopener noreferrer" class="btn-whatsapp w-full rounded text-center block" onclick="event.stopPropagation(); fbq('track', 'Lead', {content_name: 'Nahar 72% Dark'});">
+            Order via WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 6: Cherelle Sweet Break Gift Box -->
+      <div class="product-card bg-card-bg rounded-lg overflow-hidden border border-cacao-dark/10 flex flex-col justify-between border-t-4 border-accent-gold shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="gifting">
+        <div>
+          <div class="relative aspect-square overflow-hidden bg-canvas group cursor-pointer"
+               onclick="openProductModal(this)"
+               data-title="Cherelle Sweet Break Gift Box"
+               data-image="everything_cacao_products/2.png"
+               data-price="640"
+               data-cacao="Assorted Line"
+               data-origin="Curated Collection Box"
+               data-notes="An assortment of Cherelle Milk, Dark, and Snack Delights in an executive gift box."
+               data-description="Direct from the @everythingcacaogh showroom: The ultimate sharing collection! Combines full-sized Cherelle 40% Milk and 60% Dark bars with snack pouches. Ideal for family sharing, office celebrations, and holiday gifting."
+               data-brand="Gift Box"
+               data-wa="https://wa.me/233240000000?text=Hi,%20I'd%20like%20to%20order%20the%20Cherelle%20Sweet%20Break%20Gift%20Box">
+            <img src="everything_cacao_products/2.png" alt="Cherelle Sweet Break Gift Box" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <span class="absolute top-4 left-4 text-[10px] font-semibold uppercase tracking-wider bg-cacao-dark text-canvas px-3 py-1 z-10">Assorted Line</span>
+            <span class="absolute top-4 right-4 text-[10px] font-semibold uppercase tracking-wider bg-white/90 text-cacao-dark px-3 py-1 rounded-full shadow-sm z-10">Gift Box</span>
+            <div class="absolute inset-0 bg-cacao-dark/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400 z-20">
+              <span class="text-canvas font-serif-luxury text-lg font-bold mb-2">View Details</span>
+              <span class="w-12 h-0.5 bg-accent-gold"></span>
+            </div>
+          </div>
+          <div class="p-6 space-y-3">
+            <span class="text-[10px] font-semibold text-text-muted uppercase tracking-widest block">Curated Collection Box</span>
+            <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Cherelle Sweet Break Gift Box</h3>
+            <p class="text-xs text-text-muted"><strong class="text-cacao-dark">Tasting Notes:</strong> An assortment of Cherelle Milk, Dark, and Snack Delights in an executive gift box.</p>
+          </div>
+        </div>
+        <div class="p-6 pt-0 space-y-4">
+          <div class="flex justify-between items-center border-t border-cacao-dark/10 pt-4">
+            <span class="text-xs font-semibold text-text-muted">PRICE</span>
+            <span class="font-serif-luxury text-lg font-bold text-cacao-dark">GHC 640</span>
+          </div>
+          <a href="https://wa.me/233240000000?text=Hi,%20I'd%20like%20to%20order%20the%20Cherelle%20Sweet%20Break%20Gift%20Box" target="_blank" rel="noopener noreferrer" class="btn-whatsapp w-full rounded text-center block" onclick="event.stopPropagation(); fbq('track', 'Lead', {content_name: 'Cherelle Sweet Break Gift Box'});">
+            Order via WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Empty State -->
+    <div id="no-results" class="hidden text-center py-20 space-y-4">
+      <span class="text-5xl">ðŸ«</span>
+      <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark">No products in this collection yet</h3>
+      <p class="text-sm text-text-muted">Check back soon or browse all collections.</p>
+      <button onclick="filterProducts('all', document.querySelector('[data-category=all]'))" class="px-8 py-3 bg-cacao-dark text-canvas font-semibold text-xs uppercase tracking-widest hover:bg-accent-terracotta transition-colors">
+        View All Collections
+      </button>
+    </div>
+  </section>
+
+  <!-- Product Detail Modal -->
+  <div id="product-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="absolute inset-0 bg-cacao-dark/80 backdrop-blur-sm" onclick="closeProductModal()"></div>
+    
+    <div class="relative bg-canvas rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl z-10 transform scale-95 transition-transform duration-300" id="modal-content">
+      <button onclick="closeProductModal()" class="absolute top-4 right-4 z-30 w-10 h-10 flex items-center justify-center rounded-full bg-cacao-dark/80 text-canvas hover:bg-accent-terracotta transition-colors text-xl font-bold">
+        &times;
+      </button>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="aspect-square lg:aspect-auto lg:min-h-[500px] overflow-hidden bg-nahar-obsidian">
+          <img id="modal-image" src="" alt="" class="w-full h-full object-cover" />
+        </div>
+
+        <div class="p-8 md:p-12 flex flex-col justify-between space-y-6">
+          <div class="space-y-6">
+            <div class="flex items-center gap-3">
+              <span id="modal-brand" class="text-[10px] font-semibold uppercase tracking-widest bg-cacao-dark text-canvas px-3 py-1 rounded-full"></span>
+              <span id="modal-cacao" class="text-[10px] font-semibold uppercase tracking-widest bg-accent-gold text-cacao-dark px-3 py-1 rounded-full"></span>
+            </div>
+            <h2 id="modal-title" class="font-serif-luxury text-3xl md:text-4xl font-bold text-cacao-dark"></h2>
+            <span id="modal-origin" class="text-[10px] font-semibold text-text-muted uppercase tracking-widest block"></span>
+
+            <div class="space-y-2">
+              <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider">Tasting Notes</span>
+              <p id="modal-notes" class="text-sm text-text-muted leading-relaxed italic"></p>
+            </div>
+
+            <div class="space-y-2">
+              <span class="text-xs font-semibold text-accent-terracotta uppercase tracking-wider">About This Product</span>
+              <p id="modal-description" class="text-sm text-text-muted leading-relaxed"></p>
+            </div>
+          </div>
+
+          <div class="space-y-4 border-t border-cacao-dark/10 pt-6">
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-semibold text-text-muted uppercase tracking-wider">Price</span>
+              <span id="modal-price" class="font-serif-luxury text-2xl font-bold text-cacao-dark"></span>
+            </div>
+            <a id="modal-wa-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-whatsapp w-full rounded text-center block text-base py-4">
+               Order via WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function filterProducts(category, btn) {
+      const cards = document.querySelectorAll('.product-card');
+      const tabs  = document.querySelectorAll('.catalog-tab');
+      const grid  = document.getElementById('product-grid');
+      const empty = document.getElementById('no-results');
+      let visibleCount = 0;
+
+      tabs.forEach(t => {
+        t.classList.remove('bg-cacao-dark', 'text-canvas', 'active');
+        t.classList.add('bg-card-bg', 'text-cacao-dark');
+      });
+      btn.classList.remove('bg-card-bg', 'text-cacao-dark');
+      btn.classList.add('bg-cacao-dark', 'text-canvas', 'active');
+
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        if (category === 'all' || cardCat === category) {
+          card.style.display = '';
+          card.style.opacity = '1';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (visibleCount === 0) {
+        grid.classList.add('hidden');
+        empty.classList.remove('hidden');
+      } else {
+        grid.classList.remove('hidden');
+        empty.classList.add('hidden');
+      }
+    }
+
+    function openProductModal(el) {
+      const modal   = document.getElementById('product-modal');
+      const content = document.getElementById('modal-content');
+
+      document.getElementById('modal-image').src           = el.dataset.image;
+      document.getElementById('modal-image').alt           = el.dataset.title;
+      document.getElementById('modal-title').textContent   = el.dataset.title;
+      document.getElementById('modal-brand').textContent   = el.dataset.brand;
+      document.getElementById('modal-cacao').textContent   = el.dataset.cacao;
+      document.getElementById('modal-origin').textContent  = el.dataset.origin;
+      document.getElementById('modal-notes').textContent   = el.dataset.notes;
+      document.getElementById('modal-description').textContent = el.dataset.description;
+      document.getElementById('modal-price').textContent   = 'GHC ' + el.dataset.price;
+      document.getElementById('modal-wa-btn').href         = el.dataset.wa;
+
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100', 'pointer-events-auto');
+      content.classList.remove('scale-95');
+      content.classList.add('scale-100');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProductModal() {
+      const modal   = document.getElementById('product-modal');
+      const content = document.getElementById('modal-content');
+
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100', 'pointer-events-auto');
+      content.classList.add('scale-95');
+      content.classList.remove('scale-100');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeProductModal();
+    });
+  </script>
+
+</body>
+</html>
+

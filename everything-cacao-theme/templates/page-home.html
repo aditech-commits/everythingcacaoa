@@ -1,0 +1,478 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Everything Cacao GH | Ghanaian Craftsmanship. Global Luxury.</title>
+  <meta name="description" content="100% locally sourced, bean-to-bar Ghanaian artisanal chocolate. Discover Cherelle and Nahar luxury cocoa collections." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'canvas': '#FBF8F3',
+            'card-bg': '#FFFFFF',
+            'cacao-dark': '#2C1A11',
+            'accent-gold': '#D4AF37',
+            'accent-terracotta': '#C86D51',
+            'accent-whatsapp': '#25D366',
+            'cherelle-caramel': '#E08E45',
+            'nahar-obsidian': '#18110D',
+            'text-primary': '#2C1A11',
+            'text-muted': '#7A685A',
+          },
+          fontFamily: {
+            'serif-luxury': ['Playfair Display', 'serif'],
+            'sans': ['Hanken Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../assets/css/tailwind.css" />
+
+  <!-- Meta Pixel Base Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID_HERE');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"/></noscript>
+
+  <script src="../assets/js/pixel-events.js" defer></script>
+  <script src="../assets/js/app.js" defer></script>
+  <script src="../functions.js" defer></script>
+</head>
+<body class="bg-canvas text-cacao-dark antialiased flex flex-col min-h-screen">
+
+  <!-- Header Navigation -->
+  <header class="glass-header border-b border-cacao-dark/10 sticky top-0 z-50 transition-all duration-300">
+    <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-12 py-5">
+      <a href="page-home.html" class="flex items-center gap-3">
+        <img src="../assets/images/brand/logo.png" alt="Everything Cacao GH" class="h-10 md:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105" />
+      </a>
+
+      <div class="hidden md:flex items-center space-x-10 text-xs font-semibold uppercase tracking-widest">
+        <a href="page-home.html" class="text-accent-terracotta font-bold border-b-2 border-accent-terracotta py-1">Home</a>
+        <a href="page-collections.html" class="hover:text-accent-terracotta transition-colors py-1">Our Collections</a>
+        <a href="page-craft.html" class="hover:text-accent-terracotta transition-colors py-1">Our Craft</a>
+        <a href="page-journal.html" class="hover:text-accent-terracotta transition-colors py-1">Cacao Journal</a>
+        <a href="page-concierge.html" class="hover:text-accent-terracotta transition-colors py-1">Concierge &amp; Stockists</a>
+      </div>
+
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="https://wa.me/233240000000?text=Hi!%20I'd%20like%20to%20order%20artisanal%20chocolate." target="_blank" rel="noopener noreferrer" class="btn-whatsapp rounded shadow-sm">
+          Order via WhatsApp
+        </a>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden text-cacao-dark p-2 focus:outline-none" aria-label="Open Navigation Menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-drawer" class="fixed inset-0 z-50 bg-cacao-dark text-canvas transform translate-x-full transition-transform duration-500 flex flex-col justify-between p-8 md:hidden">
+    <div class="space-y-8">
+      <div class="flex justify-between items-center border-b border-canvas/20 pb-4">
+        <span class="font-serif-luxury text-xl font-bold">EVERYTHING CACAO GH</span>
+        <button id="close-drawer-btn" class="text-canvas text-2xl">&times;</button>
+      </div>
+      <div class="flex flex-col space-y-6 text-sm uppercase tracking-widest font-medium">
+        <a href="page-home.html" class="text-accent-gold font-bold">Home</a>
+        <a href="page-collections.html">Our Collections</a>
+        <a href="page-craft.html">Our Craft</a>
+        <a href="page-journal.html">Cacao Journal</a>
+        <a href="page-concierge.html">Concierge &amp; Stockists</a>
+      </div>
+    </div>
+    <div class="space-y-4">
+      <a href="https://wa.me/233240000000?text=Hi%20Everything%20Cacao%20GH!" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-accent-whatsapp text-white font-semibold uppercase tracking-widest text-center block rounded">
+        WhatsApp Concierge
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[85vh] flex items-center overflow-hidden py-16">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-6 z-10 space-y-8">
+        <span class="inline-block font-sans text-xs font-semibold uppercase tracking-widest text-accent-terracotta bg-accent-terracotta/10 px-4 py-2 rounded-full">
+          EST. ACCRA, GHANA
+        </span>
+        
+        <h1 class="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-cacao-dark">
+          From Ghanaian Soil to Pure Luxury: <span class="italic font-normal text-accent-terracotta">Pure Cacao,</span> Crafted at Home.
+        </h1>
+
+        <p class="text-base sm:text-lg text-text-muted max-w-lg leading-relaxed font-normal">
+          100% locally sourced, bean-to-bar Ghanaian chocolate empowering local farming communities through artisanal excellence.
+        </p>
+
+        <div class="flex flex-wrap gap-4 pt-4">
+          <a href="page-collections.html" class="px-8 py-4 bg-cacao-dark text-canvas font-semibold text-xs uppercase tracking-widest hover:bg-accent-terracotta transition-all duration-300 shadow-xl">
+            EXPLORE COLLECTIONS
+          </a>
+          <a href="page-craft.html" class="px-8 py-4 border border-cacao-dark text-cacao-dark font-semibold text-xs uppercase tracking-widest hover:bg-cacao-dark hover:text-canvas transition-all duration-300">
+            OUR STORY
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 relative aspect-square group">
+        <div class="absolute inset-0 bg-cacao-dark/10 rounded-2xl transform rotate-3 scale-95 transition-transform duration-700 group-hover:rotate-0"></div>
+        <img class="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-2xl z-0 transform -rotate-3 transition-transform duration-700 group-hover:rotate-0" 
+             alt="Everything Cacao GH Premium Bean-to-Bar Chocolate Box" 
+             src="everything_cacao_products/Cherelle milk choc long.png" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Showcase: Dual-Line Expressions -->
+  <section class="py-24 bg-card-bg border-t border-b border-cacao-dark/10">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <div class="text-center mb-16 space-y-4 max-w-2xl mx-auto">
+        <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">Two Expressions of Ghanaian Soil</h2>
+        <p class="text-text-muted text-sm leading-relaxed">From daily indulgence to the pinnacle of artisanal luxury, discover the lineages of Everything Cacao.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- Card A: Cherelle -->
+        <div class="group relative overflow-hidden bg-canvas rounded-xl p-8 md:p-12 flex flex-col justify-between min-h-[580px] border border-cacao-dark/10 hover:border-cherelle-caramel/50 transition-all duration-500 subbrand-cherelle shadow-sm">
+          <div class="relative z-10 space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-widest text-cherelle-caramel block">THE LIFESTYLE LINE</span>
+            <h3 class="font-serif-luxury text-4xl sm:text-5xl font-bold text-cacao-dark">Cherelle</h3>
+            <p class="font-serif-luxury text-xl text-accent-terracotta italic">Everyday Moments &amp; Joy</p>
+          </div>
+
+          <div class="relative z-10 space-y-6 pt-6">
+            <div class="w-full aspect-video bg-card-bg rounded-lg overflow-hidden border border-cacao-dark/10">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                   alt="Cherelle Lifestyle Presentation" 
+                   src="everything_cacao_products/Cherelle Milk Chocolate 90g.jpg" />
+            </div>
+            
+            <div class="flex justify-between items-end w-full border-t border-cacao-dark/10 pt-4">
+              <div>
+                <span class="text-[10px] font-semibold text-text-muted uppercase tracking-wider block">PRICING</span>
+                <span class="font-serif-luxury text-2xl font-bold text-cacao-dark">GHC 305 Ã¢â‚¬â€œ 640</span>
+              </div>
+              <a href="page-collections.html?lineage=cherelle" class="px-6 py-3.5 bg-cacao-dark text-canvas font-semibold text-xs uppercase tracking-widest hover:bg-cherelle-caramel transition-colors">
+                SHOP CHERELLE
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card B: Nahar -->
+        <div class="group relative overflow-hidden bg-cacao-dark text-canvas rounded-xl p-8 md:p-12 flex flex-col justify-between min-h-[580px] border border-cacao-dark/10 transition-all duration-500 subbrand-nahar shadow-sm">
+          <div class="relative z-10 space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold block">THE ARTISANAL LINE</span>
+            <h3 class="font-serif-luxury text-4xl sm:text-5xl font-bold text-canvas">Nahar</h3>
+            <p class="font-serif-luxury text-xl text-accent-gold italic">Refined Artisanal Luxury</p>
+          </div>
+
+          <div class="relative z-10 space-y-6 pt-6">
+            <div class="w-full aspect-video bg-nahar-obsidian rounded-lg overflow-hidden border border-canvas/10">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" 
+                   alt="Nahar Obsidian Luxury Presentation" 
+                   src="everything_cacao_products/Nahar dark choc long.png" />
+            </div>
+
+            <div class="flex justify-between items-end w-full border-t border-canvas/15 pt-4">
+              <div>
+                <span class="text-[10px] font-semibold text-canvas/60 uppercase tracking-wider block">ESTIMATED VALUATION</span>
+                <span class="font-serif-luxury text-lg font-bold text-accent-gold italic">Inquire for Private Reserve</span>
+              </div>
+              <a href="page-collections.html?lineage=nahar" class="px-6 py-3.5 bg-accent-gold text-cacao-dark font-semibold text-xs uppercase tracking-widest hover:bg-white transition-colors">
+                DISCOVER NAHAR
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bean-to-Bar Impact Section -->
+  <section class="py-24 max-w-7xl mx-auto px-6 md:px-12">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
+      <div class="max-w-2xl space-y-4">
+        <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark leading-tight">Crafting Change from the Root Up.</h2>
+        <p class="text-text-muted text-base leading-relaxed">We believe true luxury is ethical. By controlling every step from the soil to the bar, we ensure the highest quality while returning maximum value to our Ghanaian partners.</p>
+      </div>
+      <a class="font-semibold text-xs uppercase tracking-widest text-cacao-dark border-b-2 border-cacao-dark pb-1 hover:text-accent-terracotta hover:border-accent-terracotta transition-colors flex items-center gap-2" 
+         href="page-craft.html">
+        READ THE SUSTAINABILITY PACT &rarr;
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <!-- Item 1: Direct Farmer Partnerships -->
+      <div class="space-y-6 group">
+        <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+               alt="Ghanaian Cacao Farmer holding pod" 
+               src="everything_cacao_products/6.png" />
+        </div>
+        <div class="space-y-2">
+          <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark">Direct Farmer Partnerships</h4>
+          <p class="text-xs text-text-muted leading-relaxed">We bypass the middleman, working directly with families in the Ashanti region to guarantee fair wages and regenerative agricultural education.</p>
+        </div>
+      </div>
+
+      <!-- Item 2: 100% Ghanaian Value Chain -->
+      <div class="space-y-6 group">
+        <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+               alt="Ghanaian Chocolate Manufacturing Facility" 
+               src="everything_cacao_products/3.png" />
+        </div>
+        <div class="space-y-2">
+          <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark">100% Ghanaian Value Chain</h4>
+          <p class="text-xs text-text-muted leading-relaxed">Processing, roasting, tempering, and packaging all happen within Ghana's borders, keeping economic power where the cacao grows.</p>
+        </div>
+      </div>
+
+      <!-- Item 3: Sustainable Fair-Trade Craftsmanship -->
+      <div class="space-y-6 group">
+        <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+               alt="Artisan Chocolate Bar Hand-wrapping with Wax Seal" 
+               src="everything_cacao_products/4.png" />
+        </div>
+        <div class="space-y-2">
+          <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark">Sustainable Fair-Trade Craftsmanship</h4>
+          <p class="text-xs text-text-muted leading-relaxed">Our small-batch approach minimizes waste and utilizes organic methods that protect the biodiversity of our local tropical ecosystems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Collection Storefront -->
+  <section class="py-24 bg-cacao-dark text-canvas overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <div class="flex flex-col md:flex-row md:items-center justify-between mb-16 gap-6">
+        <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-canvas">The Seasonal Collection</h2>
+        <a href="page-collections.html" class="text-xs font-semibold uppercase tracking-widest text-accent-gold underline hover:text-white transition-colors">
+          VIEW ALL PRODUCTS &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Product 1: Dark Ghanaian Forest -->
+        <div class="group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between">
+          <div>
+            <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                   alt="Dark Ghanaian Forest 85% Cacao" 
+                   src="everything_cacao_products/1.png" />
+              <span class="absolute top-3 left-3 text-[10px] font-semibold uppercase bg-accent-gold text-cacao-dark px-2.5 py-0.5 rounded">85% Cacao</span>
+            </div>
+            <div class="space-y-1">
+              <h5 class="font-serif-luxury text-lg font-bold text-canvas">Dark Ghanaian Forest</h5>
+              <p class="text-[11px] text-canvas/60 uppercase tracking-widest">100G ARTISAN BAR</p>
+              <p class="font-serif-luxury text-xl font-bold text-accent-gold pt-1">GHC 320</p>
+            </div>
+          </div>
+          <a href="https://wa.me/233240000000?text=Hi,%20I'd%20like%20to%20order%20the%20Dark%20Ghanaian%20Forest%20bar" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="btn-whatsapp w-full rounded text-center block mt-4"
+             onclick="fbq('track', 'Lead', {content_name: 'Dark Ghanaian Forest 85%'});">
+            Order via WhatsApp
+          </a>
+        </div>
+
+        <!-- Product 2: Heritage Sampler -->
+        <div class="group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between">
+          <div>
+            <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                   alt="Heritage Sampler Minis Box" 
+                   src="everything_cacao_products/Cherelle Dark Chocolate 24x9g.jpg" />
+              <span class="absolute top-3 left-3 text-[10px] font-semibold uppercase bg-canvas text-cacao-dark px-2.5 py-0.5 rounded">Assorted</span>
+            </div>
+            <div class="space-y-1">
+              <h5 class="font-serif-luxury text-lg font-bold text-canvas">Heritage Sampler</h5>
+              <p class="text-[11px] text-canvas/60 uppercase tracking-widest">MINIS BOX (12 PCS)</p>
+              <p class="font-serif-luxury text-xl font-bold text-accent-gold pt-1">GHC 480</p>
+            </div>
+          </div>
+          <a href="https://wa.me/233240000000?text=Hi,%20I'd%20like%20to%20order%20the%20Heritage%20Sampler" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="btn-whatsapp w-full rounded text-center block mt-4"
+             onclick="fbq('track', 'Lead', {content_name: 'Heritage Sampler Box'});">
+            Order via WhatsApp
+          </a>
+        </div>
+
+        <!-- Product 3: Ashanti Gold -->
+        <div class="group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between">
+          <div>
+            <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                   alt="Ashanti Gold Milk 45% Bar" 
+                   src="everything_cacao_products/Cherelle Milk Chocolate 50g.jpg" />
+              <span class="absolute top-3 left-3 text-[10px] font-semibold uppercase bg-cherelle-caramel text-white px-2.5 py-0.5 rounded">Milk 45%</span>
+            </div>
+            <div class="space-y-1">
+              <h5 class="font-serif-luxury text-lg font-bold text-canvas">Ashanti Gold</h5>
+              <p class="text-[11px] text-canvas/60 uppercase tracking-widest">100G ARTISAN BAR</p>
+              <p class="font-serif-luxury text-xl font-bold text-accent-gold pt-1">GHC 305</p>
+            </div>
+          </div>
+          <a href="https://wa.me/233240000000?text=Hi,%20I'd%20like%20to%20order%20the%20Ashanti%20Gold%20Milk%20Bar" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="btn-whatsapp w-full rounded text-center block mt-4"
+             onclick="fbq('track', 'Lead', {content_name: 'Ashanti Gold Milk Bar'});">
+            Order via WhatsApp
+          </a>
+        </div>
+
+        <!-- Product 4: Nahar Private Reserve -->
+        <div class="group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between">
+          <div>
+            <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                   alt="Nahar Private Reserve Luxury Gift Box" 
+                   src="everything_cacao_products/5.png" />
+              <span class="absolute top-3 left-3 text-[10px] font-semibold uppercase bg-accent-gold text-cacao-dark px-2.5 py-0.5 rounded">Exclusive</span>
+            </div>
+            <div class="space-y-1">
+              <h5 class="font-serif-luxury text-lg font-bold text-canvas">Nahar Private Reserve</h5>
+              <p class="text-[11px] text-canvas/60 uppercase tracking-widest">LUXURY GIFT BOX</p>
+              <p class="font-serif-luxury text-xl font-bold text-accent-gold pt-1">GHC 1,250</p>
+            </div>
+          </div>
+          <a href="https://wa.me/233240000000?text=Hi,%20I'd%20like%20to%20order%20the%20Nahar%20Private%20Reserve%20Box" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="btn-whatsapp w-full rounded text-center block mt-4"
+             onclick="fbq('track', 'Lead', {content_name: 'Nahar Private Reserve Box'});">
+            Order via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stockist Banner Marquee -->
+  <section class="bg-canvas py-8 border-y border-cacao-dark/10 overflow-hidden">
+    <div class="flex whitespace-nowrap space-x-12 text-xs font-semibold uppercase tracking-widest text-cacao-dark/70 animate-pulse justify-center">
+      <span>Now Available in Supermarkets &amp; Malls Across Ghana</span>
+      <span>Ã¢â‚¬Â¢</span>
+      <span>Visit Our Accra Experience Center</span>
+      <span>Ã¢â‚¬Â¢</span>
+      <span>Shipping Worldwide from Tema Harbor</span>
+    </div>
+  </section>
+
+  <!-- Quick Home Contact Form Section -->
+  <section class="py-24 max-w-4xl mx-auto px-6 md:px-12">
+    <div class="bg-cacao-dark text-canvas rounded-xl p-8 md:p-12 border border-cacao-dark shadow-2xl space-y-6">
+      <div class="space-y-2 text-center">
+        <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Direct Inquiry Desk</span>
+        <h3 class="font-serif-luxury text-2xl md:text-3xl font-bold">Send a Quick Message</h3>
+        <p class="text-xs text-canvas/70 leading-relaxed">
+          Inquiries are automatically routed to <span class="text-accent-gold">concierge@everythingcacao.com</span> with Meta Pixel tracking.
+        </p>
+      </div>
+
+      <form class="quick-inquiry-form space-y-4 max-w-xl mx-auto" onsubmit="return window.EC_Functions.handleQuickFormSubmit(event, this);">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-[11px] font-semibold uppercase tracking-widest text-canvas/70 mb-1">Your Name *</label>
+            <input type="text" name="name" required placeholder="Kwame Mensah" class="w-full px-4 py-3 bg-canvas/10 border border-canvas/20 rounded text-canvas text-xs focus:outline-none focus:border-accent-gold placeholder-canvas/40" />
+          </div>
+          <div>
+            <label class="block text-[11px] font-semibold uppercase tracking-widest text-canvas/70 mb-1">Email Address *</label>
+            <input type="email" name="email" required placeholder="kwame@domain.com" class="w-full px-4 py-3 bg-canvas/10 border border-canvas/20 rounded text-canvas text-xs focus:outline-none focus:border-accent-gold placeholder-canvas/40" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-semibold uppercase tracking-widest text-canvas/70 mb-1">Message *</label>
+          <textarea name="message" rows="3" required placeholder="Tell us about your order or tasting experience inquiry..." class="w-full px-4 py-3 bg-canvas/10 border border-canvas/20 rounded text-canvas text-xs focus:outline-none focus:border-accent-gold placeholder-canvas/40"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 bg-accent-gold text-cacao-dark font-semibold text-xs uppercase tracking-widest hover:bg-white transition-colors shadow-lg">
+          Dispatch Inquiry to Concierge
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Persistent Floating WhatsApp Trigger Widget -->
+  <a href="https://wa.me/233240000000?text=Hi%20Everything%20Cacao%20GH!%20I'd%20like%20to%20order%20artisanal%20chocolate." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 bg-accent-whatsapp text-white p-4 rounded-full shadow-2xl animate-whatsapp flex items-center gap-3 group hover:scale-105 transition-transform" aria-label="Direct WhatsApp Order Assistant">
+    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.228-1.157z"/></svg>
+    <span class="hidden md:inline font-semibold text-xs uppercase tracking-wider pr-1">WhatsApp Order</span>
+  </a>
+
+  <!-- Footer Section -->
+  <footer class="bg-cacao-dark text-canvas border-t border-canvas/10 mt-auto py-16 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div class="space-y-4">
+        <a href="page-home.html" class="inline-block">
+          <img src="../assets/images/brand/logo.png" alt="Everything Cacao GH" class="h-12 md:h-14 w-auto object-contain transition-transform duration-300 hover:scale-105" />
+        </a>
+        <p class="text-xs text-canvas/70 leading-relaxed">Ghanaian Bean-to-Bar Artisanal Chocolate. Certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA).</p>
+        <div class="flex items-center gap-2 pt-1 text-[11px] text-accent-gold font-semibold">
+          <span>✓ FDA Certified</span>
+          <span>•</span>
+          <span>✓ GSA Certified</span>
+        </div>
+        <p class="text-xs text-canvas/50">Ã‚Â© 2026 Everything Cacao GH. All Rights Reserved.</p>
+      </div>
+
+      <div class="space-y-3 text-xs uppercase tracking-widest font-semibold">
+        <span class="text-accent-gold block mb-2">Explore Pages</span>
+        <a href="page-home.html" class="block text-accent-gold">Home</a>
+        <a href="page-collections.html" class="block hover:text-accent-gold">Our Collections</a>
+        <a href="page-craft.html" class="block hover:text-accent-gold">Our Craft</a>
+        <a href="page-journal.html" class="block hover:text-accent-gold">Cacao Journal</a>
+        <a href="page-concierge.html" class="block hover:text-accent-gold">Concierge &amp; Stockists</a>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <span class="text-accent-gold uppercase tracking-widest font-semibold block mb-2">Contact &amp; Showroom</span>
+        <p class="text-canvas/80">Airport Residential Area, Accra, Ghana</p>
+        <p class="text-canvas/80">Email: concierge@everythingcacao.com</p>
+        <p class="text-canvas/80">WhatsApp: +233 24 000 0000</p>
+      </div>
+
+      <div class="space-y-4">
+        <span class="text-accent-gold text-xs uppercase tracking-widest font-semibold block">Join The Palette Club</span>
+        <p class="text-xs text-canvas/70">Sign up for private tasting invitations and limited seasonal drops.</p>
+        <form id="palette-club-form" onsubmit="return window.EC_Functions.handlePaletteClubSubmit(event, this);" class="space-y-2">
+          <input type="email" name="email" required placeholder="Enter your email address..." class="w-full px-4 py-2.5 bg-canvas/10 border border-canvas/20 text-canvas text-xs rounded focus:outline-none focus:border-accent-gold placeholder-canvas/40" />
+          <button type="submit" class="w-full py-2.5 bg-accent-gold text-cacao-dark font-semibold text-xs uppercase tracking-widest hover:bg-white transition-colors">
+            Join Palette Club
+          </button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+

@@ -1,0 +1,381 @@
+<?php
+/**
+ * Template Name: Home Page
+ *
+ * Everything Cacao GH - Front Page Template (front-page.php)
+ * Matches the uploaded UI/UX design specification & image assets exactly.
+ *
+ * @package EverythingCacao
+ */
+
+get_header();
+
+// Resolve page URLs using the same smart resolver as header/footer
+$link_collections = ec_get_smart_page_link(array('our-collections', 'collections'), '/our-collections');
+$link_craft       = ec_get_smart_page_link(array('our-craft', 'craft'), '/our-craft');
+$link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'concierge-stockists'), '/stock-lists');
+?>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[85vh] flex items-center overflow-hidden py-16">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+      <!-- Text Content -->
+      <div class="lg:col-span-6 z-10 space-y-8">
+        <span class="inline-block font-sans text-xs font-semibold uppercase tracking-widest text-accent-terracotta bg-accent-terracotta/10 px-4 py-2 rounded-full">
+          EST. ACCRA, GHANA
+        </span>
+        
+        <h1 class="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-cacao-dark">
+          From Ghanaian Soil to Pure Luxury: <span class="italic font-normal text-accent-terracotta">Pure Cacao,</span> Crafted at Home.
+        </h1>
+
+        <p class="text-base sm:text-lg text-text-muted max-w-lg leading-relaxed font-normal">
+          100% locally sourced, bean-to-bar Ghanaian chocolate empowering local farming communities through artisanal excellence.
+        </p>
+
+        <div class="flex flex-wrap gap-4 pt-4">
+          <a href="<?php echo $link_collections; ?>" class="px-8 py-4 bg-cacao-dark text-canvas font-semibold text-xs uppercase tracking-widest hover:bg-accent-terracotta transition-all duration-300 shadow-xl">
+            EXPLORE COLLECTIONS
+          </a>
+          <a href="<?php echo $link_craft; ?>" class="px-8 py-4 border border-cacao-dark text-cacao-dark font-semibold text-xs uppercase tracking-widest hover:bg-cacao-dark hover:text-canvas transition-all duration-300">
+            OUR STORY
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Visual Image Stack -->
+      <div class="lg:col-span-6 relative aspect-square group">
+        <div class="absolute inset-0 bg-cacao-dark/10 rounded-2xl transform rotate-3 scale-95 transition-transform duration-700 group-hover:rotate-0"></div>
+        <img class="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-2xl z-0 transform -rotate-3 transition-transform duration-700 group-hover:rotate-0" 
+             alt="Everything Cacao GH Premium Bean-to-Bar Chocolate Box" 
+             src="<?php echo get_template_directory_uri(); ?>/assets/images/products/Cherelle milk choc long.png" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Showcase: Dual-Line Expressions -->
+  <section class="py-24 bg-card-bg border-t border-b border-cacao-dark/10">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <div class="text-center mb-16 space-y-4 max-w-2xl mx-auto">
+        <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">Two Expressions of Ghanaian Soil</h2>
+        <p class="text-text-muted text-sm leading-relaxed">From daily indulgence to the pinnacle of artisanal luxury, discover the lineages of Everything Cacao.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- Card A: Cherelle -->
+        <div class="group relative overflow-hidden bg-canvas rounded-xl p-8 md:p-12 flex flex-col justify-between min-h-[580px] border border-cacao-dark/10 hover:border-cherelle-caramel/50 transition-all duration-500 subbrand-cherelle shadow-sm">
+          <div class="relative z-10 space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-widest text-cherelle-caramel block">THE LIFESTYLE LINE</span>
+            <h3 class="font-serif-luxury text-4xl sm:text-5xl font-bold text-cacao-dark">Cherelle</h3>
+            <p class="font-serif-luxury text-xl text-accent-terracotta italic">Everyday Moments &amp; Joy</p>
+          </div>
+
+          <div class="relative z-10 space-y-6 pt-6">
+            <div class="w-full aspect-[4/3] bg-[#F5EFE6] rounded-lg overflow-hidden border border-cacao-dark/10 flex items-center justify-center">
+              <img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700" 
+                   alt="Cherelle Lifestyle Presentation" 
+                   src="<?php echo get_template_directory_uri(); ?>/assets/images/products/Cherelle Milk Chocolate 90g.jpg"
+                   loading="eager" />
+            </div>
+            
+            <div class="flex justify-between items-end w-full border-t border-cacao-dark/10 pt-4">
+              <div>
+                <span class="text-[10px] font-semibold text-text-muted uppercase tracking-wider block">PRICING</span>
+                <span class="font-serif-luxury text-2xl font-bold text-cacao-dark">GHC 305 &ndash; 640</span>
+              </div>
+              <a href="<?php echo $link_collections; ?>?lineage=cherelle" class="px-6 py-3.5 bg-cacao-dark text-canvas font-semibold text-xs uppercase tracking-widest hover:bg-cherelle-caramel transition-colors">
+                SHOP CHERELLE
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card B: Nahar -->
+        <div class="group relative overflow-hidden bg-cacao-dark text-canvas rounded-xl p-8 md:p-12 flex flex-col justify-between min-h-[580px] border border-cacao-dark/10 transition-all duration-500 subbrand-nahar shadow-sm">
+          <div class="relative z-10 space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold block">THE ARTISANAL LINE</span>
+            <h3 class="font-serif-luxury text-4xl sm:text-5xl font-bold text-canvas">Nahar</h3>
+            <p class="font-serif-luxury text-xl text-accent-gold italic">Refined Artisanal Luxury</p>
+          </div>
+
+          <div class="relative z-10 space-y-6 pt-6">
+            <div class="w-full aspect-[4/3] bg-[#18110D] rounded-lg overflow-hidden border border-canvas/10 flex items-center justify-center">
+              <img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" 
+                   alt="Nahar Obsidian Luxury Presentation" 
+                   src="<?php echo get_template_directory_uri(); ?>/assets/images/products/Nahar dark choc long.png"
+                   loading="eager" />
+            </div>
+
+            <div class="flex justify-between items-end w-full border-t border-canvas/15 pt-4">
+              <div>
+                <span class="text-[10px] font-semibold text-canvas/60 uppercase tracking-wider block">ESTIMATED VALUATION</span>
+                <span class="font-serif-luxury text-lg font-bold text-accent-gold italic">Inquire for Private Reserve</span>
+              </div>
+              <a href="<?php echo $link_collections; ?>?lineage=nahar" class="px-6 py-3.5 bg-accent-gold text-cacao-dark font-semibold text-xs uppercase tracking-widest hover:bg-white transition-colors">
+                DISCOVER NAHAR
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bean-to-Bar Impact Section -->
+  <section class="py-24 max-w-7xl mx-auto px-6 md:px-12">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
+      <div class="max-w-2xl space-y-4">
+        <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark leading-tight">Crafting Change from the Root Up.</h2>
+        <p class="text-text-muted text-base leading-relaxed">We believe true luxury is ethical. By controlling every step from the soil to the bar, we ensure the highest quality while returning maximum value to our Ghanaian partners.</p>
+      </div>
+      <a class="font-semibold text-xs uppercase tracking-widest text-cacao-dark border-b-2 border-cacao-dark pb-1 hover:text-accent-terracotta hover:border-accent-terracotta transition-colors flex items-center gap-2" 
+         href="<?php echo $link_craft; ?>">
+        READ THE SUSTAINABILITY PACT &rarr;
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <!-- Item 1: Direct Farmer Partnerships -->
+      <div class="space-y-6 group">
+        <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+               alt="Ghanaian Cacao Farmer holding pod" 
+               src="<?php echo get_template_directory_uri(); ?>/assets/images/products/6.png" />
+        </div>
+        <div class="space-y-2">
+          <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark">Direct Farmer Partnerships</h4>
+          <p class="text-xs text-text-muted leading-relaxed">We bypass the middleman, working directly with families in the Ashanti region to guarantee fair wages and regenerative agricultural education.</p>
+        </div>
+      </div>
+
+      <!-- Item 2: 100% Ghanaian Value Chain -->
+      <div class="space-y-6 group">
+        <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+               alt="Ghanaian Chocolate Manufacturing Facility" 
+               src="<?php echo get_template_directory_uri(); ?>/assets/images/products/3.png" />
+        </div>
+        <div class="space-y-2">
+          <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark">100% Ghanaian Value Chain</h4>
+          <p class="text-xs text-text-muted leading-relaxed">Processing, roasting, tempering, and packaging all happen within Ghana's borders, keeping economic power where the cacao grows.</p>
+        </div>
+      </div>
+
+      <!-- Item 3: Sustainable Fair-Trade Craftsmanship -->
+      <div class="space-y-6 group">
+        <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+               alt="Artisan Chocolate Bar Hand-wrapping with Wax Seal" 
+               src="<?php echo get_template_directory_uri(); ?>/assets/images/products/4.png" />
+        </div>
+        <div class="space-y-2">
+          <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark">Sustainable Fair-Trade Craftsmanship</h4>
+          <p class="text-xs text-text-muted leading-relaxed">Our small-batch approach minimizes waste and utilizes organic methods that protect the biodiversity of our local tropical ecosystems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Collection Storefront -->
+  <section class="py-24 bg-cacao-dark text-canvas overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <div class="flex flex-col md:flex-row md:items-center justify-between mb-16 gap-6">
+        <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-canvas">The Seasonal Collection</h2>
+        <a href="<?php echo $link_collections; ?>" class="text-xs font-semibold uppercase tracking-widest text-accent-gold underline hover:text-white transition-colors">
+          VIEW ALL PRODUCTS &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Product 1: Dark Ghanaian Forest -->
+        <div class="group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between">
+          <div>
+            <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                   alt="Dark Ghanaian Forest 85% Cacao" 
+                   src="<?php echo get_template_directory_uri(); ?>/assets/images/products/1.png" />
+              <span class="absolute top-3 left-3 text-[10px] font-semibold uppercase bg-accent-gold text-cacao-dark px-2.5 py-0.5 rounded">85% Cacao</span>
+            </div>
+            <div class="space-y-1">
+              <h5 class="font-serif-luxury text-lg font-bold text-canvas">Dark Ghanaian Forest</h5>
+              <p class="text-[11px] text-canvas/60 uppercase tracking-widest">100G ARTISAN BAR</p>
+              <p class="font-serif-luxury text-xl font-bold text-accent-gold pt-1">GHC 320</p>
+            </div>
+          </div>
+          <a href="https://wa.me/<?php echo esc_attr(get_option('ec_whatsapp_number', '233240000000')); ?>?text=Hi,%20I'd%20like%20to%20order%20the%20Dark%20Ghanaian%20Forest%20bar" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="btn-whatsapp w-full rounded text-center block mt-4"
+             onclick="fbq('track', 'Lead', {content_name: 'Dark Ghanaian Forest 85%'});">
+            Order via WhatsApp
+          </a>
+        </div>
+
+        <!-- Product 2: Heritage Sampler -->
+        <div class="group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between">
+          <div>
+            <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                   alt="Heritage Sampler Minis Box" 
+                   src="<?php echo get_template_directory_uri(); ?>/assets/images/products/Cherelle Dark Chocolate 24x9g.jpg" />
+              <span class="absolute top-3 left-3 text-[10px] font-semibold uppercase bg-canvas text-cacao-dark px-2.5 py-0.5 rounded">Assorted</span>
+            </div>
+            <div class="space-y-1">
+              <h5 class="font-serif-luxury text-lg font-bold text-canvas">Heritage Sampler</h5>
+              <p class="text-[11px] text-canvas/60 uppercase tracking-widest">MINIS BOX (12 PCS)</p>
+              <p class="font-serif-luxury text-xl font-bold text-accent-gold pt-1">GHC 480</p>
+            </div>
+          </div>
+          <a href="https://wa.me/<?php echo esc_attr(get_option('ec_whatsapp_number', '233240000000')); ?>?text=Hi,%20I'd%20like%20to%20order%20the%20Heritage%20Sampler" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="btn-whatsapp w-full rounded text-center block mt-4"
+             onclick="fbq('track', 'Lead', {content_name: 'Heritage Sampler Box'});">
+            Order via WhatsApp
+          </a>
+        </div>
+
+        <!-- Product 3: Ashanti Gold -->
+        <div class="group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between">
+          <div>
+            <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                   alt="Ashanti Gold Milk 45% Bar" 
+                   src="<?php echo get_template_directory_uri(); ?>/assets/images/products/Cherelle Milk Chocolate 50g.jpg" />
+              <span class="absolute top-3 left-3 text-[10px] font-semibold uppercase bg-cherelle-caramel text-white px-2.5 py-0.5 rounded">Milk 45%</span>
+            </div>
+            <div class="space-y-1">
+              <h5 class="font-serif-luxury text-lg font-bold text-canvas">Ashanti Gold</h5>
+              <p class="text-[11px] text-canvas/60 uppercase tracking-widest">100G ARTISAN BAR</p>
+              <p class="font-serif-luxury text-xl font-bold text-accent-gold pt-1">GHC 305</p>
+            </div>
+          </div>
+          <a href="https://wa.me/<?php echo esc_attr(get_option('ec_whatsapp_number', '233240000000')); ?>?text=Hi,%20I'd%20like%20to%20order%20the%20Ashanti%20Gold%20Milk%20Bar" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="btn-whatsapp w-full rounded text-center block mt-4"
+             onclick="fbq('track', 'Lead', {content_name: 'Ashanti Gold Milk Bar'});">
+            Order via WhatsApp
+          </a>
+        </div>
+
+        <!-- Product 4: Nahar Private Reserve -->
+        <div class="group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between">
+          <div>
+            <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                   alt="Nahar Private Reserve Luxury Gift Box" 
+                   src="<?php echo get_template_directory_uri(); ?>/assets/images/products/5.png" />
+              <span class="absolute top-3 left-3 text-[10px] font-semibold uppercase bg-accent-gold text-cacao-dark px-2.5 py-0.5 rounded">Exclusive</span>
+            </div>
+            <div class="space-y-1">
+              <h5 class="font-serif-luxury text-lg font-bold text-canvas">Nahar Private Reserve</h5>
+              <p class="text-[11px] text-canvas/60 uppercase tracking-widest">LUXURY GIFT BOX</p>
+              <p class="font-serif-luxury text-xl font-bold text-accent-gold pt-1">GHC 1,250</p>
+            </div>
+          </div>
+          <a href="https://wa.me/<?php echo esc_attr(get_option('ec_whatsapp_number', '233240000000')); ?>?text=Hi,%20I'd%20like%20to%20order%20the%20Nahar%20Private%20Reserve%20Box" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="btn-whatsapp w-full rounded text-center block mt-4"
+             onclick="fbq('track', 'Lead', {content_name: 'Nahar Private Reserve Box'});">
+            Order via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stockist Banner Marquee -->
+  <section class="bg-canvas py-8 border-y border-cacao-dark/10 overflow-hidden">
+    <div class="flex whitespace-nowrap space-x-12 text-xs font-semibold uppercase tracking-widest text-cacao-dark/70 animate-pulse justify-center">
+      <span>Now Available in Supermarkets &amp; Malls Across Ghana</span>
+      <span>â€¢</span>
+      <span>Visit Our Accra Experience Center</span>
+      <span>â€¢</span>
+      <span>Shipping Worldwide from Tema Harbor</span>
+    </div>
+  </section>
+
+  <!-- Live In-Store Sampling Video Experience Section -->
+  <section class="py-24 bg-card-bg border-t border-b border-cacao-dark/10">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+        <div class="space-y-4 max-w-2xl">
+          <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Real People, Real Joy</span>
+          <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">In-Store Sampling Experience</h2>
+          <p class="text-text-muted text-base leading-relaxed">Watch chocolate lovers across Ghana sample Cherelle and Nahar artisanal creations live in supermarkets, pop-up lounges, and luxury retail stores.</p>
+        </div>
+        <a href="<?php echo $link_concierge; ?>" class="px-6 py-3.5 bg-cacao-dark text-canvas text-xs font-semibold uppercase tracking-widest hover:bg-accent-terracotta transition-colors shadow-sm">
+          Find A Sampling Store &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Video 1 Reel -->
+        <div class="group bg-cacao-dark rounded-xl overflow-hidden border border-cacao-dark/10 shadow-lg flex flex-col justify-between">
+          <div class="aspect-[9/16] bg-nahar-obsidian relative overflow-hidden">
+            <iframe class="w-full h-full border-0" src="https://drive.google.com/file/d/1JUC7nwQjQpqLD8z7WnyhiyPtkV6rkcvG/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="absolute top-3 left-3 bg-accent-gold text-cacao-dark text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow pointer-events-none z-10">
+              Live Sampling
+            </div>
+          </div>
+          <div class="p-5 bg-card-bg space-y-1">
+            <h5 class="font-serif-luxury text-base font-bold text-cacao-dark">Supermarket Tasting Reel #1</h5>
+            <p class="text-xs text-text-muted">Customers discovering Cherelle 45% Milk Chocolate.</p>
+          </div>
+        </div>
+
+        <!-- Video 2 Reel -->
+        <div class="group bg-cacao-dark rounded-xl overflow-hidden border border-cacao-dark/10 shadow-lg flex flex-col justify-between">
+          <div class="aspect-[9/16] bg-nahar-obsidian relative overflow-hidden">
+            <iframe class="w-full h-full border-0" src="https://drive.google.com/file/d/1pKLN1VVG15IKg_WP6RUlZ8eD3UJnX1yW/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="absolute top-3 left-3 bg-accent-terracotta text-white text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow pointer-events-none z-10">
+              Nahar Luxury Tasting
+            </div>
+          </div>
+          <div class="p-5 bg-card-bg space-y-1">
+            <h5 class="font-serif-luxury text-base font-bold text-cacao-dark">Grand Reserve Sampling #2</h5>
+            <p class="text-xs text-text-muted">Discerning palates savoring Nahar 72% Obsidian Dark.</p>
+          </div>
+        </div>
+
+        <!-- Video 3 Reel -->
+        <div class="group bg-cacao-dark rounded-xl overflow-hidden border border-cacao-dark/10 shadow-lg flex flex-col justify-between">
+          <div class="aspect-[9/16] bg-nahar-obsidian relative overflow-hidden">
+            <iframe class="w-full h-full border-0" src="https://drive.google.com/file/d/15lB6wkq0Cg6NT4pACbXxZiokmdDYtcE0/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="absolute top-3 left-3 bg-accent-gold text-cacao-dark text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow pointer-events-none z-10">
+              Retail Pop-Up
+            </div>
+          </div>
+          <div class="p-5 bg-card-bg space-y-1">
+            <h5 class="font-serif-luxury text-base font-bold text-cacao-dark">Accra Retail Pop-Up #3</h5>
+            <p class="text-xs text-text-muted">Interactive tasting counter at Accra shopping mall.</p>
+          </div>
+        </div>
+
+        <!-- Video 4 Reel -->
+        <div class="group bg-cacao-dark rounded-xl overflow-hidden border border-cacao-dark/10 shadow-lg flex flex-col justify-between">
+          <div class="aspect-[9/16] bg-nahar-obsidian relative overflow-hidden">
+            <iframe class="w-full h-full border-0" src="https://drive.google.com/file/d/1FQK5L6ErULSbr0Wd_VKoGYcJo463HVYC/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="absolute top-3 left-3 bg-cherelle-caramel text-white text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow pointer-events-none z-10">
+              Family &amp; Kids Joy
+            </div>
+          </div>
+          <div class="p-5 bg-card-bg space-y-1">
+            <h5 class="font-serif-luxury text-base font-bold text-cacao-dark">Joy in Every Bite #4</h5>
+            <p class="text-xs text-text-muted">Delighting young chocolate lovers with Cherelle treats.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Home Contact Form Section -->
+  <section class="py-24 max-w-4xl mx-auto px-6 md:px-12">
+    <?php get_template_part('template-parts/quick-form'); ?>
+  </section>
+
+<?php
+get_footer();
+

@@ -1,0 +1,123 @@
+# =============================================================
+#  Everything Cacao — .gitignore
+#  GitHub repo purpose: deploy `everything-cacao-theme/` to
+#  WordPress via GitHub integration (direct WP deployment).
+#  Only the WordPress theme folder is needed on GitHub.
+# =============================================================
+
+
+# --- PROTOTYPE / DESIGN FILES (root-level HTML site) ---------
+# These are local development prototypes, not part of the WP theme.
+index.html
+index.css
+about.html
+collections.html
+contact.html
+gifting.html
+app.js
+pixel.js
+
+# Design & architecture docs (keep locally, not needed on GitHub)
+design.md
+architecture.md
+antigravity.md
+wp-theme-structure.md
+
+
+# --- UI/UX PROTOTYPE FOLDER ----------------------------------
+# Design mockup folder — not deployed to WordPress
+everything_cacao_luxury_ui-ux/
+
+
+# --- RAW ASSET DUMP FOLDERS ----------------------------------
+# Very large raw product photos & PDFs — serve these from
+# WordPress Media Library instead, not from GitHub.
+everything_cacao_products/
+nahar_assets_folder/
+
+
+# --- LARGE FILE TYPES (inside the theme too, if any sneak in) -
+# PDFs are never part of a WP theme — block them everywhere
+*.pdf
+
+# Raw/unoptimised high-res images that don't belong in theme code
+# (Comment out these lines if you intentionally add images to the theme)
+# *.png
+# *.jpg
+# *.jpeg
+
+
+# --- WORDPRESS / PHP ENVIRONMENT -----------------------------
+# Never commit WP core, database exports, or server config
+wp-config.php
+wp-config-local.php
+.env
+.env.*
+*.sql
+*.sql.gz
+*.tar.gz
+*.zip
+
+# WP uploads folder (if this ever becomes a full WP install)
+wp-content/uploads/
+wp-content/cache/
+wp-content/backup*/
+wp-content/upgrade/
+
+
+# --- NODE / BUILD TOOLS --------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp.*
+.yarn/
+package-lock.json
+dist/
+build/
+.cache/
+.parcel-cache/
+
+
+# --- EDITORS & IDEs ------------------------------------------
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+*~
+
+
+# --- OS SYSTEM FILES -----------------------------------------
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+
+# --- LOGS & TEMP FILES ---------------------------------------
+*.log
+*.tmp
+*.temp
+debug.log
+error_log
+php_errorlog
+
+
+# --- SECURITY — never expose these --------------------------
+*.pem
+*.key
+*.cert
+*.p12
+auth.json

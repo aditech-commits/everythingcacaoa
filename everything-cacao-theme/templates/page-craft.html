@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Craft | Everything Cacao GH (WordPress Theme Template)</title>
+  <meta name="description" content="Discover how local tradition meets contemporary chocolate craftsmanship â€” from single-origin soils to sustainable packaging." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'canvas': '#FBF8F3',
+            'card-bg': '#FFFFFF',
+            'cacao-dark': '#2C1A11',
+            'accent-gold': '#D4AF37',
+            'accent-terracotta': '#C86D51',
+            'accent-whatsapp': '#25D366',
+            'cherelle-caramel': '#E08E45',
+            'nahar-obsidian': '#18110D',
+            'text-primary': '#2C1A11',
+            'text-muted': '#7A685A',
+          },
+          fontFamily: {
+            'serif-luxury': ['Playfair Display', 'serif'],
+            'sans': ['Hanken Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../assets/css/tailwind.css" />
+
+  <!-- Meta Pixel Base Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID_HERE');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"/></noscript>
+
+  <script src="../assets/js/pixel-events.js" defer></script>
+  <script src="../assets/js/app.js" defer></script>
+  <script src="../functions.js" defer></script>
+</head>
+<body class="bg-canvas text-cacao-dark antialiased flex flex-col min-h-screen">
+
+  <!-- Header Navigation -->
+  <header class="glass-header border-b border-cacao-dark/10 sticky top-0 z-50 transition-all duration-300">
+    <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-12 py-5">
+      <a href="page-home.html" class="flex items-center gap-3">
+        <img src="../assets/images/brand/logo.png" alt="Everything Cacao GH" class="h-10 md:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105" />
+      </a>
+
+      <div class="hidden md:flex items-center space-x-10 text-xs font-semibold uppercase tracking-widest">
+        <a href="page-home.html" class="hover:text-accent-terracotta transition-colors py-1">Home</a>
+        <a href="page-collections.html" class="hover:text-accent-terracotta transition-colors py-1">Our Collections</a>
+        <a href="page-craft.html" class="text-accent-terracotta font-bold border-b-2 border-accent-terracotta py-1">Our Craft</a>
+        <a href="page-journal.html" class="hover:text-accent-terracotta transition-colors py-1">Cacao Journal</a>
+        <a href="page-concierge.html" class="hover:text-accent-terracotta transition-colors py-1">Concierge &amp; Stockists</a>
+      </div>
+
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="https://wa.me/233240000000?text=Hi!%20I'd%20like%20to%20order%20artisanal%20chocolate." target="_blank" rel="noopener noreferrer" class="btn-whatsapp rounded shadow-sm">
+          Order via WhatsApp
+        </a>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden text-cacao-dark p-2 focus:outline-none" aria-label="Open Navigation Menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-drawer" class="fixed inset-0 z-50 bg-cacao-dark text-canvas transform translate-x-full transition-transform duration-500 flex flex-col justify-between p-8 md:hidden">
+    <div class="space-y-8">
+      <div class="flex justify-between items-center border-b border-canvas/20 pb-4">
+        <span class="font-serif-luxury text-xl font-bold">EVERYTHING CACAO GH</span>
+        <button id="close-drawer-btn" class="text-canvas text-2xl">&times;</button>
+      </div>
+      <div class="flex flex-col space-y-6 text-sm uppercase tracking-widest font-medium">
+        <a href="page-home.html">Home</a>
+        <a href="page-collections.html">Our Collections</a>
+        <a href="page-craft.html" class="text-accent-gold font-bold">Our Craft</a>
+        <a href="page-journal.html">Cacao Journal</a>
+        <a href="page-concierge.html">Concierge &amp; Stockists</a>
+      </div>
+    </div>
+    <div class="space-y-4">
+      <a href="https://wa.me/233240000000?text=Hi%20Everything%20Cacao%20GH!" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-accent-whatsapp text-white font-semibold uppercase tracking-widest text-center block rounded">
+        WhatsApp Concierge
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero Banner -->
+  <section class="py-20 bg-cacao-dark text-canvas border-b border-canvas/10">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 text-center space-y-4">
+      <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Artisanal Heritage</span>
+      <h1 class="font-serif-luxury text-4xl md:text-6xl font-bold">Rooted in the Gold Coast</h1>
+      <p class="text-canvas/80 text-base max-w-2xl mx-auto leading-relaxed">
+        The story of how local tradition meets contemporary chocolate craftsmanship.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3 Story Sections -->
+  <section class="py-24 max-w-7xl mx-auto px-6 md:px-12 space-y-24">
+    
+    <!-- Story Section 1: The Soil & The Harvest -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-6 space-y-6">
+        <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Pillar 01</span>
+        <h2 class="font-serif-luxury text-3xl md:text-4xl font-bold text-cacao-dark">The Soil &amp; The Harvest</h2>
+        <p class="text-text-muted text-sm leading-relaxed">
+          Ghanaian cocoa is renowned worldwide for its deep, rich cocoa baseline. We work hand-in-hand with generational farming families in Suhum, Assin Fosu, and Sefwi Wiawso.
+        </p>
+        <p class="text-text-muted text-sm leading-relaxed">
+          Through fair-trade partnerships, we pay living income premiums well above international commodity rates, supporting sustainable farming practices and zero-child-labor commitments.
+        </p>
+      </div>
+
+      <div class="lg:col-span-6 aspect-video bg-card-bg rounded-lg overflow-hidden border border-cacao-dark/10 shadow-xl">
+        <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=800&q=80" alt="The Harvest" class="w-full h-full object-cover" />
+      </div>
+    </div>
+
+    <!-- Story Section 2: The Artisan Touch -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center lg:flex-row-reverse">
+      <div class="lg:col-span-6 aspect-video bg-card-bg rounded-lg overflow-hidden border border-cacao-dark/10 shadow-xl lg:order-2">
+        <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80" alt="Artisan Micro Roasting" class="w-full h-full object-cover" />
+      </div>
+
+      <div class="lg:col-span-6 space-y-6 lg:order-1">
+        <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Pillar 02</span>
+        <h2 class="font-serif-luxury text-3xl md:text-4xl font-bold text-cacao-dark">The Artisan Touch</h2>
+        <p class="text-text-muted text-sm leading-relaxed">
+          From micro-batch roasting in small drums to traditional winnowing, stone conching for 72 hours, and precise hand-tempering on marble slabs, our master chocolatiers oversee every detail.
+        </p>
+        <p class="text-text-muted text-sm leading-relaxed">
+          We never introduce palm oil or soy lecithin. Only pure Ghanaian cocoa butter, unrefined cane sugar, and hand-selected natural ingredients.
+        </p>
+      </div>
+    </div>
+
+    <!-- Story Section 3: Sustainable Elegance -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-6 space-y-6">
+        <span class="text-xs font-semibold uppercase tracking-widest text-cherelle-caramel">Pillar 03</span>
+        <h2 class="font-serif-luxury text-3xl md:text-4xl font-bold text-cacao-dark">Sustainable Elegance</h2>
+        <p class="text-text-muted text-sm leading-relaxed">
+          Luxury should leave a gentle footprint on the earth. Every bar wrapper is printed on 100% recyclable, biodegradable paper stock embossed with gold foil and vegetal inks.
+        </p>
+        <p class="text-text-muted text-sm leading-relaxed">
+          Our zero-waste policy ensures cacao husks are repurposed into organic compost for local community gardens and tea infusions.
+        </p>
+      </div>
+
+      <div class="lg:col-span-6 aspect-video bg-card-bg rounded-lg overflow-hidden border border-cacao-dark/10 shadow-xl">
+        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80" alt="Sustainable Packaging" class="w-full h-full object-cover" />
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Persistent Floating WhatsApp Trigger Widget -->
+  <a href="https://wa.me/233240000000?text=Hi%20Everything%20Cacao%20GH!%20I'd%20like%20to%20learn%20more%20about%20your%20craft." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 bg-accent-whatsapp text-white p-4 rounded-full shadow-2xl animate-whatsapp flex items-center gap-3 group hover:scale-105 transition-transform" aria-label="Direct WhatsApp Order Assistant">
+    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.228-1.157z"/></svg>
+    <span class="hidden md:inline font-semibold text-xs uppercase tracking-wider pr-1">WhatsApp Order</span>
+  </a>
+
+  <!-- Footer Section -->
+  <footer class="bg-cacao-dark text-canvas border-t border-canvas/10 mt-auto py-16 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div class="space-y-4">
+        <a href="page-home.html" class="inline-block">
+          <img src="../assets/images/brand/logo.png" alt="Everything Cacao GH" class="h-12 md:h-14 w-auto object-contain transition-transform duration-300 hover:scale-105" />
+        </a>
+        <p class="text-xs text-canvas/70 leading-relaxed">Ghanaian Bean-to-Bar Artisanal Chocolate. Certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA).</p>
+        <div class="flex items-center gap-2 pt-1 text-[11px] text-accent-gold font-semibold">
+          <span>✓ FDA Certified</span>
+          <span>•</span>
+          <span>✓ GSA Certified</span>
+        </div>
+        <p class="text-xs text-canvas/50">Â© 2026 Everything Cacao GH. All Rights Reserved.</p>
+      </div>
+
+      <div class="space-y-3 text-xs uppercase tracking-widest font-semibold">
+        <span class="text-accent-gold block mb-2">Explore Pages</span>
+        <a href="page-home.html" class="block hover:text-accent-gold">Home</a>
+        <a href="page-collections.html" class="block hover:text-accent-gold">Our Collections</a>
+        <a href="page-craft.html" class="block text-accent-gold">Our Craft</a>
+        <a href="page-journal.html" class="block hover:text-accent-gold">Cacao Journal</a>
+        <a href="page-concierge.html" class="block hover:text-accent-gold">Concierge &amp; Stockists</a>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <span class="text-accent-gold uppercase tracking-widest font-semibold block mb-2">Contact &amp; Showroom</span>
+        <p class="text-canvas/80">Airport Residential Area, Accra, Ghana</p>
+        <p class="text-canvas/80">Email: concierge@everythingcacao.com</p>
+        <p class="text-canvas/80">WhatsApp: +233 24 000 0000</p>
+      </div>
+
+      <div class="space-y-4">
+        <span class="text-accent-gold text-xs uppercase tracking-widest font-semibold block">Join The Palette Club</span>
+        <p class="text-xs text-canvas/70">Sign up for private tasting invitations and limited seasonal drops.</p>
+        <form id="palette-club-form" onsubmit="return window.EC_Functions.handlePaletteClubSubmit(event, this);" class="space-y-2">
+          <input type="email" name="email" required placeholder="Enter your email address..." class="w-full px-4 py-2.5 bg-canvas/10 border border-canvas/20 text-canvas text-xs rounded focus:outline-none focus:border-accent-gold placeholder-canvas/40" />
+          <button type="submit" class="w-full py-2.5 bg-accent-gold text-cacao-dark font-semibold text-xs uppercase tracking-widest hover:bg-white transition-colors">
+            Join Palette Club
+          </button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+

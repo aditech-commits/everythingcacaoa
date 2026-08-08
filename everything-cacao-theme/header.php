@@ -184,61 +184,48 @@
 
       <!-- Desktop Navigation Menu (Structure requested by Client) -->
       <div class="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest">
-        <?php
-        if (has_nav_menu('primary')) {
-            wp_nav_menu(array(
-                'theme_location' => 'primary',
-                'container'      => false,
-                'menu_class'     => 'flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest',
-                'fallback_cb'    => false,
-            ));
-        } else {
-            ?>
-            <!-- EXPERIENCE US Dropdown Menu -->
-            <div class="relative group py-2">
-              <button class="nav-link flex items-center gap-1.5 font-semibold uppercase tracking-widest text-xs <?php echo $is_craft ? 'active-page' : ''; ?>">
-                <?php if ($is_craft) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1"></span><?php endif; ?>
-                EXPERIENCE US
-                <svg class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180 text-accent-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-              </button>
-              <div class="absolute left-0 top-full hidden group-hover:flex flex-col bg-cacao-dark text-canvas min-w-[200px] py-3 rounded-lg shadow-2xl border border-canvas/15 transition-all z-50">
-                <a href="<?php echo $link_craft; ?>#about" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">ABOUT</a>
-                <a href="<?php echo $link_craft; ?>#team" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">MEET THE TEAM</a>
-                <a href="<?php echo $link_craft; ?>" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">OUR CRAFT</a>
-              </div>
-            </div>
+        <!-- EXPERIENCE US Dropdown Menu -->
+        <div class="relative group py-2">
+          <button class="nav-link flex items-center gap-1.5 font-semibold uppercase tracking-widest text-xs <?php echo $is_craft ? 'active-page' : ''; ?>">
+            <?php if ($is_craft) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1"></span><?php endif; ?>
+            EXPERIENCE US
+            <svg class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180 text-accent-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="absolute left-0 top-full hidden group-hover:flex flex-col bg-cacao-dark text-canvas min-w-[200px] py-3 rounded-lg shadow-2xl border border-canvas/15 transition-all z-50">
+            <a href="<?php echo $link_craft; ?>#about" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">ABOUT</a>
+            <a href="<?php echo $link_craft; ?>#team" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">MEET THE TEAM</a>
+            <a href="<?php echo $link_craft; ?>" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">OUR CRAFT</a>
+          </div>
+        </div>
 
-            <!-- CACAO JOURNAL -->
-            <a href="<?php echo $link_journal; ?>" class="nav-link <?php echo $is_journal ? 'active-page' : ''; ?>">
-              <?php if ($is_journal) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
-              CACAO JOURNAL
-            </a>
+        <!-- CACAO JOURNAL -->
+        <a href="<?php echo $link_journal; ?>" class="nav-link <?php echo $is_journal ? 'active-page' : ''; ?>">
+          <?php if ($is_journal) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
+          CACAO JOURNAL
+        </a>
 
-            <!-- OUR COLLECTIONS Dropdown Menu -->
-            <div class="relative group py-2">
-              <a href="<?php echo $link_collections; ?>" class="nav-link flex items-center gap-1.5 font-semibold uppercase tracking-widest text-xs <?php echo $is_collections ? 'active-page' : ''; ?>">
-                <?php if ($is_collections) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1"></span><?php endif; ?>
-                OUR COLLECTIONS
-                <svg class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180 text-accent-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-              </a>
-              <div class="absolute left-0 top-full hidden group-hover:flex flex-col bg-cacao-dark text-canvas min-w-[260px] py-3 rounded-lg shadow-2xl border border-canvas/15 transition-all z-50">
-                <a href="<?php echo $link_collections; ?>?lineage=gifting" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">CORPORATE &amp; CUSTOM GIFTING</a>
-              </div>
-            </div>
+        <!-- OUR COLLECTIONS Dropdown Menu -->
+        <div class="relative group py-2">
+          <a href="<?php echo $link_collections; ?>" class="nav-link flex items-center gap-1.5 font-semibold uppercase tracking-widest text-xs <?php echo $is_collections ? 'active-page' : ''; ?>">
+            <?php if ($is_collections) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1"></span><?php endif; ?>
+            OUR COLLECTIONS
+            <svg class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180 text-accent-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="absolute left-0 top-full hidden group-hover:flex flex-col bg-cacao-dark text-canvas min-w-[260px] py-3 rounded-lg shadow-2xl border border-canvas/15 transition-all z-50">
+            <a href="<?php echo $link_collections; ?>?lineage=gifting" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">CORPORATE &amp; CUSTOM GIFTING</a>
+          </div>
+        </div>
 
-            <!-- STOCKISTS (Replaced Stocklists) -->
-            <a href="<?php echo $link_concierge; ?>" class="nav-link <?php echo $is_concierge ? 'active-page' : ''; ?>">
-              <?php if ($is_concierge) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
-              STOCKISTS
-            </a>
+        <!-- STOCKISTS (Replaced Stocklists) -->
+        <a href="<?php echo $link_concierge; ?>" class="nav-link <?php echo $is_concierge ? 'active-page' : ''; ?>">
+          <?php if ($is_concierge) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
+          STOCKISTS
+        </a>
 
-            <!-- CONTACT -->
-            <a href="<?php echo $link_concierge; ?>#contact" class="nav-link">
-              CONTACT
-            </a>
-            <?php
-        }
-        ?>
+        <!-- CONTACT -->
+        <a href="<?php echo $link_concierge; ?>#contact" class="nav-link">
+          CONTACT
+        </a>
       </div>
 
       <!-- Quick Action Buttons -->
@@ -263,51 +250,31 @@
         <button id="close-drawer-btn" class="text-canvas text-3xl font-light">&times;</button>
       </div>
       <div class="flex flex-col space-y-6 text-xs uppercase tracking-widest font-semibold">
-        <?php
-        if (has_nav_menu('mobile')) {
-            wp_nav_menu(array(
-                'theme_location' => 'mobile',
-                'container'      => false,
-                'menu_class'     => 'flex flex-col space-y-6 text-xs uppercase tracking-widest font-semibold',
-                'fallback_cb'    => false,
-            ));
-        } else {
-            ?>
-            <!-- EXPERIENCE US Submenu -->
-            <div class="space-y-3">
-              <span class="text-xs text-accent-gold font-bold uppercase tracking-widest block">EXPERIENCE US</span>
-              <div class="pl-4 flex flex-col space-y-2.5 text-xs text-canvas/80 font-normal">
-                <a href="<?php echo $link_craft; ?>#about" class="hover:text-accent-gold transition-colors block">ABOUT</a>
-                <a href="<?php echo $link_craft; ?>#team" class="hover:text-accent-gold transition-colors block">MEET THE TEAM</a>
-                <a href="<?php echo $link_craft; ?>" class="hover:text-accent-gold transition-colors block">OUR CRAFT</a>
-              </div>
-            </div>
+        <!-- EXPERIENCE US Dropdown / Links for Mobile -->
+        <div class="space-y-3 border-b border-canvas/10 pb-4">
+          <span class="text-accent-gold text-[10px] tracking-widest font-bold uppercase block">EXPERIENCE US</span>
+          <a href="<?php echo $link_craft; ?>#about" class="block text-canvas/80 hover:text-accent-gold pl-2">About</a>
+          <a href="<?php echo $link_craft; ?>#team" class="block text-canvas/80 hover:text-accent-gold pl-2">Meet the Team</a>
+          <a href="<?php echo $link_craft; ?>" class="block text-canvas/80 hover:text-accent-gold pl-2">Our Craft</a>
+        </div>
 
-            <!-- CACAO JOURNAL -->
-            <a href="<?php echo $link_journal; ?>" class="<?php echo $is_journal ? 'text-accent-gold font-bold' : ''; ?> block">CACAO JOURNAL</a>
+        <a href="<?php echo $link_journal; ?>" class="block text-canvas hover:text-accent-gold">CACAO JOURNAL</a>
 
-            <!-- OUR COLLECTIONS Submenu -->
-            <div class="space-y-3">
-              <a href="<?php echo $link_collections; ?>" class="<?php echo $is_collections ? 'text-accent-gold font-bold' : ''; ?> block font-bold">OUR COLLECTIONS</a>
-              <div class="pl-4 flex flex-col space-y-2.5 text-xs text-canvas/80 font-normal">
-                <a href="<?php echo $link_collections; ?>?lineage=gifting" class="hover:text-accent-gold transition-colors block">CORPORATE &amp; CUSTOM GIFTING</a>
-              </div>
-            </div>
+        <!-- OUR COLLECTIONS Mobile -->
+        <div class="space-y-3 border-b border-canvas/10 pb-4">
+          <a href="<?php echo $link_collections; ?>" class="text-accent-gold text-[10px] tracking-widest font-bold uppercase block">OUR COLLECTIONS</a>
+          <a href="<?php echo $link_collections; ?>?lineage=gifting" class="block text-canvas/80 hover:text-accent-gold pl-2">Corporate &amp; Custom Gifting</a>
+        </div>
 
-            <!-- STOCKISTS -->
-            <a href="<?php echo $link_concierge; ?>" class="<?php echo $is_concierge ? 'text-accent-gold font-bold' : ''; ?> block">STOCKISTS</a>
-
-            <!-- CONTACT -->
-            <a href="<?php echo $link_concierge; ?>#contact" class="block">CONTACT</a>
-            <?php
-        }
-        ?>
+        <a href="<?php echo $link_concierge; ?>" class="block text-canvas hover:text-accent-gold">STOCKISTS</a>
+        <a href="<?php echo $link_concierge; ?>#contact" class="block text-canvas hover:text-accent-gold">CONTACT</a>
       </div>
-    </div>
-    <div class="space-y-4 pt-6">
-      <a href="https://wa.me/<?php echo esc_attr(get_option('ec_whatsapp_number', '233240000000')); ?>?text=Hi%20Everything%20Cacao%20GH!" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-accent-whatsapp text-white font-semibold uppercase tracking-widest text-center block rounded">
-        WhatsApp Concierge
-      </a>
+
+      <div class="space-y-4 pt-6">
+        <a href="https://wa.me/<?php echo esc_attr(get_option('ec_whatsapp_number', '233240000000')); ?>?text=Hi%20Everything%20Cacao%20GH!" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-accent-whatsapp text-white font-semibold uppercase tracking-widest text-center block rounded">
+          WhatsApp Concierge
+        </a>
+      </div>
     </div>
   </div>
 

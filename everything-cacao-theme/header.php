@@ -247,25 +247,50 @@
         <span class="font-serif-luxury text-xl font-bold text-accent-gold">EVERYTHING CACAO GH</span>
         <button id="close-drawer-btn" class="text-canvas text-3xl font-light">&times;</button>
       </div>
-      <div class="flex flex-col space-y-6 text-xs uppercase tracking-widest font-semibold">
-        <!-- EXPERIENCE US Dropdown / Links for Mobile -->
-        <div class="space-y-3 border-b border-canvas/10 pb-4">
-          <span class="text-accent-gold text-[10px] tracking-widest font-bold uppercase block">EXPERIENCE US</span>
-          <a href="<?php echo $link_craft; ?>#about" class="block text-canvas/80 hover:text-accent-gold pl-2">About</a>
-          <a href="<?php echo $link_craft; ?>#team" class="block text-canvas/80 hover:text-accent-gold pl-2">Meet the Team</a>
-          <a href="<?php echo $link_craft; ?>" class="block text-canvas/80 hover:text-accent-gold pl-2">Our Craft</a>
+      <div class="flex flex-col space-y-4 text-xs uppercase tracking-widest font-semibold">
+        <!-- 1. EXPERIENCE US Dropdown -->
+        <div class="border-b border-canvas/10 pb-3">
+          <button type="button" class="mobile-dropdown-btn w-full flex items-center justify-between text-canvas hover:text-accent-gold py-1 text-left focus:outline-none" data-target="mobile-sub-experience">
+            <span class="font-bold tracking-wider">EXPERIENCE US</span>
+            <svg class="w-4 h-4 transition-transform duration-300 transform text-accent-gold icon-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div id="mobile-sub-experience" class="hidden pl-3 pt-3 space-y-3.5 border-l border-accent-gold/40 mt-2">
+            <a href="<?php echo $link_craft; ?>#about" class="block text-canvas/80 hover:text-accent-gold">ABOUT</a>
+            <a href="<?php echo $link_craft; ?>#team" class="block text-canvas/80 hover:text-accent-gold">MEET THE TEAM</a>
+            <a href="<?php echo $link_craft; ?>" class="block text-canvas/80 hover:text-accent-gold">OUR CRAFT</a>
+          </div>
         </div>
 
-        <a href="<?php echo $link_journal; ?>" class="block text-canvas hover:text-accent-gold">CACAO JOURNAL</a>
-
-        <!-- OUR COLLECTIONS Mobile -->
-        <div class="space-y-3 border-b border-canvas/10 pb-4">
-          <a href="<?php echo $link_collections; ?>" class="text-accent-gold text-[10px] tracking-widest font-bold uppercase block">OUR COLLECTIONS</a>
-          <a href="<?php echo $link_collections; ?>?lineage=gifting" class="block text-canvas/80 hover:text-accent-gold pl-2">Corporate &amp; Custom Gifting</a>
+        <!-- 2. CACAO JOURNAL -->
+        <div class="border-b border-canvas/10 pb-3">
+          <a href="<?php echo $link_journal; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">CACAO JOURNAL</a>
         </div>
 
-        <a href="<?php echo $link_concierge; ?>" class="block text-canvas hover:text-accent-gold">STOCKISTS</a>
-        <a href="<?php echo $link_concierge; ?>#contact" class="block text-canvas hover:text-accent-gold">CONTACT</a>
+        <!-- 3. OUR COLLECTIONS Dropdown -->
+        <div class="border-b border-canvas/10 pb-3">
+          <button type="button" class="mobile-dropdown-btn w-full flex items-center justify-between text-canvas hover:text-accent-gold py-1 text-left focus:outline-none" data-target="mobile-sub-collections">
+            <span class="font-bold tracking-wider">OUR COLLECTIONS</span>
+            <svg class="w-4 h-4 transition-transform duration-300 transform text-accent-gold icon-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div id="mobile-sub-collections" class="hidden pl-3 pt-3 space-y-3.5 border-l border-accent-gold/40 mt-2">
+            <a href="<?php echo $link_collections; ?>" class="block text-canvas/80 hover:text-accent-gold">ALL COLLECTIONS</a>
+            <a href="<?php echo $link_collections; ?>?lineage=gifting" class="block text-canvas/80 hover:text-accent-gold">CORPORATE &amp; CUSTOM GIFTING</a>
+          </div>
+        </div>
+
+        <!-- 4. STOCKISTS -->
+        <div class="border-b border-canvas/10 pb-3">
+          <a href="<?php echo $link_concierge; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">STOCKISTS</a>
+        </div>
+
+        <!-- 5. CONTACT -->
+        <div class="border-b border-canvas/10 pb-3">
+          <a href="<?php echo $link_concierge; ?>#contact" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">CONTACT</a>
+        </div>
       </div>
 
       <div class="space-y-4 pt-6">
@@ -276,7 +301,7 @@
     </div>
   </div>
 
-  <!-- ✅ Mobile Drawer Toggle — Inline so it always works regardless of plugin/JS load order -->
+  <!-- ✅ Mobile Drawer Toggle & Accordion Dropdowns — Inline script for zero dependency -->
   <script>
   (function() {
     function ecInitMobileMenu() {
@@ -299,8 +324,27 @@
           document.body.style.overflow = '';
         });
       }
-      // Close drawer when clicking backdrop (any link inside)
+
+      // Mobile sub-menu accordion toggle
       if (drawer) {
+        var dropdownBtns = drawer.querySelectorAll('.mobile-dropdown-btn');
+        dropdownBtns.forEach(function(dBtn) {
+          dBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var targetId = dBtn.getAttribute('data-target');
+            var targetEl = document.getElementById(targetId);
+            var chevron = dBtn.querySelector('.icon-chevron');
+
+            if (targetEl) {
+              targetEl.classList.toggle('hidden');
+              if (chevron) {
+                chevron.classList.toggle('rotate-180');
+              }
+            }
+          });
+        });
+
+        // Close drawer when clicking any link inside
         drawer.addEventListener('click', function(e) {
           if (e.target.tagName === 'A') {
             drawer.classList.add('translate-x-full');
@@ -309,6 +353,7 @@
           }
         });
       }
+
       // Close on Escape key
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && drawer) {

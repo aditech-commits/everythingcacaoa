@@ -225,7 +225,7 @@ get_header();
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
-          <img src="<?php echo esc_url(get_theme_mod('ec_gallery_1', get_template_directory_uri() . '/assets/images/products/Nahar dark choc long.png')); ?>" alt="Nahar 72% Dark Chocolate Long Bar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <img src="<?php echo esc_url(ec_get_smart_image_url('ec_gallery_1', 'Nahar dark choc long.png')); ?>" alt="Nahar 72% Dark Chocolate Long Bar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
           <div class="absolute inset-0 bg-cacao-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-canvas">
             <span class="text-xs text-accent-gold uppercase font-semibold">Nahar Collection</span>
             <h5 class="font-serif-luxury font-bold text-lg">72% Dark Obsidian Long Bar</h5>
@@ -233,7 +233,7 @@ get_header();
         </div>
 
         <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
-          <img src="<?php echo esc_url(get_theme_mod('ec_gallery_2', get_template_directory_uri() . '/assets/images/products/Cherelle Milk Chocolate 90g.jpg')); ?>" alt="Cherelle 45% Milk Chocolate Bar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <img src="<?php echo esc_url(ec_get_smart_image_url('ec_gallery_2', 'Cherelle Milk Chocolate 90g.jpg')); ?>" alt="Cherelle 45% Milk Chocolate Bar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
           <div class="absolute inset-0 bg-cacao-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-canvas">
             <span class="text-xs text-accent-gold uppercase font-semibold">Cherelle Collection</span>
             <h5 class="font-serif-luxury font-bold text-lg">45% Milk Chocolate Artisanal Bar</h5>
@@ -241,7 +241,7 @@ get_header();
         </div>
 
         <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
-          <img src="<?php echo esc_url(get_theme_mod('ec_gallery_3', get_template_directory_uri() . '/assets/images/products/4.png')); ?>" alt="Ashanti Gold Truffle Box" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <img src="<?php echo esc_url(ec_get_smart_image_url('ec_gallery_3', '4.png')); ?>" alt="Ashanti Gold Truffle Box" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
           <div class="absolute inset-0 bg-cacao-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-canvas">
             <span class="text-xs text-accent-gold uppercase font-semibold">Bespoke Gifting</span>
             <h5 class="font-serif-luxury font-bold text-lg">Ashanti Gold Truffle Collection</h5>
@@ -249,7 +249,7 @@ get_header();
         </div>
 
         <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
-          <img src="<?php echo esc_url(get_theme_mod('ec_gallery_4', get_template_directory_uri() . '/assets/images/products/5.png')); ?>" alt="Royal Ghanaian Luxury Cacao Hamper" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <img src="<?php echo esc_url(ec_get_smart_image_url('ec_gallery_4', '5.png')); ?>" alt="Royal Ghanaian Luxury Cacao Hamper" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
           <div class="absolute inset-0 bg-cacao-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-canvas">
             <span class="text-xs text-accent-gold uppercase font-semibold">Luxury Gifting</span>
             <h5 class="font-serif-luxury font-bold text-lg">Royal Ghanaian Luxury Hamper</h5>
@@ -257,7 +257,7 @@ get_header();
         </div>
 
         <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
-          <img src="<?php echo esc_url(get_theme_mod('ec_gallery_5', get_template_directory_uri() . '/assets/images/products/Nahar dark choc small.png')); ?>" alt="Nahar Executive Mini Box" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <img src="<?php echo esc_url(ec_get_smart_image_url('ec_gallery_5', 'Nahar dark choc small.png')); ?>" alt="Nahar Executive Mini Box" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
           <div class="absolute inset-0 bg-cacao-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-canvas">
             <span class="text-xs text-accent-gold uppercase font-semibold">Executive Collection</span>
             <h5 class="font-serif-luxury font-bold text-lg">Nahar 72% Mini Square Box</h5>
@@ -265,7 +265,7 @@ get_header();
         </div>
 
         <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
-          <img src="<?php echo esc_url(get_theme_mod('ec_gallery_6', get_template_directory_uri() . '/assets/images/products/Cherelle Milk Chocolate 50g.jpg')); ?>" alt="Cherelle Delights Snack Pouch" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <img src="<?php echo esc_url(ec_get_smart_image_url('ec_gallery_6', 'Cherelle Milk Chocolate 50g.jpg')); ?>" alt="Cherelle Delights Snack Pouch" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
           <div class="absolute inset-0 bg-cacao-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-canvas">
             <span class="text-xs text-accent-gold uppercase font-semibold">On-The-Go Snacking</span>
             <h5 class="font-serif-luxury font-bold text-lg">Cherelle Delights Standup Pouch</h5>

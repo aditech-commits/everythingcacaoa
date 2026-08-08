@@ -64,7 +64,7 @@ get_header();
               $origin       = ec_get_product_field('origin_region') ?: 'Single-Origin • Ghana';
               $notes        = ec_get_product_field('tasting_notes') ?: get_the_excerpt();
               $description  = ec_get_product_field('product_description') ?: '';
-              $thumb_url    = get_the_post_thumbnail_url(get_the_ID(), 'large') ?: get_template_directory_uri() . '/assets/images/products/Cherelle Milk Chocolate 90g.jpg';
+              $thumb_url    = get_the_post_thumbnail_url(get_the_ID(), 'large') ?: ec_get_smart_image_url(null, 'Cherelle Milk Chocolate 90g.jpg');
               $wa_number    = get_option('ec_whatsapp_number', '233240000000');
               $wa_text      = urlencode("Hi, I'd like to order the " . get_the_title());
               

@@ -835,12 +835,83 @@ function ec_auto_seed_cacao_products() {
                         set_post_thumbnail($post_id, $attach_id);
                     }
                 }
+            } else {
+                // If local theme file is missing (e.g. Git ignored), search WP Media Library for uploaded image
+                global $wpdb;
+                $attach_id = $wpdb->get_var($wpdb->prepare(
+                    "SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = '_wp_attached_file' AND meta_value LIKE %s LIMIT 1",
+                    '%' . $wpdb->esc_like($prod['image_file'])
+                ));
+                if ($attach_id) {
+                    set_post_thumbnail($post_id, $attach_id);
+                }
+            }
+        } elseif ($existing && !has_post_thumbnail($existing->ID)) {
+            // Auto-link thumbnail if user uploaded image to Media Library after seeding
+            global $wpdb;
+            $attach_id = $wpdb->get_var($wpdb->prepare(
+                "SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = '_wp_attached_file' AND meta_value LIKE %s LIMIT 1",
+                '%' . $wpdb->esc_like($prod['image_file'])
+            ));
+            if ($attach_id) {
+                set_post_thumbnail($existing->ID, $attach_id);
             }
         }
     }
 }
 add_action('admin_init', 'ec_auto_seed_cacao_products');
 add_action('init', 'ec_auto_seed_cacao_products', 20);
+
+/**
+ * 11. Smart Media Library Image Resolver
+ * Auto-finds images uploaded to WP Media Library by filename.
+ * Prevents broken images even if local theme assets are missing from Git.
+ */
+function ec_get_smart_image_url($setting_name, $filename) {
+    // 1. Customizer Setting Override
+    if ($setting_name) {
+        $customizer_url = get_theme_mod($setting_name);
+        if ($customizer_url) {
+            return $customizer_url;
+        }
+    }
+
+    // 2. Search WP Media Library by Filename
+    if ($filename) {
+        global $wpdb;
+        $attachment_id = $wpdb->get_var($wpdb->prepare(
+            "SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = '_wp_attached_file' AND meta_value LIKE %s LIMIT 1",
+            '%' . $wpdb->esc_like($filename)
+        ));
+
+        if ($attachment_id) {
+            $url = wp_get_attachment_url($attachment_id);
+            if ($url) {
+                return $url;
+            }
+        }
+
+        // Search by Attachment Title / Slug
+        $clean_name = pathinfo($filename, PATHINFO_FILENAME);
+        $attachment_by_name = get_page_by_title($clean_name, OBJECT, 'attachment');
+        if ($attachment_by_name) {
+            $url = wp_get_attachment_url($attachment_by_name->ID);
+            if ($url) {
+                return $url;
+            }
+        }
+    }
+
+    // 3. Fallback to Local Theme Asset File (if present)
+    $theme_file_path = get_template_directory() . '/assets/images/products/' . $filename;
+    if (file_exists($theme_file_path)) {
+        return get_template_directory_uri() . '/assets/images/products/' . $filename;
+    }
+
+    // 4. Fallback to Elegant SVG Brand Placeholder
+    return 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600"><rect width="100%" height="100%" fill="%232C1A11"/><circle cx="300" cy="270" r="100" fill="%23C86D51" opacity="0.2"/><text x="50%" y="46%" dominant-baseline="middle" text-anchor="middle" fill="%23D4AF37" font-family="Georgia, serif" font-size="28" font-weight="bold">EVERYTHING CACAO</text><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="%23F5EFE6" font-family="sans-serif" font-size="14" letter-spacing="2">GHANA LUXURY CONFECTION</text></svg>';
+}
+
 
 
 

@@ -966,6 +966,48 @@ function ec_get_smart_image_url($setting_name, $filename) {
     return 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600"><rect width="100%" height="100%" fill="%232C1A11"/><circle cx="300" cy="270" r="100" fill="%23C86D51" opacity="0.2"/><text x="50%" y="46%" dominant-baseline="middle" text-anchor="middle" fill="%23D4AF37" font-family="Georgia, serif" font-size="28" font-weight="bold">EVERYTHING CACAO</text><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="%23F5EFE6" font-family="sans-serif" font-size="14" letter-spacing="2">GHANA LUXURY CONFECTION</text></svg>';
 }
 
+/**
+ * 12. Menu Filters & Permalink Resolver for Stockists Page
+ * Automatically renames any WP menu item titled "Stock Lists" or "Stock Lists & Concierge" to "STOCKISTS"
+ * and rewrites /stock-lists URLs to /stockist/
+ */
+function ec_customize_nav_menu_items($items, $args) {
+    if (!is_array($items)) return $items;
+    foreach ($items as $item) {
+        if (isset($item->title) && preg_match('/stock\s*lists?/i', $item->title)) {
+            $item->title = 'STOCKISTS';
+        }
+        if (isset($item->url) && strpos($item->url, '/stock-lists') !== false) {
+            $item->url = str_replace('/stock-lists', '/stockist', $item->url);
+        }
+    }
+    return $items;
+}
+add_filter('wp_nav_menu_objects', 'ec_customize_nav_menu_items', 10, 2);
+
+function ec_filter_nav_menu_item_title($title, $item, $args, $depth) {
+    if (preg_match('/stock\s*lists?/i', $title)) {
+        return 'STOCKISTS';
+    }
+    return $title;
+}
+add_filter('nav_menu_item_title', 'ec_filter_nav_menu_item_title', 10, 4);
+
+/**
+ * 13. Redirect /stock-lists/ to /stockist/ (301 Permanent Redirect)
+ */
+function ec_redirect_stock_lists_url() {
+    if (is_admin()) return;
+    $uri = $_SERVER['REQUEST_URI'];
+    if (strpos($uri, '/stock-lists') !== false) {
+        $new_uri = str_replace('/stock-lists', '/stockist', $uri);
+        wp_redirect(home_url($new_uri), 301);
+        exit;
+    }
+}
+add_action('template_redirect', 'ec_redirect_stock_lists_url');
+
+
 
 
 

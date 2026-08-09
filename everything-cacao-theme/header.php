@@ -167,7 +167,7 @@
   $link_collections= ec_get_smart_page_link(array('our-collections', 'collections'), '/our-collections');
   $link_craft      = ec_get_smart_page_link(array('our-craft', 'craft'), '/our-craft');
   $link_journal    = ec_get_smart_page_link(array('cacao-journal', 'journal'), '/cacao-journal');
-  $link_concierge  = ec_get_smart_page_link(array('stock-lists', 'stockists', 'concierge'), '/stock-lists');
+  $link_concierge  = ec_get_smart_page_link(array('stockist', 'stockists', 'stock-lists', 'concierge'), '/stockist');
   ?>
 
   <!-- Header Navigation Component -->

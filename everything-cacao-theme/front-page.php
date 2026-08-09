@@ -13,7 +13,7 @@ get_header();
 // Resolve page URLs using the same smart resolver as header/footer
 $link_collections = ec_get_smart_page_link(array('our-collections', 'collections'), '/our-collections');
 $link_craft       = ec_get_smart_page_link(array('our-craft', 'craft'), '/our-craft');
-$link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'concierge-stockists'), '/stock-lists');
+$link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock-lists', 'concierge'), '/stockist');
 ?>
 
   <!-- Hero Section -->

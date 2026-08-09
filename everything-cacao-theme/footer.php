@@ -11,7 +11,7 @@ $link_home       = esc_url(home_url('/'));
 $link_collections= ec_get_smart_page_link(array('our-collections', 'collections'), '/our-collections');
 $link_craft      = ec_get_smart_page_link(array('our-craft', 'craft'), '/our-craft');
 $link_journal    = ec_get_smart_page_link(array('cacao-journal', 'journal'), '/cacao-journal');
-$link_concierge  = ec_get_smart_page_link(array('stock-lists', 'concierge', 'concierge-stockists'), '/stock-lists');
+$link_concierge  = ec_get_smart_page_link(array('stockist', 'stockists', 'stock-lists', 'concierge', 'concierge-stockists'), '/stockist');
 ?>
   <!-- Footer Component -->
   <footer class="bg-cacao-dark text-canvas border-t border-canvas/10 mt-auto py-16 px-6 md:px-12">

@@ -13,17 +13,8 @@
  */
 
 get_header();
+?>
 
-if (have_posts()) :
-    while (have_posts()) : the_post();
-        if (did_action('elementor/loaded') && (\Elementor\Plugin::$instance->db->is_built_with_elementor(get_the_ID()) || \Elementor\Plugin::$instance->preview->is_preview_mode())) :
-            ?>
-            <main id="primary" class="site-main elementor-page-wrapper">
-              <?php the_content(); ?>
-            </main>
-            <?php
-        else :
-            ?>
   <!-- Page Banner -->
   <section class="py-16 bg-cacao-dark text-canvas border-b border-canvas/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12 text-center space-y-4">
@@ -583,18 +574,20 @@ if (have_posts()) :
       content.classList.remove('scale-100');
       document.body.style.overflow = '';
     }
+  </script>
 
-  <!-- Optional WP / Elementor Content Area -->
-  <?php if (get_the_content()) : ?>
-    <section class="py-12 max-w-7xl mx-auto px-6 md:px-12">
-      <?php the_content(); ?>
-    </section>
-  <?php endif; ?>
+  <!-- Elementor / WP Content Support Area -->
+  <div class="elementor-content-container">
+    <?php
+    if (have_posts()) :
+        while (have_posts()) : the_post();
+            the_content();
+        endwhile;
+    endif;
+    ?>
+  </div>
 
-  <?php
-        endif;
-    endwhile;
-endif;
-
+<?php
 get_footer();
+
 

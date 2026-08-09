@@ -14,9 +14,17 @@ get_header();
 $link_collections = ec_get_smart_page_link(array('our-collections', 'collections'), '/our-collections');
 $link_craft       = ec_get_smart_page_link(array('our-craft', 'craft'), '/our-craft');
 $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock-lists', 'concierge'), '/stockist');
-?>
 
-  <!-- Hero Section -->
+if (have_posts()) :
+    while (have_posts()) : the_post();
+        if (did_action('elementor/loaded') && (\Elementor\Plugin::$instance->db->is_built_with_elementor(get_the_ID()) || \Elementor\Plugin::$instance->preview->is_preview_mode())) :
+            ?>
+            <main id="primary" class="site-main elementor-page-wrapper">
+              <?php the_content(); ?>
+            </main>
+            <?php
+        else :
+            ?>
   <!-- Hero Section -->
   <section class="relative min-h-[85vh] flex items-center overflow-hidden py-16">
     <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
@@ -367,6 +375,18 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
     <?php get_template_part('template-parts/quick-form'); ?>
   </section>
 
-<?php
+  <!-- Optional WP / Elementor Content Area -->
+  <?php if (get_the_content()) : ?>
+    <section class="py-12 max-w-7xl mx-auto px-6 md:px-12">
+      <?php the_content(); ?>
+    </section>
+  <?php endif; ?>
+
+  <?php
+        endif;
+    endwhile;
+endif;
+
 get_footer();
+
 

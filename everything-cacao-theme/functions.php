@@ -39,6 +39,9 @@ function ec_theme_setup() {
     add_theme_support('editor-styles');
     add_editor_style('assets/css/tailwind.css');
 
+    // ── Elementor & Page Builder Full Compatibility ──────────────────────
+    add_theme_support('elementor');
+
     // Custom line-height and spacing controls in block editor
     add_theme_support('custom-line-height');
     add_theme_support('custom-spacing');

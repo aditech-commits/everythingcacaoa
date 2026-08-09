@@ -80,10 +80,9 @@ get_header();
   </section>
 
   <!-- Two Lineages Write-Up: Cherelle vs Nahar -->
-  <section class="py-24 bg-card-bg border-t border-b border-cacao-dark/10">
+  <section class="py-20 md:py-24 bg-card-bg border-t border-b border-cacao-dark/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
-      <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
-        <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Brand Write-Up</span>
+      <div class="text-center max-w-2xl mx-auto space-y-3 mb-12">
         <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">Cherelle &amp; Nahar</h2>
         <p class="text-text-muted text-sm leading-relaxed">
           Together, Cherelle and Nahar represent our commitment to quality and passion for chocolate, ensuring there’s something for everyone to enjoy at Everything Cacao GH Ltd.

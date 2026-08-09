@@ -163,10 +163,9 @@ get_header();
         </div>
 
         <!-- Social Media Integration -->
-        <div class="p-6 bg-cacao-dark text-canvas rounded-lg space-y-4">
-          <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Social Media Integration</span>
-          <p class="text-xs text-canvas/70">Follow @everythingcacaogh for micro-batch drops and behind-the-scenes stories.</p>
-          <div class="flex items-center gap-4 text-xs font-semibold text-accent-gold">
+        <div class="p-6 bg-cacao-dark text-canvas rounded-lg space-y-3">
+          <p class="text-xs text-canvas/80 leading-relaxed">Follow @everythingcacaogh for micro-batch drops and behind-the-scenes stories.</p>
+          <div class="flex items-center gap-4 text-xs font-semibold text-accent-gold pt-1">
             <a href="https://instagram.com/everythingcacaogh" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1">
               <span>Instagram</span> (@everythingcacaogh)
             </a>

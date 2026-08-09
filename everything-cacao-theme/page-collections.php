@@ -65,7 +65,7 @@ get_header();
               $notes        = ec_get_product_field('tasting_notes') ?: get_the_excerpt();
               $description  = ec_get_product_field('product_description') ?: '';
               $thumb_url    = get_the_post_thumbnail_url(get_the_ID(), 'large') ?: ec_get_smart_image_url(null, 'Cherelle Milk Chocolate 90g.jpg');
-              $wa_number    = get_option('ec_whatsapp_number', '233240000000');
+              $wa_number    = get_option('ec_whatsapp_number', '233240661866');
               $wa_text      = urlencode("Hi, I'd like to order the " . get_the_title());
               
               // Determine category for filtering
@@ -120,20 +120,12 @@ get_header();
                   </div>
                 </div>
 
-                <!-- Price & CTA -->
-                <div class="p-6 pt-0 space-y-4">
+                <!-- Price -->
+                <div class="p-6 pt-0">
                   <div class="flex justify-between items-center border-t border-cacao-dark/10 pt-4">
                     <span class="text-xs font-semibold text-text-muted">PRICE</span>
                     <span class="font-serif-luxury text-lg font-bold text-cacao-dark">GHC <?php echo esc_html($price); ?></span>
                   </div>
-
-                  <a href="https://wa.me/<?php echo esc_attr($wa_number); ?>?text=<?php echo $wa_text; ?>" 
-                     target="_blank" 
-                     rel="noopener noreferrer"
-                     class="btn-whatsapp w-full rounded text-center block"
-                     onclick="event.stopPropagation(); fbq('track', 'Lead', {content_name: '<?php echo esc_js(get_the_title()); ?>'});">
-                     Order via WhatsApp
-                  </a>
                 </div>
               </div>
               <?php
@@ -364,7 +356,7 @@ get_header();
               )
           );
 
-          $wa_number = get_option('ec_whatsapp_number', '233240000000');
+          $wa_number = get_option('ec_whatsapp_number', '233240661866');
 
           foreach ($fallback_products as $product) :
               $wa_text = urlencode("Hi, I'd like to order the " . $product['title']);
@@ -410,14 +402,6 @@ get_header();
                     <span class="text-xs font-semibold text-text-muted">PRICE</span>
                     <span class="font-serif-luxury text-lg font-bold text-cacao-dark">GHC <?php echo esc_html($product['price']); ?></span>
                   </div>
-
-                  <a href="https://wa.me/<?php echo esc_attr($wa_number); ?>?text=<?php echo $wa_text; ?>" 
-                     target="_blank" 
-                     rel="noopener noreferrer"
-                     class="btn-whatsapp w-full rounded text-center block"
-                     onclick="event.stopPropagation(); fbq('track', 'Lead', {content_name: '<?php echo esc_js($product['title']); ?>'});">
-                     Order via WhatsApp
-                  </a>
                 </div>
               </div>
               <?php
@@ -495,17 +479,12 @@ get_header();
             </div>
           </div>
 
-          <!-- Price & Action -->
-          <div class="space-y-4 border-t border-cacao-dark/10 pt-6">
+          <!-- Price -->
+          <div class="border-t border-cacao-dark/10 pt-6">
             <div class="flex justify-between items-center">
               <span class="text-xs font-semibold text-text-muted uppercase tracking-wider">Price</span>
               <span id="modal-price" class="font-serif-luxury text-2xl font-bold text-cacao-dark"></span>
             </div>
-            <a id="modal-wa-btn" href="#" target="_blank" rel="noopener noreferrer"
-               class="btn-whatsapp w-full rounded text-center block text-base py-4"
-               onclick="fbq('track', 'Lead', {content_name: document.getElementById('modal-title').textContent});">
-               Order via WhatsApp
-            </a>
           </div>
         </div>
       </div>

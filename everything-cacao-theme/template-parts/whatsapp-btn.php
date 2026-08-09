@@ -4,7 +4,7 @@
  *
  * @package EverythingCacao
  */
-$wa_number = get_option('ec_whatsapp_number', '233240000000');
+$wa_number = get_option('ec_whatsapp_number', '233240661866');
 ?>
 <a href="https://wa.me/<?php echo esc_attr($wa_number); ?>?text=Hi%20Everything%20Cacao%20GH!%20I'd%20like%20to%20order%20artisanal%20chocolate." 
    target="_blank" 

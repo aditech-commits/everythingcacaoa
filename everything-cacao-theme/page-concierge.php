@@ -67,8 +67,8 @@ get_header();
         <div class="p-6 bg-canvas border-l-4 border-accent-gold rounded text-xs text-text-muted space-y-4">
           <div class="space-y-1">
             <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Direct WhatsApp Chat</span>
-            <a href="https://wa.me/<?php echo esc_attr(get_option('ec_whatsapp_number', '233240000000')); ?>" target="_blank" rel="noopener noreferrer" class="font-semibold text-cacao-dark text-sm hover:text-accent-terracotta transition-colors">
-              +<?php echo esc_html(get_option('ec_whatsapp_number', '233240000000')); ?>
+            <a href="https://wa.me/<?php echo esc_attr(get_option('ec_whatsapp_number', '233240661866')); ?>" target="_blank" rel="noopener noreferrer" class="font-semibold text-cacao-dark text-sm hover:text-accent-terracotta transition-colors">
+              +<?php echo esc_html(get_option('ec_whatsapp_number', '233240661866')); ?>
             </a>
             <p class="text-[11px] opacity-80">Click to instantly chat with a rep</p>
           </div>

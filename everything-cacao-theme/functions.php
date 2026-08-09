@@ -109,7 +109,7 @@ function ec_enqueue_assets() {
         'nonce'          => wp_create_nonce('ec_concierge_nonce'),
         'theme_url'      => get_template_directory_uri(),
         'concierge_email'=> get_option('ec_concierge_email', 'concierge@everythingcacao.com'),
-        'whatsapp_num'   => get_option('ec_whatsapp_number', '233240000000'),
+        'whatsapp_num'   => get_option('ec_whatsapp_number', '233240661866'),
     ));
 }
 add_action('wp_enqueue_scripts', 'ec_enqueue_assets');
@@ -375,7 +375,7 @@ function ec_customize_register($wp_customize) {
 
     // 2. WhatsApp Concierge Number Setting
     $wp_customize->add_setting('ec_whatsapp_number', array(
-        'default'           => '233240000000',
+        'default'           => '233240661866',
         'type'              => 'option',
         'sanitize_callback' => 'sanitize_text_field',
     ));
@@ -553,7 +553,7 @@ function ec_render_admin_settings_page() {
     }
 
     $pixel_id = get_option('ec_pixel_id', '');
-    $whatsapp = get_option('ec_whatsapp_number', '233240000000');
+    $whatsapp = get_option('ec_whatsapp_number', '233240661866');
     $email    = get_option('ec_concierge_email', 'concierge@everythingcacao.com');
     ?>
     <div class="wrap">

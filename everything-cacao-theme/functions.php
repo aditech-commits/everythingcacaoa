@@ -963,6 +963,11 @@ function ec_get_smart_image_url($setting_name, $filename) {
         }
     }
 
+    // 2. Direct URL Fallback
+    if ($filename && (strpos($filename, 'http://') === 0 || strpos($filename, 'https://') === 0)) {
+        return $filename;
+    }
+
     // 2. Search WP Media Library by Filename
     if ($filename) {
         global $wpdb;

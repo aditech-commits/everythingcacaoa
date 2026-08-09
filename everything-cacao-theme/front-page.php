@@ -44,11 +44,13 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
       </div>
 
       <!-- Hero Visual Image Stack -->
-      <div class="lg:col-span-6 relative aspect-square group ec-animate">
-        <div class="absolute inset-0 bg-cacao-dark/10 rounded-2xl transform rotate-3 scale-95 transition-transform duration-700 group-hover:rotate-0"></div>
-        <img class="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-2xl z-0 transform -rotate-3 transition-transform duration-700 group-hover:rotate-0" 
-             alt="Buy Ghanaian Chocolate Online | Everything Cacao GH" 
-             src="<?php echo esc_url(ec_get_smart_image_url('ec_hero_image', 'Cherelle milk choc long.png')); ?>" />
+      <div class="lg:col-span-6 relative aspect-square group ec-animate flex items-center justify-center">
+        <div class="absolute inset-0 bg-cacao-dark/5 rounded-2xl border border-cacao-dark/10 transform rotate-3 scale-95 transition-transform duration-700 group-hover:rotate-0"></div>
+        <div class="relative w-full h-full p-8 md:p-12 flex items-center justify-center bg-card-bg/60 rounded-2xl shadow-xl z-10 border border-cacao-dark/10 backdrop-blur-sm transform -rotate-3 transition-transform duration-700 group-hover:rotate-0">
+          <img class="max-h-full max-w-full object-contain transition-transform duration-700 group-hover:scale-105" 
+               alt="Everything Cacao GH Logo" 
+               src="<?php echo esc_url(ec_get_smart_image_url('ec_hero_image', 'https://everythingcacaogh.com/wp-content/uploads/2026/08/logo-300x268.png')); ?>" />
+        </div>
       </div>
     </div>
   </section>

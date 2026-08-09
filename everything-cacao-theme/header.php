@@ -160,14 +160,16 @@
   $is_collections= is_page('collections') || is_page('our-collections') || strpos($request_uri, 'collections') !== false;
   $is_craft      = is_page('craft') || is_page('our-craft') || is_page('about') || strpos($request_uri, 'craft') !== false;
   $is_journal    = (is_home() && !is_front_page()) || is_singular('post') || strpos($request_uri, 'journal') !== false;
-  $is_concierge  = is_page('concierge') || is_page('stock-lists') || is_page('stockists') || strpos($request_uri, 'stock') !== false || strpos($request_uri, 'concierge') !== false;
+  $is_stockist   = is_page('stockist') || is_page('stockists') || is_page('stock-lists') || strpos($request_uri, 'stock') !== false;
+  $is_contact    = is_page('contact') || is_page('concierge') || strpos($request_uri, 'contact') !== false || strpos($request_uri, 'concierge') !== false;
 
   // Smart URL resolver for header links
   $link_home       = esc_url(home_url('/'));
   $link_collections= ec_get_smart_page_link(array('our-collections', 'collections'), '/our-collections');
   $link_craft      = ec_get_smart_page_link(array('our-craft', 'craft'), '/our-craft');
   $link_journal    = ec_get_smart_page_link(array('cacao-journal', 'journal'), '/cacao-journal');
-  $link_concierge  = ec_get_smart_page_link(array('stockist', 'stockists', 'stock-lists', 'concierge'), '/stockist');
+  $link_stockist   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock-lists'), '/stockist');
+  $link_contact    = ec_get_smart_page_link(array('contact', 'concierge'), '/contact');
   ?>
 
   <!-- Header Navigation Component -->
@@ -187,8 +189,8 @@
         </a>
       </div>
 
-      <!-- Desktop Navigation Menu (Centered) -->
-      <div class="hidden md:flex items-center justify-center flex-1 mx-6 space-x-8 text-xs font-semibold uppercase tracking-widest">
+      <!-- Desktop Navigation Menu -->
+      <div class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest font-semibold text-cacao-dark">
         <!-- EXPERIENCE US Dropdown Menu -->
         <div class="relative group py-2">
           <button class="nav-link flex items-center gap-1.5 font-semibold uppercase tracking-widest text-xs <?php echo $is_craft ? 'active-page' : ''; ?>">
@@ -221,14 +223,15 @@
           </div>
         </div>
 
-        <!-- STOCKISTS (Replaced Stocklists) -->
-        <a href="<?php echo $link_concierge; ?>" class="nav-link <?php echo $is_concierge ? 'active-page' : ''; ?>">
-          <?php if ($is_concierge) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
+        <!-- STOCKISTS -->
+        <a href="<?php echo $link_stockist; ?>" class="nav-link <?php echo $is_stockist ? 'active-page' : ''; ?>">
+          <?php if ($is_stockist) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
           STOCKISTS
         </a>
 
         <!-- CONTACT -->
-        <a href="<?php echo $link_concierge; ?>#contact" class="nav-link">
+        <a href="<?php echo $link_contact; ?>" class="nav-link <?php echo $is_contact ? 'active-page' : ''; ?>">
+          <?php if ($is_contact) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
           CONTACT
         </a>
       </div>
@@ -284,12 +287,12 @@
 
         <!-- 4. STOCKISTS -->
         <div class="border-b border-canvas/10 pb-3">
-          <a href="<?php echo $link_concierge; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">STOCKISTS</a>
+          <a href="<?php echo $link_stockist; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">STOCKISTS</a>
         </div>
 
         <!-- 5. CONTACT -->
         <div class="border-b border-canvas/10 pb-3">
-          <a href="<?php echo $link_concierge; ?>#contact" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">CONTACT</a>
+          <a href="<?php echo $link_contact; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">CONTACT</a>
         </div>
       </div>
 

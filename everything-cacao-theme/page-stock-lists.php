@@ -1,11 +1,10 @@
 <?php
 /**
- * Template Name: Stock Lists & Concierge
+ * Template Name: Stock Lists Redirect Alias
  *
- * Everything Cacao GH - Stock Lists / Concierge Page Template (page-stock-lists.php)
- * Automatically loaded for page slug 'stock-lists'
+ * Everything Cacao GH - Stock List Page Template Alias (page-stock-lists.php)
  *
  * @package EverythingCacao
  */
 
-require get_template_directory() . '/page-concierge.php';
+require get_template_directory() . '/page-stockist.php';

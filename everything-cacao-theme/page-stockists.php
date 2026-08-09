@@ -1,11 +1,10 @@
 <?php
 /**
- * Template Name: Stockists & Concierge
+ * Template Name: Stockists Redirect Alias
  *
- * Everything Cacao GH - Stockists / Concierge Page Template (page-stockists.php)
- * Automatically loaded for page slug 'stockists' (URL: https://everythingcacaogh.com/stockists/)
+ * Everything Cacao GH - Stockist Page Template Alias (page-stockists.php)
  *
  * @package EverythingCacao
  */
 
-require get_template_directory() . '/page-concierge.php';
+require get_template_directory() . '/page-stockist.php';

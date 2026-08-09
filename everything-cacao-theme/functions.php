@@ -110,12 +110,42 @@ function ec_enqueue_assets() {
     wp_localize_script('ec-app', 'EC_WP_Data', array(
         'ajax_url'       => admin_url('admin-ajax.php'),
         'nonce'          => wp_create_nonce('ec_concierge_nonce'),
-        'theme_url'      => get_template_directory_uri(),
-        'concierge_email'=> get_option('ec_concierge_email', 'concierge@everythingcacao.com'),
+        'concierge_email'=> get_option('ec_concierge_email', 'info@everythingcacaogh.com'),
         'whatsapp_num'   => get_option('ec_whatsapp_number', '233240661866'),
     ));
 }
 add_action('wp_enqueue_scripts', 'ec_enqueue_assets');
+
+/**
+ * Smart Template Router Fallback
+ * Guarantees /contact and /stockist URLs render their custom page templates cleanly.
+ */
+add_filter('template_include', function($template) {
+    if (is_admin()) {
+        return $template;
+    }
+
+    $request_uri = strtok($_SERVER['REQUEST_URI'], '?');
+    $path = strtolower(trim($request_uri, '/'));
+
+    if ($path === 'contact' || $path === 'concierge' || $path === 'contact-us') {
+        $contact_template = get_template_directory() . '/page-contact.php';
+        if (file_exists($contact_template)) {
+            status_header(200);
+            return $contact_template;
+        }
+    }
+
+    if ($path === 'stockist' || $path === 'stockists' || $path === 'stock-lists') {
+        $stockist_template = get_template_directory() . '/page-stockist.php';
+        if (file_exists($stockist_template)) {
+            status_header(200);
+            return $stockist_template;
+        }
+    }
+
+    return $template;
+});
 
 /**
  * 3. Register Custom Post Type: cacao_products (No WooCommerce needed)
@@ -201,7 +231,7 @@ function ec_handle_concierge_form_ajax() {
         wp_send_json_error(array('message' => 'Please provide a valid name and email address.'));
     }
 
-    $to      = get_option('ec_concierge_email', 'concierge@everythingcacao.com');
+    $to      = get_option('ec_concierge_email', 'info@everythingcacaogh.com');
     $subject = sprintf('[Concierge Inquiry] %s from %s', $inquiry, $name);
     $body    = "Name: {$name}\nEmail: {$email}\nInquiry Type: {$inquiry}\n\nMessage:\n{$message}\n";
     $headers = array('Content-Type: text/plain; charset=UTF-8', "Reply-To: {$name} <{$email}>");
@@ -209,7 +239,7 @@ function ec_handle_concierge_form_ajax() {
     $sent = wp_mail($to, $subject, $body, $headers);
 
     if ($sent) {
-        wp_send_json_success(array('message' => sprintf('Thank you %s! Your inquiry has been routed to concierge@everythingcacao.com.', $name)));
+        wp_send_json_success(array('message' => sprintf('Thank you %s! Your inquiry has been routed to info@everythingcacaogh.com.', $name)));
     } else {
         // Fallback response for dev environments without mail server setup
         wp_send_json_success(array('message' => sprintf('Thank you %s! Your inquiry has been received.', $name)));
@@ -391,7 +421,7 @@ function ec_customize_register($wp_customize) {
 
     // 3. Concierge Email Setting
     $wp_customize->add_setting('ec_concierge_email', array(
-        'default'           => 'concierge@everythingcacao.com',
+        'default'           => 'info@everythingcacaogh.com',
         'type'              => 'option',
         'sanitize_callback' => 'sanitize_email',
     ));
@@ -557,7 +587,7 @@ function ec_render_admin_settings_page() {
 
     $pixel_id = get_option('ec_pixel_id', '');
     $whatsapp = get_option('ec_whatsapp_number', '233240661866');
-    $email    = get_option('ec_concierge_email', 'concierge@everythingcacao.com');
+    $email    = get_option('ec_concierge_email', 'info@everythingcacaogh.com');
     ?>
     <div class="wrap">
         <h1 style="font-family: Georgia, serif; color: #2C1A11;">🍫 Everything Cacao GH — Theme Settings</h1>
@@ -584,7 +614,7 @@ function ec_render_admin_settings_page() {
                 <tr>
                     <th scope="row"><label for="ec_concierge_email">Concierge Email Address</label></th>
                     <td>
-                        <input name="ec_concierge_email" type="email" id="ec_concierge_email" value="<?php echo esc_attr($email); ?>" class="regular-text" placeholder="concierge@everythingcacao.com" />
+                        <input name="ec_concierge_email" type="email" id="ec_concierge_email" value="<?php echo esc_attr($email); ?>" class="regular-text" placeholder="info@everythingcacaogh.com" />
                         <p class="description">Website contact form submissions will route directly to this email address.</p>
                     </td>
                 </tr>

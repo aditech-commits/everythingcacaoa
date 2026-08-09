@@ -63,7 +63,7 @@ get_header();
         <div class="space-y-2">
           <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Direct Concierge Routing</span>
           <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark">Concierge Message Form</h3>
-          <p class="text-xs text-text-muted">Submissions route directly to <strong class="text-cacao-dark">concierge@everythingcacao.com</strong> with fast-track routing for corporate gifting &amp; stockist bookings.</p>
+          <p class="text-xs text-text-muted">Submissions route directly to <strong class="text-cacao-dark">info@everythingcacaogh.com</strong> with fast-track routing for corporate gifting &amp; stockist bookings.</p>
         </div>
 
         <!-- Direct Concierge Contact Info Box -->
@@ -77,7 +77,7 @@ get_header();
           </div>
           <div class="space-y-1 border-t border-cacao-dark/10 pt-3">
             <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Email Inquiries</span>
-            <a href="mailto:concierge@everythingcacao.com" class="font-semibold text-cacao-dark text-sm hover:text-accent-terracotta transition-colors">concierge@everythingcacao.com</a>
+            <a href="mailto:info@everythingcacaogh.com" class="font-semibold text-cacao-dark text-sm hover:text-accent-terracotta transition-colors">info@everythingcacaogh.com</a>
           </div>
           <div class="space-y-1 border-t border-cacao-dark/10 pt-3">
             <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Private Gifting &amp; Weddings</span>
@@ -158,7 +158,7 @@ get_header();
           </div>
           <div class="space-y-1 border-t border-cacao-dark/10 pt-4">
             <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Direct Concierge Email</span>
-            <p class="text-xs text-text-muted">concierge@everythingcacao.com</p>
+            <p class="text-xs text-text-muted">info@everythingcacaogh.com</p>
           </div>
           <div class="space-y-1 border-t border-cacao-dark/10 pt-4">
             <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Direct WhatsApp &amp; Calls</span>

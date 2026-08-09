@@ -64,7 +64,7 @@ $link_contact    = ec_get_smart_page_link(array('contact', 'concierge'), '/conta
       <div class="space-y-3 text-xs">
         <span class="text-accent-gold uppercase tracking-widest font-semibold block mb-2">Contact &amp; Showroom</span>
         <p class="text-canvas/80">Airport Residential Area, Accra, Ghana</p>
-        <p class="text-canvas/80">Email: concierge@everythingcacao.com</p>
+        <p class="text-canvas/80">Email: info@everythingcacaogh.com</p>
         <p class="text-canvas/80">WhatsApp: +233 24 066 1866</p>
         <div class="pt-2 flex gap-4 text-xs font-semibold text-accent-gold">
           <a href="https://instagram.com/everythingcacaogh" target="_blank" rel="noopener noreferrer" class="hover:underline">Instagram (@everythingcacaogh)</a>

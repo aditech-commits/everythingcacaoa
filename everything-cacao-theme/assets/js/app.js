@@ -73,7 +73,7 @@ function initQuickForms() {
         window.EC_Tracking.trackContact('Quick Home Inquiry');
       }
 
-      showToast(`Thank you ${name}! Your inquiry has been routed to concierge@everythingcacao.com.`, 'success');
+      showToast(`Thank you ${name}! Your inquiry has been routed to info@everythingcacaogh.com.`, 'success');
       form.reset();
     });
   });
@@ -128,7 +128,7 @@ function initConciergeForm() {
       .then(res => res.json())
       .then(data => {
         if (data.success) {
-          showToast(data.data.message || `Thank you ${name}! Your inquiry has been routed to concierge@everythingcacao.com.`, 'success');
+          showToast(data.data.message || `Thank you ${name}! Your inquiry has been routed to info@everythingcacaogh.com.`, 'success');
           conciergeForm.reset();
         } else {
           showToast(data.data.message || 'There was an issue sending your message. Please try WhatsApp.', 'error');
@@ -136,7 +136,7 @@ function initConciergeForm() {
       })
       .catch(err => {
         console.warn('AJAX fallback triggered:', err);
-        showToast(`Thank you ${name}! Your inquiry has been routed to concierge@everythingcacao.com.`, 'success');
+        showToast(`Thank you ${name}! Your inquiry has been routed to info@everythingcacaogh.com.`, 'success');
         conciergeForm.reset();
       })
       .finally(() => {
@@ -148,7 +148,7 @@ function initConciergeForm() {
     } else {
       // Local / static fallback
       setTimeout(() => {
-        showToast(`Thank you ${name}! Your inquiry has been routed to concierge@everythingcacao.com.`, 'success');
+        showToast(`Thank you ${name}! Your inquiry has been routed to info@everythingcacaogh.com.`, 'success');
         conciergeForm.reset();
         if (btn) {
           btn.disabled = false;

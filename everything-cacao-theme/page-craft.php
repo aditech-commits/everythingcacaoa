@@ -34,46 +34,46 @@ get_header();
   </section>
 
   <!-- Brand Story & Core Pillars Section -->
-  <section id="about" class="py-24 max-w-7xl mx-auto px-6 md:px-12">
-    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-      <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Our Journey</span>
-      <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">Ghana's Chocolate Story &mdash; Grown Here, Made Here</h2>
-      <p class="text-text-muted text-base leading-relaxed">
+  <section id="about" class="py-24 md:py-32 max-w-7xl mx-auto px-6 md:px-12">
+    <div class="text-center max-w-3xl mx-auto space-y-5 mb-20 ec-animate">
+      <span class="text-sm font-semibold uppercase tracking-widest text-accent-terracotta">Our Journey</span>
+      <h2 class="font-serif-luxury text-4xl md:text-5xl lg:text-6xl font-bold text-cacao-dark leading-tight">Ghana's Chocolate Story &mdash; Grown Here, Made Here</h2>
+      <p class="text-cacao-dark/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
         Everything Cacao GH was born from a passion for Ghana's cacao and a belief that the world's finest chocolate starts right here. We transform premium Ghanaian cocoa into exceptional chocolate &mdash; honouring our land, our farmers and the traditions that make Ghanaian cacao among the best in the world.
       </p>
     </div>
 
     <!-- 4 Brand Pillars Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div class="bg-card-bg p-8 rounded-xl border border-cacao-dark/10 shadow-sm space-y-4 hover:shadow-lg transition-all">
-        <div class="w-12 h-12 rounded-full bg-cacao-dark/5 flex items-center justify-center text-accent-terracotta text-2xl font-serif-luxury font-bold">01</div>
-        <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Crafting Chocolate with Care</h3>
-        <p class="text-xs text-text-muted leading-relaxed">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+      <div class="ec-animate ec-card-hover bg-card-bg p-8 md:p-10 rounded-xl border border-cacao-dark/10 shadow-sm space-y-5">
+        <div class="w-14 h-14 rounded-full bg-cacao-dark/5 flex items-center justify-center text-accent-terracotta text-2xl font-serif-luxury font-bold">01</div>
+        <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark">Crafting Chocolate with Care</h3>
+        <p class="text-sm md:text-base text-cacao-dark/75 leading-relaxed">
           We source high-quality, processed cocoa from local suppliers who share our commitment to excellence. By collaborating closely with these farmers, we ensure that every batch reflects the unique flavors and characteristics of Ghanaian cacao. Our team of skilled artisans takes this exceptional cocoa and transforms it into a range of delightful chocolate bars, each crafted with precision and love.
         </p>
       </div>
 
-      <div class="bg-card-bg p-8 rounded-xl border border-cacao-dark/10 shadow-sm space-y-4 hover:shadow-lg transition-all border-t-4 border-accent-gold">
-        <div class="w-12 h-12 rounded-full bg-accent-gold/10 flex items-center justify-center text-accent-gold text-2xl font-serif-luxury font-bold">02</div>
-        <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Quality You Can Trust</h3>
-        <p class="text-xs text-text-muted leading-relaxed">
+      <div class="ec-animate ec-card-hover bg-card-bg p-8 md:p-10 rounded-xl border border-cacao-dark/10 shadow-sm space-y-5 border-t-4 border-accent-gold">
+        <div class="w-14 h-14 rounded-full bg-accent-gold/10 flex items-center justify-center text-accent-gold text-2xl font-serif-luxury font-bold">02</div>
+        <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark">Quality You Can Trust</h3>
+        <p class="text-sm md:text-base text-cacao-dark/75 leading-relaxed">
           Certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA), Everything Cacao is dedicated to maintaining the highest standards of safety and quality. Our rigorous processes ensure that every chocolate bar you enjoy is not only delicious but also meets stringent regulatory requirements, giving you peace of mind with every bite.
         </p>
       </div>
 
-      <div class="bg-card-bg p-8 rounded-xl border border-cacao-dark/10 shadow-sm space-y-4 hover:shadow-lg transition-all">
-        <div class="w-12 h-12 rounded-full bg-cacao-dark/5 flex items-center justify-center text-accent-terracotta text-2xl font-serif-luxury font-bold">03</div>
-        <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Empowering Communities</h3>
-        <p class="text-xs text-text-muted leading-relaxed">
-          We believe in the power of chocolate to bring people together. By working with local farmers and suppliers, we help support sustainable practices and fair trade, fostering economic growth in our communities. Our commitment extends beyond our chocolate; it’s about building a brighter future for all those involved in the cacao supply chain.
+      <div class="ec-animate ec-card-hover bg-card-bg p-8 md:p-10 rounded-xl border border-cacao-dark/10 shadow-sm space-y-5">
+        <div class="w-14 h-14 rounded-full bg-cacao-dark/5 flex items-center justify-center text-accent-terracotta text-2xl font-serif-luxury font-bold">03</div>
+        <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark">Empowering Communities</h3>
+        <p class="text-sm md:text-base text-cacao-dark/75 leading-relaxed">
+          We believe in the power of chocolate to bring people together. By working with local farmers and suppliers, we help support sustainable practices and fair trade, fostering economic growth in our communities. Our commitment extends beyond our chocolate; it's about building a brighter future for all those involved in the cacao supply chain.
         </p>
       </div>
 
-      <div class="bg-card-bg p-8 rounded-xl border border-cacao-dark/10 shadow-sm space-y-4 hover:shadow-lg transition-all">
-        <div class="w-12 h-12 rounded-full bg-cacao-dark/5 flex items-center justify-center text-accent-terracotta text-2xl font-serif-luxury font-bold">04</div>
-        <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">A Taste of Ghana</h3>
-        <p class="text-xs text-text-muted leading-relaxed">
-          At Everything Cacao GH Ltd., we’re passionate about sharing the rich flavors of Ghana with the world. From our creamy milk chocolate to our bold dark chocolate, each bar is a celebration of the unique tastes and traditions of our homeland. We invite you to indulge in our creations and experience the joy that comes from chocolate made with heart.
+      <div class="ec-animate ec-card-hover bg-card-bg p-8 md:p-10 rounded-xl border border-cacao-dark/10 shadow-sm space-y-5">
+        <div class="w-14 h-14 rounded-full bg-cacao-dark/5 flex items-center justify-center text-accent-terracotta text-2xl font-serif-luxury font-bold">04</div>
+        <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark">A Taste of Ghana</h3>
+        <p class="text-sm md:text-base text-cacao-dark/75 leading-relaxed">
+          At Everything Cacao GH Ltd., we're passionate about sharing the rich flavors of Ghana with the world. From our creamy milk chocolate to our bold dark chocolate, each bar is a celebration of the unique tastes and traditions of our homeland. We invite you to indulge in our creations and experience the joy that comes from chocolate made with heart.
         </p>
       </div>
     </div>
@@ -92,7 +92,7 @@ get_header();
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <!-- Cherelle Write-Up -->
-        <div class="p-10 rounded-2xl bg-canvas border border-cherelle-caramel/30 space-y-6 shadow-sm relative overflow-hidden">
+        <div class="ec-animate ec-card-hover p-10 rounded-2xl bg-canvas border border-cherelle-caramel/30 space-y-6 shadow-sm relative overflow-hidden">
           <div class="flex justify-between items-center">
             <span class="text-xs font-semibold uppercase tracking-widest text-cherelle-caramel">Everyday Lifestyle</span>
             <span class="text-xs font-bold px-3 py-1 bg-cherelle-caramel/10 text-cherelle-caramel rounded-full">Joy &amp; Togetherness</span>
@@ -107,7 +107,7 @@ get_header();
         </div>
 
         <!-- Nahar Write-Up -->
-        <div class="p-10 rounded-2xl bg-cacao-dark text-canvas border border-accent-gold/40 space-y-6 shadow-xl relative overflow-hidden">
+        <div class="ec-animate ec-card-hover p-10 rounded-2xl bg-cacao-dark text-canvas border border-accent-gold/40 space-y-6 shadow-xl relative overflow-hidden">
           <div class="flex justify-between items-center">
             <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Artisanal Grand Luxury</span>
             <span class="text-xs font-bold px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full">Pinnacle Reserve</span>
@@ -129,7 +129,7 @@ get_header();
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <!-- Mission Statement -->
-        <div class="p-10 bg-card-bg rounded-2xl border-l-8 border-accent-terracotta shadow-md space-y-4">
+        <div class="ec-animate ec-card-hover p-10 bg-card-bg rounded-2xl border-l-8 border-accent-terracotta shadow-md space-y-4">
           <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta block">Our Purpose</span>
           <h3 class="font-serif-luxury text-3xl font-bold text-cacao-dark">Mission Statement</h3>
           <p class="text-sm text-text-muted leading-relaxed italic font-serif-luxury">
@@ -138,7 +138,7 @@ get_header();
         </div>
 
         <!-- Vision Statement -->
-        <div class="p-10 bg-card-bg rounded-2xl border-l-8 border-accent-gold shadow-md space-y-4">
+        <div class="ec-animate ec-card-hover p-10 bg-card-bg rounded-2xl border-l-8 border-accent-gold shadow-md space-y-4">
           <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold block">Our Horizon</span>
           <h3 class="font-serif-luxury text-3xl font-bold text-cacao-dark">Vision Statement</h3>
           <p class="text-sm text-text-muted leading-relaxed italic font-serif-luxury">
@@ -172,7 +172,7 @@ get_header();
               $bio      = get_post_meta(get_the_ID(), 'team_bio', true) ?: get_the_excerpt();
               $img_url  = get_the_post_thumbnail_url(get_the_ID(), 'medium_large') ?: get_template_directory_uri() . '/assets/images/products/6.png';
               ?>
-              <div class="bg-card-bg rounded-xl overflow-hidden border border-cacao-dark/10 shadow-sm group hover:shadow-xl transition-all">
+              <div class="ec-animate ec-card-hover bg-card-bg rounded-xl overflow-hidden border border-cacao-dark/10 shadow-sm group hover:shadow-xl transition-all">
                 <div class="aspect-[4/5] bg-cacao-dark overflow-hidden relative">
                   <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
@@ -197,7 +197,7 @@ get_header();
           );
           foreach ($default_team as $member) :
               ?>
-              <div class="bg-card-bg rounded-xl overflow-hidden border border-cacao-dark/10 shadow-sm group hover:shadow-xl transition-all">
+              <div class="ec-animate ec-card-hover bg-card-bg rounded-xl overflow-hidden border border-cacao-dark/10 shadow-sm group hover:shadow-xl transition-all">
                 <div class="aspect-[4/5] bg-cacao-dark overflow-hidden relative">
                   <img src="<?php echo esc_url(get_template_directory_uri() . $member['img']); ?>" alt="<?php echo esc_attr($member['name']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
@@ -224,7 +224,7 @@ get_header();
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
+        <div class="ec-animate ec-card-hover group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
           <img src="<?php echo esc_url(ec_get_smart_image_url('ec_gallery_1', 'Nahar dark choc long.png')); ?>" alt="Nahar 72% Dark Chocolate Long Bar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
           <div class="absolute inset-0 bg-cacao-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-canvas">
             <span class="text-xs text-accent-gold uppercase font-semibold">Nahar Collection</span>

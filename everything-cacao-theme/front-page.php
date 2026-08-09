@@ -21,7 +21,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
   <section class="relative min-h-[85vh] flex items-center overflow-hidden py-16">
     <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
       <!-- Text Content -->
-      <div class="lg:col-span-6 z-10 space-y-8">
+      <div class="lg:col-span-6 z-10 space-y-8 ec-animate">
         <span class="inline-block font-sans text-xs font-semibold uppercase tracking-widest text-accent-terracotta bg-accent-terracotta/10 px-4 py-2 rounded-full">
           FDA &amp; GSA CERTIFIED • EST. ACCRA, GHANA
         </span>
@@ -45,7 +45,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
       </div>
 
       <!-- Hero Visual Image Stack -->
-      <div class="lg:col-span-6 relative aspect-square group">
+      <div class="lg:col-span-6 relative aspect-square group ec-animate">
         <div class="absolute inset-0 bg-cacao-dark/10 rounded-2xl transform rotate-3 scale-95 transition-transform duration-700 group-hover:rotate-0"></div>
         <img class="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-2xl z-0 transform -rotate-3 transition-transform duration-700 group-hover:rotate-0" 
              alt="Buy Ghanaian Chocolate Online | Everything Cacao GH" 
@@ -57,14 +57,14 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
   <!-- Brand Showcase: Dual-Line Expressions -->
   <section class="py-24 bg-card-bg border-t border-b border-cacao-dark/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
-      <div class="text-center mb-16 space-y-4 max-w-2xl mx-auto">
+      <div class="text-center mb-16 space-y-4 max-w-2xl mx-auto ec-animate">
         <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">Two Ranges. One Ghanaian Story.</h2>
         <p class="text-text-muted text-sm leading-relaxed">Whether you're treating yourself, sharing with family or finding the perfect gift, Everything Cacao has a chocolate for every moment.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
         <!-- Card A: Nahar -->
-        <div class="group relative overflow-hidden bg-cacao-dark text-canvas rounded-xl p-8 md:p-12 flex flex-col justify-between min-h-[580px] border border-cacao-dark/10 transition-all duration-500 subbrand-nahar shadow-sm">
+        <div class="ec-animate ec-card-hover group relative overflow-hidden bg-cacao-dark text-canvas rounded-xl p-8 md:p-12 flex flex-col justify-between min-h-[580px] border border-cacao-dark/10 transition-all duration-500 subbrand-nahar shadow-sm">
           <div class="relative z-10 space-y-2">
             <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold block">THE ESSENCE OF LUXURY</span>
             <h3 class="font-serif-luxury text-4xl sm:text-5xl font-bold text-canvas">Nahar</h3>
@@ -95,7 +95,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
         </div>
 
         <!-- Card B: Cherelle -->
-        <div class="group relative overflow-hidden bg-canvas rounded-xl p-8 md:p-12 flex flex-col justify-between min-h-[580px] border border-cacao-dark/10 hover:border-cherelle-caramel/50 transition-all duration-500 subbrand-cherelle shadow-sm">
+        <div class="ec-animate ec-card-hover group relative overflow-hidden bg-canvas rounded-xl p-8 md:p-12 flex flex-col justify-between min-h-[580px] border border-cacao-dark/10 hover:border-cherelle-caramel/50 transition-all duration-500 subbrand-cherelle shadow-sm">
           <div class="relative z-10 space-y-2">
             <span class="text-xs font-semibold uppercase tracking-widest text-cherelle-caramel block">DELIGHT IN EVERY BITE</span>
             <h3 class="font-serif-luxury text-4xl sm:text-5xl font-bold text-cacao-dark">Cherelle</h3>
@@ -143,7 +143,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
       <!-- Item 1: Locally sourced cacao -->
-      <div class="space-y-6 group">
+      <div class="ec-animate ec-card-hover space-y-6 group">
         <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
           <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                alt="Locally Sourced Ghanaian Cacao Farmers" 
@@ -156,7 +156,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
       </div>
 
       <!-- Item 2: Certified quality -->
-      <div class="space-y-6 group">
+      <div class="ec-animate ec-card-hover space-y-6 group">
         <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
           <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                alt="FDA and GSA Certified Quality Ghanaian Chocolate" 
@@ -169,7 +169,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
       </div>
 
       <!-- Item 3: Made in Ghana -->
-      <div class="space-y-6 group">
+      <div class="ec-animate ec-card-hover space-y-6 group">
         <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
           <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                alt="Made in Ghana Artisanal Chocolate Manufacturing" 
@@ -195,7 +195,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Product 1: Dark Ghanaian Forest -->
-        <a href="<?php echo $link_collections; ?>" class="group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between hover:border-accent-gold/50 transition-colors duration-300">
+        <a href="<?php echo $link_collections; ?>" class="ec-animate ec-card-hover group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between hover:border-accent-gold/50 transition-colors duration-300">
           <div>
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
@@ -215,7 +215,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
         </a>
 
         <!-- Product 2: Heritage Sampler -->
-        <a href="<?php echo $link_collections; ?>" class="group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between hover:border-accent-gold/50 transition-colors duration-300">
+        <a href="<?php echo $link_collections; ?>" class="ec-animate ec-card-hover group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between hover:border-accent-gold/50 transition-colors duration-300">
           <div>
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
@@ -235,7 +235,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
         </a>
 
         <!-- Product 3: Ashanti Gold -->
-        <a href="<?php echo $link_collections; ?>" class="group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between hover:border-accent-gold/50 transition-colors duration-300">
+        <a href="<?php echo $link_collections; ?>" class="ec-animate ec-card-hover group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between hover:border-accent-gold/50 transition-colors duration-300">
           <div>
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
@@ -255,7 +255,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
         </a>
 
         <!-- Product 4: Nahar Private Reserve -->
-        <a href="<?php echo $link_collections; ?>" class="group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between hover:border-accent-gold/50 transition-colors duration-300">
+        <a href="<?php echo $link_collections; ?>" class="ec-animate ec-card-hover group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between hover:border-accent-gold/50 transition-colors duration-300">
           <div>
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
@@ -304,7 +304,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Video 1 Reel -->
-        <div class="group bg-cacao-dark rounded-xl overflow-hidden border border-cacao-dark/10 shadow-lg flex flex-col justify-between">
+        <div class="ec-animate ec-card-hover group bg-cacao-dark rounded-xl overflow-hidden border border-cacao-dark/10 shadow-lg flex flex-col justify-between">
           <div class="aspect-[9/16] bg-nahar-obsidian relative overflow-hidden">
             <iframe class="w-full h-full border-0" src="https://drive.google.com/file/d/1JUC7nwQjQpqLD8z7WnyhiyPtkV6rkcvG/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <div class="absolute top-3 left-3 bg-accent-gold text-cacao-dark text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow pointer-events-none z-10">
@@ -318,7 +318,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
         </div>
 
         <!-- Video 2 Reel -->
-        <div class="group bg-cacao-dark rounded-xl overflow-hidden border border-cacao-dark/10 shadow-lg flex flex-col justify-between">
+        <div class="ec-animate ec-card-hover group bg-cacao-dark rounded-xl overflow-hidden border border-cacao-dark/10 shadow-lg flex flex-col justify-between">
           <div class="aspect-[9/16] bg-nahar-obsidian relative overflow-hidden">
             <iframe class="w-full h-full border-0" src="https://drive.google.com/file/d/1pKLN1VVG15IKg_WP6RUlZ8eD3UJnX1yW/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <div class="absolute top-3 left-3 bg-accent-terracotta text-white text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow pointer-events-none z-10">
@@ -332,7 +332,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
         </div>
 
         <!-- Video 3 Reel -->
-        <div class="group bg-cacao-dark rounded-xl overflow-hidden border border-cacao-dark/10 shadow-lg flex flex-col justify-between">
+        <div class="ec-animate ec-card-hover group bg-cacao-dark rounded-xl overflow-hidden border border-cacao-dark/10 shadow-lg flex flex-col justify-between">
           <div class="aspect-[9/16] bg-nahar-obsidian relative overflow-hidden">
             <iframe class="w-full h-full border-0" src="https://drive.google.com/file/d/15lB6wkq0Cg6NT4pACbXxZiokmdDYtcE0/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <div class="absolute top-3 left-3 bg-accent-gold text-cacao-dark text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow pointer-events-none z-10">
@@ -346,7 +346,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
         </div>
 
         <!-- Video 4 Reel -->
-        <div class="group bg-cacao-dark rounded-xl overflow-hidden border border-cacao-dark/10 shadow-lg flex flex-col justify-between">
+        <div class="ec-animate ec-card-hover group bg-cacao-dark rounded-xl overflow-hidden border border-cacao-dark/10 shadow-lg flex flex-col justify-between">
           <div class="aspect-[9/16] bg-nahar-obsidian relative overflow-hidden">
             <iframe class="w-full h-full border-0" src="https://drive.google.com/file/d/1FQK5L6ErULSbr0Wd_VKoGYcJo463HVYC/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <div class="absolute top-3 left-3 bg-cherelle-caramel text-white text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow pointer-events-none z-10">

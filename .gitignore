@@ -8,14 +8,14 @@
 
 # --- PROTOTYPE / DESIGN FILES (root-level HTML site) ---------
 # These are local development prototypes, not part of the WP theme.
-index.html
-index.css
-about.html
-collections.html
-contact.html
-gifting.html
-app.js
-pixel.js
+/index.html
+/index.css
+/about.html
+/collections.html
+/contact.html
+/gifting.html
+/app.js
+/pixel.js
 
 # Design & architecture docs (keep locally, not needed on GitHub)
 design.md

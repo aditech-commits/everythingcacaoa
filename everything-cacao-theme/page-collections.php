@@ -555,7 +555,8 @@ get_header();
       document.getElementById('modal-notes').textContent   = el.dataset.notes;
       document.getElementById('modal-description').textContent = el.dataset.description;
       document.getElementById('modal-price').textContent   = 'GHC ' + el.dataset.price;
-      document.getElementById('modal-wa-btn').href         = el.dataset.wa;
+      var waBtn = document.getElementById('modal-wa-btn');
+      if (waBtn) { waBtn.href = el.dataset.wa; }
 
       modal.classList.remove('opacity-0', 'pointer-events-none');
       modal.classList.add('opacity-100', 'pointer-events-auto');

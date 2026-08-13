@@ -141,7 +141,7 @@ $link_contact = ec_get_smart_page_link(array('contact', 'concierge'), '/contact'
         <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">WHOLESALE &amp; RETAIL PARTNERSHIPS</span>
         <h2 class="font-serif-luxury text-3xl md:text-4xl font-bold text-cacao-dark">Why Partner With Everything Cacao</h2>
         <p class="text-xs text-text-muted leading-relaxed">
-          We empower retailers, hoteliers, and gift concierges with premium Ghanaian chocolate backed by reliable supply, elegant presentation, and marketing support.
+          We empower retailers, hoteliers, and corporate gift partners with premium Ghanaian chocolate backed by reliable supply, elegant presentation, and marketing support.
         </p>
       </div>
 

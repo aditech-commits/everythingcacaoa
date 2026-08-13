@@ -148,70 +148,7 @@ get_header();
     </div>
   </section>
 
-  <!-- OUR TEAM Section -->
-  <section id="team" class="py-24 max-w-7xl mx-auto px-6 md:px-12">
-    <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
-      <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Leadership &amp; Artisans</span>
-      <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">OUR TEAM</h2>
-      <p class="text-text-muted text-sm">Meet the passionate minds and master chocolatiers behind Everything Cacao</p>
-    </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      <?php
-      $team_query = new WP_Query(array(
-          'post_type'      => 'ec_team_member',
-          'posts_per_page' => -1,
-          'orderby'        => 'menu_order',
-          'order'          => 'ASC',
-      ));
-
-      if ($team_query->have_posts()) :
-          while ($team_query->have_posts()) : $team_query->the_post();
-              $subtitle = get_post_meta(get_the_ID(), 'team_subtitle', true);
-              $bio      = get_post_meta(get_the_ID(), 'team_bio', true) ?: get_the_excerpt();
-              $img_url  = get_the_post_thumbnail_url(get_the_ID(), 'medium_large') ?: get_template_directory_uri() . '/assets/images/products/6.png';
-              ?>
-              <div class="ec-animate ec-card-hover bg-card-bg rounded-xl overflow-hidden border border-cacao-dark/10 shadow-sm group hover:shadow-xl transition-all">
-                <div class="aspect-[4/5] bg-cacao-dark overflow-hidden relative">
-                  <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                </div>
-                <div class="p-6 space-y-2">
-                  <h4 class="font-serif-luxury text-lg font-bold text-cacao-dark"><?php the_title(); ?></h4>
-                  <?php if ($subtitle) : ?>
-                    <span class="text-[11px] font-semibold text-accent-terracotta uppercase tracking-wider block"><?php echo esc_html($subtitle); ?></span>
-                  <?php endif; ?>
-                  <p class="text-xs text-text-muted"><?php echo esc_html($bio); ?></p>
-                </div>
-              </div>
-              <?php
-          endwhile;
-          wp_reset_postdata();
-      else :
-          // Default fallback team display until client adds team members in WP Admin
-          $default_team = array(
-              array('name' => 'Managing Director & Founder', 'subtitle' => 'Strategic Vision & Heritage', 'bio' => 'Championing local Ghanaian cocoa transformation, fair-trade empowerment, and international brand expansion.', 'img' => '/assets/images/products/6.png'),
-              array('name' => 'Master Chocolatier & Product Lead', 'subtitle' => 'Confection Craftsmanship', 'bio' => 'Over 12 years of experience in cocoa conching, micro-batch roasting, and signature flavor profiling.', 'img' => '/assets/images/products/4.png'),
-              array('name' => 'Head of Quality & FDA/GSA Compliance', 'subtitle' => 'Standards & Regulatory Safety', 'bio' => 'Ensuring strict adherence to Ghana Standards Authority (GSA) and Food & Drug Authority (FDA) certifications.', 'img' => '/assets/images/products/3.png'),
-              array('name' => 'Farmer Relations & Sourcing Lead', 'subtitle' => 'Community Engagement', 'bio' => 'Coordinating direct partnerships with cocoa farming co-operatives across Suhum, Assin Fosu, and Sefwi Wiawso.', 'img' => '/assets/images/products/Cherelle Milk Chocolate 90g.jpg'),
-          );
-          foreach ($default_team as $member) :
-              ?>
-              <div class="ec-animate ec-card-hover bg-card-bg rounded-xl overflow-hidden border border-cacao-dark/10 shadow-sm group hover:shadow-xl transition-all">
-                <div class="aspect-[4/5] bg-cacao-dark overflow-hidden relative">
-                  <img src="<?php echo esc_url(get_template_directory_uri() . $member['img']); ?>" alt="<?php echo esc_attr($member['name']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                </div>
-                <div class="p-6 space-y-2">
-                  <h4 class="font-serif-luxury text-lg font-bold text-cacao-dark"><?php echo esc_html($member['name']); ?></h4>
-                  <span class="text-[11px] font-semibold text-accent-terracotta uppercase tracking-wider block"><?php echo esc_html($member['subtitle']); ?></span>
-                  <p class="text-xs text-text-muted"><?php echo esc_html($member['bio']); ?></p>
-                </div>
-              </div>
-              <?php
-          endforeach;
-      endif;
-      ?>
-    </div>
-  </section>
 
   <!-- OUR GALLERY Section -->
   <section class="py-24 bg-card-bg border-t border-cacao-dark/10">

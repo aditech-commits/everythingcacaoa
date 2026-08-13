@@ -61,8 +61,8 @@ get_header();
       <!-- Column 1: Direct Concierge & Contact Form -->
       <div class="lg:col-span-7 bg-card-bg p-8 md:p-12 rounded-2xl border border-cacao-dark/10 shadow-sm space-y-6">
         <div class="space-y-2">
-          <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Direct Concierge Routing</span>
-          <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark">Concierge Message Form</h3>
+          <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Direct Inquiry Routing</span>
+          <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark">Contact Message Form</h3>
           <p class="text-xs text-text-muted">Submissions route directly to <strong class="text-cacao-dark">info@everythingcacaogh.com</strong> with fast-track routing for corporate gifting &amp; stockist bookings.</p>
         </div>
 
@@ -73,7 +73,7 @@ get_header();
             <a href="https://wa.me/<?php echo esc_attr(get_option('ec_whatsapp_number', '233240661866')); ?>" target="_blank" rel="noopener noreferrer" class="font-semibold text-cacao-dark text-sm hover:text-accent-terracotta transition-colors flex items-center gap-1.5">
               <span>+<?php echo esc_html(get_option('ec_whatsapp_number', '233240661866')); ?></span>
             </a>
-            <p class="text-[11px] opacity-80">Click to instantly chat with a sales concierge representative</p>
+            <p class="text-[11px] opacity-80">Click to instantly chat with a sales representative</p>
           </div>
           <div class="space-y-1 border-t border-cacao-dark/10 pt-3">
             <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Email Inquiries</span>
@@ -127,7 +127,7 @@ get_header();
               </div>
 
               <button type="submit" id="concierge-submit-btn" class="w-full py-4 bg-cacao-dark text-canvas font-semibold text-xs uppercase tracking-widest hover:bg-accent-terracotta transition-colors shadow-lg flex items-center justify-center gap-2 rounded">
-                <span>Send Concierge Message</span>
+                <span>Send Message</span>
               </button>
             </form>
             <?php
@@ -157,7 +157,7 @@ get_header();
             <p class="text-xs text-text-muted">Sunday: Private Appointments Only</p>
           </div>
           <div class="space-y-1 border-t border-cacao-dark/10 pt-4">
-            <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Direct Concierge Email</span>
+            <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Direct Email</span>
             <p class="text-xs text-text-muted">info@everythingcacaogh.com</p>
           </div>
           <div class="space-y-1 border-t border-cacao-dark/10 pt-4">
@@ -226,7 +226,7 @@ get_header();
             <span class="faq-icon text-xl font-sans">+</span>
           </button>
           <div class="accordion-content px-6 pb-6 text-xs text-text-muted leading-relaxed">
-            All purchases are processed directly via WhatsApp or our concierge desk to ensure personalized service. Submit an enquiry above or click the WhatsApp trigger to launch a pre-filled chat with our sales representative, who will confirm stock and delivery options in Ghana or internationally.
+            All purchases are processed directly via WhatsApp or our contact desk to ensure personalized service. Submit an enquiry above or click the WhatsApp trigger to launch a pre-filled chat with our sales representative, who will confirm stock and delivery options in Ghana or internationally.
           </div>
         </div>
 
@@ -237,7 +237,7 @@ get_header();
             <span class="faq-icon text-xl font-sans">+</span>
           </button>
           <div class="accordion-content px-6 pb-6 text-xs text-text-muted leading-relaxed">
-            Yes! We ship insulated temperature-controlled micro-batches via express courier to selected destinations across West Africa, Europe, North America, and the UK. Contact our concierge desk for shipping quotes.
+            Yes! We ship insulated temperature-controlled micro-batches via express courier to selected destinations across West Africa, Europe, North America, and the UK. Contact our team for shipping quotes.
           </div>
         </div>
 

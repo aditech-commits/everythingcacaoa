@@ -26,7 +26,7 @@ $link_contact     = ec_get_smart_page_link(array('contact', 'concierge'), '/cont
     <div class="space-y-4">
       <h2 class="font-serif-luxury text-2xl font-bold text-cacao-dark">Where would you like to go?</h2>
       <p class="text-sm text-text-muted leading-relaxed">
-        Browse our collections of artisanal Ghanaian chocolate, learn about our craft, or get in touch with our concierge team.
+        Browse our collections of artisanal Ghanaian chocolate, learn about our craft, or get in touch with our team.
       </p>
     </div>
 

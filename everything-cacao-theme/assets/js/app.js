@@ -168,7 +168,7 @@ function initConciergeForm() {
       .finally(() => {
         if (btn) {
           btn.disabled = false;
-          btn.innerHTML = '<span>Send Concierge Message</span>';
+          btn.innerHTML = '<span>Send Message</span>';
         }
       });
     } else {
@@ -178,7 +178,7 @@ function initConciergeForm() {
         conciergeForm.reset();
         if (btn) {
           btn.disabled = false;
-          btn.innerHTML = '<span>Send Concierge Message</span>';
+          btn.innerHTML = '<span>Send Message</span>';
         }
       }, 500);
     }

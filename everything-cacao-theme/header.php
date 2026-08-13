@@ -177,7 +177,6 @@
           </button>
           <div class="absolute left-0 top-full hidden group-hover:flex flex-col bg-cacao-dark text-canvas min-w-[200px] py-3 rounded-lg shadow-2xl border border-canvas/15 transition-all z-50">
             <a href="<?php echo $link_craft; ?>#about" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">ABOUT</a>
-            <a href="<?php echo $link_craft; ?>#team" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">MEET THE TEAM</a>
             <a href="<?php echo $link_craft; ?>" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">OUR CRAFT</a>
           </div>
         </div>
@@ -238,7 +237,6 @@
           </button>
           <div id="mobile-sub-experience" class="hidden pl-3 pt-3 space-y-3.5 border-l border-accent-gold/40 mt-2">
             <a href="<?php echo $link_craft; ?>#about" class="block text-canvas/80 hover:text-accent-gold">ABOUT</a>
-            <a href="<?php echo $link_craft; ?>#team" class="block text-canvas/80 hover:text-accent-gold">MEET THE TEAM</a>
             <a href="<?php echo $link_craft; ?>" class="block text-canvas/80 hover:text-accent-gold">OUR CRAFT</a>
           </div>
         </div>
@@ -275,7 +273,7 @@
 
       <div class="space-y-4 pt-6">
         <a href="https://wa.me/<?php echo esc_attr(get_option('ec_whatsapp_number', '233240661866')); ?>?text=Hi%20Everything%20Cacao%20GH!" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-accent-whatsapp text-white font-semibold uppercase tracking-widest text-center block rounded">
-          WhatsApp Concierge
+          WhatsApp Support
         </a>
       </div>
     </div>

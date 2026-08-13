@@ -211,7 +211,7 @@ get_header();
   </section>
 
   <!-- FAQ Accordion Section -->
-  <section class="py-24 bg-canvas border-t border-cacao-dark/10">
+  <section class="pt-24 pb-32 md:pb-40 bg-canvas border-t border-cacao-dark/10">
     <div class="max-w-4xl mx-auto px-6 md:px-12 space-y-12">
       <div class="text-center space-y-3">
         <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Common Questions</span>
@@ -264,6 +264,8 @@ get_header();
         </div>
       </div>
     </div>
+  </section>
+
   <!-- Elementor / WP Content Support Area -->
   <div class="elementor-content-container">
     <?php

@@ -4,32 +4,9 @@
   <meta charset="<?php bloginfo('charset'); ?>"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <?php
-  // Reach 360 Marketing Group - SEO Meta Titles & Descriptions
-  $seo_title = 'Buy Ghanaian Chocolate Online | Everything Cacao';
-  $seo_desc  = 'Shop Nahar and Cherelle — premium chocolate made from Ghana\'s finest cacao. Milk and dark bars available across Accra and Ghana. FDA and GSA certified.';
-
-  if (is_front_page()) {
-      $seo_title = 'Buy Ghanaian Chocolate Online | Everything Cacao';
-      $seo_desc  = 'Shop Nahar and Cherelle — premium chocolate made from Ghana\'s finest cacao. Milk and dark bars available across Accra and Ghana. FDA and GSA certified.';
-  } elseif (is_page(array('craft', 'our-craft', 'about', 'about-us'))) {
-      $seo_title = 'About Everything Cacao | Ghana\'s Premium Chocolate Maker';
-      $seo_desc  = 'Learn the story behind Everything Cacao — a proudly Ghanaian chocolate company committed to quality, sustainability and supporting local cacao farmers.';
-  } elseif (is_page(array('collections', 'our-collections', 'shop'))) {
-      $seo_title = 'Buy Chocolate Online in Ghana | Everything Cacao Shop';
-      $seo_desc  = 'Shop Nahar and Cherelle chocolate bars online. Premium and everyday Ghanaian chocolate delivered across Accra and Ghana. Milk, dark and mini bars available.';
-  } elseif (is_page(array('concierge', 'stock-lists', 'stockists', 'contact'))) {
-      $seo_title = 'Contact Everything Cacao | Get in Touch';
-      $seo_desc  = 'Get in touch with Everything Cacao for orders, wholesale enquiries or general questions. We\'d love to hear from you.';
-  }
-  ?>
-  <title><?php echo esc_html($seo_title); ?></title>
-  <meta name="description" content="<?php echo esc_attr($seo_desc); ?>"/>
-
-  <!-- Google Fonts -->
+  <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
   <!-- Tailwind CSS Engine & Brand Configuration -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -155,7 +132,7 @@
 
   <?php
   // Determine current active page for fallback menu links
-  $request_uri = $_SERVER['REQUEST_URI'];
+  $request_uri = sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI']));
   $is_home       = is_front_page() || $request_uri === '/' || strpos($request_uri, 'home') !== false;
   $is_collections= is_page('collections') || is_page('our-collections') || strpos($request_uri, 'collections') !== false;
   $is_craft      = is_page('craft') || is_page('our-craft') || is_page('about') || strpos($request_uri, 'craft') !== false;

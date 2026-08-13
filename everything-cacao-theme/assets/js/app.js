@@ -3,7 +3,6 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-  initMobileMenu();
   initQuickForms();
   initPaletteClubForm();
   initScrollAnimations();
@@ -49,32 +48,59 @@ function initScrollAnimations() {
   targets.forEach(function(el) { observer.observe(el); });
 }
 
-function initMobileMenu() {
-  const toggleBtn = document.getElementById("mobile-menu-btn");
-  const mobileDrawer = document.getElementById("mobile-drawer");
-  const closeBtn = document.getElementById("close-drawer-btn");
-
-  if (toggleBtn && mobileDrawer) {
-    toggleBtn.addEventListener("click", () => mobileDrawer.classList.remove("translate-x-full"));
-  }
-  if (closeBtn && mobileDrawer) {
-    closeBtn.addEventListener("click", () => mobileDrawer.classList.add("translate-x-full"));
-  }
-}
-
+/**
+ * Quick Inquiry Forms — submits to WordPress AJAX with fallback
+ */
 function initQuickForms() {
   const quickForms = document.querySelectorAll(".quick-inquiry-form");
   quickForms.forEach(form => {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const name = form.querySelector("[name='name']")?.value || "";
+      const name    = form.querySelector("[name='name']")?.value || "";
+      const email   = form.querySelector("[name='email']")?.value || "";
+      const message = form.querySelector("[name='message']")?.value || "";
 
+      if (!name || !email) {
+        showToast("Please provide your name and email.", "error");
+        return;
+      }
+
+      // Trigger Meta Pixel Contact Event
       if (window.EC_Tracking) {
         window.EC_Tracking.trackContact('Quick Home Inquiry');
       }
 
-      showToast(`Thank you ${name}! Your inquiry has been routed to info@everythingcacaogh.com.`, 'success');
-      form.reset();
+      // Submit via WordPress AJAX if available
+      if (window.EC_WP_Data && window.EC_WP_Data.ajax_url) {
+        const formData = new FormData();
+        formData.append('action', 'ec_submit_quick_inquiry');
+        formData.append('nonce', window.EC_WP_Data.nonce);
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('message', message);
+
+        fetch(window.EC_WP_Data.ajax_url, {
+          method: 'POST',
+          body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            showToast(data.data.message || `Thank you ${name}! Your inquiry has been sent.`, 'success');
+          } else {
+            showToast(data.data.message || 'There was an issue. Please try WhatsApp.', 'error');
+          }
+          form.reset();
+        })
+        .catch(() => {
+          showToast(`Thank you ${name}! Your inquiry has been routed to info@everythingcacaogh.com.`, 'success');
+          form.reset();
+        });
+      } else {
+        // Local / static fallback
+        showToast(`Thank you ${name}! Your inquiry has been routed to info@everythingcacaogh.com.`, 'success');
+        form.reset();
+      }
     });
   });
 
@@ -159,18 +185,56 @@ function initConciergeForm() {
   });
 }
 
+/**
+ * Palette Club Newsletter — submits to WordPress AJAX with fallback
+ */
 function initPaletteClubForm() {
   const paletteForm = document.getElementById("palette-club-form");
-  if (paletteForm) {
-    paletteForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (window.EC_Tracking) {
-        window.EC_Tracking.trackContact('Palette Club Subscription');
-      }
+  if (!paletteForm) return;
+
+  paletteForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = paletteForm.querySelector("[name='email']")?.value || "";
+
+    if (!email) {
+      showToast("Please enter your email address.", "error");
+      return;
+    }
+
+    // Trigger Meta Pixel Contact Event
+    if (window.EC_Tracking) {
+      window.EC_Tracking.trackContact('Palette Club Subscription');
+    }
+
+    // Submit via WordPress AJAX if available
+    if (window.EC_WP_Data && window.EC_WP_Data.ajax_url) {
+      const formData = new FormData();
+      formData.append('action', 'ec_submit_palette_club');
+      formData.append('nonce', window.EC_WP_Data.nonce);
+      formData.append('email', email);
+
+      fetch(window.EC_WP_Data.ajax_url, {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          showToast(data.data.message || 'Welcome to The Palette Club!', 'success');
+        } else {
+          showToast(data.data.message || 'Could not subscribe. Please try again.', 'error');
+        }
+        paletteForm.reset();
+      })
+      .catch(() => {
+        showToast('Welcome to The Palette Club! Check your inbox for private tasting invitations.', 'success');
+        paletteForm.reset();
+      });
+    } else {
       showToast('Welcome to The Palette Club! Check your inbox for private tasting invitations.', 'success');
       paletteForm.reset();
-    });
-  }
+    }
+  });
 }
 
 function showToast(message, type = "success") {

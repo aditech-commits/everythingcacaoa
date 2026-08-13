@@ -72,7 +72,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
             <p class="text-xs text-canvas/80 leading-relaxed">
               Nahar is our premium chocolate range, crafted for discerning palates. Rich, complex flavours made from the finest Ghanaian cocoa, wrapped in elegant packaging. Perfect for gifts, special occasions and personal indulgence.
             </p>
-            <div class="w-full aspect-[4/3] bg-[#18110D] rounded-lg overflow-hidden border border-canvas/10 flex items-center justify-center">
+            <div class="w-full aspect-[4/3] bg-[#3D281C] rounded-lg overflow-hidden border border-canvas/10 flex items-center justify-center">
               <img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" 
                    alt="Nahar Luxury Ghanaian Chocolate" 
                    src="<?php echo esc_url(ec_get_smart_image_url('ec_nahar_image', 'Nahar dark choc long.png')); ?>"
@@ -203,7 +203,6 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
             <div class="space-y-1">
               <h5 class="font-serif-luxury text-lg font-bold text-canvas">Dark Ghanaian Forest</h5>
               <p class="text-[11px] text-canvas/60 uppercase tracking-widest">100G ARTISAN BAR</p>
-              <p class="font-serif-luxury text-xl font-bold text-accent-gold pt-1">GHC 320</p>
             </div>
           </div>
           <span class="block mt-4 text-xs font-semibold uppercase tracking-widest text-accent-gold group-hover:text-white transition-colors">
@@ -223,7 +222,6 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
             <div class="space-y-1">
               <h5 class="font-serif-luxury text-lg font-bold text-canvas">Heritage Sampler</h5>
               <p class="text-[11px] text-canvas/60 uppercase tracking-widest">MINIS BOX (12 PCS)</p>
-              <p class="font-serif-luxury text-xl font-bold text-accent-gold pt-1">GHC 480</p>
             </div>
           </div>
           <span class="block mt-4 text-xs font-semibold uppercase tracking-widest text-accent-gold group-hover:text-white transition-colors">
@@ -243,7 +241,6 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
             <div class="space-y-1">
               <h5 class="font-serif-luxury text-lg font-bold text-canvas">Ashanti Gold</h5>
               <p class="text-[11px] text-canvas/60 uppercase tracking-widest">100G ARTISAN BAR</p>
-              <p class="font-serif-luxury text-xl font-bold text-accent-gold pt-1">GHC 305</p>
             </div>
           </div>
           <span class="block mt-4 text-xs font-semibold uppercase tracking-widest text-accent-gold group-hover:text-white transition-colors">
@@ -263,7 +260,6 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
             <div class="space-y-1">
               <h5 class="font-serif-luxury text-lg font-bold text-canvas">Nahar Private Reserve</h5>
               <p class="text-[11px] text-canvas/60 uppercase tracking-widest">LUXURY GIFT BOX</p>
-              <p class="font-serif-luxury text-xl font-bold text-accent-gold pt-1">GHC 1,250</p>
             </div>
           </div>
           <span class="block mt-4 text-xs font-semibold uppercase tracking-widest text-accent-gold group-hover:text-white transition-colors">
@@ -278,9 +274,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
   <section class="bg-canvas py-8 border-y border-cacao-dark/10 overflow-hidden">
     <div class="flex whitespace-nowrap space-x-12 text-xs font-semibold uppercase tracking-widest text-cacao-dark/70 animate-pulse justify-center">
       <span>Now Available in Supermarkets &amp; Malls Across Ghana</span>
-      <span>â€¢</span>
       <span>Visit Our Accra Experience Center</span>
-      <span>â€¢</span>
       <span>Shipping Worldwide from Tema Harbor</span>
     </div>
   </section>
@@ -294,9 +288,6 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
           <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">In-Store Sampling Experience</h2>
           <p class="text-text-muted text-base leading-relaxed">Watch chocolate lovers across Ghana sample Cherelle and Nahar artisanal creations live in supermarkets, pop-up lounges, and luxury retail stores.</p>
         </div>
-        <a href="<?php echo $link_concierge; ?>" class="px-6 py-3.5 bg-cacao-dark text-canvas text-xs font-semibold uppercase tracking-widest hover:bg-accent-terracotta transition-colors shadow-sm">
-          Find A Sampling Store &rarr;
-        </a>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -8,7 +8,7 @@
 <div class="bg-cacao-dark text-canvas rounded-xl p-8 md:p-12 border border-cacao-dark shadow-2xl space-y-6">
   <div class="space-y-2 text-center max-w-lg mx-auto">
     <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Direct Inquiry</span>
-    <h3 class="font-serif-luxury text-2xl md:text-3xl font-bold">Quick Concierge Inquiry</h3>
+    <h3 class="font-serif-luxury text-2xl md:text-3xl font-bold uppercase tracking-wider">CONTACT</h3>
     <p class="text-xs text-canvas/70 leading-relaxed">
       Have a question about custom gifting, tasting masterclasses, or orders? Send us a quick message below.
     </p>
@@ -32,7 +32,7 @@
     </div>
 
     <button type="submit" class="w-full py-3.5 bg-accent-gold text-cacao-dark font-semibold text-xs uppercase tracking-widest hover:bg-white transition-colors shadow-lg">
-      Dispatch Inquiry to Concierge
+      SUBMIT
     </button>
   </form>
 </div>

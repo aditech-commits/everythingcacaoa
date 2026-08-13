@@ -52,12 +52,6 @@ $wa_number    = get_option('ec_whatsapp_number', '233240661866');
               </div>
             </div>
             <div class="p-6 pt-0 space-y-4">
-              <?php if ($price) : ?>
-                <div class="flex justify-between items-center border-t border-cacao-dark/10 pt-4">
-                  <span class="text-xs font-semibold text-text-muted">PRICE</span>
-                  <span class="font-serif-luxury text-lg font-bold text-cacao-dark">GHC <?php echo esc_html($price); ?></span>
-                </div>
-              <?php endif; ?>
               <a href="https://wa.me/<?php echo esc_attr($wa_number); ?>?text=<?php echo $wa_text; ?>" target="_blank" rel="noopener noreferrer" class="btn-whatsapp w-full rounded text-center block">
                 Order via WhatsApp
               </a>

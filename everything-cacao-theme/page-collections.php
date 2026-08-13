@@ -120,13 +120,6 @@ get_header();
                   </div>
                 </div>
 
-                <!-- Price -->
-                <div class="p-6 pt-0">
-                  <div class="flex justify-between items-center border-t border-cacao-dark/10 pt-4">
-                    <span class="text-xs font-semibold text-text-muted">PRICE</span>
-                    <span class="font-serif-luxury text-lg font-bold text-cacao-dark">GHC <?php echo esc_html($price); ?></span>
-                  </div>
-                </div>
               </div>
               <?php
           endwhile;
@@ -396,13 +389,6 @@ get_header();
                   </div>
                 </div>
 
-                <!-- Price & CTA -->
-                <div class="p-6 pt-0 space-y-4">
-                  <div class="flex justify-between items-center border-t border-cacao-dark/10 pt-4">
-                    <span class="text-xs font-semibold text-text-muted">PRICE</span>
-                    <span class="font-serif-luxury text-lg font-bold text-cacao-dark">GHC <?php echo esc_html($product['price']); ?></span>
-                  </div>
-                </div>
               </div>
               <?php
           endforeach;

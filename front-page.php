@@ -46,7 +46,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
         <div class="relative w-full h-full p-2 flex items-center justify-center bg-card-bg rounded-2xl shadow-xl z-10 border border-cacao-dark/10 overflow-hidden transform -rotate-3 transition-transform duration-700 group-hover:rotate-0">
           <img class="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105" 
                alt="Ghanaian Cocoa Farm" 
-               src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/brand/cocoa-farm.png'); ?>" />
+               src="<?php echo esc_url(ec_get_smart_image_url('ec_hero_image', 'https://everythingcacaogh.com/wp-content/uploads/2026/08/cocoa-farm.jpg')); ?>" />
         </div>
       </div>
     </div>

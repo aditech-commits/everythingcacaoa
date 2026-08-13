@@ -14,7 +14,7 @@ get_header();
   <section class="py-20 bg-cacao-dark text-canvas border-b border-canvas/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12 text-center space-y-6">
       <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Official Brand Story &amp; Vision</span>
-      <h1 class="font-serif-luxury text-4xl md:text-6xl font-bold leading-tight">Everything Cacao GH Ltd.</h1>
+      <h1 class="font-serif-luxury text-4xl md:text-6xl font-bold leading-tight">Everything Cacao</h1>
       <p class="text-canvas/80 text-base max-w-3xl mx-auto leading-relaxed">
         Celebrating the rich heritage of Ghana’s cacao and the art of transforming processed cocoa into premium chocolate.
       </p>
@@ -39,7 +39,7 @@ get_header();
       <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Our Journey</span>
       <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">Ghana's Chocolate Story &mdash; Grown Here, Made Here</h2>
       <p class="text-text-muted text-base leading-relaxed">
-        Everything Cacao GH was born from a passion for Ghana's cacao and a belief that the world's finest chocolate starts right here. We transform premium Ghanaian cocoa into exceptional chocolate &mdash; honouring our land, our farmers and the traditions that make Ghanaian cacao among the best in the world.
+        Everything Cacao was born from a passion for Ghana's cacao and a belief that the world's finest chocolate starts right here. We transform premium Ghanaian cocoa into exceptional chocolate &mdash; honouring our land, our farmers and the traditions that make Ghanaian cacao among the best in the world.
       </p>
     </div>
 
@@ -73,7 +73,7 @@ get_header();
         <div class="w-12 h-12 rounded-full bg-cacao-dark/5 flex items-center justify-center text-accent-terracotta text-2xl font-serif-luxury font-bold">04</div>
         <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">A Taste of Ghana</h3>
         <p class="text-xs text-text-muted leading-relaxed">
-          At Everything Cacao GH Ltd., we’re passionate about sharing the rich flavors of Ghana with the world. From our creamy milk chocolate to our bold dark chocolate, each bar is a celebration of the unique tastes and traditions of our homeland. We invite you to indulge in our creations and experience the joy that comes from chocolate made with heart.
+          At Everything Cacao, we’re passionate about sharing the rich flavors of Ghana with the world. From our creamy milk chocolate to our bold dark chocolate, each bar is a celebration of the unique tastes and traditions of our homeland. We invite you to indulge in our creations and experience the joy that comes from chocolate made with heart.
         </p>
       </div>
     </div>
@@ -86,7 +86,7 @@ get_header();
         <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Brand Write-Up</span>
         <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">Cherelle &amp; Nahar</h2>
         <p class="text-text-muted text-sm leading-relaxed">
-          Together, Cherelle and Nahar represent our commitment to quality and passion for chocolate, ensuring there’s something for everyone to enjoy at Everything Cacao GH Ltd.
+          Together, Cherelle and Nahar represent our commitment to quality and passion for chocolate, ensuring there’s something for everyone to enjoy at Everything Cacao
         </p>
       </div>
 
@@ -133,7 +133,7 @@ get_header();
           <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta block">Our Purpose</span>
           <h3 class="font-serif-luxury text-3xl font-bold text-cacao-dark">Mission Statement</h3>
           <p class="text-sm text-text-muted leading-relaxed italic font-serif-luxury">
-            "At Everything Cacao GH Ltd., our mission is to transform the rich heritage of Ghanaian cacao into exceptional chocolate experiences that delight the senses. Through our brands—Cherelle, bringing joy to every palate, and Nahar, offering a taste of luxury—we are committed to quality, sustainability, and community empowerment. We strive to create delicious moments that connect people, celebrate our culture, and support local farmers, ensuring that every bite reflects our passion for excellence and the spirit of Ghana."
+            "At Everything Cacao, our mission is to transform the rich heritage of Ghanaian cacao into exceptional chocolate experiences that delight the senses. Through our brands—Cherelle, bringing joy to every palate, and Nahar, offering a taste of luxury—we are committed to quality, sustainability, and community empowerment. We strive to create delicious moments that connect people, celebrate our culture, and support local farmers, ensuring that every bite reflects our passion for excellence and the spirit of Ghana."
           </p>
         </div>
 
@@ -142,7 +142,7 @@ get_header();
           <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold block">Our Horizon</span>
           <h3 class="font-serif-luxury text-3xl font-bold text-cacao-dark">Vision Statement</h3>
           <p class="text-sm text-text-muted leading-relaxed italic font-serif-luxury">
-            "Our vision at Everything Cacao GH Ltd. is to become a globally recognized leader in premium chocolate, celebrated for our commitment to quality and the rich flavors of Ghanaian cacao. We aspire to create a world where our chocolates, under the Cherelle and Nahar brands, are enjoyed by communities locally and abroad, bridging cultures and bringing people together through the joy of exceptional chocolate. We envision a sustainable future where our partnerships with local farmers empower communities, and every bite of our chocolate tells the story of Ghana’s vibrant heritage."
+            "Our vision at Everything Cacao is to become a globally recognized leader in premium chocolate, celebrated for our commitment to quality and the rich flavors of Ghanaian cacao. We aspire to create a world where our chocolates, under the Cherelle and Nahar brands, are enjoyed by communities locally and abroad, bridging cultures and bringing people together through the joy of exceptional chocolate. We envision a sustainable future where our partnerships with local farmers empower communities, and every bite of our chocolate tells the story of Ghana’s vibrant heritage."
           </p>
         </div>
       </div>
@@ -154,7 +154,7 @@ get_header();
     <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
       <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Leadership &amp; Artisans</span>
       <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">OUR TEAM</h2>
-      <p class="text-text-muted text-sm">Meet the passionate minds and master chocolatiers behind Everything Cacao GH Ltd.</p>
+      <p class="text-text-muted text-sm">Meet the passionate minds and master chocolatiers behind Everything Cacao</p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

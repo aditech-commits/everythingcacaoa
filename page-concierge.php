@@ -15,7 +15,7 @@ get_header();
   <section class="py-20 bg-cacao-dark text-canvas border-b border-canvas/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12 text-center space-y-4">
       <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Wholesale, Corporate Gifting &amp; Customer Support</span>
-      <h1 class="font-serif-luxury text-4xl md:text-5xl font-bold">Get in Touch with Everything Cacao GH</h1>
+      <h1 class="font-serif-luxury text-4xl md:text-5xl font-bold">Get in Touch with Everything Cacao</h1>
       <p class="text-canvas/80 text-sm max-w-3xl mx-auto leading-relaxed">
         Whether you're a chocolate lover with a question, a retailer interested in stocking our products or a business looking for corporate gifting solutions &mdash; we'd love to hear from you.
       </p>

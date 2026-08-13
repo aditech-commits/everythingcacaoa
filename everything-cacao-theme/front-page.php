@@ -21,10 +21,6 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
     <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
       <!-- Text Content -->
       <div class="lg:col-span-6 z-10 space-y-8 ec-animate">
-        <span class="inline-block font-sans text-xs font-semibold uppercase tracking-widest text-accent-terracotta bg-accent-terracotta/10 px-4 py-2 rounded-full">
-          FDA &amp; GSA CERTIFIED • EST. ACCRA, GHANA
-        </span>
-        
         <h1 class="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-cacao-dark">
           Ghana's Finest Chocolate &mdash; <span class="italic font-normal text-accent-terracotta">Crafted from Local Cacao</span>
         </h1>
@@ -46,10 +42,10 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
       <!-- Hero Visual Image Stack -->
       <div class="lg:col-span-6 relative aspect-square group ec-animate flex items-center justify-center">
         <div class="absolute inset-0 bg-cacao-dark/5 rounded-2xl border border-cacao-dark/10 transform rotate-3 scale-95 transition-transform duration-700 group-hover:rotate-0"></div>
-        <div class="relative w-full h-full p-8 md:p-12 flex items-center justify-center bg-card-bg/60 rounded-2xl shadow-xl z-10 border border-cacao-dark/10 backdrop-blur-sm transform -rotate-3 transition-transform duration-700 group-hover:rotate-0">
-          <img class="max-h-full max-w-full object-contain transition-transform duration-700 group-hover:scale-105" 
-               alt="Everything Cacao GH Logo" 
-               src="<?php echo esc_url(ec_get_smart_image_url('ec_hero_image', 'https://everythingcacaogh.com/wp-content/uploads/2026/08/logo-300x268.png')); ?>" />
+        <div class="relative w-full h-full p-2 flex items-center justify-center bg-card-bg rounded-2xl shadow-xl z-10 border border-cacao-dark/10 overflow-hidden transform -rotate-3 transition-transform duration-700 group-hover:rotate-0">
+          <img class="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105" 
+               alt="Ghanaian Cocoa Farm" 
+               src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/brand/cocoa-farm.png'); ?>" />
         </div>
       </div>
     </div>
@@ -86,7 +82,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
             <div class="flex justify-between items-end w-full border-t border-canvas/15 pt-4">
               <div>
                 <span class="text-[10px] font-semibold text-canvas/60 uppercase tracking-wider block">COLLECTION TYPE</span>
-                <span class="font-serif-luxury text-lg font-bold text-accent-gold italic">Luxury &amp; Bespoke Reserve</span>
+                <span class="font-serif-luxury text-2xl font-bold text-accent-gold">Luxury &amp; Bespoke Reserve</span>
               </div>
               <a href="<?php echo $link_collections; ?>?lineage=nahar" class="px-6 py-3.5 bg-accent-gold text-cacao-dark font-semibold text-xs uppercase tracking-widest hover:bg-white transition-colors">
                 SHOP NAHAR &rarr;
@@ -133,8 +129,8 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
   <section class="py-24 max-w-7xl mx-auto px-6 md:px-12">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
       <div class="max-w-2xl space-y-4">
-        <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark leading-tight">Why Choose Everything Cacao GH?</h2>
-        <p class="text-text-muted text-base leading-relaxed">From bean to bar, we celebrate our land, our farmers, and our heritage with every bite.</p>
+        <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark leading-tight">Why Choose Us?</h2>
+        <p class="text-text-muted text-base leading-relaxed">We celebrate our land, the farmers and our heritage with every bite.</p>
       </div>
       <a class="font-semibold text-xs uppercase tracking-widest text-cacao-dark border-b-2 border-cacao-dark pb-1 hover:text-accent-terracotta hover:border-accent-terracotta transition-colors flex items-center gap-2" 
          href="<?php echo $link_craft; ?>">

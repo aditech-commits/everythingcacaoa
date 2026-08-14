@@ -25,19 +25,16 @@ function ec_theme_setup() {
     ));
     add_theme_support('html5', array('search-form', 'comment-form', 'gallery', 'caption', 'style', 'script'));
 
-    // ── Block Editor & Page Builder Compatibility ───────────────────────────
-    // Enables Gutenberg full/wide alignment for blocks
-    add_theme_support('align-wide');
+    // Enable Block Templates / Full Site Editing (FSE)
+    add_theme_support('block-templates');
 
-    // Loads block editor CSS in the editor so blocks look correct
-    add_theme_support('wp-block-styles');
-
-    // Responsive embeds (YouTube, Vimeo, etc.) inside Gutenberg/Elementor
-    add_theme_support('responsive-embeds');
-
-    // Allows editor stylesheets so Elementor/Gutenberg match front-end
-    add_theme_support('editor-styles');
-    add_editor_style('assets/css/tailwind.css');
+    // Register Custom Block Pattern Category
+    if (function_exists('register_block_pattern_category')) {
+        register_block_pattern_category('everything-cacao', array(
+            'label'       => __('Everything Cacao Patterns', 'everything-cacao'),
+            'description' => __('Luxury brand section patterns for Everything Cacao GH.', 'everything-cacao'),
+        ));
+    }
 
     // ── Elementor & Page Builder Full Compatibility ──────────────────────
     add_theme_support('elementor');

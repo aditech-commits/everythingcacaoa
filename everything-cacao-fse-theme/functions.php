@@ -46,6 +46,37 @@ function ec_fse_enqueue_assets() {
         null
     );
 
+    // Tailwind CDN engine for dynamic utilities
+    wp_enqueue_script(
+        'ec-tailwind-cdn',
+        'https://cdn.tailwindcss.com',
+        array(),
+        null,
+        false
+    );
+    wp_add_inline_script('ec-tailwind-cdn', '
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "canvas": "#FBF8F3",
+              "card-bg": "#FFFFFF",
+              "cacao-dark": "#2C1A11",
+              "accent-gold": "#D4AF37",
+              "accent-terracotta": "#C86D51",
+              "cherelle-caramel": "#E08E45",
+              "nahar-obsidian": "#3D281C",
+              "text-muted": "#7A685A"
+            },
+            fontFamily: {
+              "serif-luxury": ["Playfair Display", "Georgia", "serif"],
+              "sans-body": ["Hanken Grotesk", "sans-serif"]
+            }
+          }
+        }
+      };
+    ');
+
     // Custom CSS & Tailwind engine
     wp_enqueue_style(
         'ec-tailwind',

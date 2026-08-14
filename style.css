@@ -1,16 +1,13 @@
 /*
-Theme Name: Everything Cacao GH Block Theme
-Theme URI: https://everythingcacaogh.com
-Author: Aditech
-Author URI: https://github.com/aditech-commits
-Description: Full Site Editing (FSE) WordPress Block Theme for Everything Cacao GH. Features theme.json design tokens, Gutenberg block patterns, custom post type cacao_products, WhatsApp order flow, and Meta Pixel tracking. Fully editable in WordPress Site Editor.
-Version: 2.0.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: everything-cacao
-Requires at least: 6.2
-Tested up to: 6.7
-Requires PHP: 7.4
+Theme Name:    Everything Cacao GH
+Theme URI:     https://everythingcacao.com
+Author:        Aditech
+Author URI:    https://aditech.com
+Description:   Luxury Ghanaian bean-to-bar artisanal chocolate brand WordPress theme. Features Cherelle & Nahar sub-brand collections, Custom Post Type cacao_products, WhatsApp direct ordering, Meta Pixel tracking, and contact forms.
+Version:       1.0.0
+License:       GNU General Public License v2 or later
+Text Domain:   everything-cacao
+Tags:          luxury, chocolate, artisanal, ghana, custom-logo, custom-menu, featured-images, custom-post-type
 */
 
 /* Core CSS rules are enqueued via assets/css/tailwind.css */

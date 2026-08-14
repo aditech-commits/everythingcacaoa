@@ -25,9 +25,6 @@ function ec_theme_setup() {
     ));
     add_theme_support('html5', array('search-form', 'comment-form', 'gallery', 'caption', 'style', 'script'));
 
-    // Enable Block Templates / Full Site Editing (FSE)
-    add_theme_support('block-templates');
-
     // Register Custom Block Pattern Category
     if (function_exists('register_block_pattern_category')) {
         register_block_pattern_category('everything-cacao', array(

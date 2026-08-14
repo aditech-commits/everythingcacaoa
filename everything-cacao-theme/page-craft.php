@@ -43,8 +43,8 @@ get_header();
       </p>
     </div>
 
-    <!-- 4 Brand Pillars Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+    <!-- 4 Brand Pillars Grid (2x2 Layout for optimal breathing room) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 max-w-6xl mx-auto">
       <div class="ec-animate ec-card-hover bg-card-bg p-8 md:p-10 rounded-xl border border-cacao-dark/10 shadow-sm space-y-5">
         <div class="w-14 h-14 rounded-full bg-cacao-dark/5 flex items-center justify-center text-accent-terracotta text-2xl font-serif-luxury font-bold">01</div>
         <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark">Crafting Chocolate with Care</h3>

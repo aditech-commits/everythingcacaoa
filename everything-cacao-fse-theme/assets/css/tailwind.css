@@ -1,0 +1,110 @@
+:root {
+  /* Canvas & Neutral */
+  --canvas: #FBF8F3;
+  --card-bg: #FFFFFF;
+  --cacao-dark: #2C1A11;
+  --text-primary: #2C1A11;
+  --text-muted: #7A685A;
+
+  /* Brand Accents */
+  --accent-gold: #D4AF37;
+  --accent-gold-light: #F4E8C1;
+  --accent-terracotta: #C86D51;
+  --accent-whatsapp: #25D366;
+
+  /* Lineages */
+  --cherelle-caramel: #E08E45;
+  --nahar-obsidian: #3D281C;
+}
+
+body {
+  font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+  background-color: var(--canvas);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif-luxury {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Glassmorphism Header */
+.glass-header {
+  background: rgba(251, 248, 243, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Sub-Brand Borders */
+.subbrand-cherelle {
+  border-top: 4px solid var(--cherelle-caramel);
+}
+
+.subbrand-nahar {
+  border-top: 4px solid var(--accent-gold);
+}
+
+/* Scroll Animation Engine */
+.ec-animate {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.ec-animate.ec-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger Delays */
+.ec-delay-1 { transition-delay: 0.1s; }
+.ec-delay-2 { transition-delay: 0.2s; }
+.ec-delay-3 { transition-delay: 0.3s; }
+.ec-delay-4 { transition-delay: 0.4s; }
+.ec-delay-5 { transition-delay: 0.5s; }
+.ec-delay-6 { transition-delay: 0.6s; }
+
+/* Button Styles */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--accent-whatsapp);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1eb956;
+  transform: translateY(-1px);
+}
+
+/* Animation Pulse */
+@keyframes whatsapp-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.animate-whatsapp {
+  animation: whatsapp-pulse 2.5s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ec-animate {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .animate-whatsapp {
+    animation: none !important;
+  }
+}

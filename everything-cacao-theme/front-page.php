@@ -182,7 +182,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
 
   <!-- Product Collection Storefront -->
   <section class="py-24 bg-cacao-dark text-canvas overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 md:px-12">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <a href="<?php echo $link_collections; ?>" class="ec-animate ec-card-hover group bg-canvas/5 p-4 rounded-xl border border-canvas/10 flex flex-col justify-between hover:border-accent-gold/50 transition-colors duration-300">
           <div>
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">

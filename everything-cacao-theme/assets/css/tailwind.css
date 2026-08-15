@@ -1,0 +1,144 @@
+
+:root {
+  /* Canvas & Neutral */
+  --bg-canvas: #FBF8F3;         /* Warm Cream Main Background */
+  --bg-card: #FFFFFF;           /* Pure White Card Containers */
+  --bg-dark: #2C1A11;           /* Deep Roasted Cacao Dark Brown */
+
+  /* Primary Brand Accents */
+  --accent-gold: #D4AF37;       /* Metallic Gold */
+  --accent-terracotta: #C86D51; /* Soft Terracotta */
+  --accent-whatsapp: #25D366;   /* Official WhatsApp Green */
+
+  /* Product Sub-brands */
+  --cherelle-caramel: #E08E45;  /* Playful Warm Caramel */
+  --nahar-obsidian: #18110D;    /* Dark Obsidian Luxury Accent */
+
+  /* Typography Colors */
+  --text-primary: #2C1A11;
+  --text-muted: #7A685A;
+  --text-inverse: #FFFFFF;
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: 'Hanken Grotesk', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-serif-luxury {
+  font-family: 'Playfair Display', serif;
+}
+
+.glass-header {
+  background-color: rgba(251, 248, 243, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.subbrand-cherelle {
+  border-top: 4px solid var(--cherelle-caramel);
+}
+.subbrand-nahar {
+  border-top: 4px solid var(--nahar-obsidian);
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.animate-whatsapp {
+  animation: whatsapp-pulse 2s infinite;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--accent-whatsapp);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.875rem 1.5rem;
+  transition: all 0.3s ease;
+}
+.btn-whatsapp:hover {
+  background-color: #059669;
+}
+
+/* ═══════════════════════════════════════════════════
+   Scroll-Reveal & Hover Animation System
+   Works globally across all pages via app.js observer
+   ═══════════════════════════════════════════════════ */
+
+/* Scroll-reveal fade-up keyframe */
+@keyframes ec-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Initial hidden state — elements start invisible & shifted down */
+.ec-animate {
+  opacity: 0;
+  transform: translateY(40px) scale(0.97);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+/* Revealed state — triggered by IntersectionObserver */
+.ec-animate.ec-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Stagger delay utilities for grid children */
+.ec-animate.ec-delay-1 { transition-delay: 0.08s; }
+.ec-animate.ec-delay-2 { transition-delay: 0.16s; }
+.ec-animate.ec-delay-3 { transition-delay: 0.24s; }
+.ec-animate.ec-delay-4 { transition-delay: 0.32s; }
+.ec-animate.ec-delay-5 { transition-delay: 0.40s; }
+.ec-animate.ec-delay-6 { transition-delay: 0.48s; }
+
+/* ── Card Hover Lift & Glow ────────────────────────── */
+.ec-card-hover {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.4s ease;
+}
+.ec-card-hover:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 20px 50px -12px rgba(44, 26, 17, 0.15),
+              0 8px 24px -8px rgba(44, 26, 17, 0.1);
+}
+
+/* ── Respect user motion preference ────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .ec-animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .ec-card-hover:hover {
+    transform: none;
+  }
+}

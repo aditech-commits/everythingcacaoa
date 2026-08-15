@@ -19,17 +19,7 @@ get_header();
         Celebrating the rich heritage of Ghana’s cacao and the art of transforming processed cocoa into premium chocolate.
       </p>
 
-      <!-- FDA & GSA Certification Badges -->
-      <div class="pt-4 flex flex-wrap justify-center items-center gap-6 text-xs text-accent-gold font-semibold uppercase tracking-widest">
-        <div class="flex items-center gap-2 bg-canvas/10 px-4 py-2 rounded-full border border-accent-gold/30">
-          <svg class="w-4 h-4 text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          <span>FDA Certified (Food &amp; Drug Authority)</span>
-        </div>
-        <div class="flex items-center gap-2 bg-canvas/10 px-4 py-2 rounded-full border border-accent-gold/30">
-          <svg class="w-4 h-4 text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          <span>GSA Certified (Ghana Standards Authority)</span>
-        </div>
-      </div>
+
     </div>
   </section>
 

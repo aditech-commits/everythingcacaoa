@@ -40,7 +40,7 @@ $link_contact = ec_get_smart_page_link(array('contact', 'concierge'), '/contact'
     <div class="space-y-6">
       <div class="flex items-center gap-3 border-b border-cacao-dark/10 pb-3">
         <span class="w-2 h-2 bg-accent-gold rounded-full"></span>
-        <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark uppercase tracking-wider">Luxury Hotels &amp; Resorts</h3>
+        <h3 class="font-sans text-xl md:text-2xl font-bold text-cacao-dark uppercase tracking-wider">Luxury Hotels &amp; Resorts</h3>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
@@ -72,7 +72,7 @@ $link_contact = ec_get_smart_page_link(array('contact', 'concierge'), '/contact'
     <div class="space-y-6">
       <div class="flex items-center gap-3 border-b border-cacao-dark/10 pb-3">
         <span class="w-2 h-2 bg-accent-terracotta rounded-full"></span>
-        <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark uppercase tracking-wider">Gourmet Cafes &amp; Espresso Bars</h3>
+        <h3 class="font-sans text-xl md:text-2xl font-bold text-cacao-dark uppercase tracking-wider">Gourmet Cafes &amp; Espresso Bars</h3>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
@@ -104,7 +104,7 @@ $link_contact = ec_get_smart_page_link(array('contact', 'concierge'), '/contact'
     <div class="space-y-6">
       <div class="flex items-center gap-3 border-b border-cacao-dark/10 pb-3">
         <span class="w-2 h-2 bg-accent-gold rounded-full"></span>
-        <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark uppercase tracking-wider">Airport Duty Free &amp; Retail Pavilions</h3>
+        <h3 class="font-sans text-xl md:text-2xl font-bold text-cacao-dark uppercase tracking-wider">Airport Duty Free &amp; Retail Pavilions</h3>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 

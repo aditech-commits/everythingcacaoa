@@ -147,9 +147,9 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
                alt="Locally Sourced Ghanaian Cacao Farmers" 
                src="<?php echo esc_url(ec_get_smart_image_url('ec_impact_image_1', '6.png')); ?>" />
         </div>
-        <div class="space-y-2">
-          <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Locally sourced cacao</h3>
-          <p class="text-xs text-text-muted leading-relaxed">We work directly with Ghanaian farmers and local suppliers to source the highest quality processed cocoa &mdash; supporting communities and ensuring exceptional flavour in every bar.</p>
+        <div class="space-y-3">
+          <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark">Locally sourced cacao</h3>
+          <p class="font-sans text-base md:text-lg font-medium text-cacao-dark/85 leading-relaxed">We work directly with Ghanaian farmers and local suppliers to source the highest quality processed cocoa &mdash; supporting communities and ensuring exceptional flavour in every bar.</p>
         </div>
       </div>
 
@@ -160,9 +160,9 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
                alt="FDA and GSA Certified Quality Ghanaian Chocolate" 
                src="<?php echo esc_url(ec_get_smart_image_url('ec_impact_image_2', '3.png')); ?>" />
         </div>
-        <div class="space-y-2">
-          <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Certified quality</h3>
-          <p class="text-xs text-text-muted leading-relaxed">Every Everything Cacao product is certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA). Quality and safety you can trust.</p>
+        <div class="space-y-3">
+          <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark">Certified quality</h3>
+          <p class="font-sans text-base md:text-lg font-medium text-cacao-dark/85 leading-relaxed">Every Everything Cacao product is certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA). Quality and safety you can trust.</p>
         </div>
       </div>
 
@@ -173,9 +173,9 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
                alt="Made in Ghana Artisanal Chocolate Manufacturing" 
                src="<?php echo esc_url(ec_get_smart_image_url('ec_impact_image_3', '4.png')); ?>" />
         </div>
-        <div class="space-y-2">
-          <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Made in Ghana</h3>
-          <p class="text-xs text-text-muted leading-relaxed">From bean to bar, our chocolate is made in Ghana &mdash; celebrating our land, our farmers and our heritage with every bite.</p>
+        <div class="space-y-3">
+          <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark">Made in Ghana</h3>
+          <p class="font-sans text-base md:text-lg font-medium text-cacao-dark/85 leading-relaxed">From bean to bar, our chocolate is made in Ghana &mdash; celebrating our land, our farmers and our heritage with every bite.</p>
         </div>
       </div>
     </div>
@@ -277,12 +277,10 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
 
   <!-- Stockist Banner Marquee -->
   <section class="bg-canvas py-8 border-y border-cacao-dark/10 overflow-hidden">
-    <div class="flex whitespace-nowrap space-x-12 text-xs font-semibold uppercase tracking-widest text-cacao-dark/70 animate-pulse justify-center">
+    <div class="flex whitespace-nowrap space-x-12 text-xs md:text-sm font-semibold uppercase tracking-widest text-cacao-dark/80 justify-center items-center">
       <span>Now Available in Supermarkets &amp; Malls Across Ghana</span>
-      <span>â€¢</span>
-      <span>Visit Our Accra Experience Center</span>
-      <span>â€¢</span>
-      <span>Shipping Worldwide from Tema Harbor</span>
+      <span class="text-accent-gold">&bull;</span>
+      <span>Shipping Worldwide</span>
     </div>
   </section>
 

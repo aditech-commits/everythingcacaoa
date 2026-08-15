@@ -55,9 +55,9 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
   <!-- Brand Showcase: Dual-Line Expressions -->
   <section class="py-24 bg-card-bg border-t border-b border-cacao-dark/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
-      <div class="text-center mb-16 space-y-4 max-w-2xl mx-auto">
-        <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">Two Ranges. One Ghanaian Story.</h2>
-        <p class="text-text-muted text-sm leading-relaxed">Whether you're treating yourself, sharing with family or finding the perfect gift, Everything Cacao has a chocolate for every moment.</p>
+      <div class="text-center mb-16 space-y-4 max-w-5xl mx-auto">
+        <h2 class="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-bold text-cacao-dark md:whitespace-nowrap">Two Ranges. One Ghanaian Story.</h2>
+        <p class="text-text-muted text-sm sm:text-base md:text-lg font-medium leading-relaxed md:whitespace-nowrap">Whether you're treating yourself, sharing with family or finding the perfect gift, Everything Cacao has a chocolate for every moment.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -70,10 +70,10 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
           </div>
 
           <div class="relative z-10 space-y-6 pt-6">
-            <p class="text-xs text-canvas/80 leading-relaxed">
+            <p class="font-sans text-base md:text-lg lg:text-xl font-medium text-canvas/90 leading-relaxed">
               Nahar is our premium chocolate range, crafted for discerning palates. Rich, complex flavours made from the finest Ghanaian cocoa, wrapped in elegant packaging. Perfect for gifts, special occasions and personal indulgence.
             </p>
-            <div class="w-full aspect-[4/3] bg-[#18110D] rounded-lg overflow-hidden border border-canvas/10 flex items-center justify-center">
+            <div class="w-full aspect-[4/3] bg-[#3D281C] rounded-lg overflow-hidden border border-canvas/10 flex items-center justify-center">
               <img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" 
                    alt="Nahar Luxury Ghanaian Chocolate" 
                    src="<?php echo esc_url(ec_get_smart_image_url('ec_nahar_image', 'Nahar dark choc long.png')); ?>"
@@ -101,7 +101,7 @@ $link_concierge   = ec_get_smart_page_link(array('stock-lists', 'concierge', 'co
           </div>
 
           <div class="relative z-10 space-y-6 pt-6">
-            <p class="text-xs text-text-muted leading-relaxed">
+            <p class="font-sans text-base md:text-lg lg:text-xl font-medium text-cacao-dark/85 leading-relaxed">
               Cherelle is everyday chocolate for everyone. Affordable, joyful and bursting with the natural taste of Ghanaian cacao. Made for sharing, gifting and sweet everyday moments.
             </p>
             <div class="w-full aspect-[4/3] bg-[#F5EFE6] rounded-lg overflow-hidden border border-cacao-dark/10 flex items-center justify-center">

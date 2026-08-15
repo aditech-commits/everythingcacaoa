@@ -14,9 +14,9 @@ get_header();
   <section class="py-20 bg-cacao-dark text-canvas border-b border-canvas/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12 text-center space-y-6">
       <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Official Brand Story &amp; Vision</span>
-      <h1 class="font-serif-luxury text-4xl md:text-6xl font-bold leading-tight">Everything Cacao</h1>
+      <h1 class="font-serif-luxury text-4xl md:text-6xl font-bold leading-tight"><?php echo esc_html(ec_get_text_option('ec_craft_hero_title', 'Everything Cacao')); ?></h1>
       <p class="text-canvas/80 text-base max-w-3xl mx-auto leading-relaxed">
-        Celebrating the rich heritage of Ghana’s cacao and the art of transforming processed cocoa into premium chocolate.
+        <?php echo esc_html(ec_get_text_option('ec_craft_hero_subtitle', "Celebrating the rich heritage of Ghana's cacao and the art of transforming processed cocoa into premium chocolate.")); ?>
       </p>
 
 
@@ -24,56 +24,55 @@ get_header();
   </section>
 
   <!-- Brand Story & Core Pillars Section -->
-  <section id="about" class="py-24 max-w-7xl mx-auto px-6 md:px-12">
-    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-      <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Our Journey</span>
-      <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">Ghana's Chocolate Story &mdash; Grown Here, Made Here</h2>
-      <p class="text-text-muted text-base leading-relaxed">
-        Everything Cacao was born from a passion for Ghana's cacao and a belief that the world's finest chocolate starts right here. We transform premium Ghanaian cocoa into exceptional chocolate &mdash; honouring our land, our farmers and the traditions that make Ghanaian cacao among the best in the world.
+  <section id="about" class="py-24 md:py-32 max-w-7xl mx-auto px-6 md:px-12">
+    <div class="text-center max-w-3xl mx-auto space-y-5 mb-20 ec-animate">
+      <span class="text-sm font-semibold uppercase tracking-widest text-accent-terracotta">Our Journey</span>
+      <h2 class="font-serif-luxury text-4xl md:text-5xl lg:text-6xl font-bold text-cacao-dark leading-tight"><?php echo esc_html(ec_get_text_option('ec_craft_sec_title', "Ghana's Chocolate Story — Grown Here, Made Here")); ?></h2>
+      <p class="text-cacao-dark/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+        <?php echo esc_html(ec_get_text_option('ec_craft_sec_subtitle', "Everything Cacao was born from a passion for Ghana's cacao and a belief that the world's finest chocolate starts right here. We transform premium Ghanaian cocoa into exceptional chocolate — honouring our land, our farmers and the traditions that make Ghanaian cacao among the best in the world.")); ?>
       </p>
     </div>
 
     <!-- 4 Brand Pillars Grid (2x2 Layout for optimal breathing room) -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 max-w-6xl mx-auto">
-      <div class="bg-card-bg p-8 rounded-xl border border-cacao-dark/10 shadow-sm space-y-4 hover:shadow-lg transition-all">
-        <div class="w-12 h-12 rounded-full bg-cacao-dark/5 flex items-center justify-center text-accent-terracotta text-2xl font-serif-luxury font-bold">01</div>
-        <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Crafting Chocolate with Care</h3>
-        <p class="text-xs text-text-muted leading-relaxed">
-          We source high-quality, processed cocoa from local suppliers who share our commitment to excellence. By collaborating closely with these farmers, we ensure that every batch reflects the unique flavors and characteristics of Ghanaian cacao. Our team of skilled artisans takes this exceptional cocoa and transforms it into a range of delightful chocolate bars, each crafted with precision and love.
+      <div class="ec-animate ec-card-hover bg-card-bg p-8 md:p-10 rounded-xl border border-cacao-dark/10 shadow-sm space-y-5">
+        <div class="w-14 h-14 rounded-full bg-cacao-dark/5 flex items-center justify-center text-accent-terracotta text-2xl font-serif-luxury font-bold">01</div>
+        <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_pillar1_title', 'Crafting Chocolate with Care')); ?></h3>
+        <p class="text-sm md:text-base text-cacao-dark/75 leading-relaxed">
+          <?php echo esc_html(ec_get_text_option('ec_pillar1_text', "We source high-quality, processed cocoa from local suppliers who share our commitment to excellence. By collaborating closely with these farmers, we ensure that every batch reflects the unique flavors and characteristics of Ghanaian cacao. Our team of skilled artisans takes this exceptional cocoa and transforms it into a range of delightful chocolate bars, each crafted with precision and love.")); ?>
         </p>
       </div>
 
-      <div class="bg-card-bg p-8 rounded-xl border border-cacao-dark/10 shadow-sm space-y-4 hover:shadow-lg transition-all border-t-4 border-accent-gold">
-        <div class="w-12 h-12 rounded-full bg-accent-gold/10 flex items-center justify-center text-accent-gold text-2xl font-serif-luxury font-bold">02</div>
-        <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Quality You Can Trust</h3>
-        <p class="text-xs text-text-muted leading-relaxed">
-          Certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA), Everything Cacao is dedicated to maintaining the highest standards of safety and quality. Our rigorous processes ensure that every chocolate bar you enjoy is not only delicious but also meets stringent regulatory requirements, giving you peace of mind with every bite.
+      <div class="ec-animate ec-card-hover bg-card-bg p-8 md:p-10 rounded-xl border border-cacao-dark/10 shadow-sm space-y-5 border-t-4 border-accent-gold">
+        <div class="w-14 h-14 rounded-full bg-accent-gold/10 flex items-center justify-center text-accent-gold text-2xl font-serif-luxury font-bold">02</div>
+        <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_pillar2_title', 'Quality You Can Trust')); ?></h3>
+        <p class="text-sm md:text-base text-cacao-dark/75 leading-relaxed">
+          <?php echo esc_html(ec_get_text_option('ec_pillar2_text', "Certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA), Everything Cacao is dedicated to maintaining the highest standards of safety and quality. Our rigorous processes ensure that every chocolate bar you enjoy is not only delicious but also meets stringent regulatory requirements, giving you peace of mind with every bite.")); ?>
         </p>
       </div>
 
-      <div class="bg-card-bg p-8 rounded-xl border border-cacao-dark/10 shadow-sm space-y-4 hover:shadow-lg transition-all">
-        <div class="w-12 h-12 rounded-full bg-cacao-dark/5 flex items-center justify-center text-accent-terracotta text-2xl font-serif-luxury font-bold">03</div>
-        <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Empowering Communities</h3>
-        <p class="text-xs text-text-muted leading-relaxed">
-          We believe in the power of chocolate to bring people together. By working with local farmers and suppliers, we help support sustainable practices and fair trade, fostering economic growth in our communities. Our commitment extends beyond our chocolate; it’s about building a brighter future for all those involved in the cacao supply chain.
+      <div class="ec-animate ec-card-hover bg-card-bg p-8 md:p-10 rounded-xl border border-cacao-dark/10 shadow-sm space-y-5">
+        <div class="w-14 h-14 rounded-full bg-cacao-dark/5 flex items-center justify-center text-accent-terracotta text-2xl font-serif-luxury font-bold">03</div>
+        <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_pillar3_title', 'Empowering Communities')); ?></h3>
+        <p class="text-sm md:text-base text-cacao-dark/75 leading-relaxed">
+          <?php echo esc_html(ec_get_text_option('ec_pillar3_text', "We believe chocolate should benefit everyone involved in its creation. Everything Cacao works closely with local cocoa processing companies and cocoa farmers in Ghana, ensuring fair trade practices and sustainable livelihoods. By choosing our chocolate, you contribute to empowering communities and supporting local industry in Ghana.")); ?>
         </p>
       </div>
 
-      <div class="bg-card-bg p-8 rounded-xl border border-cacao-dark/10 shadow-sm space-y-4 hover:shadow-lg transition-all">
-        <div class="w-12 h-12 rounded-full bg-cacao-dark/5 flex items-center justify-center text-accent-terracotta text-2xl font-serif-luxury font-bold">04</div>
-        <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">A Taste of Ghana</h3>
-        <p class="text-xs text-text-muted leading-relaxed">
-          At Everything Cacao, we’re passionate about sharing the rich flavors of Ghana with the world. From our creamy milk chocolate to our bold dark chocolate, each bar is a celebration of the unique tastes and traditions of our homeland. We invite you to indulge in our creations and experience the joy that comes from chocolate made with heart.
+      <div class="ec-animate ec-card-hover bg-card-bg p-8 md:p-10 rounded-xl border border-cacao-dark/10 shadow-sm space-y-5">
+        <div class="w-14 h-14 rounded-full bg-cacao-dark/5 flex items-center justify-center text-accent-terracotta text-2xl font-serif-luxury font-bold">04</div>
+        <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_pillar4_title', 'A Taste of Ghana')); ?></h3>
+        <p class="text-sm md:text-base text-cacao-dark/75 leading-relaxed">
+          <?php echo esc_html(ec_get_text_option('ec_pillar4_text', "Every bar of Everything Cacao tells a story of Ghanaian heritage and artisanal pride. From rich dark chocolate bars to creamy milk varieties and delightful treats, our products celebrate the distinct flavor of Ghana's cacao. Experience the true taste of Ghana with every bite.")); ?>
         </p>
       </div>
     </div>
   </section>
 
   <!-- Two Lineages Write-Up: Cherelle vs Nahar -->
-  <section class="py-24 bg-card-bg border-t border-b border-cacao-dark/10">
+  <section class="py-20 md:py-24 bg-card-bg border-t border-b border-cacao-dark/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
-      <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
-        <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Brand Write-Up</span>
+      <div class="text-center max-w-2xl mx-auto space-y-3 mb-12">
         <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">Cherelle &amp; Nahar</h2>
         <p class="text-text-muted text-sm leading-relaxed">
           Together, Cherelle and Nahar represent our commitment to quality and passion for chocolate, ensuring there’s something for everyone to enjoy at Everything Cacao
@@ -82,7 +81,7 @@ get_header();
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <!-- Cherelle Write-Up -->
-        <div class="p-10 rounded-2xl bg-canvas border border-cherelle-caramel/30 space-y-6 shadow-sm relative overflow-hidden">
+        <div class="ec-animate ec-card-hover p-10 rounded-2xl bg-canvas border border-cherelle-caramel/30 space-y-6 shadow-sm relative overflow-hidden">
           <div class="flex justify-between items-center">
             <span class="text-xs font-semibold uppercase tracking-widest text-cherelle-caramel">Everyday Lifestyle</span>
             <span class="text-xs font-bold px-3 py-1 bg-cherelle-caramel/10 text-cherelle-caramel rounded-full">Joy &amp; Togetherness</span>
@@ -97,7 +96,7 @@ get_header();
         </div>
 
         <!-- Nahar Write-Up -->
-        <div class="p-10 rounded-2xl bg-cacao-dark text-canvas border border-accent-gold/40 space-y-6 shadow-xl relative overflow-hidden">
+        <div class="ec-animate ec-card-hover p-10 rounded-2xl bg-cacao-dark text-canvas border border-accent-gold/40 space-y-6 shadow-xl relative overflow-hidden">
           <div class="flex justify-between items-center">
             <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Artisanal Grand Luxury</span>
             <span class="text-xs font-bold px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full">Pinnacle Reserve</span>
@@ -119,7 +118,7 @@ get_header();
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <!-- Mission Statement -->
-        <div class="p-10 bg-card-bg rounded-2xl border-l-8 border-accent-terracotta shadow-md space-y-4">
+        <div class="ec-animate ec-card-hover p-10 bg-card-bg rounded-2xl border-l-8 border-accent-terracotta shadow-md space-y-4">
           <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta block">Our Purpose</span>
           <h3 class="font-serif-luxury text-3xl font-bold text-cacao-dark">Mission Statement</h3>
           <p class="text-sm text-text-muted leading-relaxed italic font-serif-luxury">
@@ -128,7 +127,7 @@ get_header();
         </div>
 
         <!-- Vision Statement -->
-        <div class="p-10 bg-card-bg rounded-2xl border-l-8 border-accent-gold shadow-md space-y-4">
+        <div class="ec-animate ec-card-hover p-10 bg-card-bg rounded-2xl border-l-8 border-accent-gold shadow-md space-y-4">
           <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold block">Our Horizon</span>
           <h3 class="font-serif-luxury text-3xl font-bold text-cacao-dark">Vision Statement</h3>
           <p class="text-sm text-text-muted leading-relaxed italic font-serif-luxury">
@@ -139,70 +138,7 @@ get_header();
     </div>
   </section>
 
-  <!-- OUR TEAM Section -->
-  <section id="team" class="py-24 max-w-7xl mx-auto px-6 md:px-12">
-    <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
-      <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Leadership &amp; Artisans</span>
-      <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">OUR TEAM</h2>
-      <p class="text-text-muted text-sm">Meet the passionate minds and master chocolatiers behind Everything Cacao</p>
-    </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      <?php
-      $team_query = new WP_Query(array(
-          'post_type'      => 'ec_team_member',
-          'posts_per_page' => -1,
-          'orderby'        => 'menu_order',
-          'order'          => 'ASC',
-      ));
-
-      if ($team_query->have_posts()) :
-          while ($team_query->have_posts()) : $team_query->the_post();
-              $subtitle = get_post_meta(get_the_ID(), 'team_subtitle', true);
-              $bio      = get_post_meta(get_the_ID(), 'team_bio', true) ?: get_the_excerpt();
-              $img_url  = get_the_post_thumbnail_url(get_the_ID(), 'medium_large') ?: get_template_directory_uri() . '/assets/images/products/6.png';
-              ?>
-              <div class="bg-card-bg rounded-xl overflow-hidden border border-cacao-dark/10 shadow-sm group hover:shadow-xl transition-all">
-                <div class="aspect-[4/5] bg-cacao-dark overflow-hidden relative">
-                  <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                </div>
-                <div class="p-6 space-y-2">
-                  <h4 class="font-serif-luxury text-lg font-bold text-cacao-dark"><?php the_title(); ?></h4>
-                  <?php if ($subtitle) : ?>
-                    <span class="text-[11px] font-semibold text-accent-terracotta uppercase tracking-wider block"><?php echo esc_html($subtitle); ?></span>
-                  <?php endif; ?>
-                  <p class="text-xs text-text-muted"><?php echo esc_html($bio); ?></p>
-                </div>
-              </div>
-              <?php
-          endwhile;
-          wp_reset_postdata();
-      else :
-          // Default fallback team display until client adds team members in WP Admin
-          $default_team = array(
-              array('name' => 'Managing Director & Founder', 'subtitle' => 'Strategic Vision & Heritage', 'bio' => 'Championing local Ghanaian cocoa transformation, fair-trade empowerment, and international brand expansion.', 'img' => '/assets/images/products/6.png'),
-              array('name' => 'Master Chocolatier & Product Lead', 'subtitle' => 'Confection Craftsmanship', 'bio' => 'Over 12 years of experience in cocoa conching, micro-batch roasting, and signature flavor profiling.', 'img' => '/assets/images/products/4.png'),
-              array('name' => 'Head of Quality & FDA/GSA Compliance', 'subtitle' => 'Standards & Regulatory Safety', 'bio' => 'Ensuring strict adherence to Ghana Standards Authority (GSA) and Food & Drug Authority (FDA) certifications.', 'img' => '/assets/images/products/3.png'),
-              array('name' => 'Farmer Relations & Sourcing Lead', 'subtitle' => 'Community Engagement', 'bio' => 'Coordinating direct partnerships with cocoa farming co-operatives across Suhum, Assin Fosu, and Sefwi Wiawso.', 'img' => '/assets/images/products/Cherelle Milk Chocolate 90g.jpg'),
-          );
-          foreach ($default_team as $member) :
-              ?>
-              <div class="bg-card-bg rounded-xl overflow-hidden border border-cacao-dark/10 shadow-sm group hover:shadow-xl transition-all">
-                <div class="aspect-[4/5] bg-cacao-dark overflow-hidden relative">
-                  <img src="<?php echo esc_url(get_template_directory_uri() . $member['img']); ?>" alt="<?php echo esc_attr($member['name']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                </div>
-                <div class="p-6 space-y-2">
-                  <h4 class="font-serif-luxury text-lg font-bold text-cacao-dark"><?php echo esc_html($member['name']); ?></h4>
-                  <span class="text-[11px] font-semibold text-accent-terracotta uppercase tracking-wider block"><?php echo esc_html($member['subtitle']); ?></span>
-                  <p class="text-xs text-text-muted"><?php echo esc_html($member['bio']); ?></p>
-                </div>
-              </div>
-              <?php
-          endforeach;
-      endif;
-      ?>
-    </div>
-  </section>
 
   <!-- OUR GALLERY Section -->
   <section class="py-24 bg-card-bg border-t border-cacao-dark/10">
@@ -214,7 +150,7 @@ get_header();
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
+        <div class="ec-animate ec-card-hover group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
           <img src="<?php echo esc_url(ec_get_smart_image_url('ec_gallery_1', 'Nahar dark choc long.png')); ?>" alt="Nahar 72% Dark Chocolate Long Bar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
           <div class="absolute inset-0 bg-cacao-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-canvas">
             <span class="text-xs text-accent-gold uppercase font-semibold">Nahar Collection</span>
@@ -281,5 +217,18 @@ get_header();
     </div>
   </section>
 
+  <!-- Elementor / WP Content Support Area -->
+  <div class="elementor-content-container">
+    <?php
+    if (have_posts()) :
+        while (have_posts()) : the_post();
+            the_content();
+        endwhile;
+    endif;
+    ?>
+  </div>
+
 <?php
 get_footer();
+
+

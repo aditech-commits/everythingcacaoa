@@ -39,6 +39,9 @@ function ec_theme_setup() {
     add_theme_support('editor-styles');
     add_editor_style('assets/css/tailwind.css');
 
+    // ── Elementor & Page Builder Full Compatibility ──────────────────────
+    add_theme_support('elementor');
+
     // Custom line-height and spacing controls in block editor
     add_theme_support('custom-line-height');
     add_theme_support('custom-spacing');
@@ -73,6 +76,43 @@ function ec_theme_setup() {
 add_action('after_setup_theme', 'ec_theme_setup');
 
 /**
+ * 1b. SEO: Dynamic Document Titles (replaces manual <title> tags in header.php)
+ */
+function ec_seo_document_title($title) {
+    if (is_front_page()) {
+        return 'Buy Ghanaian Chocolate Online | Everything Cacao';
+    } elseif (is_page(array('craft', 'our-craft', 'about', 'about-us'))) {
+        return 'About Everything Cacao | Ghana\'s Premium Chocolate Maker';
+    } elseif (is_page(array('collections', 'our-collections', 'shop'))) {
+        return 'Buy Chocolate Online in Ghana | Everything Cacao Shop';
+    } elseif (is_page(array('concierge', 'stock-lists', 'stockists', 'contact'))) {
+        return 'Contact Everything Cacao | Get in Touch';
+    }
+    return $title;
+}
+add_filter('pre_get_document_title', 'ec_seo_document_title');
+
+/**
+ * 1c. SEO: Meta Description output via wp_head
+ */
+function ec_seo_meta_description() {
+    $desc = 'Shop Nahar and Cherelle — premium chocolate made from Ghana\'s finest cacao. Milk and dark bars available across Accra and Ghana. FDA and GSA certified.';
+
+    if (is_front_page()) {
+        $desc = 'Shop Nahar and Cherelle — premium chocolate made from Ghana\'s finest cacao. Milk and dark bars available across Accra and Ghana. FDA and GSA certified.';
+    } elseif (is_page(array('craft', 'our-craft', 'about', 'about-us'))) {
+        $desc = 'Learn the story behind Everything Cacao — a proudly Ghanaian chocolate company committed to quality, sustainability and supporting local cacao farmers.';
+    } elseif (is_page(array('collections', 'our-collections', 'shop'))) {
+        $desc = 'Shop Nahar and Cherelle chocolate bars online. Premium and everyday Ghanaian chocolate delivered across Accra and Ghana. Milk, dark and mini bars available.';
+    } elseif (is_page(array('concierge', 'stock-lists', 'stockists', 'contact'))) {
+        $desc = 'Get in touch with Everything Cacao for orders, wholesale enquiries or general questions. We\'d love to hear from you.';
+    }
+
+    echo '<meta name="description" content="' . esc_attr($desc) . '"/>' . "\n";
+}
+add_action('wp_head', 'ec_seo_meta_description', 1);
+
+/**
  * Elementor: Load theme fonts/CSS inside Elementor editor preview
  * so it looks identical to the live front-end.
  */
@@ -92,37 +132,6 @@ add_action('elementor/frontend/after_enqueue_scripts', function() {
  * 2. Enqueue Scripts & Stylesheets
  */
 function ec_enqueue_assets() {
-    // Tailwind CDN engine for dynamic utilities
-    wp_enqueue_script(
-        'ec-tailwind-cdn',
-        'https://cdn.tailwindcss.com',
-        array(),
-        null,
-        false
-    );
-    wp_add_inline_script('ec-tailwind-cdn', '
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              "canvas": "#FBF8F3",
-              "card-bg": "#FFFFFF",
-              "cacao-dark": "#2C1A11",
-              "accent-gold": "#D4AF37",
-              "accent-terracotta": "#C86D51",
-              "cherelle-caramel": "#E08E45",
-              "nahar-obsidian": "#3D281C",
-              "text-muted": "#7A685A"
-            },
-            fontFamily: {
-              "serif-luxury": ["Playfair Display", "Georgia", "serif"],
-              "sans-body": ["Hanken Grotesk", "sans-serif"]
-            }
-          }
-        }
-      };
-    ');
-
     // Compiled Tailwind CSS
     wp_enqueue_style('ec-tailwind', get_template_directory_uri() . '/assets/css/tailwind.css', array(), '1.0.0');
 
@@ -138,12 +147,42 @@ function ec_enqueue_assets() {
     wp_localize_script('ec-app', 'EC_WP_Data', array(
         'ajax_url'       => admin_url('admin-ajax.php'),
         'nonce'          => wp_create_nonce('ec_concierge_nonce'),
-        'theme_url'      => get_template_directory_uri(),
-        'concierge_email'=> get_option('ec_concierge_email', 'concierge@everythingcacao.com'),
-        'whatsapp_num'   => get_option('ec_whatsapp_number', '233240000000'),
+        'concierge_email'=> get_option('ec_concierge_email', 'info@everythingcacaogh.com'),
+        'whatsapp_num'   => get_option('ec_whatsapp_number', '233240661866'),
     ));
 }
 add_action('wp_enqueue_scripts', 'ec_enqueue_assets');
+
+/**
+ * Smart Template Router Fallback
+ * Guarantees /contact and /stockist URLs render their custom page templates cleanly.
+ */
+add_filter('template_include', function($template) {
+    if (is_admin()) {
+        return $template;
+    }
+
+    $request_uri = strtok(sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI'])), '?');
+    $path = strtolower(trim($request_uri, '/'));
+
+    if ($path === 'contact' || $path === 'concierge' || $path === 'contact-us') {
+        $contact_template = get_template_directory() . '/page-contact.php';
+        if (file_exists($contact_template)) {
+            status_header(200);
+            return $contact_template;
+        }
+    }
+
+    if ($path === 'stockist' || $path === 'stockists' || $path === 'stock-lists') {
+        $stockist_template = get_template_directory() . '/page-stockist.php';
+        if (file_exists($stockist_template)) {
+            status_header(200);
+            return $stockist_template;
+        }
+    }
+
+    return $template;
+});
 
 /**
  * 3. Register Custom Post Type: cacao_products (No WooCommerce needed)
@@ -229,7 +268,7 @@ function ec_handle_concierge_form_ajax() {
         wp_send_json_error(array('message' => 'Please provide a valid name and email address.'));
     }
 
-    $to      = get_option('ec_concierge_email', 'concierge@everythingcacao.com');
+    $to      = get_option('ec_concierge_email', 'info@everythingcacaogh.com');
     $subject = sprintf('[Concierge Inquiry] %s from %s', $inquiry, $name);
     $body    = "Name: {$name}\nEmail: {$email}\nInquiry Type: {$inquiry}\n\nMessage:\n{$message}\n";
     $headers = array('Content-Type: text/plain; charset=UTF-8', "Reply-To: {$name} <{$email}>");
@@ -237,7 +276,7 @@ function ec_handle_concierge_form_ajax() {
     $sent = wp_mail($to, $subject, $body, $headers);
 
     if ($sent) {
-        wp_send_json_success(array('message' => sprintf('Thank you %s! Your inquiry has been routed to concierge@everythingcacao.com.', $name)));
+        wp_send_json_success(array('message' => sprintf('Thank you %s! Your inquiry has been routed to info@everythingcacaogh.com.', $name)));
     } else {
         // Fallback response for dev environments without mail server setup
         wp_send_json_success(array('message' => sprintf('Thank you %s! Your inquiry has been received.', $name)));
@@ -406,7 +445,7 @@ function ec_customize_register($wp_customize) {
 
     // 2. WhatsApp Concierge Number Setting
     $wp_customize->add_setting('ec_whatsapp_number', array(
-        'default'           => '233240000000',
+        'default'           => '233240661866',
         'type'              => 'option',
         'sanitize_callback' => 'sanitize_text_field',
     ));
@@ -419,7 +458,7 @@ function ec_customize_register($wp_customize) {
 
     // 3. Concierge Email Setting
     $wp_customize->add_setting('ec_concierge_email', array(
-        'default'           => 'concierge@everythingcacao.com',
+        'default'           => 'info@everythingcacaogh.com',
         'type'              => 'option',
         'sanitize_callback' => 'sanitize_email',
     ));
@@ -483,8 +522,119 @@ function ec_customize_register($wp_customize) {
             'settings' => $setting_id,
         )));
     }
+
+    // 6. Homepage Content Settings
+    $wp_customize->add_section('ec_homepage_content', array(
+        'title'       => __('Homepage Text & Banner Content', 'everything-cacao'),
+        'priority'    => 33,
+        'description' => __('Edit headlines, subheadings, ticker banner, and card descriptions for the Homepage.', 'everything-cacao'),
+    ));
+
+    $hp_text_controls = array(
+        'ec_hero_title'        => array('label' => __('Hero Section Title', 'everything-cacao'), 'type' => 'textarea', 'default' => "Ghana's Finest Chocolate — Crafted from Local Cacao"),
+        'ec_hero_subtitle'     => array('label' => __('Hero Section Subtitle', 'everything-cacao'), 'type' => 'textarea', 'default' => "Everything Cacao GH makes premium chocolate from Ghana's finest locally sourced cacao. Our two iconic ranges — Nahar for luxury occasions and Cherelle for everyday delight — bring world-class Ghanaian chocolate to your table."),
+        'ec_showcase_title'    => array('label' => __('Dual Showcase Title', 'everything-cacao'), 'type' => 'text', 'default' => "Two Ranges. One Ghanaian Story."),
+        'ec_showcase_subtitle' => array('label' => __('Dual Showcase Subtitle', 'everything-cacao'), 'type' => 'textarea', 'default' => "Whether you're treating yourself, sharing with family or finding the perfect gift, Everything Cacao has a chocolate for every moment."),
+        'ec_nahar_desc'        => array('label' => __('Nahar Card Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "Nahar is our premium chocolate range, crafted for discerning palates. Rich, complex flavours made from the finest Ghanaian cocoa, wrapped in elegant packaging. Perfect for gifts, special occasions and personal indulgence."),
+        'ec_cherelle_desc'     => array('label' => __('Cherelle Card Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "Cherelle is everyday chocolate for everyone. Affordable, joyful and bursting with the natural taste of Ghanaian cacao. Made for sharing, gifting and sweet everyday moments."),
+        'ec_why_title'         => array('label' => __('Why Choose Us Title', 'everything-cacao'), 'type' => 'text', 'default' => "Why Choose Us?"),
+        'ec_why_subtitle'      => array('label' => __('Why Choose Us Subtitle', 'everything-cacao'), 'type' => 'textarea', 'default' => "We celebrate our land, the farmers and our heritage with every bite."),
+        'ec_impact1_title'     => array('label' => __('Impact #1 Title', 'everything-cacao'), 'type' => 'text', 'default' => "Locally sourced cacao"),
+        'ec_impact1_text'      => array('label' => __('Impact #1 Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "We work directly with Ghanaian farmers and local suppliers to source the highest quality processed cocoa — supporting communities and ensuring exceptional flavour in every bar."),
+        'ec_impact2_title'     => array('label' => __('Impact #2 Title', 'everything-cacao'), 'type' => 'text', 'default' => "Certified quality"),
+        'ec_impact2_text'      => array('label' => __('Impact #2 Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "Every Everything Cacao product is certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA). Quality and safety you can trust."),
+        'ec_impact3_title'     => array('label' => __('Impact #3 Title', 'everything-cacao'), 'type' => 'text', 'default' => "Made in Ghana"),
+        'ec_impact3_text'      => array('label' => __('Impact #3 Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "From bean to bar, our chocolate is made in Ghana — celebrating our land, our farmers and our heritage with every bite."),
+        'ec_ticker_1'          => array('label' => __('Marquee Ticker #1', 'everything-cacao'), 'type' => 'text', 'default' => "Now Available in Supermarkets & Malls Across Ghana"),
+        'ec_ticker_2'          => array('label' => __('Marquee Ticker #2', 'everything-cacao'), 'type' => 'text', 'default' => "Shipping Worldwide"),
+    );
+
+    foreach ($hp_text_controls as $setting_id => $data) {
+        $wp_customize->add_setting($setting_id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($setting_id, array(
+            'label'    => $data['label'],
+            'section'  => 'ec_homepage_content',
+            'type'     => $data['type'],
+        ));
+    }
+
+    // 7. Our Craft Page Content Settings
+    $wp_customize->add_section('ec_craft_content', array(
+        'title'       => __('Our Craft Page Content', 'everything-cacao'),
+        'priority'    => 34,
+        'description' => __('Edit headlines, subtitles, and the 4 Brand Pillars for the Our Craft / About page.', 'everything-cacao'),
+    ));
+
+    $craft_text_controls = array(
+        'ec_craft_hero_title'    => array('label' => __('Craft Hero Title', 'everything-cacao'), 'type' => 'text', 'default' => "Everything Cacao"),
+        'ec_craft_hero_subtitle' => array('label' => __('Craft Hero Subtitle', 'everything-cacao'), 'type' => 'textarea', 'default' => "Celebrating the rich heritage of Ghana's cacao and the art of transforming processed cocoa into premium chocolate."),
+        'ec_craft_sec_title'     => array('label' => __('Story Section Title', 'everything-cacao'), 'type' => 'text', 'default' => "Ghana's Chocolate Story — Grown Here, Made Here"),
+        'ec_craft_sec_subtitle'  => array('label' => __('Story Section Subtitle', 'everything-cacao'), 'type' => 'textarea', 'default' => "Everything Cacao was born from a passion for Ghana's cacao and a belief that the world's finest chocolate starts right here. We transform premium Ghanaian cocoa into exceptional chocolate — honouring our land, our farmers and the traditions that make Ghanaian cacao among the best in the world."),
+        'ec_pillar1_title'       => array('label' => __('Pillar 1 Title', 'everything-cacao'), 'type' => 'text', 'default' => "Crafting Chocolate with Care"),
+        'ec_pillar1_text'        => array('label' => __('Pillar 1 Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "We source high-quality, processed cocoa from local suppliers who share our commitment to excellence. By collaborating closely with these farmers, we ensure that every batch reflects the unique flavors and characteristics of Ghanaian cacao. Our team of skilled artisans takes this exceptional cocoa and transforms it into a range of delightful chocolate bars, each crafted with precision and love."),
+        'ec_pillar2_title'       => array('label' => __('Pillar 2 Title', 'everything-cacao'), 'type' => 'text', 'default' => "Quality You Can Trust"),
+        'ec_pillar2_text'        => array('label' => __('Pillar 2 Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "Certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA), Everything Cacao is dedicated to maintaining the highest standards of safety and quality. Our rigorous processes ensure that every chocolate bar you enjoy is not only delicious but also meets stringent regulatory requirements, giving you peace of mind with every bite."),
+        'ec_pillar3_title'       => array('label' => __('Pillar 3 Title', 'everything-cacao'), 'type' => 'text', 'default' => "Empowering Communities"),
+        'ec_pillar3_text'        => array('label' => __('Pillar 3 Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "We believe chocolate should benefit everyone involved in its creation. Everything Cacao works closely with local cocoa processing companies and cocoa farmers in Ghana, ensuring fair trade practices and sustainable livelihoods. By choosing our chocolate, you contribute to empowering communities and supporting local industry in Ghana."),
+        'ec_pillar4_title'       => array('label' => __('Pillar 4 Title', 'everything-cacao'), 'type' => 'text', 'default' => "A Taste of Ghana"),
+        'ec_pillar4_text'        => array('label' => __('Pillar 4 Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "Every bar of Everything Cacao tells a story of Ghanaian heritage and artisanal pride. From rich dark chocolate bars to creamy milk varieties and delightful treats, our products celebrate the distinct flavor of Ghana's cacao. Experience the true taste of Ghana with every bite."),
+    );
+
+    foreach ($craft_text_controls as $setting_id => $data) {
+        $wp_customize->add_setting($setting_id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($setting_id, array(
+            'label'    => $data['label'],
+            'section'  => 'ec_craft_content',
+            'type'     => $data['type'],
+        ));
+    }
+
+    // 8. Stockist Page Content Settings
+    $wp_customize->add_section('ec_stockist_content', array(
+        'title'       => __('Stockists Page Content', 'everything-cacao'),
+        'priority'    => 35,
+        'description' => __('Edit category headers and subtitles on the Stockists page.', 'everything-cacao'),
+    ));
+
+    $stockist_text_controls = array(
+        'ec_stockist_hero_title' => array('label' => __('Stockist Hero Title', 'everything-cacao'), 'type' => 'text', 'default' => "Where to Find Everything Cacao"),
+        'ec_stockist_cat1_title' => array('label' => __('Category 1 Header', 'everything-cacao'), 'type' => 'text', 'default' => "LUXURY HOTELS & RESORTS"),
+        'ec_stockist_cat2_title' => array('label' => __('Category 2 Header', 'everything-cacao'), 'type' => 'text', 'default' => "GOURMET CAFES & ESPRESSO BARS"),
+        'ec_stockist_cat3_title' => array('label' => __('Category 3 Header', 'everything-cacao'), 'type' => 'text', 'default' => "AIRPORT DUTY FREE & RETAIL PAVILIONS"),
+    );
+
+    foreach ($stockist_text_controls as $setting_id => $data) {
+        $wp_customize->add_setting($setting_id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($setting_id, array(
+            'label'    => $data['label'],
+            'section'  => 'ec_stockist_content',
+            'type'     => $data['type'],
+        ));
+    }
 }
 add_action('customize_register', 'ec_customize_register');
+
+/**
+ * 9a. Helper: Get Customizer Text Option with Fallback
+ */
+if (!function_exists('ec_get_text_option')) {
+    function ec_get_text_option($setting_id, $default = '') {
+        $val = get_theme_mod($setting_id, get_option($setting_id, ''));
+        return (!empty($val)) ? $val : $default;
+    }
+}
 
 /**
  * 9b. Register Custom Post Type: ec_team_member (Team Members for Craft Page)
@@ -584,8 +734,8 @@ function ec_render_admin_settings_page() {
     }
 
     $pixel_id = get_option('ec_pixel_id', '');
-    $whatsapp = get_option('ec_whatsapp_number', '233240000000');
-    $email    = get_option('ec_concierge_email', 'concierge@everythingcacao.com');
+    $whatsapp = get_option('ec_whatsapp_number', '233240661866');
+    $email    = get_option('ec_concierge_email', 'info@everythingcacaogh.com');
     ?>
     <div class="wrap">
         <h1 style="font-family: Georgia, serif; color: #2C1A11;">🍫 Everything Cacao GH — Theme Settings</h1>
@@ -612,7 +762,7 @@ function ec_render_admin_settings_page() {
                 <tr>
                     <th scope="row"><label for="ec_concierge_email">Concierge Email Address</label></th>
                     <td>
-                        <input name="ec_concierge_email" type="email" id="ec_concierge_email" value="<?php echo esc_attr($email); ?>" class="regular-text" placeholder="concierge@everythingcacao.com" />
+                        <input name="ec_concierge_email" type="email" id="ec_concierge_email" value="<?php echo esc_attr($email); ?>" class="regular-text" placeholder="info@everythingcacaogh.com" />
                         <p class="description">Website contact form submissions will route directly to this email address.</p>
                     </td>
                 </tr>
@@ -625,7 +775,7 @@ function ec_render_admin_settings_page() {
 
         <hr style="margin: 30px 0;" />
         <h2>⚡ Confection Catalog Auto-Importer</h2>
-        <p>Automatically upload and populate all 18 signature Ghanaian chocolate products (Cherelle, Nahar &amp; Gift Boxes) into WordPress <strong>Confection Catalog</strong> database with photos, prices, origins, and tasting notes.</p>
+        <p>Automatically upload and populate all 22 signature Ghanaian chocolate products (Cherelle, Nahar &amp; Gift Boxes) into WordPress <strong>Confection Catalog</strong> database with photos, prices, origins, and tasting notes.</p>
         <p>
             <a href="<?php echo admin_url('admin.php?page=everything-cacao-options&ec_action=seed_products'); ?>" class="button button-secondary" style="background: #2C1A11; color: #FFF; border-color: #2C1A11; padding: 6px 16px;">
                 ⚡ Auto-Upload All 18 Confections to WordPress
@@ -637,21 +787,26 @@ function ec_render_admin_settings_page() {
 
 /**
  * 10. Automatic Product Seeder for Confection Catalog (cacao_products CPT)
- *     Auto-creates all 18 Ghanaian artisanal chocolate products with images & meta fields in WordPress DB.
+ *     Auto-creates all 22 Ghanaian artisanal chocolate products with images & meta fields in WordPress DB.
+ *     Runs on admin_init only — never on front-end page loads.
  */
 function ec_auto_seed_cacao_products() {
+    if (!is_admin()) {
+        return;
+    }
+
     $force_seed = isset($_GET['ec_action']) && $_GET['ec_action'] === 'seed_products';
     
     if ($force_seed) {
         add_action('admin_notices', function() {
-            echo '<div class="notice notice-success is-dismissible"><p><strong>🍫 Confection Catalog Auto-Uploaded!</strong> All 18 Ghanaian chocolate products (Cherelle, Nahar &amp; Gift Boxes) have been populated in WordPress database.</p></div>';
+            echo '<div class="notice notice-success is-dismissible"><p><strong>🍫 Confection Catalog Auto-Uploaded!</strong> All 22 Ghanaian chocolate products (Cherelle, Nahar &amp; Gift Boxes) have been populated in WordPress database.</p></div>';
         });
     }
 
     $count = wp_count_posts('cacao_products');
     $published = isset($count->publish) ? intval($count->publish) : 0;
     
-    if ($published >= 18 && !$force_seed) {
+    if ($published >= 22 && !$force_seed) {
         return;
     }
 
@@ -883,7 +1038,13 @@ function ec_auto_seed_cacao_products() {
     require_once(ABSPATH . 'wp-admin/includes/media.php');
 
     foreach ($products as $prod) {
-        $existing = get_page_by_title($prod['title'], OBJECT, 'cacao_products');
+        $existing_posts = get_posts(array(
+            'post_type'   => 'cacao_products',
+            'title'       => $prod['title'],
+            'post_status' => 'any',
+            'numberposts' => 1,
+        ));
+        $existing = !empty($existing_posts) ? $existing_posts[0] : null;
         if ($existing) {
             continue;
         }
@@ -945,7 +1106,6 @@ function ec_auto_seed_cacao_products() {
     }
 }
 add_action('admin_init', 'ec_auto_seed_cacao_products');
-add_action('init', 'ec_auto_seed_cacao_products', 20);
 
 /**
  * 11. Smart Media Library Image Resolver
@@ -959,6 +1119,11 @@ function ec_get_smart_image_url($setting_name, $filename) {
         if ($customizer_url) {
             return $customizer_url;
         }
+    }
+
+    // 2. Direct URL Fallback
+    if ($filename && (strpos($filename, 'http://') === 0 || strpos($filename, 'https://') === 0)) {
+        return $filename;
     }
 
     // 2. Search WP Media Library by Filename
@@ -978,9 +1143,14 @@ function ec_get_smart_image_url($setting_name, $filename) {
 
         // Search by Attachment Title / Slug
         $clean_name = pathinfo($filename, PATHINFO_FILENAME);
-        $attachment_by_name = get_page_by_title($clean_name, OBJECT, 'attachment');
-        if ($attachment_by_name) {
-            $url = wp_get_attachment_url($attachment_by_name->ID);
+        $attachment_results = get_posts(array(
+            'post_type'   => 'attachment',
+            'title'       => $clean_name,
+            'post_status' => 'inherit',
+            'numberposts' => 1,
+        ));
+        if (!empty($attachment_results)) {
+            $url = wp_get_attachment_url($attachment_results[0]->ID);
             if ($url) {
                 return $url;
             }
@@ -997,7 +1167,99 @@ function ec_get_smart_image_url($setting_name, $filename) {
     return 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600"><rect width="100%" height="100%" fill="%232C1A11"/><circle cx="300" cy="270" r="100" fill="%23C86D51" opacity="0.2"/><text x="50%" y="46%" dominant-baseline="middle" text-anchor="middle" fill="%23D4AF37" font-family="Georgia, serif" font-size="28" font-weight="bold">EVERYTHING CACAO</text><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="%23F5EFE6" font-family="sans-serif" font-size="14" letter-spacing="2">GHANA LUXURY CONFECTION</text></svg>';
 }
 
+/**
+ * 12. Menu Filters & Permalink Resolver for Stockists Page
+ * Automatically renames any WP menu item titled "Stock Lists" or "Stock Lists & Concierge" to "STOCKISTS"
+ * and rewrites /stock-lists URLs to /stockist/
+ */
+function ec_customize_nav_menu_items($items, $args) {
+    if (!is_array($items)) return $items;
+    foreach ($items as $item) {
+        if (isset($item->title) && preg_match('/stock\s*lists?/i', $item->title)) {
+            $item->title = 'STOCKISTS';
+        }
+        if (isset($item->url) && strpos($item->url, '/stock-lists') !== false) {
+            $item->url = str_replace('/stock-lists', '/stockist', $item->url);
+        }
+    }
+    return $items;
+}
+add_filter('wp_nav_menu_objects', 'ec_customize_nav_menu_items', 10, 2);
 
+function ec_filter_nav_menu_item_title($title, $item, $args, $depth) {
+    if (preg_match('/stock\s*lists?/i', $title)) {
+        return 'STOCKISTS';
+    }
+    return $title;
+}
+add_filter('nav_menu_item_title', 'ec_filter_nav_menu_item_title', 10, 4);
 
+/**
+ * 13. Redirect /stock-lists/ to /stockist/ (301 Permanent Redirect)
+ */
+function ec_redirect_stock_lists_url() {
+    if (is_admin()) return;
+    $uri = sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI']));
+    if (strpos($uri, '/stock-lists') !== false) {
+        $new_uri = str_replace('/stock-lists', '/stockist', $uri);
+        wp_redirect(home_url($new_uri), 301);
+        exit;
+    }
+}
+add_action('template_redirect', 'ec_redirect_stock_lists_url');
+
+/**
+ * 14. AJAX Handler: Quick Inquiry Form (Homepage)
+ */
+function ec_handle_quick_inquiry_ajax() {
+    check_ajax_referer('ec_concierge_nonce', 'nonce');
+
+    $name    = isset($_POST['name']) ? sanitize_text_field($_POST['name']) : '';
+    $email   = isset($_POST['email']) ? sanitize_email($_POST['email']) : '';
+    $message = isset($_POST['message']) ? sanitize_textarea_field($_POST['message']) : '';
+
+    if (empty($name) || empty($email) || !is_email($email)) {
+        wp_send_json_error(array('message' => 'Please provide a valid name and email address.'));
+    }
+
+    $to      = get_option('ec_concierge_email', 'info@everythingcacaogh.com');
+    $subject = sprintf('[Quick Inquiry] Message from %s', $name);
+    $body    = "Name: {$name}\nEmail: {$email}\n\nMessage:\n{$message}\n";
+    $headers = array('Content-Type: text/plain; charset=UTF-8', "Reply-To: {$name} <{$email}>");
+
+    $sent = wp_mail($to, $subject, $body, $headers);
+
+    if ($sent) {
+        wp_send_json_success(array('message' => sprintf('Thank you %s! Your inquiry has been sent to %s.', $name, $to)));
+    } else {
+        wp_send_json_success(array('message' => sprintf('Thank you %s! Your inquiry has been received.', $name)));
+    }
+}
+add_action('wp_ajax_ec_submit_quick_inquiry', 'ec_handle_quick_inquiry_ajax');
+add_action('wp_ajax_nopriv_ec_submit_quick_inquiry', 'ec_handle_quick_inquiry_ajax');
+
+/**
+ * 15. AJAX Handler: Palette Club Newsletter Signup
+ */
+function ec_handle_palette_club_ajax() {
+    check_ajax_referer('ec_concierge_nonce', 'nonce');
+
+    $email = isset($_POST['email']) ? sanitize_email($_POST['email']) : '';
+
+    if (empty($email) || !is_email($email)) {
+        wp_send_json_error(array('message' => 'Please enter a valid email address.'));
+    }
+
+    $to      = get_option('ec_concierge_email', 'info@everythingcacaogh.com');
+    $subject = '[Palette Club] New Subscriber';
+    $body    = "New Palette Club subscriber:\nEmail: {$email}\n\nPlease add to your mailing list.\n";
+    $headers = array('Content-Type: text/plain; charset=UTF-8');
+
+    wp_mail($to, $subject, $body, $headers);
+
+    wp_send_json_success(array('message' => 'Welcome to The Palette Club! Check your inbox for private tasting invitations.'));
+}
+add_action('wp_ajax_ec_submit_palette_club', 'ec_handle_palette_club_ajax');
+add_action('wp_ajax_nopriv_ec_submit_palette_club', 'ec_handle_palette_club_ajax');
 
 

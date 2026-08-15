@@ -22,11 +22,11 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
       <!-- Text Content -->
       <div class="lg:col-span-6 z-10 space-y-8 ec-animate">
         <h1 class="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-cacao-dark">
-          Ghana's Finest Chocolate &mdash; <span class="italic font-normal text-accent-terracotta">Crafted from Local Cacao</span>
+          <?php echo esc_html(ec_get_text_option('ec_hero_title', "Ghana's Finest Chocolate — Crafted from Local Cacao")); ?>
         </h1>
 
         <p class="text-base sm:text-lg text-text-muted max-w-lg leading-relaxed font-normal">
-          Everything Cacao GH makes premium chocolate from Ghana's finest locally sourced cacao. Our two iconic ranges &mdash; Nahar for luxury occasions and Cherelle for everyday delight &mdash; bring world-class Ghanaian chocolate to your table.
+          <?php echo esc_html(ec_get_text_option('ec_hero_subtitle', "Everything Cacao GH makes premium chocolate from Ghana's finest locally sourced cacao. Our two iconic ranges — Nahar for luxury occasions and Cherelle for everyday delight — bring world-class Ghanaian chocolate to your table.")); ?>
         </p>
 
         <div class="flex flex-wrap gap-4 pt-4">
@@ -55,8 +55,8 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
   <section class="py-24 bg-card-bg border-t border-b border-cacao-dark/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       <div class="text-center mb-16 space-y-4 max-w-5xl mx-auto ec-animate">
-        <h2 class="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-bold text-cacao-dark md:whitespace-nowrap">Two Ranges. One Ghanaian Story.</h2>
-        <p class="text-text-muted text-sm sm:text-base md:text-lg font-medium leading-relaxed md:whitespace-nowrap">Whether you're treating yourself, sharing with family or finding the perfect gift, Everything Cacao has a chocolate for every moment.</p>
+        <h2 class="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-bold text-cacao-dark md:whitespace-nowrap"><?php echo esc_html(ec_get_text_option('ec_showcase_title', 'Two Ranges. One Ghanaian Story.')); ?></h2>
+        <p class="text-text-muted text-sm sm:text-base md:text-lg font-medium leading-relaxed md:whitespace-nowrap"><?php echo esc_html(ec_get_text_option('ec_showcase_subtitle', "Whether you're treating yourself, sharing with family or finding the perfect gift, Everything Cacao has a chocolate for every moment.")); ?></p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -70,7 +70,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
 
           <div class="relative z-10 space-y-6 pt-6">
             <p class="font-sans text-base md:text-lg lg:text-xl font-medium text-canvas/90 leading-relaxed">
-              Nahar is our premium chocolate range, crafted for discerning palates. Rich, complex flavours made from the finest Ghanaian cocoa, wrapped in elegant packaging. Perfect for gifts, special occasions and personal indulgence.
+              <?php echo esc_html(ec_get_text_option('ec_nahar_desc', 'Nahar is our premium chocolate range, crafted for discerning palates. Rich, complex flavours made from the finest Ghanaian cocoa, wrapped in elegant packaging. Perfect for gifts, special occasions and personal indulgence.')); ?>
             </p>
             <div class="w-full aspect-[4/3] bg-[#3D281C] rounded-lg overflow-hidden border border-canvas/10 flex items-center justify-center">
               <img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" 
@@ -101,7 +101,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
 
           <div class="relative z-10 space-y-6 pt-6">
             <p class="font-sans text-base md:text-lg lg:text-xl font-medium text-cacao-dark/85 leading-relaxed">
-              Cherelle is everyday chocolate for everyone. Affordable, joyful and bursting with the natural taste of Ghanaian cacao. Made for sharing, gifting and sweet everyday moments.
+              <?php echo esc_html(ec_get_text_option('ec_cherelle_desc', 'Cherelle is everyday chocolate for everyone. Affordable, joyful and bursting with the natural taste of Ghanaian cacao. Made for sharing, gifting and sweet everyday moments.')); ?>
             </p>
             <div class="w-full aspect-[4/3] bg-[#F5EFE6] rounded-lg overflow-hidden border border-cacao-dark/10 flex items-center justify-center">
               <img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700" 
@@ -129,8 +129,8 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
   <section class="py-24 max-w-7xl mx-auto px-6 md:px-12">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
       <div class="max-w-2xl space-y-4">
-        <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark leading-tight">Why Choose Us?</h2>
-        <p class="text-text-muted text-base leading-relaxed">We celebrate our land, the farmers and our heritage with every bite.</p>
+        <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark leading-tight"><?php echo esc_html(ec_get_text_option('ec_why_title', 'Why Choose Us?')); ?></h2>
+        <p class="text-text-muted text-base leading-relaxed"><?php echo esc_html(ec_get_text_option('ec_why_subtitle', 'We celebrate our land, the farmers and our heritage with every bite.')); ?></p>
       </div>
       <a class="font-semibold text-xs uppercase tracking-widest text-cacao-dark border-b-2 border-cacao-dark pb-1 hover:text-accent-terracotta hover:border-accent-terracotta transition-colors flex items-center gap-2" 
          href="<?php echo $link_craft; ?>">
@@ -147,8 +147,8 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
                src="<?php echo esc_url(ec_get_smart_image_url('ec_impact_image_1', '6.png')); ?>" />
         </div>
         <div class="space-y-3">
-          <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark">Locally sourced cacao</h3>
-          <p class="font-sans text-base md:text-lg font-medium text-cacao-dark/85 leading-relaxed">We work directly with Ghanaian farmers and local suppliers to source the highest quality processed cocoa &mdash; supporting communities and ensuring exceptional flavour in every bar.</p>
+          <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_impact1_title', 'Locally sourced cacao')); ?></h3>
+          <p class="font-sans text-base md:text-lg font-medium text-cacao-dark/85 leading-relaxed"><?php echo esc_html(ec_get_text_option('ec_impact1_text', 'We work directly with Ghanaian farmers and local suppliers to source the highest quality processed cocoa — supporting communities and ensuring exceptional flavour in every bar.')); ?></p>
         </div>
       </div>
 
@@ -160,8 +160,8 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
                src="<?php echo esc_url(ec_get_smart_image_url('ec_impact_image_2', '3.png')); ?>" />
         </div>
         <div class="space-y-3">
-          <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark">Certified quality</h3>
-          <p class="font-sans text-base md:text-lg font-medium text-cacao-dark/85 leading-relaxed">Every Everything Cacao product is certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA). Quality and safety you can trust.</p>
+          <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_impact2_title', 'Certified quality')); ?></h3>
+          <p class="font-sans text-base md:text-lg font-medium text-cacao-dark/85 leading-relaxed"><?php echo esc_html(ec_get_text_option('ec_impact2_text', 'Every Everything Cacao product is certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA). Quality and safety you can trust.')); ?></p>
         </div>
       </div>
 
@@ -173,8 +173,8 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
                src="<?php echo esc_url(ec_get_smart_image_url('ec_impact_image_3', '4.png')); ?>" />
         </div>
         <div class="space-y-3">
-          <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark">Made in Ghana</h3>
-          <p class="font-sans text-base md:text-lg font-medium text-cacao-dark/85 leading-relaxed">From bean to bar, our chocolate is made in Ghana &mdash; celebrating our land, our farmers and our heritage with every bite.</p>
+          <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_impact3_title', 'Made in Ghana')); ?></h3>
+          <p class="font-sans text-base md:text-lg font-medium text-cacao-dark/85 leading-relaxed"><?php echo esc_html(ec_get_text_option('ec_impact3_text', 'From bean to bar, our chocolate is made in Ghana — celebrating our land, our farmers and our heritage with every bite.')); ?></p>
         </div>
       </div>
     </div>
@@ -264,9 +264,9 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
   <!-- Stockist Banner Marquee -->
   <section class="bg-canvas py-8 border-y border-cacao-dark/10 overflow-hidden">
     <div class="flex whitespace-nowrap space-x-12 text-xs md:text-sm font-semibold uppercase tracking-widest text-cacao-dark/80 justify-center items-center">
-      <span>Now Available in Supermarkets &amp; Malls Across Ghana</span>
+      <span><?php echo esc_html(ec_get_text_option('ec_ticker_1', 'Now Available in Supermarkets & Malls Across Ghana')); ?></span>
       <span class="text-accent-gold">&bull;</span>
-      <span>Shipping Worldwide</span>
+      <span><?php echo esc_html(ec_get_text_option('ec_ticker_2', 'Shipping Worldwide')); ?></span>
     </div>
   </section>
 

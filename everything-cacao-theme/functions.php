@@ -522,8 +522,119 @@ function ec_customize_register($wp_customize) {
             'settings' => $setting_id,
         )));
     }
+
+    // 6. Homepage Content Settings
+    $wp_customize->add_section('ec_homepage_content', array(
+        'title'       => __('Homepage Text & Banner Content', 'everything-cacao'),
+        'priority'    => 33,
+        'description' => __('Edit headlines, subheadings, ticker banner, and card descriptions for the Homepage.', 'everything-cacao'),
+    ));
+
+    $hp_text_controls = array(
+        'ec_hero_title'        => array('label' => __('Hero Section Title', 'everything-cacao'), 'type' => 'textarea', 'default' => "Ghana's Finest Chocolate — Crafted from Local Cacao"),
+        'ec_hero_subtitle'     => array('label' => __('Hero Section Subtitle', 'everything-cacao'), 'type' => 'textarea', 'default' => "Everything Cacao GH makes premium chocolate from Ghana's finest locally sourced cacao. Our two iconic ranges — Nahar for luxury occasions and Cherelle for everyday delight — bring world-class Ghanaian chocolate to your table."),
+        'ec_showcase_title'    => array('label' => __('Dual Showcase Title', 'everything-cacao'), 'type' => 'text', 'default' => "Two Ranges. One Ghanaian Story."),
+        'ec_showcase_subtitle' => array('label' => __('Dual Showcase Subtitle', 'everything-cacao'), 'type' => 'textarea', 'default' => "Whether you're treating yourself, sharing with family or finding the perfect gift, Everything Cacao has a chocolate for every moment."),
+        'ec_nahar_desc'        => array('label' => __('Nahar Card Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "Nahar is our premium chocolate range, crafted for discerning palates. Rich, complex flavours made from the finest Ghanaian cocoa, wrapped in elegant packaging. Perfect for gifts, special occasions and personal indulgence."),
+        'ec_cherelle_desc'     => array('label' => __('Cherelle Card Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "Cherelle is everyday chocolate for everyone. Affordable, joyful and bursting with the natural taste of Ghanaian cacao. Made for sharing, gifting and sweet everyday moments."),
+        'ec_why_title'         => array('label' => __('Why Choose Us Title', 'everything-cacao'), 'type' => 'text', 'default' => "Why Choose Us?"),
+        'ec_why_subtitle'      => array('label' => __('Why Choose Us Subtitle', 'everything-cacao'), 'type' => 'textarea', 'default' => "We celebrate our land, the farmers and our heritage with every bite."),
+        'ec_impact1_title'     => array('label' => __('Impact #1 Title', 'everything-cacao'), 'type' => 'text', 'default' => "Locally sourced cacao"),
+        'ec_impact1_text'      => array('label' => __('Impact #1 Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "We work directly with Ghanaian farmers and local suppliers to source the highest quality processed cocoa — supporting communities and ensuring exceptional flavour in every bar."),
+        'ec_impact2_title'     => array('label' => __('Impact #2 Title', 'everything-cacao'), 'type' => 'text', 'default' => "Certified quality"),
+        'ec_impact2_text'      => array('label' => __('Impact #2 Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "Every Everything Cacao product is certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA). Quality and safety you can trust."),
+        'ec_impact3_title'     => array('label' => __('Impact #3 Title', 'everything-cacao'), 'type' => 'text', 'default' => "Made in Ghana"),
+        'ec_impact3_text'      => array('label' => __('Impact #3 Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "From bean to bar, our chocolate is made in Ghana — celebrating our land, our farmers and our heritage with every bite."),
+        'ec_ticker_1'          => array('label' => __('Marquee Ticker #1', 'everything-cacao'), 'type' => 'text', 'default' => "Now Available in Supermarkets & Malls Across Ghana"),
+        'ec_ticker_2'          => array('label' => __('Marquee Ticker #2', 'everything-cacao'), 'type' => 'text', 'default' => "Shipping Worldwide"),
+    );
+
+    foreach ($hp_text_controls as $setting_id => $data) {
+        $wp_customize->add_setting($setting_id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($setting_id, array(
+            'label'    => $data['label'],
+            'section'  => 'ec_homepage_content',
+            'type'     => $data['type'],
+        ));
+    }
+
+    // 7. Our Craft Page Content Settings
+    $wp_customize->add_section('ec_craft_content', array(
+        'title'       => __('Our Craft Page Content', 'everything-cacao'),
+        'priority'    => 34,
+        'description' => __('Edit headlines, subtitles, and the 4 Brand Pillars for the Our Craft / About page.', 'everything-cacao'),
+    ));
+
+    $craft_text_controls = array(
+        'ec_craft_hero_title'    => array('label' => __('Craft Hero Title', 'everything-cacao'), 'type' => 'text', 'default' => "Everything Cacao"),
+        'ec_craft_hero_subtitle' => array('label' => __('Craft Hero Subtitle', 'everything-cacao'), 'type' => 'textarea', 'default' => "Celebrating the rich heritage of Ghana's cacao and the art of transforming processed cocoa into premium chocolate."),
+        'ec_craft_sec_title'     => array('label' => __('Story Section Title', 'everything-cacao'), 'type' => 'text', 'default' => "Ghana's Chocolate Story — Grown Here, Made Here"),
+        'ec_craft_sec_subtitle'  => array('label' => __('Story Section Subtitle', 'everything-cacao'), 'type' => 'textarea', 'default' => "Everything Cacao was born from a passion for Ghana's cacao and a belief that the world's finest chocolate starts right here. We transform premium Ghanaian cocoa into exceptional chocolate — honouring our land, our farmers and the traditions that make Ghanaian cacao among the best in the world."),
+        'ec_pillar1_title'       => array('label' => __('Pillar 1 Title', 'everything-cacao'), 'type' => 'text', 'default' => "Crafting Chocolate with Care"),
+        'ec_pillar1_text'        => array('label' => __('Pillar 1 Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "We source high-quality, processed cocoa from local suppliers who share our commitment to excellence. By collaborating closely with these farmers, we ensure that every batch reflects the unique flavors and characteristics of Ghanaian cacao. Our team of skilled artisans takes this exceptional cocoa and transforms it into a range of delightful chocolate bars, each crafted with precision and love."),
+        'ec_pillar2_title'       => array('label' => __('Pillar 2 Title', 'everything-cacao'), 'type' => 'text', 'default' => "Quality You Can Trust"),
+        'ec_pillar2_text'        => array('label' => __('Pillar 2 Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "Certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA), Everything Cacao is dedicated to maintaining the highest standards of safety and quality. Our rigorous processes ensure that every chocolate bar you enjoy is not only delicious but also meets stringent regulatory requirements, giving you peace of mind with every bite."),
+        'ec_pillar3_title'       => array('label' => __('Pillar 3 Title', 'everything-cacao'), 'type' => 'text', 'default' => "Empowering Communities"),
+        'ec_pillar3_text'        => array('label' => __('Pillar 3 Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "We believe chocolate should benefit everyone involved in its creation. Everything Cacao works closely with local cocoa processing companies and cocoa farmers in Ghana, ensuring fair trade practices and sustainable livelihoods. By choosing our chocolate, you contribute to empowering communities and supporting local industry in Ghana."),
+        'ec_pillar4_title'       => array('label' => __('Pillar 4 Title', 'everything-cacao'), 'type' => 'text', 'default' => "A Taste of Ghana"),
+        'ec_pillar4_text'        => array('label' => __('Pillar 4 Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "Every bar of Everything Cacao tells a story of Ghanaian heritage and artisanal pride. From rich dark chocolate bars to creamy milk varieties and delightful treats, our products celebrate the distinct flavor of Ghana's cacao. Experience the true taste of Ghana with every bite."),
+    );
+
+    foreach ($craft_text_controls as $setting_id => $data) {
+        $wp_customize->add_setting($setting_id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($setting_id, array(
+            'label'    => $data['label'],
+            'section'  => 'ec_craft_content',
+            'type'     => $data['type'],
+        ));
+    }
+
+    // 8. Stockist Page Content Settings
+    $wp_customize->add_section('ec_stockist_content', array(
+        'title'       => __('Stockists Page Content', 'everything-cacao'),
+        'priority'    => 35,
+        'description' => __('Edit category headers and subtitles on the Stockists page.', 'everything-cacao'),
+    ));
+
+    $stockist_text_controls = array(
+        'ec_stockist_hero_title' => array('label' => __('Stockist Hero Title', 'everything-cacao'), 'type' => 'text', 'default' => "Where to Find Everything Cacao"),
+        'ec_stockist_cat1_title' => array('label' => __('Category 1 Header', 'everything-cacao'), 'type' => 'text', 'default' => "LUXURY HOTELS & RESORTS"),
+        'ec_stockist_cat2_title' => array('label' => __('Category 2 Header', 'everything-cacao'), 'type' => 'text', 'default' => "GOURMET CAFES & ESPRESSO BARS"),
+        'ec_stockist_cat3_title' => array('label' => __('Category 3 Header', 'everything-cacao'), 'type' => 'text', 'default' => "AIRPORT DUTY FREE & RETAIL PAVILIONS"),
+    );
+
+    foreach ($stockist_text_controls as $setting_id => $data) {
+        $wp_customize->add_setting($setting_id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($setting_id, array(
+            'label'    => $data['label'],
+            'section'  => 'ec_stockist_content',
+            'type'     => $data['type'],
+        ));
+    }
 }
 add_action('customize_register', 'ec_customize_register');
+
+/**
+ * 9a. Helper: Get Customizer Text Option with Fallback
+ */
+if (!function_exists('ec_get_text_option')) {
+    function ec_get_text_option($setting_id, $default = '') {
+        $val = get_theme_mod($setting_id, get_option($setting_id, ''));
+        return (!empty($val)) ? $val : $default;
+    }
+}
 
 /**
  * 9b. Register Custom Post Type: ec_team_member (Team Members for Craft Page)

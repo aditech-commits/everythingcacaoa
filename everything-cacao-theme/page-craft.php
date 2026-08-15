@@ -14,9 +14,9 @@ get_header();
   <section class="py-20 bg-cacao-dark text-canvas border-b border-canvas/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12 text-center space-y-6">
       <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Official Brand Story &amp; Vision</span>
-      <h1 class="font-serif-luxury text-4xl md:text-6xl font-bold leading-tight">Everything Cacao</h1>
+      <h1 class="font-serif-luxury text-4xl md:text-6xl font-bold leading-tight"><?php echo esc_html(ec_get_text_option('ec_craft_hero_title', 'Everything Cacao')); ?></h1>
       <p class="text-canvas/80 text-base max-w-3xl mx-auto leading-relaxed">
-        Celebrating the rich heritage of Ghana’s cacao and the art of transforming processed cocoa into premium chocolate.
+        <?php echo esc_html(ec_get_text_option('ec_craft_hero_subtitle', "Celebrating the rich heritage of Ghana's cacao and the art of transforming processed cocoa into premium chocolate.")); ?>
       </p>
 
 
@@ -27,9 +27,9 @@ get_header();
   <section id="about" class="py-24 md:py-32 max-w-7xl mx-auto px-6 md:px-12">
     <div class="text-center max-w-3xl mx-auto space-y-5 mb-20 ec-animate">
       <span class="text-sm font-semibold uppercase tracking-widest text-accent-terracotta">Our Journey</span>
-      <h2 class="font-serif-luxury text-4xl md:text-5xl lg:text-6xl font-bold text-cacao-dark leading-tight">Ghana's Chocolate Story &mdash; Grown Here, Made Here</h2>
+      <h2 class="font-serif-luxury text-4xl md:text-5xl lg:text-6xl font-bold text-cacao-dark leading-tight"><?php echo esc_html(ec_get_text_option('ec_craft_sec_title', "Ghana's Chocolate Story — Grown Here, Made Here")); ?></h2>
       <p class="text-cacao-dark/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-        Everything Cacao was born from a passion for Ghana's cacao and a belief that the world's finest chocolate starts right here. We transform premium Ghanaian cocoa into exceptional chocolate &mdash; honouring our land, our farmers and the traditions that make Ghanaian cacao among the best in the world.
+        <?php echo esc_html(ec_get_text_option('ec_craft_sec_subtitle', "Everything Cacao was born from a passion for Ghana's cacao and a belief that the world's finest chocolate starts right here. We transform premium Ghanaian cocoa into exceptional chocolate — honouring our land, our farmers and the traditions that make Ghanaian cacao among the best in the world.")); ?>
       </p>
     </div>
 
@@ -37,33 +37,33 @@ get_header();
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 max-w-6xl mx-auto">
       <div class="ec-animate ec-card-hover bg-card-bg p-8 md:p-10 rounded-xl border border-cacao-dark/10 shadow-sm space-y-5">
         <div class="w-14 h-14 rounded-full bg-cacao-dark/5 flex items-center justify-center text-accent-terracotta text-2xl font-serif-luxury font-bold">01</div>
-        <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark">Crafting Chocolate with Care</h3>
+        <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_pillar1_title', 'Crafting Chocolate with Care')); ?></h3>
         <p class="text-sm md:text-base text-cacao-dark/75 leading-relaxed">
-          We source high-quality, processed cocoa from local suppliers who share our commitment to excellence. By collaborating closely with these farmers, we ensure that every batch reflects the unique flavors and characteristics of Ghanaian cacao. Our team of skilled artisans takes this exceptional cocoa and transforms it into a range of delightful chocolate bars, each crafted with precision and love.
+          <?php echo esc_html(ec_get_text_option('ec_pillar1_text', "We source high-quality, processed cocoa from local suppliers who share our commitment to excellence. By collaborating closely with these farmers, we ensure that every batch reflects the unique flavors and characteristics of Ghanaian cacao. Our team of skilled artisans takes this exceptional cocoa and transforms it into a range of delightful chocolate bars, each crafted with precision and love.")); ?>
         </p>
       </div>
 
       <div class="ec-animate ec-card-hover bg-card-bg p-8 md:p-10 rounded-xl border border-cacao-dark/10 shadow-sm space-y-5 border-t-4 border-accent-gold">
         <div class="w-14 h-14 rounded-full bg-accent-gold/10 flex items-center justify-center text-accent-gold text-2xl font-serif-luxury font-bold">02</div>
-        <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark">Quality You Can Trust</h3>
+        <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_pillar2_title', 'Quality You Can Trust')); ?></h3>
         <p class="text-sm md:text-base text-cacao-dark/75 leading-relaxed">
-          Certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA), Everything Cacao is dedicated to maintaining the highest standards of safety and quality. Our rigorous processes ensure that every chocolate bar you enjoy is not only delicious but also meets stringent regulatory requirements, giving you peace of mind with every bite.
+          <?php echo esc_html(ec_get_text_option('ec_pillar2_text', "Certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA), Everything Cacao is dedicated to maintaining the highest standards of safety and quality. Our rigorous processes ensure that every chocolate bar you enjoy is not only delicious but also meets stringent regulatory requirements, giving you peace of mind with every bite.")); ?>
         </p>
       </div>
 
       <div class="ec-animate ec-card-hover bg-card-bg p-8 md:p-10 rounded-xl border border-cacao-dark/10 shadow-sm space-y-5">
         <div class="w-14 h-14 rounded-full bg-cacao-dark/5 flex items-center justify-center text-accent-terracotta text-2xl font-serif-luxury font-bold">03</div>
-        <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark">Empowering Communities</h3>
+        <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_pillar3_title', 'Empowering Communities')); ?></h3>
         <p class="text-sm md:text-base text-cacao-dark/75 leading-relaxed">
-          We believe in the power of chocolate to bring people together. By working with local farmers and suppliers, we help support sustainable practices and fair trade, fostering economic growth in our communities. Our commitment extends beyond our chocolate; it's about building a brighter future for all those involved in the cacao supply chain.
+          <?php echo esc_html(ec_get_text_option('ec_pillar3_text', "We believe chocolate should benefit everyone involved in its creation. Everything Cacao works closely with local cocoa processing companies and cocoa farmers in Ghana, ensuring fair trade practices and sustainable livelihoods. By choosing our chocolate, you contribute to empowering communities and supporting local industry in Ghana.")); ?>
         </p>
       </div>
 
       <div class="ec-animate ec-card-hover bg-card-bg p-8 md:p-10 rounded-xl border border-cacao-dark/10 shadow-sm space-y-5">
         <div class="w-14 h-14 rounded-full bg-cacao-dark/5 flex items-center justify-center text-accent-terracotta text-2xl font-serif-luxury font-bold">04</div>
-        <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark">A Taste of Ghana</h3>
+        <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_pillar4_title', 'A Taste of Ghana')); ?></h3>
         <p class="text-sm md:text-base text-cacao-dark/75 leading-relaxed">
-          At Everything Cacao, we're passionate about sharing the rich flavors of Ghana with the world. From our creamy milk chocolate to our bold dark chocolate, each bar is a celebration of the unique tastes and traditions of our homeland. We invite you to indulge in our creations and experience the joy that comes from chocolate made with heart.
+          <?php echo esc_html(ec_get_text_option('ec_pillar4_text', "Every bar of Everything Cacao tells a story of Ghanaian heritage and artisanal pride. From rich dark chocolate bars to creamy milk varieties and delightful treats, our products celebrate the distinct flavor of Ghana's cacao. Experience the true taste of Ghana with every bite.")); ?>
         </p>
       </div>
     </div>

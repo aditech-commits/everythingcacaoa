@@ -87,11 +87,8 @@ get_header();
             <span class="text-xs font-bold px-3 py-1 bg-cherelle-caramel/10 text-cherelle-caramel rounded-full">Joy &amp; Togetherness</span>
           </div>
           <h3 class="font-serif-luxury text-3xl font-bold text-cacao-dark">Cherelle: Delight in Every Bite</h3>
-          <p class="text-sm text-text-muted leading-relaxed">
-            Cherelle is our brand dedicated to bringing the joy of chocolate to everyone. With a focus on accessibility and affordability, Cherelle offers a delightful range of chocolate bars that cater to all taste preferences. Crafted from high-quality processed cocoa, each product is designed to be an everyday treat, perfect for sharing with friends and family or indulging in a moment of self-care.
-          </p>
-          <p class="text-sm text-text-muted leading-relaxed">
-            Cherelle embodies the spirit of community and togetherness, making it easy for everyone to enjoy the rich flavors of Ghanaian cacao. Our approachable packaging and playful branding invite chocolate lovers of all ages to experience the happiness that only chocolate can bring. With Cherelle, delicious moments are always within reach.
+          <p class="text-base text-text-muted leading-relaxed font-medium">
+            <?php echo esc_html(ec_get_text_option('ec_craft_cherelle_writeup', 'Cherelle brings chocolate joy to everyone. Made from quality Ghanaian cocoa, our affordable bars are perfect for everyday moments — sharing with loved ones or treating yourself. Playful, approachable, and made for all ages, Cherelle keeps delicious moments within easy reach.')); ?>
           </p>
         </div>
 
@@ -102,11 +99,8 @@ get_header();
             <span class="text-xs font-bold px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full">Pinnacle Reserve</span>
           </div>
           <h3 class="font-serif-luxury text-3xl font-bold text-canvas">Nahar: The Essence of Luxury</h3>
-          <p class="text-sm text-canvas/80 leading-relaxed">
-            Nahar is our premium brand, where chocolate becomes an exquisite experience. Designed for discerning palates, Nahar showcases the finest processed cocoa, expertly crafted into luxurious chocolate bars that elevate any occasion. With an emphasis on sophistication and flavor complexity, each Nahar product is a journey into the heart of Ghana’s cacao heritage.
-          </p>
-          <p class="text-sm text-canvas/80 leading-relaxed">
-            From elegantly designed packaging to carefully curated flavors, Nahar is a celebration of quality and craftsmanship. Ideal for special occasions, gifts, or a personal indulgence, Nahar embodies the essence of luxury, offering chocolate lovers a unique experience that transcends the ordinary.
+          <p class="text-base text-canvas/90 leading-relaxed font-medium">
+            <?php echo esc_html(ec_get_text_option('ec_craft_nahar_writeup', "Nahar is our premium chocolate brand for the discerning palate. Crafted from the finest Ghanaian cocoa, each bar delivers sophisticated, complex flavor rooted in Ghana's cacao heritage. With elegant packaging and curated craftsmanship, Nahar is the perfect choice for gifting, special occasions, or personal indulgence.")); ?>
           </p>
         </div>
       </div>

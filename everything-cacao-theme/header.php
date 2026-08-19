@@ -176,8 +176,7 @@
             <svg class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180 text-accent-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div class="absolute left-0 top-full hidden group-hover:flex flex-col bg-cacao-dark text-canvas min-w-[200px] py-3 rounded-lg shadow-2xl border border-canvas/15 transition-all z-50">
-            <a href="<?php echo $link_craft; ?>#about" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">ABOUT US</a>
-            <a href="<?php echo $link_craft; ?>" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">OUR CRAFT</a>
+            <a href="<?php echo $link_craft; ?>" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">ABOUT US</a>
           </div>
         </div>
 
@@ -219,9 +218,9 @@
     </nav>
   </header>
 
-  <!-- Mobile Drawer Menu -->
-  <div id="mobile-drawer" class="fixed inset-0 z-50 bg-cacao-dark text-canvas transform translate-x-full transition-transform duration-500 flex flex-col justify-between p-8 md:hidden overflow-y-auto">
-    <div class="space-y-8">
+  <!-- Mobile Drawer Overlay Menu -->
+  <div id="mobile-drawer" class="fixed inset-0 bg-cacao-dark text-canvas z-50 transform translate-x-full transition-transform duration-300 overflow-y-auto">
+    <div class="p-6 space-y-6">
       <div class="flex justify-between items-center border-b border-canvas/20 pb-4">
         <span class="font-serif-luxury text-xl font-bold text-accent-gold">EVERYTHING CACAO GH</span>
         <button id="close-drawer-btn" class="text-canvas text-3xl font-light">&times;</button>
@@ -236,8 +235,7 @@
             </svg>
           </button>
           <div id="mobile-sub-experience" class="hidden pl-3 pt-3 space-y-3.5 border-l border-accent-gold/40 mt-2">
-            <a href="<?php echo $link_craft; ?>#about" class="block text-canvas/80 hover:text-accent-gold">ABOUT</a>
-            <a href="<?php echo $link_craft; ?>" class="block text-canvas/80 hover:text-accent-gold">OUR CRAFT</a>
+            <a href="<?php echo $link_craft; ?>" class="block text-canvas/80 hover:text-accent-gold">ABOUT US</a>
           </div>
         </div>
 

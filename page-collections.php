@@ -65,7 +65,7 @@ get_header();
               $notes        = ec_get_product_field('tasting_notes') ?: get_the_excerpt();
               $description  = ec_get_product_field('product_description') ?: '';
               $thumb_url    = get_the_post_thumbnail_url(get_the_ID(), 'large') ?: ec_get_smart_image_url(null, 'Cherelle Milk Chocolate 90g.jpg');
-              $wa_number    = get_option('ec_whatsapp_number', '233240000000');
+              $wa_number    = get_option('ec_whatsapp_number', '233240661866');
               $wa_text      = urlencode("Hi, I'd like to order the " . get_the_title());
               
               // Determine category for filtering
@@ -120,21 +120,6 @@ get_header();
                   </div>
                 </div>
 
-                <!-- Price & CTA -->
-                <div class="p-6 pt-0 space-y-4">
-                  <div class="flex justify-between items-center border-t border-cacao-dark/10 pt-4">
-                    <span class="text-xs font-semibold text-text-muted">PRICE</span>
-                    <span class="font-serif-luxury text-lg font-bold text-cacao-dark">GHC <?php echo esc_html($price); ?></span>
-                  </div>
-
-                  <a href="https://wa.me/<?php echo esc_attr($wa_number); ?>?text=<?php echo $wa_text; ?>" 
-                     target="_blank" 
-                     rel="noopener noreferrer"
-                     class="btn-whatsapp w-full rounded text-center block"
-                     onclick="event.stopPropagation(); fbq('track', 'Lead', {content_name: '<?php echo esc_js(get_the_title()); ?>'});">
-                     Order via WhatsApp
-                  </a>
-                </div>
               </div>
               <?php
           endwhile;
@@ -143,7 +128,7 @@ get_header();
           // ═══════════════════════════════════════════════════
           // FALLBACK STATIC ITEMS (Shown when no CPT posts exist yet)
           // ═══════════════════════════════════════════════════
-          $theme_img_uri = get_template_directory_uri() . '/assets/images/products/';
+          $placeholder_img = 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg';
 
           $fallback_products = array(
               array(
@@ -155,7 +140,7 @@ get_header();
                   'origin'      => 'Suhum, Eastern Region • Ghana',
                   'notes'       => 'Warm Caramel, Toasted Hazelnut, Vanilla',
                   'description' => 'Creamy artisanal milk chocolate crafted with pure Ghanaian cocoa butter, fresh milk, and golden cane sugar.',
-                  'image'       => $theme_img_uri . 'Cherelle Milk Chocolate 90g.jpg',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(
@@ -167,7 +152,7 @@ get_header();
                   'origin'      => 'Assin Fosu, Central Region • Ghana',
                   'notes'       => 'Red Berry, Dark Fudge, Caramel',
                   'description' => 'Smooth medium-dark chocolate with subtle red berry and caramel undertones, presented in an executive mini square collection box.',
-                  'image'       => $theme_img_uri . 'Cherelle Dark Chocolate 24x9g.jpg',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(
@@ -179,7 +164,7 @@ get_header();
                   'origin'      => 'On-The-Go Pouch • Accra',
                   'notes'       => 'Creamy Cocoa, Sweet Honey, Toasted Milk',
                   'description' => 'Convenient re-sealable standup pouch packed with bite-sized Cherelle milk chocolate delights for daily snacking.',
-                  'image'       => $theme_img_uri . 'Cherelle Milk Chocolate 50g.jpg',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(
@@ -191,7 +176,7 @@ get_header();
                   'origin'      => 'Suhum, Eastern Region • Ghana',
                   'notes'       => 'Creamy Butterscotch, Smooth Cocoa, Honey',
                   'description' => 'Individual 9g luxury squares of Cherelle signature milk chocolate wrapped in gold foil.',
-                  'image'       => $theme_img_uri . 'Cherelle Milk Chocolate 24x9g.jpg',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(
@@ -203,7 +188,7 @@ get_header();
                   'origin'      => 'Suhum, Eastern Region • Ghana',
                   'notes'       => 'Toasted Almond, Creamy Caramel, Cocoa Butter',
                   'description' => 'Elongated artisanal milk chocolate bar crafted with double-conched milk cacao.',
-                  'image'       => $theme_img_uri . 'Cherelle milk choc long.png',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(
@@ -215,7 +200,7 @@ get_header();
                   'origin'      => 'Accra • Ghana',
                   'notes'       => 'Creamy Cocoa, Vanilla Bean, Honey',
                   'description' => 'On-the-go snack pouch containing silky milk chocolate nibbles crafted from 100% single-origin cacao.',
-                  'image'       => $theme_img_uri . 'Cherelle milk choc small b.png',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(
@@ -227,7 +212,7 @@ get_header();
                   'origin'      => 'Single-Origin • Sefwi Wiawso',
                   'notes'       => 'Black Cherry, Roasted Espresso, Smoked Timber',
                   'description' => 'Deep, intensely aromatic single-origin dark chocolate bar conched for 72 hours.',
-                  'image'       => $theme_img_uri . '1.png',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-nahar',
               ),
               array(
@@ -239,7 +224,7 @@ get_header();
                   'origin'      => 'Single-Origin • Tepa, Ashanti',
                   'notes'       => 'Bittersweet Cocoa, Dark Plum, Smoked Wood',
                   'description' => 'Our highest cacao percentage bar. High in polyphenols and antioxidants for pure dark cocoa purists.',
-                  'image'       => $theme_img_uri . '2.png',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-nahar',
               ),
               array(
@@ -251,7 +236,7 @@ get_header();
                   'origin'      => 'Sefwi Wiawso & Ada Foah',
                   'notes'       => 'Crunch Nib, Sea Salt, Roasted Cocoa',
                   'description' => 'Single-origin 70% dark chocolate studded with sun-roasted crunchy cacao nibs and sea salt flakes.',
-                  'image'       => $theme_img_uri . '3.png',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-nahar',
               ),
               array(
@@ -263,7 +248,7 @@ get_header();
                   'origin'      => 'Kumasi & Suhum • Ghana',
                   'notes'       => 'Golden Honeycomb, Hazelnut Praline, Dark Truffle',
                   'description' => 'Hand-painted luxury truffles infused with wild Ashanti honey and 72% dark chocolate ganache.',
-                  'image'       => $theme_img_uri . '4.png',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'border-t-4 border-accent-gold',
               ),
               array(
@@ -275,7 +260,7 @@ get_header();
                   'origin'      => 'Suhum & Sefwi Wiawso',
                   'notes'       => 'Complete Confection Suite, Plush Keepsake',
                   'description' => 'Our grandest gift hamper featuring full-sized Cherelle & Nahar bars, snack pouches, and plush keepsake.',
-                  'image'       => $theme_img_uri . '5.png',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'border-t-4 border-accent-gold',
               ),
               array(
@@ -287,7 +272,7 @@ get_header();
                   'origin'      => 'Suhum, Eastern Region • Ghana',
                   'notes'       => 'Golden Honeycomb, Salted Butter, Caramel',
                   'description' => 'Crunchy golden honeycomb pieces folded into creamy milk chocolate with a pinch of sea salt.',
-                  'image'       => $theme_img_uri . '6.png',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(
@@ -299,7 +284,7 @@ get_header();
                   'origin'      => 'Assin Fosu, Central Region • Ghana',
                   'notes'       => 'Nutty, Raw Cocoa, Earthy Bitterness',
                   'description' => 'Unsweetened, antioxidant-rich organic roasted cacao nibs. Superfood perfect for baking and smoothies.',
-                  'image'       => $theme_img_uri . '7.png',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(
@@ -311,7 +296,7 @@ get_header();
                   'origin'      => 'Suhum, Eastern Region • Ghana',
                   'notes'       => 'Balanced Dark Cocoa, Caramel, Toasted Oat',
                   'description' => 'Semi-sweet 50% dark chocolate snack bites packed in a protective re-sealable foil pouch.',
-                  'image'       => $theme_img_uri . 'cherelle-2.jpg',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(
@@ -364,7 +349,7 @@ get_header();
               )
           );
 
-          $wa_number = get_option('ec_whatsapp_number', '233240000000');
+          $wa_number = get_option('ec_whatsapp_number', '233240661866');
 
           foreach ($fallback_products as $product) :
               $wa_text = urlencode("Hi, I'd like to order the " . $product['title']);
@@ -404,21 +389,6 @@ get_header();
                   </div>
                 </div>
 
-                <!-- Price & CTA -->
-                <div class="p-6 pt-0 space-y-4">
-                  <div class="flex justify-between items-center border-t border-cacao-dark/10 pt-4">
-                    <span class="text-xs font-semibold text-text-muted">PRICE</span>
-                    <span class="font-serif-luxury text-lg font-bold text-cacao-dark">GHC <?php echo esc_html($product['price']); ?></span>
-                  </div>
-
-                  <a href="https://wa.me/<?php echo esc_attr($wa_number); ?>?text=<?php echo $wa_text; ?>" 
-                     target="_blank" 
-                     rel="noopener noreferrer"
-                     class="btn-whatsapp w-full rounded text-center block"
-                     onclick="event.stopPropagation(); fbq('track', 'Lead', {content_name: '<?php echo esc_js($product['title']); ?>'});">
-                     Order via WhatsApp
-                  </a>
-                </div>
               </div>
               <?php
           endforeach;
@@ -495,17 +465,12 @@ get_header();
             </div>
           </div>
 
-          <!-- Price & Action -->
-          <div class="space-y-4 border-t border-cacao-dark/10 pt-6">
+          <!-- Price -->
+          <div class="border-t border-cacao-dark/10 pt-6">
             <div class="flex justify-between items-center">
               <span class="text-xs font-semibold text-text-muted uppercase tracking-wider">Price</span>
               <span id="modal-price" class="font-serif-luxury text-2xl font-bold text-cacao-dark"></span>
             </div>
-            <a id="modal-wa-btn" href="#" target="_blank" rel="noopener noreferrer"
-               class="btn-whatsapp w-full rounded text-center block text-base py-4"
-               onclick="fbq('track', 'Lead', {content_name: document.getElementById('modal-title').textContent});">
-               Order via WhatsApp
-            </a>
           </div>
         </div>
       </div>
@@ -576,7 +541,8 @@ get_header();
       document.getElementById('modal-notes').textContent   = el.dataset.notes;
       document.getElementById('modal-description').textContent = el.dataset.description;
       document.getElementById('modal-price').textContent   = 'GHC ' + el.dataset.price;
-      document.getElementById('modal-wa-btn').href         = el.dataset.wa;
+      var waBtn = document.getElementById('modal-wa-btn');
+      if (waBtn) { waBtn.href = el.dataset.wa; }
 
       modal.classList.remove('opacity-0', 'pointer-events-none');
       modal.classList.add('opacity-100', 'pointer-events-auto');
@@ -595,12 +561,20 @@ get_header();
       content.classList.remove('scale-100');
       document.body.style.overflow = '';
     }
-
-    // Close modal on Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeProductModal();
-    });
   </script>
+
+  <!-- Elementor / WP Content Support Area -->
+  <div class="elementor-content-container">
+    <?php
+    if (have_posts()) :
+        while (have_posts()) : the_post();
+            the_content();
+        endwhile;
+    endif;
+    ?>
+  </div>
 
 <?php
 get_footer();
+
+

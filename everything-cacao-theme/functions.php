@@ -1163,8 +1163,8 @@ function ec_get_smart_image_url($setting_name, $filename) {
         return get_template_directory_uri() . '/assets/images/products/' . $filename;
     }
 
-    // 4. Fallback to Elegant SVG Brand Placeholder
-    return 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600"><rect width="100%" height="100%" fill="%232C1A11"/><circle cx="300" cy="270" r="100" fill="%23C86D51" opacity="0.2"/><text x="50%" y="46%" dominant-baseline="middle" text-anchor="middle" fill="%23D4AF37" font-family="Georgia, serif" font-size="28" font-weight="bold">EVERYTHING CACAO</text><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="%23F5EFE6" font-family="sans-serif" font-size="14" letter-spacing="2">GHANA LUXURY CONFECTION</text></svg>';
+    // 4. Fallback to User Uploaded Media Library Product Image
+    return 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg';
 }
 
 /**

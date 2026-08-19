@@ -62,16 +62,18 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
         <!-- Card A: Nahar -->
         <div class="ec-animate ec-card-hover group relative overflow-hidden bg-cacao-dark text-canvas rounded-xl p-8 md:p-12 flex flex-col justify-between min-h-[580px] border border-cacao-dark/10 transition-all duration-500 subbrand-nahar shadow-sm">
-          <div class="relative z-10 space-y-2">
-            <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold block">THE ESSENCE OF LUXURY</span>
-            <h3 class="font-serif-luxury text-4xl sm:text-5xl font-bold text-canvas">Nahar</h3>
-            <p class="font-serif-luxury text-xl text-accent-gold italic">Luxury Ghanaian Chocolate</p>
-          </div>
-
-          <div class="relative z-10 space-y-6 pt-6">
+          <div class="relative z-10 space-y-4">
+            <div class="space-y-2">
+              <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold block">THE ESSENCE OF LUXURY</span>
+              <h3 class="font-serif-luxury text-4xl sm:text-5xl font-bold text-canvas">Nahar</h3>
+              <p class="font-serif-luxury text-xl text-accent-gold italic">Luxury Ghanaian Chocolate</p>
+            </div>
             <p class="font-sans text-base md:text-lg lg:text-xl font-medium text-canvas/90 leading-relaxed">
               <?php echo esc_html(ec_get_text_option('ec_nahar_desc', 'Nahar is our premium chocolate range, crafted for discerning palates. Rich, complex flavours made from the finest Ghanaian cocoa, wrapped in elegant packaging. Perfect for gifts, special occasions and personal indulgence.')); ?>
             </p>
+          </div>
+
+          <div class="relative z-10 space-y-6 pt-4">
             <div class="w-full aspect-[4/3] bg-[#3D281C] rounded-lg overflow-hidden border border-canvas/10 flex items-center justify-center">
               <img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" 
                    alt="Nahar Luxury Ghanaian Chocolate" 
@@ -82,7 +84,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
             <div class="flex justify-between items-end w-full border-t border-canvas/15 pt-4">
               <div>
                 <span class="text-[10px] font-semibold text-canvas/60 uppercase tracking-wider block">COLLECTION TYPE</span>
-                <span class="font-serif-luxury text-2xl font-bold text-accent-gold">Luxury &amp; Bespoke Reserve</span>
+                <span class="font-serif-luxury text-lg sm:text-xl font-bold text-accent-gold">Luxury &amp; Bespoke Reserve</span>
               </div>
               <a href="<?php echo $link_collections; ?>?lineage=nahar" class="px-6 py-3.5 bg-accent-gold text-cacao-dark font-semibold text-xs uppercase tracking-widest hover:bg-white transition-colors">
                 SHOP NAHAR &rarr;
@@ -93,16 +95,18 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
 
         <!-- Card B: Cherelle -->
         <div class="ec-animate ec-card-hover group relative overflow-hidden bg-canvas rounded-xl p-8 md:p-12 flex flex-col justify-between min-h-[580px] border border-cacao-dark/10 hover:border-cherelle-caramel/50 transition-all duration-500 subbrand-cherelle shadow-sm">
-          <div class="relative z-10 space-y-2">
-            <span class="text-xs font-semibold uppercase tracking-widest text-cherelle-caramel block">DELIGHT IN EVERY BITE</span>
-            <h3 class="font-serif-luxury text-4xl sm:text-5xl font-bold text-cacao-dark">Cherelle</h3>
-            <p class="font-serif-luxury text-xl text-accent-terracotta italic">Everyday Chocolate for Everyone</p>
-          </div>
-
-          <div class="relative z-10 space-y-6 pt-6">
+          <div class="relative z-10 space-y-4">
+            <div class="space-y-2">
+              <span class="text-xs font-semibold uppercase tracking-widest text-cherelle-caramel block">DELIGHT IN EVERY BITE</span>
+              <h3 class="font-serif-luxury text-4xl sm:text-5xl font-bold text-cacao-dark">Cherelle</h3>
+              <p class="font-serif-luxury text-xl text-accent-terracotta italic">Everyday Chocolate for Everyone</p>
+            </div>
             <p class="font-sans text-base md:text-lg lg:text-xl font-medium text-cacao-dark/85 leading-relaxed">
               <?php echo esc_html(ec_get_text_option('ec_cherelle_desc', 'Cherelle is everyday chocolate for everyone. Affordable, joyful and bursting with the natural taste of Ghanaian cacao. Made for sharing, gifting and sweet everyday moments.')); ?>
             </p>
+          </div>
+
+          <div class="relative z-10 space-y-6 pt-4">
             <div class="w-full aspect-[4/3] bg-[#F5EFE6] rounded-lg overflow-hidden border border-cacao-dark/10 flex items-center justify-center">
               <img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700" 
                    alt="Cherelle Everyday Ghanaian Chocolate" 
@@ -113,7 +117,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
             <div class="flex justify-between items-end w-full border-t border-cacao-dark/10 pt-4">
               <div>
                 <span class="text-[10px] font-semibold text-text-muted uppercase tracking-wider block">COLLECTION TYPE</span>
-                <span class="font-serif-luxury text-2xl font-bold text-cacao-dark">Everyday Range</span>
+                <span class="font-serif-luxury text-lg sm:text-xl font-bold text-cacao-dark">Everyday Range</span>
               </div>
               <a href="<?php echo $link_collections; ?>?lineage=cherelle" class="px-6 py-3.5 bg-cacao-dark text-canvas font-semibold text-xs uppercase tracking-widest hover:bg-cherelle-caramel transition-colors">
                 SHOP CHERELLE &rarr;
@@ -152,20 +156,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
         </div>
       </div>
 
-      <!-- Item 2: Certified quality -->
-      <div class="ec-animate ec-card-hover space-y-6 group">
-        <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
-          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-               alt="FDA and GSA Certified Quality Ghanaian Chocolate" 
-               src="<?php echo esc_url(ec_get_smart_image_url('ec_impact_image_2', '3.png')); ?>" />
-        </div>
-        <div class="space-y-3">
-          <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_impact2_title', 'Certified quality')); ?></h3>
-          <p class="font-sans text-base md:text-lg font-medium text-cacao-dark/85 leading-relaxed"><?php echo esc_html(ec_get_text_option('ec_impact2_text', 'Every Everything Cacao product is certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA). Quality and safety you can trust.')); ?></p>
-        </div>
-      </div>
-
-      <!-- Item 3: Made in Ghana -->
+      <!-- Item 2: Made in Ghana -->
       <div class="ec-animate ec-card-hover space-y-6 group">
         <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
           <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
@@ -175,6 +166,19 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
         <div class="space-y-3">
           <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_impact3_title', 'Made in Ghana')); ?></h3>
           <p class="font-sans text-base md:text-lg font-medium text-cacao-dark/85 leading-relaxed"><?php echo esc_html(ec_get_text_option('ec_impact3_text', 'From bean to bar, our chocolate is made in Ghana — celebrating our land, our farmers and our heritage with every bite.')); ?></p>
+        </div>
+      </div>
+
+      <!-- Item 3: Certified quality -->
+      <div class="ec-animate ec-card-hover space-y-6 group">
+        <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+               alt="FDA and GSA Certified Quality Ghanaian Chocolate" 
+               src="<?php echo esc_url(ec_get_smart_image_url('ec_impact_image_2', '3.png')); ?>" />
+        </div>
+        <div class="space-y-3">
+          <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_impact2_title', 'Certified quality')); ?></h3>
+          <p class="font-sans text-base md:text-lg font-medium text-cacao-dark/85 leading-relaxed"><?php echo esc_html(ec_get_text_option('ec_impact2_text', 'Every Everything Cacao product is certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA). Quality and safety you can trust.')); ?></p>
         </div>
       </div>
     </div>
@@ -188,7 +192,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                    alt="Dark Ghanaian Forest 85% Cacao" 
-                   src="<?php echo esc_url(ec_get_smart_image_url('ec_seasonal_1', '1.png')); ?>" />
+                   src="<?php echo esc_url(ec_get_smart_image_url('ec_seasonal_1', 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg')); ?>" />
               <span class="absolute top-3 left-3 text-[10px] font-semibold uppercase bg-accent-gold text-cacao-dark px-2.5 py-0.5 rounded">85% Cacao</span>
             </div>
             <div class="space-y-1">
@@ -207,7 +211,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                    alt="Heritage Sampler Minis Box" 
-                   src="<?php echo esc_url(ec_get_smart_image_url('ec_seasonal_2', 'Cherelle Dark Chocolate 24x9g.jpg')); ?>" />
+                   src="<?php echo esc_url(ec_get_smart_image_url('ec_seasonal_2', 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg')); ?>" />
               <span class="absolute top-3 left-3 text-[10px] font-semibold uppercase bg-canvas text-cacao-dark px-2.5 py-0.5 rounded">Assorted</span>
             </div>
             <div class="space-y-1">
@@ -226,7 +230,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                    alt="Ashanti Gold Milk 45% Bar" 
-                   src="<?php echo esc_url(ec_get_smart_image_url('ec_seasonal_3', 'Cherelle Milk Chocolate 50g.jpg')); ?>" />
+                   src="<?php echo esc_url(ec_get_smart_image_url('ec_seasonal_3', 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg')); ?>" />
               <span class="absolute top-3 left-3 text-[10px] font-semibold uppercase bg-cherelle-caramel text-white px-2.5 py-0.5 rounded">Milk 45%</span>
             </div>
             <div class="space-y-1">
@@ -245,7 +249,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                    alt="Nahar Private Reserve Luxury Gift Box" 
-                   src="<?php echo esc_url(ec_get_smart_image_url('ec_seasonal_4', '5.png')); ?>" />
+                   src="<?php echo esc_url(ec_get_smart_image_url('ec_seasonal_4', 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg')); ?>" />
               <span class="absolute top-3 left-3 text-[10px] font-semibold uppercase bg-accent-gold text-cacao-dark px-2.5 py-0.5 rounded">Exclusive</span>
             </div>
             <div class="space-y-1">

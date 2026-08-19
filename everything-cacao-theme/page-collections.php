@@ -128,7 +128,7 @@ get_header();
           // ═══════════════════════════════════════════════════
           // FALLBACK STATIC ITEMS (Shown when no CPT posts exist yet)
           // ═══════════════════════════════════════════════════
-          $theme_img_uri = get_template_directory_uri() . '/assets/images/products/';
+          $placeholder_img = 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg';
 
           $fallback_products = array(
               array(
@@ -140,7 +140,7 @@ get_header();
                   'origin'      => 'Suhum, Eastern Region • Ghana',
                   'notes'       => 'Warm Caramel, Toasted Hazelnut, Vanilla',
                   'description' => 'Creamy artisanal milk chocolate crafted with pure Ghanaian cocoa butter, fresh milk, and golden cane sugar.',
-                  'image'       => $theme_img_uri . 'Cherelle Milk Chocolate 90g.jpg',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(
@@ -152,7 +152,7 @@ get_header();
                   'origin'      => 'Assin Fosu, Central Region • Ghana',
                   'notes'       => 'Red Berry, Dark Fudge, Caramel',
                   'description' => 'Smooth medium-dark chocolate with subtle red berry and caramel undertones, presented in an executive mini square collection box.',
-                  'image'       => $theme_img_uri . 'Cherelle Dark Chocolate 24x9g.jpg',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(
@@ -164,7 +164,7 @@ get_header();
                   'origin'      => 'On-The-Go Pouch • Accra',
                   'notes'       => 'Creamy Cocoa, Sweet Honey, Toasted Milk',
                   'description' => 'Convenient re-sealable standup pouch packed with bite-sized Cherelle milk chocolate delights for daily snacking.',
-                  'image'       => $theme_img_uri . 'Cherelle Milk Chocolate 50g.jpg',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(
@@ -176,7 +176,7 @@ get_header();
                   'origin'      => 'Suhum, Eastern Region • Ghana',
                   'notes'       => 'Creamy Butterscotch, Smooth Cocoa, Honey',
                   'description' => 'Individual 9g luxury squares of Cherelle signature milk chocolate wrapped in gold foil.',
-                  'image'       => $theme_img_uri . 'Cherelle Milk Chocolate 24x9g.jpg',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(
@@ -188,7 +188,7 @@ get_header();
                   'origin'      => 'Suhum, Eastern Region • Ghana',
                   'notes'       => 'Toasted Almond, Creamy Caramel, Cocoa Butter',
                   'description' => 'Elongated artisanal milk chocolate bar crafted with double-conched milk cacao.',
-                  'image'       => $theme_img_uri . 'Cherelle milk choc long.png',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(
@@ -200,7 +200,7 @@ get_header();
                   'origin'      => 'Accra • Ghana',
                   'notes'       => 'Creamy Cocoa, Vanilla Bean, Honey',
                   'description' => 'On-the-go snack pouch containing silky milk chocolate nibbles crafted from 100% single-origin cacao.',
-                  'image'       => $theme_img_uri . 'Cherelle milk choc small b.png',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(
@@ -212,7 +212,7 @@ get_header();
                   'origin'      => 'Single-Origin • Sefwi Wiawso',
                   'notes'       => 'Black Cherry, Roasted Espresso, Smoked Timber',
                   'description' => 'Deep, intensely aromatic single-origin dark chocolate bar conched for 72 hours.',
-                  'image'       => $theme_img_uri . '1.png',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-nahar',
               ),
               array(
@@ -224,7 +224,7 @@ get_header();
                   'origin'      => 'Single-Origin • Tepa, Ashanti',
                   'notes'       => 'Bittersweet Cocoa, Dark Plum, Smoked Wood',
                   'description' => 'Our highest cacao percentage bar. High in polyphenols and antioxidants for pure dark cocoa purists.',
-                  'image'       => $theme_img_uri . '2.png',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-nahar',
               ),
               array(
@@ -236,7 +236,7 @@ get_header();
                   'origin'      => 'Sefwi Wiawso & Ada Foah',
                   'notes'       => 'Crunch Nib, Sea Salt, Roasted Cocoa',
                   'description' => 'Single-origin 70% dark chocolate studded with sun-roasted crunchy cacao nibs and sea salt flakes.',
-                  'image'       => $theme_img_uri . '3.png',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-nahar',
               ),
               array(
@@ -248,7 +248,7 @@ get_header();
                   'origin'      => 'Kumasi & Suhum • Ghana',
                   'notes'       => 'Golden Honeycomb, Hazelnut Praline, Dark Truffle',
                   'description' => 'Hand-painted luxury truffles infused with wild Ashanti honey and 72% dark chocolate ganache.',
-                  'image'       => $theme_img_uri . '4.png',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'border-t-4 border-accent-gold',
               ),
               array(
@@ -260,7 +260,7 @@ get_header();
                   'origin'      => 'Suhum & Sefwi Wiawso',
                   'notes'       => 'Complete Confection Suite, Plush Keepsake',
                   'description' => 'Our grandest gift hamper featuring full-sized Cherelle & Nahar bars, snack pouches, and plush keepsake.',
-                  'image'       => $theme_img_uri . '5.png',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'border-t-4 border-accent-gold',
               ),
               array(
@@ -272,7 +272,7 @@ get_header();
                   'origin'      => 'Suhum, Eastern Region • Ghana',
                   'notes'       => 'Golden Honeycomb, Salted Butter, Caramel',
                   'description' => 'Crunchy golden honeycomb pieces folded into creamy milk chocolate with a pinch of sea salt.',
-                  'image'       => $theme_img_uri . '6.png',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(
@@ -284,7 +284,7 @@ get_header();
                   'origin'      => 'Assin Fosu, Central Region • Ghana',
                   'notes'       => 'Nutty, Raw Cocoa, Earthy Bitterness',
                   'description' => 'Unsweetened, antioxidant-rich organic roasted cacao nibs. Superfood perfect for baking and smoothies.',
-                  'image'       => $theme_img_uri . '7.png',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(
@@ -296,7 +296,7 @@ get_header();
                   'origin'      => 'Suhum, Eastern Region • Ghana',
                   'notes'       => 'Balanced Dark Cocoa, Caramel, Toasted Oat',
                   'description' => 'Semi-sweet 50% dark chocolate snack bites packed in a protective re-sealable foil pouch.',
-                  'image'       => $theme_img_uri . 'cherelle-2.jpg',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(

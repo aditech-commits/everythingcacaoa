@@ -4,32 +4,9 @@
   <meta charset="<?php bloginfo('charset'); ?>"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <?php
-  // Reach 360 Marketing Group - SEO Meta Titles & Descriptions
-  $seo_title = 'Buy Ghanaian Chocolate Online | Everything Cacao';
-  $seo_desc  = 'Shop Nahar and Cherelle — premium chocolate made from Ghana\'s finest cacao. Milk and dark bars available across Accra and Ghana. FDA and GSA certified.';
-
-  if (is_front_page()) {
-      $seo_title = 'Buy Ghanaian Chocolate Online | Everything Cacao';
-      $seo_desc  = 'Shop Nahar and Cherelle — premium chocolate made from Ghana\'s finest cacao. Milk and dark bars available across Accra and Ghana. FDA and GSA certified.';
-  } elseif (is_page(array('craft', 'our-craft', 'about', 'about-us'))) {
-      $seo_title = 'About Everything Cacao | Ghana\'s Premium Chocolate Maker';
-      $seo_desc  = 'Learn the story behind Everything Cacao — a proudly Ghanaian chocolate company committed to quality, sustainability and supporting local cacao farmers.';
-  } elseif (is_page(array('collections', 'our-collections', 'shop'))) {
-      $seo_title = 'Buy Chocolate Online in Ghana | Everything Cacao Shop';
-      $seo_desc  = 'Shop Nahar and Cherelle chocolate bars online. Premium and everyday Ghanaian chocolate delivered across Accra and Ghana. Milk, dark and mini bars available.';
-  } elseif (is_page(array('concierge', 'stock-lists', 'stockists', 'contact'))) {
-      $seo_title = 'Contact Everything Cacao | Get in Touch';
-      $seo_desc  = 'Get in touch with Everything Cacao for orders, wholesale enquiries or general questions. We\'d love to hear from you.';
-  }
-  ?>
-  <title><?php echo esc_html($seo_title); ?></title>
-  <meta name="description" content="<?php echo esc_attr($seo_desc); ?>"/>
-
-  <!-- Google Fonts -->
+  <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
   <!-- Tailwind CSS Engine & Brand Configuration -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -155,19 +132,21 @@
 
   <?php
   // Determine current active page for fallback menu links
-  $request_uri = $_SERVER['REQUEST_URI'];
+  $request_uri = sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI']));
   $is_home       = is_front_page() || $request_uri === '/' || strpos($request_uri, 'home') !== false;
   $is_collections= is_page('collections') || is_page('our-collections') || strpos($request_uri, 'collections') !== false;
   $is_craft      = is_page('craft') || is_page('our-craft') || is_page('about') || strpos($request_uri, 'craft') !== false;
   $is_journal    = (is_home() && !is_front_page()) || is_singular('post') || strpos($request_uri, 'journal') !== false;
-  $is_concierge  = is_page('concierge') || is_page('stock-lists') || is_page('stockists') || strpos($request_uri, 'stock') !== false || strpos($request_uri, 'concierge') !== false;
+  $is_stockist   = is_page('stockist') || is_page('stockists') || is_page('stock-lists') || strpos($request_uri, 'stock') !== false;
+  $is_contact    = is_page('contact') || is_page('concierge') || strpos($request_uri, 'contact') !== false || strpos($request_uri, 'concierge') !== false;
 
   // Smart URL resolver for header links
   $link_home       = esc_url(home_url('/'));
   $link_collections= ec_get_smart_page_link(array('our-collections', 'collections'), '/our-collections');
   $link_craft      = ec_get_smart_page_link(array('our-craft', 'craft'), '/our-craft');
   $link_journal    = ec_get_smart_page_link(array('cacao-journal', 'journal'), '/cacao-journal');
-  $link_concierge  = ec_get_smart_page_link(array('stock-lists', 'stockists', 'concierge'), '/stock-lists');
+  $link_stockist   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock-lists'), '/stockist');
+  $link_contact    = ec_get_smart_page_link(array('contact', 'concierge'), '/contact');
   ?>
 
   <!-- Header Navigation Component -->
@@ -187,8 +166,8 @@
         </a>
       </div>
 
-      <!-- Desktop Navigation Menu (Centered) -->
-      <div class="hidden md:flex items-center justify-center flex-1 mx-6 space-x-8 text-xs font-semibold uppercase tracking-widest">
+      <!-- Desktop Navigation Menu -->
+      <div class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest font-semibold text-cacao-dark">
         <!-- EXPERIENCE US Dropdown Menu -->
         <div class="relative group py-2">
           <button class="nav-link flex items-center gap-1.5 font-semibold uppercase tracking-widest text-xs <?php echo $is_craft ? 'active-page' : ''; ?>">
@@ -197,8 +176,7 @@
             <svg class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180 text-accent-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div class="absolute left-0 top-full hidden group-hover:flex flex-col bg-cacao-dark text-canvas min-w-[200px] py-3 rounded-lg shadow-2xl border border-canvas/15 transition-all z-50">
-            <a href="<?php echo $link_craft; ?>#about" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">ABOUT US</a>
-            <a href="<?php echo $link_craft; ?>" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">OUR CRAFT</a>
+            <a href="<?php echo $link_craft; ?>" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">ABOUT US</a>
           </div>
         </div>
 
@@ -220,14 +198,15 @@
           </div>
         </div>
 
-        <!-- STOCKISTS (Replaced Stocklists) -->
-        <a href="<?php echo $link_concierge; ?>" class="nav-link <?php echo $is_concierge ? 'active-page' : ''; ?>">
-          <?php if ($is_concierge) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
+        <!-- STOCKISTS -->
+        <a href="<?php echo $link_stockist; ?>" class="nav-link <?php echo $is_stockist ? 'active-page' : ''; ?>">
+          <?php if ($is_stockist) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
           STOCKISTS
         </a>
 
         <!-- CONTACT -->
-        <a href="<?php echo $link_concierge; ?>#contact" class="nav-link">
+        <a href="<?php echo $link_contact; ?>" class="nav-link <?php echo $is_contact ? 'active-page' : ''; ?>">
+          <?php if ($is_contact) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
           CONTACT
         </a>
       </div>
@@ -239,9 +218,9 @@
     </nav>
   </header>
 
-  <!-- Mobile Drawer Menu -->
-  <div id="mobile-drawer" class="fixed inset-0 z-50 bg-cacao-dark text-canvas transform translate-x-full transition-transform duration-500 flex flex-col justify-between p-8 md:hidden overflow-y-auto">
-    <div class="space-y-8">
+  <!-- Mobile Drawer Overlay Menu -->
+  <div id="mobile-drawer" class="fixed inset-0 bg-cacao-dark text-canvas z-50 transform translate-x-full transition-transform duration-300 overflow-y-auto">
+    <div class="p-6 space-y-6">
       <div class="flex justify-between items-center border-b border-canvas/20 pb-4">
         <span class="font-serif-luxury text-xl font-bold text-accent-gold">EVERYTHING CACAO GH</span>
         <button id="close-drawer-btn" class="text-canvas text-3xl font-light">&times;</button>
@@ -256,10 +235,7 @@
             </svg>
           </button>
           <div id="mobile-sub-experience" class="hidden pl-3 pt-3 space-y-3.5 border-l border-accent-gold/40 mt-2">
-            <a href="<?php echo $link_home; ?>" class="block text-canvas/80 hover:text-accent-gold">HOME</a>
-            <a href="<?php echo $link_craft; ?>#about" class="block text-canvas/80 hover:text-accent-gold">ABOUT</a>
-            <a href="<?php echo $link_craft; ?>#team" class="block text-canvas/80 hover:text-accent-gold">MEET THE TEAM</a>
-            <a href="<?php echo $link_craft; ?>" class="block text-canvas/80 hover:text-accent-gold">OUR CRAFT</a>
+            <a href="<?php echo $link_craft; ?>" class="block text-canvas/80 hover:text-accent-gold">ABOUT US</a>
           </div>
         </div>
 
@@ -277,25 +253,24 @@
             </svg>
           </button>
           <div id="mobile-sub-collections" class="hidden pl-3 pt-3 space-y-3.5 border-l border-accent-gold/40 mt-2">
-            <a href="<?php echo $link_collections; ?>" class="block text-canvas/80 hover:text-accent-gold">ALL COLLECTIONS</a>
             <a href="<?php echo $link_collections; ?>?lineage=gifting" class="block text-canvas/80 hover:text-accent-gold">CORPORATE &amp; CUSTOM GIFTING</a>
           </div>
         </div>
 
         <!-- 4. STOCKISTS -->
         <div class="border-b border-canvas/10 pb-3">
-          <a href="<?php echo $link_concierge; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">STOCKISTS</a>
+          <a href="<?php echo $link_stockist; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">STOCKISTS</a>
         </div>
 
         <!-- 5. CONTACT -->
         <div class="border-b border-canvas/10 pb-3">
-          <a href="<?php echo $link_concierge; ?>#contact" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">CONTACT</a>
+          <a href="<?php echo $link_contact; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">CONTACT</a>
         </div>
       </div>
 
       <div class="space-y-4 pt-6">
-        <a href="https://wa.me/<?php echo esc_attr(get_option('ec_whatsapp_number', '233240000000')); ?>?text=Hi%20Everything%20Cacao%20GH!" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-accent-whatsapp text-white font-semibold uppercase tracking-widest text-center block rounded">
-          WhatsApp Concierge
+        <a href="https://wa.me/<?php echo esc_attr(get_option('ec_whatsapp_number', '233240661866')); ?>?text=Hi%20Everything%20Cacao%20GH!" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-accent-whatsapp text-white font-semibold uppercase tracking-widest text-center block rounded">
+          WhatsApp Support
         </a>
       </div>
     </div>

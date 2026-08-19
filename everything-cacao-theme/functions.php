@@ -1544,5 +1544,308 @@ HTML;
 }
 add_action('init', 'ec_auto_publish_recipe_blog_post');
 
+/**
+ * 17. Auto-Publish Wellbeing Blog Post: Is Dark Chocolate Good for You?
+ */
+function ec_auto_publish_wellbeing_blog_post() {
+    $slug = 'benefits-of-dark-chocolate-ghana';
+    
+    // Check if post already exists
+    $existing = get_page_by_path($slug, OBJECT, 'post');
+    if ($existing) {
+        return;
+    }
+
+    // Ensure category 'Cocoa & Wellbeing' exists
+    $cat_id = 0;
+    $term = get_term_by('name', 'Cocoa & Wellbeing', 'category');
+    if ($term) {
+        $cat_id = $term->term_id;
+    } else {
+        $cat = wp_insert_term('Cocoa & Wellbeing', 'category', array('slug' => 'cocoa-wellbeing'));
+        if (!is_wp_error($cat)) {
+            $cat_id = $cat['term_id'];
+        }
+    }
+
+    $post_title = 'Is Dark Chocolate Good for You? The Facts, in Plain Language';
+    $post_content = <<<'HTML'
+<p class="text-xl font-medium text-cacao-dark leading-relaxed mb-6">
+  Ghana grows some of the best cocoa in the world. But how many of us actually know what that cocoa does for the body once it becomes chocolate?
+</p>
+
+<p class="mb-6">
+  Here is what dark chocolate does for you, in simple words. No jargon — just the good news, and how to get the most out of every bar.
+</p>
+
+<h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark mt-10 mb-4">
+  What makes chocolate “dark”
+</h2>
+
+<p class="mb-4">
+  Look at the front of any good chocolate bar and you will see a number. Our <a href="/our-collections?lineage=nahar" class="text-accent-terracotta font-semibold hover:underline">Nahar bar</a> says 72%.
+</p>
+
+<p class="mb-6">
+  That number is the cocoa content — how much of the bar comes from the cocoa bean itself, counting both the cocoa solids and the cocoa butter. The higher the number, the more cocoa you are getting. Dark chocolate carries a higher cocoa content than milk chocolate, and it is that generous amount of cocoa which brings the deep flavour and the goodness described below.
+</p>
+
+<h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark mt-10 mb-4">
+  1. It is good for your heart
+</h2>
+
+<p class="mb-4">
+  Cocoa beans contain natural plant compounds called flavanols. These compounds help your blood vessels relax and open up, so blood moves through them more easily.
+</p>
+
+<p class="mb-4">Researchers have studied cocoa many times, across thousands of people, and the findings are encouraging:</p>
+
+<ul class="list-disc pl-6 space-y-2 mb-6 text-cacao-dark">
+  <li><strong>Healthier blood pressure:</strong> People who enjoyed cocoa daily tended to have healthier blood pressure readings.</li>
+  <li><strong>Proven long-term benefits:</strong> In one large study of more than 21,000 adults, those taking cocoa every day showed better heart health over the years that followed.</li>
+  <li><strong>Extensively researched:</strong> Cocoa is one of the most researched foods in the world for heart health — which is a wonderful thing to be able to say about something that tastes this good.</li>
+</ul>
+
+<blockquote class="border-l-4 border-accent-gold pl-6 py-4 my-8 bg-canvas/80 rounded-r-xl italic font-serif-luxury text-lg text-cacao-dark">
+  Very few treats have this kind of reputation. Dark chocolate is one of the rare ones you can enjoy and feel good about.
+</blockquote>
+
+<h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark mt-10 mb-4">
+  2. It gives you iron and magnesium
+</h2>
+
+<p class="mb-4">
+  This is the part most people never hear. Dark chocolate is not just a treat — it is genuinely full of minerals your body needs.
+</p>
+
+<p class="mb-4">Eat three squares (about 25g, a quarter of a 100g bar) and you get:</p>
+
+<ul class="list-disc pl-6 space-y-2 mb-6 text-cacao-dark">
+  <li><strong>Iron (approx. 3mg):</strong> Iron builds the blood and carries oxygen around the body, keeping your energy up through the day.</li>
+  <li><strong>Magnesium (approx. 58mg):</strong> Magnesium helps your muscles and nerves work well and supports good, restful sleep.</li>
+  <li><strong>Essential Minerals:</strong> Copper, manganese, and potassium in balanced amounts.</li>
+</ul>
+
+<div class="p-6 bg-canvas rounded-xl border border-cacao-dark/15 space-y-2 my-6">
+  <p class="text-sm text-cacao-dark font-medium">
+    💡 <strong>Pro Tip for Iron Absorption:</strong> Eat your chocolate with something containing vitamin C, like orange, pineapple, or fresh juice, and your body absorbs the iron better. Tea and coffee do the opposite, so leave a gap between them.
+  </p>
+</div>
+
+<h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark mt-10 mb-4">
+  3. It is naturally rich in fibre
+</h2>
+
+<p class="mb-4">
+  Cocoa brings fibre with it — around 11g in every 100g of dark chocolate, which is more than most people expect from something so indulgent.
+</p>
+
+<p class="mb-6">
+  Fibre and cocoa butter together are what make dark chocolate so satisfying. A couple of squares genuinely feel like enough, which is why dark chocolate is the kind of treat you enjoy properly rather than finish without noticing.
+</p>
+
+<h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark mt-10 mb-4">
+  4. It lifts your mood and helps you focus
+</h2>
+
+<p class="mb-4">
+  Cocoa contains theobromine. It is a cousin of caffeine, but gentler and longer lasting. It wakes you up slowly instead of jolting you, which is why a square of chocolate around 3pm works better than another cup of coffee.
+</p>
+
+<p class="mb-6">
+  Research has also found that people feel brighter and concentrate better after enjoying cocoa. Anyone who has reached for a square during a long afternoon already knew that.
+</p>
+
+<h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark mt-10 mb-4">
+  5. It is packed with antioxidants — if it is made well
+</h2>
+
+<p class="mb-4">
+  Cocoa has more antioxidants by weight than most fruits. Antioxidants protect your cells from daily damage.
+</p>
+
+<p class="mb-6">
+  One thing worth knowing: the gentler the processing, the more of that natural goodness stays in the bar. Heavy factory processing strips much of it away, while careful handling keeps it intact. So when we talk about high-quality chocolate, we are talking about more than taste. Good beans, proper fermentation and drying, and gentle processing are what keep the goodness inside the bar — and they are exactly what make it taste better too.
+</p>
+
+<!-- Highlight Box: Made in Ghana -->
+<div class="my-10 p-8 bg-card-bg rounded-2xl border-2 border-accent-gold/40 shadow-xl space-y-4">
+  <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta block">Why Local Sourcing Matters</span>
+  <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark">Why chocolate made in Ghana is a better buy</h3>
+  <p class="text-sm text-text-muted leading-relaxed">
+    Ghana is the second-largest cocoa producer in the world. Our beans are famous globally for a rich, rounded, deeply chocolatey taste. That is why so much expensive chocolate sold in Europe and America quietly starts on a farm in the Western or Ashanti Region.
+  </p>
+  <p class="text-sm text-text-muted leading-relaxed">
+    <a href="/about-us" class="text-accent-terracotta font-semibold underline">Everything Cacao GH</a> was built to change that. Our cocoa is sourced in Ghana and our chocolate is made in Ghana. For you, that means:
+  </p>
+  <ul class="list-disc pl-6 space-y-2 text-sm text-cacao-dark">
+    <li><strong>Fresher chocolate:</strong> Your bar did not spend months on a ship before it became chocolate.</li>
+    <li><strong>Full transparency:</strong> The farm and the factory are in the same country.</li>
+    <li><strong>Empowering local communities:</strong> The jobs, skills, and profit stay in Ghana, with the farmers who grew the crop.</li>
+  </ul>
+</div>
+
+<h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark mt-10 mb-4">
+  How to enjoy it
+</h2>
+
+<p class="mb-4">
+  Two to three squares a day — about a quarter of a 100g bar — is the amount that appears again and again in the research, and it slips easily into everyday life. Morning coffee, afternoon break, after dinner: pick your moment.
+</p>
+
+<p class="mb-6">
+  Eat it slowly. Let a square rest on your tongue and melt rather than chewing it. A 72% bar has a long, layered finish, and taking your time is how you taste it. This is chocolate to savour, not to rush.
+</p>
+
+<h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark mt-10 mb-4">
+  How to choose a good dark chocolate bar
+</h2>
+
+<ul class="list-disc pl-6 space-y-2 mb-8 text-cacao-dark">
+  <li><strong>Read the first ingredient:</strong> In a good bar it is cocoa — cocoa mass, cocoa beans or cocoa liquor.</li>
+  <li><strong>Look for cocoa butter:</strong> Real cocoa butter gives chocolate that smooth, clean melt on the tongue.</li>
+  <li><strong>Choose 60% and above:</strong> Most people are happiest between 70% and 75%.</li>
+  <li><strong>Short ingredient list:</strong> Cocoa, cocoa butter, sugar, a little lecithin, and vanilla is all a fine bar needs.</li>
+  <li><strong>Check the snap:</strong> Good chocolate breaks with a clean, sharp crack and has a shiny surface.</li>
+</ul>
+
+<h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark mt-10 mb-4">
+  Where to buy ours
+</h2>
+
+<p class="mb-6">
+  You will find our <a href="/our-collections?lineage=nahar" class="text-accent-terracotta underline font-semibold">Nahar 72% dark bar</a> in <a href="/stockist" class="text-accent-terracotta underline font-semibold">supermarkets and malls across Ghana</a>, and in our online shop. Nahar is our premium range; Cherelle is our everyday range — sweeter, made for the family. And if you would rather <a href="/blog/chocolate-chunk-banana-bread-ghanaian-dark-chocolate" class="text-accent-terracotta underline font-semibold">bake with it</a> than eat it plain, one 100g Nahar bar chopped into chunks makes a beautiful chocolate chunk banana bread.
+</p>
+
+<div class="my-8">
+  <a href="/our-collections?lineage=nahar" class="px-8 py-4 bg-cacao-dark text-canvas font-semibold text-xs uppercase tracking-widest hover:bg-accent-terracotta transition-colors inline-block rounded-lg shadow-md">
+    Shop the Nahar 72% Dark Bar &rarr;
+  </a>
+</div>
+
+<h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark mt-12 mb-6">
+  Questions people ask
+</h2>
+
+<div class="space-y-4 my-8">
+  <div class="p-6 bg-card-bg rounded-xl border border-cacao-dark/10 space-y-2">
+    <h3 class="font-serif-luxury text-lg font-bold text-cacao-dark">Which percentage of dark chocolate is best?</h3>
+    <p class="text-sm text-text-muted">70% and above is where you get a generous amount of cocoa. 70% to 75% is the range most people love, which is exactly where our Nahar 72% sits.</p>
+  </div>
+
+  <div class="p-6 bg-card-bg rounded-xl border border-cacao-dark/10 space-y-2">
+    <h3 class="font-serif-luxury text-lg font-bold text-cacao-dark">Can I eat dark chocolate every day?</h3>
+    <p class="text-sm text-text-muted">Yes — two or three squares a day is a lovely daily habit, and it is roughly the amount used in published research studies.</p>
+  </div>
+
+  <div class="p-6 bg-card-bg rounded-xl border border-cacao-dark/10 space-y-2">
+    <h3 class="font-serif-luxury text-lg font-bold text-cacao-dark">Is dark chocolate good for the heart?</h3>
+    <p class="text-sm text-text-muted">Cocoa is one of the most studied foods in the world for heart health. The natural flavanols help blood vessels relax and support healthy blood pressure.</p>
+  </div>
+
+  <div class="p-6 bg-card-bg rounded-xl border border-cacao-dark/10 space-y-2">
+    <h3 class="font-serif-luxury text-lg font-bold text-cacao-dark">Is dark chocolate a good source of iron?</h3>
+    <p class="text-sm text-text-muted">Yes! Three squares give you around 3mg of iron. Pair it with orange or pineapple for even better absorption.</p>
+  </div>
+
+  <div class="p-6 bg-card-bg rounded-xl border border-cacao-dark/10 space-y-2">
+    <h3 class="font-serif-luxury text-lg font-bold text-cacao-dark">Why does chocolate made in Ghana taste different?</h3>
+    <p class="text-sm text-text-muted">Ghanaian cocoa has a full, rounded, classic chocolate taste. Because our chocolate is made locally, it reaches you fresher without ocean shipping delays.</p>
+  </div>
+</div>
+
+<p class="text-xs text-text-muted italic border-t border-cacao-dark/10 pt-6 mt-8">
+  This article shares general information about cocoa and is not medical advice. Information draws on published nutrition and cocoa research, including clinical trials on cocoa and heart health, the COSMOS study of 21,442 adults, and USDA nutrition data for dark chocolate.
+</p>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Is Dark Chocolate Good for You? The Facts, in Plain Language",
+  "image": [
+    "https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg"
+  ],
+  "datePublished": "2026-08-19",
+  "author": {
+    "@type": "Organization",
+    "name": "Everything Cacao GH Editorial"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Everything Cacao GH",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg"
+    }
+  },
+  "description": "Dark chocolate is good for your heart, your blood and your mood. The simple facts — and why chocolate made in Ghana is the best kind to buy."
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which percentage of dark chocolate is best?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "70% and above is where you get a generous amount of cocoa. 70% to 75% is the range most people love, which is exactly where our Nahar 72% sits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I eat dark chocolate every day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — two or three squares a day is a lovely daily habit, and it is roughly the amount used in research."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is dark chocolate good for the heart?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cocoa is one of the most studied foods in the world for heart health. The natural compounds help blood vessels relax."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is dark chocolate a good source of iron?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three squares give you around 3mg of iron. Pair it with orange or pineapple for even better absorption."
+      }
+    }
+  ]
+}
+</script>
+HTML;
+
+    $post_id = wp_insert_post(array(
+        'post_title'    => $post_title,
+        'post_name'     => $slug,
+        'post_content'  => $post_content,
+        'post_excerpt'  => 'Dark chocolate is good for your heart, your blood and your mood. The simple facts — and why chocolate made in Ghana is the best kind to buy.',
+        'post_status'   => 'publish',
+        'post_type'     => 'post',
+        'post_category' => array($cat_id),
+    ));
+
+    if ($post_id && !is_wp_error($post_id)) {
+        // SEO metadata for Yoast & Rank Math
+        update_post_meta($post_id, '_yoast_wpseo_title', 'Benefits of Dark Chocolate | Made in Ghana Chocolate');
+        update_post_meta($post_id, '_yoast_wpseo_metadesc', 'Dark chocolate is good for your heart, your blood and your mood. The simple facts — and why chocolate made in Ghana is the best kind to buy.');
+        update_post_meta($post_id, 'rank_math_title', 'Benefits of Dark Chocolate | Made in Ghana Chocolate');
+        update_post_meta($post_id, 'rank_math_description', 'Dark chocolate is good for your heart, your blood and your mood. The simple facts — and why chocolate made in Ghana is the best kind to buy.');
+        update_post_meta($post_id, 'rank_math_focus_keyword', 'benefits of dark chocolate');
+        wp_set_post_tags($post_id, array('GhanaianCacao', 'NaharObsidian', 'Wellbeing', 'HealthBenefits'));
+    }
+}
+add_action('init', 'ec_auto_publish_wellbeing_blog_post');
+
 
 

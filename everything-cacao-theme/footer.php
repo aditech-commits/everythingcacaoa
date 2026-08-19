@@ -18,10 +18,13 @@ $link_contact    = ec_get_smart_page_link(array('contact', 'concierge'), '/conta
   <footer class="bg-cacao-dark text-canvas border-t border-canvas/10 mt-auto py-16 px-6 md:px-12">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
       <div class="space-y-4">
-        <a href="<?php echo $link_home; ?>" class="inline-block">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand/logo.png" alt="<?php bloginfo('name'); ?>" class="h-20 md:h-28 w-auto object-contain transition-transform duration-300 hover:scale-105" />
+        <a href="<?php echo $link_home; ?>" class="inline-block group">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand/logo.png" alt="<?php bloginfo('name'); ?>" class="h-20 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+          <span class="font-serif-luxury text-lg md:text-xl font-bold tracking-wider text-canvas group-hover:text-accent-gold transition-colors block mt-2 uppercase">
+            EVERYTHING CACAO
+          </span>
         </a>
-        <div class="flex items-center gap-2 pt-1 text-[11px] text-accent-gold font-semibold">
+        <div class="flex items-center gap-2 text-[11px] text-accent-gold font-semibold">
           <span>✓ FDA Certified</span>
           <span>•</span>
           <span>✓ GSA Certified</span>
@@ -37,22 +40,15 @@ $link_contact    = ec_get_smart_page_link(array('contact', 'concierge'), '/conta
                 'theme_location' => 'footer',
                 'container'      => false,
                 'menu_class'     => 'space-y-2 text-xs uppercase tracking-widest font-semibold',
-                'fallback_cb'    => false,
-            ));
-        } elseif (has_nav_menu('primary')) {
-            // Mirror Primary Header Menu if footer menu is not separately assigned
-            wp_nav_menu(array(
-                'theme_location' => 'primary',
-                'container'      => false,
-                'menu_class'     => 'space-y-2 text-xs uppercase tracking-widest font-semibold',
+                'depth'          => 1,
                 'fallback_cb'    => false,
             ));
         } else {
             ?>
             <a href="<?php echo $link_home; ?>" class="block hover:text-accent-gold transition-colors">Home</a>
             <a href="<?php echo $link_craft; ?>" class="block hover:text-accent-gold transition-colors">ABOUT US</a>
-            <a href="<?php echo $link_collections; ?>" class="block hover:text-accent-gold transition-colors">Our Collections</a>
             <a href="<?php echo $link_journal; ?>" class="block hover:text-accent-gold transition-colors">Cacao Journal</a>
+            <a href="<?php echo $link_collections; ?>" class="block hover:text-accent-gold transition-colors">Our Collections</a>
             <a href="<?php echo $link_stockist; ?>" class="block hover:text-accent-gold transition-colors">STOCKISTS</a>
             <a href="<?php echo $link_contact; ?>" class="block hover:text-accent-gold transition-colors">Contact</a>
             <?php

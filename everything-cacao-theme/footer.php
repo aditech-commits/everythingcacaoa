@@ -9,7 +9,7 @@
 
 $link_home       = esc_url(home_url('/'));
 $link_collections= ec_get_smart_page_link(array('our-collections', 'collections'), '/our-collections');
-$link_craft      = ec_get_smart_page_link(array('our-craft', 'craft'), '/our-craft');
+$link_craft      = ec_get_smart_page_link(array('about-us', 'about', 'our-craft', 'craft'), '/about-us');
 $link_journal    = ec_get_smart_page_link(array('cacao-journal', 'journal'), '/cacao-journal');
 $link_stockist   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock-lists'), '/stockist');
 $link_contact    = ec_get_smart_page_link(array('contact', 'concierge'), '/contact');
@@ -50,8 +50,8 @@ $link_contact    = ec_get_smart_page_link(array('contact', 'concierge'), '/conta
         } else {
             ?>
             <a href="<?php echo $link_home; ?>" class="block hover:text-accent-gold transition-colors">Home</a>
+            <a href="<?php echo $link_craft; ?>" class="block hover:text-accent-gold transition-colors">ABOUT US</a>
             <a href="<?php echo $link_collections; ?>" class="block hover:text-accent-gold transition-colors">Our Collections</a>
-            <a href="<?php echo $link_craft; ?>" class="block hover:text-accent-gold transition-colors">Our Craft</a>
             <a href="<?php echo $link_journal; ?>" class="block hover:text-accent-gold transition-colors">Cacao Journal</a>
             <a href="<?php echo $link_stockist; ?>" class="block hover:text-accent-gold transition-colors">STOCKISTS</a>
             <a href="<?php echo $link_contact; ?>" class="block hover:text-accent-gold transition-colors">Contact</a>

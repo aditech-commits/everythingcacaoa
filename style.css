@@ -1,13 +1,22 @@
 /*
-Theme Name:    Everything Cacao GH
-Theme URI:     https://everythingcacao.com
-Author:        Aditech
-Author URI:    https://aditech.com
-Description:   Luxury Ghanaian bean-to-bar artisanal chocolate brand WordPress theme. Features Cherelle & Nahar sub-brand collections, Custom Post Type cacao_products, WhatsApp direct ordering, Meta Pixel tracking, and contact forms.
-Version:       1.0.0
-License:       GNU General Public License v2 or later
-Text Domain:   everything-cacao
-Tags:          luxury, chocolate, artisanal, ghana, custom-logo, custom-menu, featured-images, custom-post-type
+Theme Name: Everything Cacao GH
+Theme URI: https://everythingcacaogh.com
+Author: Everything Cacao
+Author URI: https://everythingcacaogh.com
+Description: Luxury Ghanaian bean-to-bar artisanal chocolate brand WordPress theme. Features Cherelle & Nahar sub-brand collections, Custom Post Type cacao_products, WhatsApp direct ordering, Meta Pixel tracking, and concierge contact forms.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: everything-cacao
+Tags: luxury, chocolate, artisanal, ghana, custom-logo, custom-menu, featured-images, custom-post-type
 */
 
-/* Core CSS rules are enqueued via assets/css/tailwind.css */
+/* Core Theme Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FBF8F3;
+  color: #2C1A11;
+  font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}

@@ -1262,4 +1262,287 @@ function ec_handle_palette_club_ajax() {
 add_action('wp_ajax_ec_submit_palette_club', 'ec_handle_palette_club_ajax');
 add_action('wp_ajax_nopriv_ec_submit_palette_club', 'ec_handle_palette_club_ajax');
 
+/**
+ * 16. Auto-Publish Recipe Blog Post: Chocolate Chunk Banana Bread
+ */
+function ec_auto_publish_recipe_blog_post() {
+    $slug = 'chocolate-chunk-banana-bread-ghanaian-dark-chocolate';
+    
+    // Check if post already exists
+    $existing = get_page_by_path($slug, OBJECT, 'post');
+    if ($existing) {
+        return;
+    }
+
+    // Ensure category 'Recipes' exists
+    $cat_id = 0;
+    $term = get_term_by('name', 'Recipes', 'category');
+    if ($term) {
+        $cat_id = $term->term_id;
+    } else {
+        $cat = wp_insert_term('Recipes', 'category', array('slug' => 'recipes'));
+        if (!is_wp_error($cat)) {
+            $cat_id = $cat['term_id'];
+        }
+    }
+
+    $post_title = 'Chocolate Chunk Banana Bread Made with Ghanaian Dark Chocolate';
+    $post_content = <<<'HTML'
+<p class="text-xl font-medium text-cacao-dark leading-relaxed mb-6">
+  We all know the feeling. You buy a bunch of bananas, life gets busy, and a few days later they are sitting on the counter soft, freckled and past the point where anyone wants to eat them. In our heat they get there quickly.
+</p>
+
+<p class="mb-6">
+  Don't throw them away. Overripe bananas are the sweetest, most fragrant they will ever be, and they make the best banana bread — and banana bread happens to be one of the loveliest ways to bake with good chocolate.
+</p>
+
+<p class="mb-6">
+  This is a simple, one-bowl recipe. What makes it special is the chocolate: one 100g bar of <a href="/our-collections?lineage=nahar" class="text-accent-terracotta font-semibold hover:underline">Nahar 72% dark</a>, chopped into rough chunks and folded through the batter. A proper dark chocolate bar, made here in Ghana from Ghanaian cocoa, broken up with a knife.
+</p>
+
+<h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark mt-10 mb-4">
+  Why a chopped bar makes a better bake than baking drops
+</h2>
+
+<p class="mb-4">Using a real chocolate bar instead of ready-made baking drops gives you three lovely things:</p>
+
+<ul class="list-disc pl-6 space-y-2 mb-6 text-cacao-dark">
+  <li><strong>Variety in every slice:</strong> When you chop by hand, the pieces come out all different sizes. The fine dust and slivers melt into the batter and flavour the whole loaf; the big chunks stay as generous bites of pure chocolate. Every slice is a little different.</li>
+  <li><strong>Better chocolate:</strong> A Nahar bar is chocolate you would happily eat on its own — good cocoa, good cocoa butter, nothing extra. Baking drops are made to survive the oven rather than to taste wonderful, so a real bar simply gives you more flavour.</li>
+  <li><strong>Beautiful melting pockets:</strong> Because the bar is full of real cocoa butter, it softens properly in the heat and leaves glossy seams and puddles of chocolate running through the crumb.</li>
+</ul>
+
+<blockquote class="border-l-4 border-accent-gold pl-6 py-4 my-8 bg-canvas/80 rounded-r-xl italic font-serif-luxury text-lg text-cacao-dark">
+  One tip that makes chopping much easier: put the bar in the fridge for about 10 minutes first. A cold bar breaks into clean chunks under the knife, while a bar left in a warm kitchen tends to bend and smear.
+</blockquote>
+
+<p class="mb-6">
+  Chop on a board with a large knife, working from one corner of the bar diagonally across. Aim for pieces roughly the size of your thumbnail, plus the smaller rubble. Keep about a quarter of the chunks aside to press into the top before baking, so the loaf comes out looking as good as it tastes.
+</p>
+
+<h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark mt-10 mb-4">
+  Why 72% is the right strength for this loaf
+</h2>
+
+<p class="mb-4">Very ripe bananas are sweet, and so is the sugar in the batter.</p>
+
+<p class="mb-6">
+  At 72%, the <a href="/our-collections?lineage=nahar" class="text-accent-terracotta font-semibold hover:underline">Nahar dark bar</a> sits in the sweet spot — enough sugar to read as a treat, enough cocoa to bring bitterness and that deep roasted note that cuts through the sweetness of the fruit. Ghanaian cocoa is known worldwide for exactly this profile: rounded, classic, chocolatey rather than sharp or fruity. It is why so much of the world's premium chocolate starts as beans grown here.
+</p>
+
+<!-- Recipe Card Container -->
+<div class="my-10 p-8 bg-card-bg rounded-2xl border-2 border-accent-gold/40 shadow-xl space-y-6">
+  <div class="border-b border-cacao-dark/15 pb-4">
+    <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta block">Ghanaian Kitchen Special</span>
+    <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark">Chocolate Chunk Banana Bread Recipe</h3>
+    <div class="flex flex-wrap items-center gap-4 text-xs font-semibold text-cacao-dark/80 mt-2">
+      <span>⏱️ Prep: 15 mins</span>
+      <span>•</span>
+      <span>🔥 Bake: 55–65 mins</span>
+      <span>•</span>
+      <span>🍞 Yield: 1 Loaf (10 slices)</span>
+    </div>
+  </div>
+
+  <div class="space-y-4">
+    <h4 class="font-serif-luxury text-lg font-bold text-cacao-dark">Ingredients</h4>
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-cacao-dark">
+      <li>• 3 large very ripe bananas (approx. 350g)</li>
+      <li>• 115g butter, melted (or 110ml neutral oil)</li>
+      <li>• 150g brown sugar</li>
+      <li>• 2 large eggs / 3 medium eggs</li>
+      <li>• 1 tsp vanilla extract</li>
+      <li>• 190g plain flour</li>
+      <li>• 1 tsp bicarbonate of soda</li>
+      <li>• ½ tsp fine salt</li>
+      <li>• ½ tsp ground cinnamon or nutmeg</li>
+      <li>• 1 × 100g bar <a href="/our-collections?lineage=nahar" class="text-accent-terracotta font-semibold hover:underline">Nahar 72% dark chocolate</a></li>
+    </ul>
+  </div>
+
+  <div class="space-y-4 pt-4 border-t border-cacao-dark/10">
+    <h4 class="font-serif-luxury text-lg font-bold text-cacao-dark">Equipment Needed</h4>
+    <p class="text-sm text-text-muted">A 23 × 13cm (9 × 5 inch) loaf tin, greased &amp; lined · One large mixing bowl, a fork and a spatula — no mixer needed.</p>
+  </div>
+</div>
+
+<h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark mt-10 mb-4">
+  How to make it
+</h2>
+
+<ol class="list-decimal pl-6 space-y-4 mb-8 text-cacao-dark">
+  <li><strong>Heat the oven:</strong> Preheat to 175°C (350°F). Grease your loaf tin and line it with baking paper.</li>
+  <li><strong>Mash bananas:</strong> Mash the ripe bananas in a large mixing bowl with a fork until smooth.</li>
+  <li><strong>Combine wet ingredients:</strong> Whisk in the melted butter, sugar, eggs one at a time, and vanilla until smooth and glossy.</li>
+  <li><strong>Fold dry ingredients:</strong> Add flour, bicarbonate of soda, salt, and spice. Fold with a spatula only until no dry flour remains. <em>Do not overmix.</em></li>
+  <li><strong>Fold in chocolate:</strong> Gently fold in three-quarters of the chopped Nahar 72% chocolate chunks.</li>
+  <li><strong>Bake:</strong> Scrape into the tin, level top, and press reserved chunks on top. Bake for 55–65 minutes until a skewer comes out clean.</li>
+  <li><strong>Cool:</strong> Cool in tin for 15 minutes, then transfer to a rack for 20 minutes before slicing.</li>
+</ol>
+
+<h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark mt-10 mb-4">
+  Baker's notes for Ghanaian kitchens
+</h2>
+
+<div class="p-6 bg-canvas rounded-xl border border-cacao-dark/15 space-y-3 my-6">
+  <ul class="space-y-2 text-sm text-cacao-dark">
+    <li>💡 <strong>Storage:</strong> Store chocolate somewhere cool, dry, and airtight away from spices.</li>
+    <li>🧊 <strong>Chilling:</strong> 10 minutes in the fridge before chopping ensures crisp, clean chunks.</li>
+    <li>🔥 <strong>Gas Ovens:</strong> Rotate the tin at 35 minutes; cover loosely with foil if browning too fast.</li>
+    <li>💧 <strong>Rainy Season Humidity:</strong> If flour is holding moisture and batter looks loose, add 1 extra tbsp flour.</li>
+  </ul>
+</div>
+
+<h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark mt-10 mb-4">
+  Ways to make it your own
+</h2>
+
+<ul class="list-disc pl-6 space-y-2 mb-6 text-sm text-cacao-dark">
+  <li><strong>Roasted groundnuts:</strong> A handful of chopped roasted groundnuts folded in with the chocolate.</li>
+  <li><strong>Toasted coconut:</strong> Fold 40g through the batter and scatter more on top.</li>
+  <li><strong>Sea salt finish:</strong> A few flakes of sea salt over top chunks before baking.</li>
+  <li><strong>For children:</strong> Swap half the Nahar 72% for our <a href="/our-collections?lineage=cherelle" class="text-accent-terracotta underline font-semibold">Cherelle 60%</a> for a sweeter finish.</li>
+</ul>
+
+<h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark mt-10 mb-4">
+  Where to buy the chocolate
+</h2>
+
+<p class="mb-6">
+  You can find the Nahar 72% dark bar and the rest of the Everything Cacao GH range in <a href="/stockist" class="text-accent-terracotta underline font-semibold">supermarkets and malls across Ghana</a>. Every bar is made from Ghanaian cocoa, processed and produced right here.
+</p>
+
+<div class="my-8">
+  <a href="/our-collections?lineage=nahar" class="px-8 py-4 bg-cacao-dark text-canvas font-semibold text-xs uppercase tracking-widest hover:bg-accent-terracotta transition-colors inline-block rounded-lg shadow-md">
+    Shop the Nahar 72% Dark Bar &rarr;
+  </a>
+</div>
+
+<h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark mt-12 mb-6">
+  Frequently Asked Questions
+</h2>
+
+<div class="space-y-4 my-8">
+  <div class="p-6 bg-card-bg rounded-xl border border-cacao-dark/10 space-y-2">
+    <h3 class="font-serif-luxury text-lg font-bold text-cacao-dark">What if I don't want to use the 72% bar?</h3>
+    <p class="text-sm text-text-muted">Use our Cherelle 60% instead. It is a gentler, sweeter chocolate, so the loaf comes out milder and more of a family favourite — especially good if you are baking for children.</p>
+  </div>
+
+  <div class="p-6 bg-card-bg rounded-xl border border-cacao-dark/10 space-y-2">
+    <h3 class="font-serif-luxury text-lg font-bold text-cacao-dark">Why did all my chocolate chunks sink to the bottom?</h3>
+    <p class="text-sm text-text-muted">Toss the chopped chocolate in a teaspoon of your measured flour before folding it in — the light coating helps it grip the batter and stay suspended.</p>
+  </div>
+
+  <div class="p-6 bg-card-bg rounded-xl border border-cacao-dark/10 space-y-2">
+    <h3 class="font-serif-luxury text-lg font-bold text-cacao-dark">My bananas aren't ripe enough. What can I do?</h3>
+    <p class="text-sm text-text-muted">Put them, still in their skins, on a tray in a 180°C oven for 15–20 minutes until the skins turn black and shiny. Let them cool, then scoop out the flesh.</p>
+  </div>
+
+  <div class="p-6 bg-card-bg rounded-xl border border-cacao-dark/10 space-y-2">
+    <h3 class="font-serif-luxury text-lg font-bold text-cacao-dark">Can I make this without an oven?</h3>
+    <p class="text-sm text-text-muted">Yes — a heavy-bottomed pot on the lowest possible flame, with the batter in a greased tin sitting on a trivet inside, lid on, will bake in 50–70 minutes.</p>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Chocolate Chunk Banana Bread Made with Ghanaian Dark Chocolate",
+  "image": [
+    "https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg"
+  ],
+  "author": {
+    "@type": "Organization",
+    "name": "Everything Cacao GH"
+  },
+  "datePublished": "2026-08-19",
+  "description": "An easy banana bread recipe using one 100g bar of Nahar 72% dark chocolate cut into chunks. Made in Ghana chocolate, baked in a Ghanaian kitchen.",
+  "prepTime": "PT15M",
+  "cookTime": "PT60M",
+  "totalTime": "PT75M",
+  "keywords": "chocolate chunk banana bread recipe, Ghanaian dark chocolate, Nahar chocolate, banana bread with dark chocolate",
+  "recipeYield": "10 slices",
+  "recipeCategory": "Dessert",
+  "recipeCuisine": "Ghanaian",
+  "recipeIngredient": [
+    "3 large very ripe bananas (about 350g peeled)",
+    "115g butter, melted and slightly cooled",
+    "150g brown sugar",
+    "2 large eggs at room temperature",
+    "1 tsp vanilla extract",
+    "190g plain flour",
+    "1 tsp bicarbonate of soda",
+    "½ tsp fine salt",
+    "½ tsp ground cinnamon",
+    "100g bar Nahar 72% dark chocolate, chopped"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What if I don't want to use the 72% bar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use our Cherelle 60% instead. It is a gentler, sweeter chocolate, so the loaf comes out milder and more of a family favourite."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did all my chocolate chunks sink to the bottom?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Toss the chopped chocolate in a teaspoon of your measured flour before folding it in — the light coating helps it grip the batter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My bananas aren't ripe enough. What can I do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Put them, still in their skins, on a tray in a 180°C oven for 15–20 minutes until the skins turn black and shiny."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I make this without an oven?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — a heavy-bottomed pot on the lowest possible flame, with the batter in a greased tin sitting on a trivet inside, lid on, will bake in roughly 50–70 minutes."
+      }
+    }
+  ]
+}
+</script>
+HTML;
+
+    $post_id = wp_insert_post(array(
+        'post_title'    => $post_title,
+        'post_name'     => $slug,
+        'post_content'  => $post_content,
+        'post_excerpt'  => 'An easy banana bread recipe using one 100g bar of Nahar 72% dark chocolate cut into chunks. Made in Ghana chocolate, baked in a Ghanaian kitchen.',
+        'post_status'   => 'publish',
+        'post_type'     => 'post',
+        'post_category' => array($cat_id),
+    ));
+
+    if ($post_id && !is_wp_error($post_id)) {
+        // SEO metadata for Yoast & Rank Math
+        update_post_meta($post_id, '_yoast_wpseo_title', 'Chocolate Chunk Banana Bread with Ghanaian Dark Chocolate');
+        update_post_meta($post_id, '_yoast_wpseo_metadesc', 'An easy banana bread recipe using one 100g bar of Nahar 72% dark chocolate cut into chunks. Made in Ghana chocolate, baked in a Ghanaian kitchen.');
+        update_post_meta($post_id, 'rank_math_title', 'Chocolate Chunk Banana Bread with Ghanaian Dark Chocolate');
+        update_post_meta($post_id, 'rank_math_description', 'An easy banana bread recipe using one 100g bar of Nahar 72% dark chocolate cut into chunks. Made in Ghana chocolate, baked in a Ghanaian kitchen.');
+        update_post_meta($post_id, 'rank_math_focus_keyword', 'chocolate chunk banana bread recipe');
+        wp_set_post_tags($post_id, array('GhanaianCacao', 'NaharObsidian', 'Recipe', 'Baking'));
+    }
+}
+add_action('init', 'ec_auto_publish_recipe_blog_post');
+
+
 

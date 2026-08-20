@@ -294,7 +294,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
       <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
         <div class="space-y-4 max-w-2xl">
           <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Real People, Real Joy</span>
-          <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">In-Store Sampling Experience</h2>
+          <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">What our customers say about our chocolate</h2>
           <p class="text-text-muted text-base leading-relaxed">Watch chocolate lovers across Ghana sample Cherelle and Nahar artisanal creations live in supermarkets, pop-up lounges, and luxury retail stores.</p>
         </div>
       </div>

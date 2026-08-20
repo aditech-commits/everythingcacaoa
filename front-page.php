@@ -150,7 +150,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
                alt="Locally Sourced Ghanaian Cacao Farmers" 
                src="<?php echo esc_url(ec_get_smart_image_url('ec_impact_image_1', '6.png')); ?>" />
         </div>
-        <div class="space-y-3">
+        <div class="space-y-3 p-6 md:p-7 bg-card-bg/60 rounded-xl border border-cacao-dark/15 transition-all duration-300 group-hover:border-accent-gold group-hover:bg-card-bg group-hover:shadow-lg">
           <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_impact1_title', 'Locally sourced cacao')); ?></h3>
           <p class="font-sans text-base md:text-lg font-medium text-cacao-dark/85 leading-relaxed"><?php echo esc_html(ec_get_text_option('ec_impact1_text', 'We work directly with Ghanaian farmers and local suppliers to source the highest quality processed cocoa — supporting communities and ensuring exceptional flavour in every bar.')); ?></p>
         </div>
@@ -163,7 +163,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
                alt="Made in Ghana Artisanal Chocolate Manufacturing" 
                src="<?php echo esc_url(ec_get_smart_image_url('ec_impact_image_3', '4.png')); ?>" />
         </div>
-        <div class="space-y-3">
+        <div class="space-y-3 p-6 md:p-7 bg-card-bg/60 rounded-xl border border-cacao-dark/15 transition-all duration-300 group-hover:border-accent-gold group-hover:bg-card-bg group-hover:shadow-lg">
           <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_impact3_title', 'Made in Ghana')); ?></h3>
           <p class="font-sans text-base md:text-lg font-medium text-cacao-dark/85 leading-relaxed"><?php echo esc_html(ec_get_text_option('ec_impact3_text', 'From bean to bar, our chocolate is made in Ghana — celebrating our land, our farmers and our heritage with every bite.')); ?></p>
         </div>
@@ -176,7 +176,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
                alt="FDA and GSA Certified Quality Ghanaian Chocolate" 
                src="<?php echo esc_url(ec_get_smart_image_url('ec_impact_image_2', '3.png')); ?>" />
         </div>
-        <div class="space-y-3">
+        <div class="space-y-3 p-6 md:p-7 bg-card-bg/60 rounded-xl border border-cacao-dark/15 transition-all duration-300 group-hover:border-accent-gold group-hover:bg-card-bg group-hover:shadow-lg">
           <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_impact2_title', 'Certified quality')); ?></h3>
           <p class="font-sans text-base md:text-lg font-medium text-cacao-dark/85 leading-relaxed"><?php echo esc_html(ec_get_text_option('ec_impact2_text', 'Every Everything Cacao product is certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA). Quality and safety you can trust.')); ?></p>
         </div>

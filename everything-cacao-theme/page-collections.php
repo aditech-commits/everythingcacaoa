@@ -64,9 +64,9 @@ get_header();
               $origin       = ec_get_product_field('origin_region') ?: 'Single-Origin • Ghana';
               $notes        = ec_get_product_field('tasting_notes') ?: get_the_excerpt();
               $description  = ec_get_product_field('product_description') ?: '';
-              $thumb_url    = get_the_post_thumbnail_url(get_the_ID(), 'large') ?: 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg';
-              if (empty($thumb_url) || strpos($thumb_url, 'Cherelle') !== false || strpos($thumb_url, 'Nahar') !== false || strpos($thumb_url, '1.png') !== false) {
-                  $thumb_url = 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg';
+              $thumb_url    = get_the_post_thumbnail_url(get_the_ID(), 'large') ?: 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png';
+              if (empty($thumb_url) || strpos($thumb_url, 'Cherelle') !== false || strpos($thumb_url, 'Nahar') !== false || strpos($thumb_url, '1.png') !== false || strpos($thumb_url, 'placeholder-product.jpg') !== false) {
+                  $thumb_url = 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png';
               }
               $wa_number    = get_option('ec_whatsapp_number', '233240661866');
               $wa_text      = urlencode("Hi, I'd like to order the " . get_the_title());
@@ -131,7 +131,7 @@ get_header();
           // ═══════════════════════════════════════════════════
           // FALLBACK STATIC ITEMS (Shown when no CPT posts exist yet)
           // ═══════════════════════════════════════════════════
-          $placeholder_img = 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg';
+          $placeholder_img = 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png';
 
           $fallback_products = array(
               array(
@@ -311,7 +311,7 @@ get_header();
                   'origin'      => 'Assin Fosu, Central Region • Ghana',
                   'notes'       => 'Rich Cocoa, Black Currant, Espresso',
                   'description' => 'Deep 70% dark chocolate bite-sized squares for health-conscious dark chocolate enthusiasts.',
-                  'image'       => $theme_img_uri . 'cherelle-3.jpg',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(
@@ -323,7 +323,7 @@ get_header();
                   'origin'      => 'Northern Region & Suhum • Ghana',
                   'notes'       => 'Crunchy Roasted Peanuts, Milk Cocoa',
                   'description' => 'Slow-roasted Northern Ghanaian peanuts embedded in rich 45% milk chocolate.',
-                  'image'       => $theme_img_uri . 'cherelle-4.jpg',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(
@@ -335,7 +335,7 @@ get_header();
                   'origin'      => 'Suhum & Koforidua • Ghana',
                   'notes'       => 'Citrus Zest, Dark Fudge, Citrus Blossom',
                   'description' => 'Infused with natural candied citrus peel oil and 60% dark Ghanaian cacao for a refreshing flavor.',
-                  'image'       => $theme_img_uri . 'cherelle-5.jpg',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               ),
               array(
@@ -347,7 +347,7 @@ get_header();
                   'origin'      => 'Assin Fosu & Suhum • Ghana',
                   'notes'       => 'Warm Ginger Spice, Wild Honey, Dark Cocoa',
                   'description' => 'Zesty Ghanaian ginger root spice balanced with pure forest honey folded into smooth 65% dark chocolate.',
-                  'image'       => $theme_img_uri . 'cherelle-6.jpg',
+                  'image'       => $placeholder_img,
                   'card_class'  => 'subbrand-cherelle',
               )
           );

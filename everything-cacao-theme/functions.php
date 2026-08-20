@@ -1167,7 +1167,7 @@ function ec_get_smart_image_url($setting_name, $filename) {
     }
 
     // 4. Fallback to User Uploaded Media Library Product Image
-    return 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg';
+    return 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png';
 }
 
 /**
@@ -1453,7 +1453,7 @@ function ec_auto_publish_recipe_blog_post() {
   "@type": "Recipe",
   "name": "Chocolate Chunk Banana Bread Made with Ghanaian Dark Chocolate",
   "image": [
-    "https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg"
+    "https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png"
   ],
   "author": {
     "@type": "Organization",
@@ -1767,7 +1767,7 @@ function ec_auto_publish_wellbeing_blog_post() {
   "@type": "Article",
   "headline": "Is Dark Chocolate Good for You? The Facts, in Plain Language",
   "image": [
-    "https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg"
+    "https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png"
   ],
   "datePublished": "2026-08-19",
   "author": {
@@ -1779,7 +1779,7 @@ function ec_auto_publish_wellbeing_blog_post() {
     "name": "Everything Cacao GH",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg"
+      "url": "https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png"
     }
   },
   "description": "Dark chocolate is good for your heart, your blood and your mood. The simple facts — and why chocolate made in Ghana is the best kind to buy."

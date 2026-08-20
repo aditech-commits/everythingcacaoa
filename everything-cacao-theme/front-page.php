@@ -206,7 +206,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                    alt="Dark Ghanaian Forest 85% Cacao" 
-                   src="<?php echo esc_url(ec_get_smart_image_url('ec_seasonal_1', 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg')); ?>" />
+                   src="<?php echo esc_url(ec_get_smart_image_url('ec_seasonal_1', 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png')); ?>" />
               <span class="absolute top-3 left-3 text-[10px] font-semibold uppercase bg-accent-gold text-cacao-dark px-2.5 py-0.5 rounded">85% Cacao</span>
             </div>
             <div class="space-y-1">
@@ -225,7 +225,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                    alt="Heritage Sampler Minis Box" 
-                   src="<?php echo esc_url(ec_get_smart_image_url('ec_seasonal_2', 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg')); ?>" />
+                   src="<?php echo esc_url(ec_get_smart_image_url('ec_seasonal_2', 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png')); ?>" />
               <span class="absolute top-3 left-3 text-[10px] font-semibold uppercase bg-canvas text-cacao-dark px-2.5 py-0.5 rounded">Assorted</span>
             </div>
             <div class="space-y-1">
@@ -244,7 +244,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                    alt="Ashanti Gold Milk 45% Bar" 
-                   src="<?php echo esc_url(ec_get_smart_image_url('ec_seasonal_3', 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg')); ?>" />
+                   src="<?php echo esc_url(ec_get_smart_image_url('ec_seasonal_3', 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png')); ?>" />
               <span class="absolute top-3 left-3 text-[10px] font-semibold uppercase bg-cherelle-caramel text-white px-2.5 py-0.5 rounded">Milk 45%</span>
             </div>
             <div class="space-y-1">
@@ -263,7 +263,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
             <div class="aspect-[4/5] bg-nahar-obsidian relative overflow-hidden rounded-lg mb-4">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                    alt="Nahar Private Reserve Luxury Gift Box" 
-                   src="<?php echo esc_url(ec_get_smart_image_url('ec_seasonal_4', 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder-product.jpg')); ?>" />
+                   src="<?php echo esc_url(ec_get_smart_image_url('ec_seasonal_4', 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png')); ?>" />
               <span class="absolute top-3 left-3 text-[10px] font-semibold uppercase bg-accent-gold text-cacao-dark px-2.5 py-0.5 rounded">Exclusive</span>
             </div>
             <div class="space-y-1">

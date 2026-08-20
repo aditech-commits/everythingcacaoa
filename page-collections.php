@@ -64,10 +64,7 @@ get_header();
               $origin       = ec_get_product_field('origin_region') ?: 'Single-Origin • Ghana';
               $notes        = ec_get_product_field('tasting_notes') ?: get_the_excerpt();
               $description  = ec_get_product_field('product_description') ?: '';
-              $thumb_url    = get_the_post_thumbnail_url(get_the_ID(), 'large') ?: 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png';
-              if (empty($thumb_url) || strpos($thumb_url, 'Cherelle') !== false || strpos($thumb_url, 'Nahar') !== false || strpos($thumb_url, '1.png') !== false || strpos($thumb_url, 'placeholder-product.jpg') !== false) {
-                  $thumb_url = 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png';
-              }
+              $thumb_url    = 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png';
               $wa_number    = get_option('ec_whatsapp_number', '233240661866');
               $wa_text      = urlencode("Hi, I'd like to order the " . get_the_title());
               

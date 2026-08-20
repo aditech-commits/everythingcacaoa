@@ -17,7 +17,7 @@ $notes       = ec_get_product_field('tasting_notes') ?: '';
 $description = ec_get_product_field('product_description') ?: get_the_content();
 $wa_number   = get_option('ec_whatsapp_number', '233240661866');
 $wa_text     = urlencode("Hi, I'd like to order " . get_the_title());
-$thumb       = get_the_post_thumbnail_url(get_the_ID(), 'full') ?: 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png';
+$thumb       = 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png';
 
 $link_collections = ec_get_smart_page_link(array('our-collections', 'collections'), '/our-collections');
 ?>

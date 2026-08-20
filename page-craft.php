@@ -35,8 +35,8 @@ get_header();
 
     <!-- 4 Brand Pillars Grid (2x2 Layout for optimal breathing room) -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 max-w-6xl mx-auto">
-      <div class="ec-animate ec-card-hover bg-card-bg p-8 md:p-10 rounded-xl border border-cacao-dark/10 shadow-sm space-y-5">
-        <div class="w-14 h-14 rounded-full bg-cacao-dark/5 flex items-center justify-center text-accent-terracotta text-2xl font-serif-luxury font-bold">01</div>
+      <div class="ec-animate ec-card-hover bg-card-bg p-8 md:p-10 rounded-xl border border-cacao-dark/10 shadow-sm space-y-5 border-t-4 border-accent-gold">
+        <div class="w-14 h-14 rounded-full bg-accent-gold/10 flex items-center justify-center text-accent-gold text-2xl font-serif-luxury font-bold">01</div>
         <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_pillar1_title', 'Crafting Chocolate with Care')); ?></h3>
         <p class="text-sm md:text-base text-cacao-dark/75 leading-relaxed">
           <?php echo esc_html(ec_get_text_option('ec_pillar1_text', "We source high-quality, processed cocoa from local suppliers who share our commitment to excellence. By collaborating closely with these farmers, we ensure that every batch reflects the unique flavors and characteristics of Ghanaian cacao. Our team of skilled artisans takes this exceptional cocoa and transforms it into a range of delightful chocolate bars, each crafted with precision and love.")); ?>
@@ -51,16 +51,16 @@ get_header();
         </p>
       </div>
 
-      <div class="ec-animate ec-card-hover bg-card-bg p-8 md:p-10 rounded-xl border border-cacao-dark/10 shadow-sm space-y-5">
-        <div class="w-14 h-14 rounded-full bg-cacao-dark/5 flex items-center justify-center text-accent-terracotta text-2xl font-serif-luxury font-bold">03</div>
+      <div class="ec-animate ec-card-hover bg-card-bg p-8 md:p-10 rounded-xl border border-cacao-dark/10 shadow-sm space-y-5 border-t-4 border-accent-gold">
+        <div class="w-14 h-14 rounded-full bg-accent-gold/10 flex items-center justify-center text-accent-gold text-2xl font-serif-luxury font-bold">03</div>
         <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_pillar3_title', 'Empowering Communities')); ?></h3>
         <p class="text-sm md:text-base text-cacao-dark/75 leading-relaxed">
           <?php echo esc_html(ec_get_text_option('ec_pillar3_text', "We believe chocolate should benefit everyone involved in its creation. Everything Cacao works closely with local cocoa processing companies and cocoa farmers in Ghana, ensuring fair trade practices and sustainable livelihoods. By choosing our chocolate, you contribute to empowering communities and supporting local industry in Ghana.")); ?>
         </p>
       </div>
 
-      <div class="ec-animate ec-card-hover bg-card-bg p-8 md:p-10 rounded-xl border border-cacao-dark/10 shadow-sm space-y-5">
-        <div class="w-14 h-14 rounded-full bg-cacao-dark/5 flex items-center justify-center text-accent-terracotta text-2xl font-serif-luxury font-bold">04</div>
+      <div class="ec-animate ec-card-hover bg-card-bg p-8 md:p-10 rounded-xl border border-cacao-dark/10 shadow-sm space-y-5 border-t-4 border-accent-gold">
+        <div class="w-14 h-14 rounded-full bg-accent-gold/10 flex items-center justify-center text-accent-gold text-2xl font-serif-luxury font-bold">04</div>
         <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_pillar4_title', 'A Taste of Ghana')); ?></h3>
         <p class="text-sm md:text-base text-cacao-dark/75 leading-relaxed">
           <?php echo esc_html(ec_get_text_option('ec_pillar4_text', "Every bar of Everything Cacao tells a story of Ghanaian heritage and artisanal pride. From rich dark chocolate bars to creamy milk varieties and delightful treats, our products celebrate the distinct flavor of Ghana's cacao. Experience the true taste of Ghana with every bite.")); ?>

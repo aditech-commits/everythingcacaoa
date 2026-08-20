@@ -142,41 +142,41 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
       </a>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-stretch">
       <!-- Item 1: Locally sourced cacao -->
-      <div class="ec-animate ec-card-hover space-y-6 group">
-        <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
+      <div class="ec-animate ec-card-hover flex flex-col justify-between space-y-6 group h-full">
+        <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm flex-shrink-0">
           <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                alt="Locally Sourced Ghanaian Cacao Farmers" 
                src="<?php echo esc_url(ec_get_smart_image_url('ec_impact_image_1', '6.png')); ?>" />
         </div>
-        <div class="space-y-3 p-6 md:p-7 bg-card-bg/60 rounded-xl border border-cacao-dark/15 transition-all duration-300 group-hover:border-accent-gold group-hover:bg-card-bg group-hover:shadow-lg">
+        <div class="space-y-3 p-6 md:p-7 bg-card-bg/60 rounded-xl border border-cacao-dark/15 transition-all duration-300 group-hover:border-accent-gold group-hover:bg-card-bg group-hover:shadow-lg flex-1 flex flex-col justify-start">
           <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_impact1_title', 'Locally sourced cacao')); ?></h3>
           <p class="font-sans text-base md:text-lg font-medium text-cacao-dark/85 leading-relaxed"><?php echo esc_html(ec_get_text_option('ec_impact1_text', 'We work directly with Ghanaian farmers and local suppliers to source the highest quality processed cocoa — supporting communities and ensuring exceptional flavour in every bar.')); ?></p>
         </div>
       </div>
 
       <!-- Item 2: Made in Ghana -->
-      <div class="ec-animate ec-card-hover space-y-6 group">
-        <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
+      <div class="ec-animate ec-card-hover flex flex-col justify-between space-y-6 group h-full">
+        <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm flex-shrink-0">
           <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                alt="Made in Ghana Artisanal Chocolate Manufacturing" 
                src="<?php echo esc_url(ec_get_smart_image_url('ec_impact_image_3', '4.png')); ?>" />
         </div>
-        <div class="space-y-3 p-6 md:p-7 bg-card-bg/60 rounded-xl border border-cacao-dark/15 transition-all duration-300 group-hover:border-accent-gold group-hover:bg-card-bg group-hover:shadow-lg">
+        <div class="space-y-3 p-6 md:p-7 bg-card-bg/60 rounded-xl border border-cacao-dark/15 transition-all duration-300 group-hover:border-accent-gold group-hover:bg-card-bg group-hover:shadow-lg flex-1 flex flex-col justify-start">
           <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_impact3_title', 'Made in Ghana')); ?></h3>
           <p class="font-sans text-base md:text-lg font-medium text-cacao-dark/85 leading-relaxed"><?php echo esc_html(ec_get_text_option('ec_impact3_text', 'From bean to bar, our chocolate is made in Ghana — celebrating our land, our farmers and our heritage with every bite.')); ?></p>
         </div>
       </div>
 
       <!-- Item 3: Certified quality -->
-      <div class="ec-animate ec-card-hover space-y-6 group">
-        <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm">
+      <div class="ec-animate ec-card-hover flex flex-col justify-between space-y-6 group h-full">
+        <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm flex-shrink-0">
           <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                alt="FDA and GSA Certified Quality Ghanaian Chocolate" 
                src="<?php echo esc_url(ec_get_smart_image_url('ec_impact_image_2', '3.png')); ?>" />
         </div>
-        <div class="space-y-3 p-6 md:p-7 bg-card-bg/60 rounded-xl border border-cacao-dark/15 transition-all duration-300 group-hover:border-accent-gold group-hover:bg-card-bg group-hover:shadow-lg">
+        <div class="space-y-3 p-6 md:p-7 bg-card-bg/60 rounded-xl border border-cacao-dark/15 transition-all duration-300 group-hover:border-accent-gold group-hover:bg-card-bg group-hover:shadow-lg flex-1 flex flex-col justify-start">
           <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_impact2_title', 'Certified quality')); ?></h3>
           <p class="font-sans text-base md:text-lg font-medium text-cacao-dark/85 leading-relaxed"><?php echo esc_html(ec_get_text_option('ec_impact2_text', 'Every Everything Cacao product is certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA). Quality and safety you can trust.')); ?></p>
         </div>

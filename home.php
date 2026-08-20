@@ -58,7 +58,17 @@ get_header();
         <?php
         if (have_posts()) :
             while (have_posts()) : the_post();
-                $thumb = get_the_post_thumbnail_url(get_the_ID(), 'large') ?: 'https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=800&q=80';
+                $thumb = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                if (!$thumb) {
+                    $slug = get_post_field('post_name', get_the_ID());
+                    if (strpos($slug, 'banana-bread') !== false) {
+                        $thumb = get_template_directory_uri() . '/assets/images/brand/blog_post_banana_bread.jpg';
+                    } elseif (strpos($slug, 'dark-chocolate') !== false || strpos($slug, 'benefits') !== false) {
+                        $thumb = get_template_directory_uri() . '/assets/images/brand/blog_post_dark_chocolate.jpg';
+                    } else {
+                        $thumb = 'https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=800&q=80';
+                    }
+                }
                 ?>
                 <article class="bg-canvas rounded-lg overflow-hidden border border-cacao-dark/10 flex flex-col justify-between shadow-sm">
                   <div>

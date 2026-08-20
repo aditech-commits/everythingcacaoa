@@ -545,6 +545,9 @@ function ec_customize_register($wp_customize) {
         'ec_impact2_text'      => array('label' => __('Impact #2 Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "Every Everything Cacao product is certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA). Quality and safety you can trust."),
         'ec_impact3_title'     => array('label' => __('Impact #3 Title', 'everything-cacao'), 'type' => 'text', 'default' => "Made in Ghana"),
         'ec_impact3_text'      => array('label' => __('Impact #3 Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "From bean to bar, our chocolate is made in Ghana — celebrating our land, our farmers and our heritage with every bite."),
+        'ec_seasonal_badge'    => array('label' => __('Featured Grid Badge', 'everything-cacao'), 'type' => 'text', 'default' => "LIMITED & SEASONAL RELEASE"),
+        'ec_seasonal_title'    => array('label' => __('Featured Grid Title', 'everything-cacao'), 'type' => 'text', 'default' => "Signature Ghanaian Confections"),
+        'ec_seasonal_subtitle' => array('label' => __('Featured Grid Subtitle', 'everything-cacao'), 'type' => 'textarea', 'default' => "Handcrafted single-origin bars and luxury gift reserves made from Ghana's finest cacao."),
         'ec_ticker_1'          => array('label' => __('Marquee Ticker #1', 'everything-cacao'), 'type' => 'text', 'default' => "Now Available in Supermarkets & Malls Across Ghana"),
         'ec_ticker_2'          => array('label' => __('Marquee Ticker #2', 'everything-cacao'), 'type' => 'text', 'default' => "Shipping Worldwide"),
     );

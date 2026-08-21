@@ -136,26 +136,10 @@ get_header();
       <!-- Column 2: Showroom Info & Social Media Channels -->
       <div class="lg:col-span-5 space-y-8">
         
-        <div class="space-y-4">
-          <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Accra Atelier &amp; Showroom</span>
-          <h2 class="font-serif-luxury text-3xl font-bold text-cacao-dark">Visiting &amp; Hours</h2>
-          <p class="text-xs text-text-muted leading-relaxed">
-            Our atelier and showroom in Accra is open for chocolate pickups, corporate consultations, and private micro-batch tasting sessions.
-          </p>
-        </div>
-
         <div class="space-y-6 bg-card-bg p-8 rounded-2xl border border-cacao-dark/10 shadow-sm text-sm">
           <div class="space-y-1">
             <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Operating Hours</span>
             <p class="text-xs text-text-muted">Monday – Saturday: 9:00 AM – 6:00 PM (GMT)</p>
-          </div>
-          <div class="space-y-1 border-t border-cacao-dark/10 pt-4">
-            <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Direct Email</span>
-            <p class="text-xs text-text-muted">info@everythingcacaogh.com</p>
-          </div>
-          <div class="space-y-1 border-t border-cacao-dark/10 pt-4">
-            <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Direct WhatsApp &amp; Calls</span>
-            <p class="text-xs text-text-muted">+233 24 066 1866</p>
           </div>
         </div>
 

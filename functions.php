@@ -791,7 +791,8 @@ function ec_render_admin_settings_page() {
 /**
  * 10. Automatic Product Seeder for Confection Catalog (cacao_products CPT)
  *     Auto-creates all 22 Ghanaian artisanal chocolate products with images & meta fields in WordPress DB.
- *     Runs on admin_init only — never on front-end page loads.
+ *     Runs ONCE on first install only — never re-creates products deleted by the user.
+ *     Can be manually re-triggered via the admin "Auto-Upload" button (?ec_action=seed_products).
  */
 function ec_auto_seed_cacao_products() {
     if (!is_admin()) {
@@ -806,10 +807,10 @@ function ec_auto_seed_cacao_products() {
         });
     }
 
-    $count = wp_count_posts('cacao_products');
-    $published = isset($count->publish) ? intval($count->publish) : 0;
-    
-    if ($published >= 22 && !$force_seed) {
+    // ── GUARD: Only auto-seed once. After initial seed, never re-create deleted products. ──
+    // The manual "seed_products" button bypasses this guard for intentional re-seeding.
+    $already_seeded = get_option('ec_products_seeded', false);
+    if ($already_seeded && !$force_seed) {
         return;
     }
 
@@ -1107,6 +1108,9 @@ function ec_auto_seed_cacao_products() {
             }
         }
     }
+
+    // ── Mark seeding as complete so it never auto-runs again ──
+    update_option('ec_products_seeded', true);
 }
 add_action('admin_init', 'ec_auto_seed_cacao_products');
 

@@ -30,10 +30,7 @@ $link_contact = ec_get_smart_page_link(array('contact', 'concierge'), '/contact'
   <section class="py-20 max-w-7xl mx-auto px-6 md:px-12 space-y-16">
     <div class="text-center max-w-3xl mx-auto space-y-3">
       <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Accra &amp; Regional Outlets</span>
-      <h2 class="font-serif-luxury text-3xl md:text-4xl font-bold text-cacao-dark">Authorized Stockists &amp; Partner Venues</h2>
-      <p class="text-xs text-text-muted leading-relaxed">
-        Our artisanal chocolate bars are carefully supplied to handpicked stockists who share our commitment to freshness, elegance, and Ghanaian cocoa excellence.
-      </p>
+      <h2 class="font-serif-luxury text-3xl md:text-4xl font-bold text-cacao-dark">Find Cherelle and Nahar Bars stocked at the following stores</h2>
     </div>
 
     <!-- Category 1: Boutique Hotels & Resorts -->

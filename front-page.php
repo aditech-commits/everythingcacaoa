@@ -84,7 +84,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
             <div class="flex justify-between items-end w-full border-t border-canvas/15 pt-4">
               <div>
                 <span class="text-[10px] font-semibold text-canvas/60 uppercase tracking-wider block">COLLECTION TYPE</span>
-                <span class="font-serif-luxury text-2xl font-bold text-cacao-dark">Luxury &amp; Bespoke Reserve</span>
+                <span class="font-serif-luxury text-2xl font-bold text-accent-gold">Luxury &amp; Bespoke Reserve</span>
               </div>
               <a href="<?php echo $link_collections; ?>?lineage=nahar" class="px-6 py-3.5 bg-accent-gold text-cacao-dark font-semibold text-xs uppercase tracking-widest hover:bg-white transition-colors">
                 SHOP NAHAR &rarr;

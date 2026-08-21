@@ -149,9 +149,6 @@ get_header();
             <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Official Social Media</span>
             <h4 class="font-serif-luxury text-xl font-bold">Connect With Us</h4>
           </div>
-          <p class="text-xs text-canvas/80 leading-relaxed">
-            Follow our official channels for micro-batch drops, behind-the-scenes harvest stories, and chocolate pairings.
-          </p>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
             <!-- Instagram -->

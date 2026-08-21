@@ -188,17 +188,11 @@
           CACAO JOURNAL
         </a>
 
-        <!-- OUR COLLECTIONS Dropdown Menu -->
-        <div class="relative group py-2">
-          <a href="<?php echo $link_collections; ?>" class="nav-link flex items-center gap-1.5 font-semibold uppercase tracking-widest text-xs <?php echo $is_collections ? 'active-page' : ''; ?>">
-            <?php if ($is_collections) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1"></span><?php endif; ?>
-            OUR COLLECTIONS
-            <svg class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180 text-accent-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </a>
-          <div class="absolute left-0 top-full hidden group-hover:flex flex-col bg-cacao-dark text-canvas min-w-[260px] py-3 rounded-lg shadow-2xl border border-canvas/15 transition-all z-50">
-            <a href="<?php echo $link_collections; ?>?lineage=gifting" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">CORPORATE &amp; CUSTOM GIFTING</a>
-          </div>
-        </div>
+        <!-- OUR COLLECTIONS -->
+        <a href="<?php echo $link_collections; ?>" class="nav-link <?php echo $is_collections ? 'active-page' : ''; ?>">
+          <?php if ($is_collections) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
+          OUR COLLECTIONS
+        </a>
 
         <!-- STOCKISTS -->
         <a href="<?php echo $link_stockist; ?>" class="nav-link <?php echo $is_stockist ? 'active-page' : ''; ?>">
@@ -247,17 +241,9 @@
           <a href="<?php echo $link_journal; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">CACAO JOURNAL</a>
         </div>
 
-        <!-- 3. OUR COLLECTIONS Dropdown -->
+        <!-- 3. OUR COLLECTIONS -->
         <div class="border-b border-canvas/10 pb-3">
-          <button type="button" class="mobile-dropdown-btn w-full flex items-center justify-between text-canvas hover:text-accent-gold py-1 text-left focus:outline-none" data-target="mobile-sub-collections">
-            <span class="font-bold tracking-wider">OUR COLLECTIONS</span>
-            <svg class="w-4 h-4 transition-transform duration-300 transform text-accent-gold icon-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </button>
-          <div id="mobile-sub-collections" class="hidden pl-3 pt-3 space-y-3.5 border-l border-accent-gold/40 mt-2">
-            <a href="<?php echo $link_collections; ?>?lineage=gifting" class="block text-canvas/80 hover:text-accent-gold">CORPORATE &amp; CUSTOM GIFTING</a>
-          </div>
+          <a href="<?php echo $link_collections; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">OUR COLLECTIONS</a>
         </div>
 
         <!-- 4. STOCKISTS -->

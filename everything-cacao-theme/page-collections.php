@@ -113,10 +113,8 @@ get_header();
                   </div>
 
                   <!-- Product Info -->
-                  <div class="p-6 space-y-3">
-                    <span class="text-[10px] font-semibold text-text-muted uppercase tracking-widest block"><?php echo esc_html($origin); ?></span>
+                  <div class="p-6">
                     <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark"><?php the_title(); ?></h3>
-                    <p class="text-xs text-text-muted"><strong class="text-cacao-dark">Tasting Notes:</strong> <?php echo esc_html($notes); ?></p>
                   </div>
                 </div>
 
@@ -382,10 +380,8 @@ get_header();
                   </div>
 
                   <!-- Product Info -->
-                  <div class="p-6 space-y-3">
-                    <span class="text-[10px] font-semibold text-text-muted uppercase tracking-widest block"><?php echo esc_html($product['origin']); ?></span>
+                  <div class="p-6">
                     <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark"><?php echo esc_html($product['title']); ?></h3>
-                    <p class="text-xs text-text-muted"><strong class="text-cacao-dark">Tasting Notes:</strong> <?php echo esc_html($product['notes']); ?></p>
                   </div>
                 </div>
 

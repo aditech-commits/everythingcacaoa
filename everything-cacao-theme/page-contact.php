@@ -61,9 +61,7 @@ get_header();
       <!-- Column 1: Direct Concierge & Contact Form -->
       <div class="lg:col-span-7 bg-card-bg p-8 md:p-12 rounded-2xl border border-cacao-dark/10 shadow-sm space-y-6">
         <div class="space-y-2">
-          <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Direct Inquiry Routing</span>
-          <h3 class="font-serif-luxury text-2xl font-bold text-cacao-dark">Contact Message Form</h3>
-          <p class="text-xs text-text-muted">Submissions route directly to <strong class="text-cacao-dark">info@everythingcacaogh.com</strong> with fast-track routing for corporate gifting &amp; stockist bookings.</p>
+          <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Get in touch</span>
         </div>
 
         <!-- Direct Concierge Contact Info Box -->
@@ -148,13 +146,8 @@ get_header();
 
         <div class="space-y-6 bg-card-bg p-8 rounded-2xl border border-cacao-dark/10 shadow-sm text-sm">
           <div class="space-y-1">
-            <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Flagship Showroom</span>
-            <p class="font-medium text-cacao-dark">Airport Residential Area, Accra, Ghana</p>
-          </div>
-          <div class="space-y-1">
             <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Operating Hours</span>
             <p class="text-xs text-text-muted">Monday – Saturday: 9:00 AM – 6:00 PM (GMT)</p>
-            <p class="text-xs text-text-muted">Sunday: Private Appointments Only</p>
           </div>
           <div class="space-y-1 border-t border-cacao-dark/10 pt-4">
             <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Direct Email</span>

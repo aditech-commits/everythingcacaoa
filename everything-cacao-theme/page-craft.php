@@ -134,77 +134,69 @@ get_header();
 
 
 
-  <!-- OUR GALLERY Section -->
+  <!-- What our Customer says about us Section -->
   <section class="py-24 bg-card-bg border-t border-cacao-dark/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
-        <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Visual Showcase</span>
-        <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">OUR GALLERY</h2>
-        <p class="text-text-muted text-sm">Explore our cocoa processing, artisanal tempering, packaging atelier, and finished Cherelle &amp; Nahar collections.</p>
+        <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Real People, Real Joy</span>
+        <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">What our Customer says about us</h2>
+        <p class="text-text-muted text-sm">Watch chocolate lovers across Ghana sample Cherelle and Nahar artisanal creations live in supermarkets, pop-up lounges, and luxury retail stores.</p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="ec-animate ec-card-hover group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
-          <img src="<?php echo esc_url(ec_get_smart_image_url('ec_gallery_1', 'Nahar dark choc long.png')); ?>" alt="Nahar 72% Dark Chocolate Long Bar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-          <div class="absolute inset-0 bg-cacao-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-canvas">
-            <span class="text-xs text-accent-gold uppercase font-semibold">Nahar Collection</span>
-            <h5 class="font-serif-luxury font-bold text-lg">72% Dark Obsidian Long Bar</h5>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Video 1 Reel -->
+        <div class="ec-animate ec-card-hover group bg-cacao-dark rounded-xl overflow-hidden border border-cacao-dark/10 shadow-lg flex flex-col justify-between">
+          <div class="aspect-[9/16] bg-nahar-obsidian relative overflow-hidden">
+            <iframe class="w-full h-full border-0" src="https://drive.google.com/file/d/1JUC7nwQjQpqLD8z7WnyhiyPtkV6rkcvG/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="absolute top-3 left-3 bg-accent-gold text-cacao-dark text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow pointer-events-none z-10">
+              Live Sampling
+            </div>
+          </div>
+          <div class="p-5 bg-card-bg space-y-1">
+            <h5 class="font-serif-luxury text-base font-bold text-cacao-dark">Supermarket Tasting Reel #1</h5>
+            <p class="text-xs text-text-muted">Customers discovering Cherelle 45% Milk Chocolate.</p>
           </div>
         </div>
 
-        <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
-          <img src="<?php echo esc_url(ec_get_smart_image_url('ec_gallery_2', 'Cherelle Milk Chocolate 90g.jpg')); ?>" alt="Cherelle 45% Milk Chocolate Bar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-          <div class="absolute inset-0 bg-cacao-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-canvas">
-            <span class="text-xs text-accent-gold uppercase font-semibold">Cherelle Collection</span>
-            <h5 class="font-serif-luxury font-bold text-lg">45% Milk Chocolate Artisanal Bar</h5>
+        <!-- Video 2 Reel -->
+        <div class="ec-animate ec-card-hover group bg-cacao-dark rounded-xl overflow-hidden border border-cacao-dark/10 shadow-lg flex flex-col justify-between">
+          <div class="aspect-[9/16] bg-nahar-obsidian relative overflow-hidden">
+            <iframe class="w-full h-full border-0" src="https://drive.google.com/file/d/1pKLN1VVG15IKg_WP6RUlZ8eD3UJnX1yW/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="absolute top-3 left-3 bg-accent-terracotta text-white text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow pointer-events-none z-10">
+              Nahar Luxury Tasting
+            </div>
+          </div>
+          <div class="p-5 bg-card-bg space-y-1">
+            <h5 class="font-serif-luxury text-base font-bold text-cacao-dark">Grand Reserve Sampling #2</h5>
+            <p class="text-xs text-text-muted">Discerning palates savoring Nahar 72% Obsidian Dark.</p>
           </div>
         </div>
 
-        <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
-          <img src="<?php echo esc_url(ec_get_smart_image_url('ec_gallery_3', '4.png')); ?>" alt="Ashanti Gold Truffle Box" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-          <div class="absolute inset-0 bg-cacao-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-canvas">
-            <span class="text-xs text-accent-gold uppercase font-semibold">Bespoke Gifting</span>
-            <h5 class="font-serif-luxury font-bold text-lg">Ashanti Gold Truffle Collection</h5>
+        <!-- Video 3 Reel -->
+        <div class="ec-animate ec-card-hover group bg-cacao-dark rounded-xl overflow-hidden border border-cacao-dark/10 shadow-lg flex flex-col justify-between">
+          <div class="aspect-[9/16] bg-nahar-obsidian relative overflow-hidden">
+            <iframe class="w-full h-full border-0" src="https://drive.google.com/file/d/15lB6wkq0Cg6NT4pACbXxZiokmdDYtcE0/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="absolute top-3 left-3 bg-accent-gold text-cacao-dark text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow pointer-events-none z-10">
+              Retail Pop-Up
+            </div>
+          </div>
+          <div class="p-5 bg-card-bg space-y-1">
+            <h5 class="font-serif-luxury text-base font-bold text-cacao-dark">Accra Retail Pop-Up #3</h5>
+            <p class="text-xs text-text-muted">Interactive tasting counter at Accra shopping mall.</p>
           </div>
         </div>
 
-        <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
-          <img src="<?php echo esc_url(ec_get_smart_image_url('ec_gallery_4', '5.png')); ?>" alt="Royal Ghanaian Luxury Cacao Hamper" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-          <div class="absolute inset-0 bg-cacao-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-canvas">
-            <span class="text-xs text-accent-gold uppercase font-semibold">Luxury Gifting</span>
-            <h5 class="font-serif-luxury font-bold text-lg">Royal Ghanaian Luxury Hamper</h5>
+        <!-- Video 4 Reel -->
+        <div class="ec-animate ec-card-hover group bg-cacao-dark rounded-xl overflow-hidden border border-cacao-dark/10 shadow-lg flex flex-col justify-between">
+          <div class="aspect-[9/16] bg-nahar-obsidian relative overflow-hidden">
+            <iframe class="w-full h-full border-0" src="https://drive.google.com/file/d/1FQK5L6ErULSbr0Wd_VKoGYcJo463HVYC/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="absolute top-3 left-3 bg-cherelle-caramel text-white text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow pointer-events-none z-10">
+              Family &amp; Kids Joy
+            </div>
           </div>
-        </div>
-
-        <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
-          <img src="<?php echo esc_url(ec_get_smart_image_url('ec_gallery_5', 'Nahar dark choc small.png')); ?>" alt="Nahar Executive Mini Box" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-          <div class="absolute inset-0 bg-cacao-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-canvas">
-            <span class="text-xs text-accent-gold uppercase font-semibold">Executive Collection</span>
-            <h5 class="font-serif-luxury font-bold text-lg">Nahar 72% Mini Square Box</h5>
-          </div>
-        </div>
-
-        <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
-          <img src="<?php echo esc_url(ec_get_smart_image_url('ec_gallery_6', 'Cherelle Milk Chocolate 50g.jpg')); ?>" alt="Cherelle Delights Snack Pouch" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-          <div class="absolute inset-0 bg-cacao-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-canvas">
-            <span class="text-xs text-accent-gold uppercase font-semibold">On-The-Go Snacking</span>
-            <h5 class="font-serif-luxury font-bold text-lg">Cherelle Delights Standup Pouch</h5>
-          </div>
-        </div>
-
-        <!-- Gallery 7: In-Store Sampling Video 1 -->
-        <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
-          <iframe class="w-full h-full border-0" src="https://drive.google.com/file/d/1JUC7nwQjQpqLD8z7WnyhiyPtkV6rkcvG/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          <div class="absolute top-3 left-3 bg-accent-gold text-cacao-dark text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow z-10 pointer-events-none">
-            In-Store Sampling Reel
-          </div>
-        </div>
-
-        <!-- Gallery 8: In-Store Sampling Video 2 -->
-        <div class="group relative aspect-square overflow-hidden rounded-xl bg-cacao-dark shadow-md">
-          <iframe class="w-full h-full border-0" src="https://drive.google.com/file/d/1pKLN1VVG15IKg_WP6RUlZ8eD3UJnX1yW/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          <div class="absolute top-3 left-3 bg-accent-terracotta text-white text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow z-10 pointer-events-none">
-            In-Store Tasting Reel
+          <div class="p-5 bg-card-bg space-y-1">
+            <h5 class="font-serif-luxury text-base font-bold text-cacao-dark">Joy in Every Bite #4</h5>
+            <p class="text-xs text-text-muted">Delighting young chocolate lovers with Cherelle treats.</p>
           </div>
         </div>
       </div>

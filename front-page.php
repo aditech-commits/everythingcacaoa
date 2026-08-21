@@ -77,7 +77,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
             <div class="w-full aspect-[4/3] bg-[#3D281C] rounded-lg overflow-hidden border border-canvas/10 flex items-center justify-center">
               <img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" 
                    alt="Nahar Luxury Ghanaian Chocolate" 
-                   src="<?php echo esc_url(ec_get_smart_image_url('ec_nahar_image', 'Nahar dark choc long.png')); ?>"
+                   src="https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png"
                    loading="eager" />
             </div>
 
@@ -110,7 +110,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
             <div class="w-full aspect-[4/3] bg-[#F5EFE6] rounded-lg overflow-hidden border border-cacao-dark/10 flex items-center justify-center">
               <img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700" 
                    alt="Cherelle Everyday Ghanaian Chocolate" 
-                   src="<?php echo esc_url(ec_get_smart_image_url('ec_cherelle_image', 'Cherelle Milk Chocolate 90g.jpg')); ?>"
+                   src="https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png"
                    loading="eager" />
             </div>
             
@@ -148,7 +148,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
         <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm flex-shrink-0">
           <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                alt="Locally Sourced Ghanaian Cacao Farmers" 
-               src="<?php echo esc_url(ec_get_smart_image_url('ec_impact_image_1', '6.png')); ?>" />
+               src="https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png" />
         </div>
         <div class="space-y-3 p-6 md:p-7 bg-card-bg/60 rounded-xl border border-cacao-dark/15 transition-all duration-300 group-hover:border-accent-gold group-hover:bg-card-bg group-hover:shadow-lg flex-1 flex flex-col justify-start">
           <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_impact1_title', 'Locally sourced cacao')); ?></h3>
@@ -161,7 +161,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
         <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm flex-shrink-0">
           <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                alt="Made in Ghana Artisanal Chocolate Manufacturing" 
-               src="<?php echo esc_url(ec_get_smart_image_url('ec_impact_image_3', '4.png')); ?>" />
+               src="https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png" />
         </div>
         <div class="space-y-3 p-6 md:p-7 bg-card-bg/60 rounded-xl border border-cacao-dark/15 transition-all duration-300 group-hover:border-accent-gold group-hover:bg-card-bg group-hover:shadow-lg flex-1 flex flex-col justify-start">
           <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_impact3_title', 'Made in Ghana')); ?></h3>
@@ -174,7 +174,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
         <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm flex-shrink-0">
           <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                alt="FDA and GSA Certified Quality Ghanaian Chocolate" 
-               src="<?php echo esc_url(ec_get_smart_image_url('ec_impact_image_2', '3.png')); ?>" />
+               src="https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png" />
         </div>
         <div class="space-y-3 p-6 md:p-7 bg-card-bg/60 rounded-xl border border-cacao-dark/15 transition-all duration-300 group-hover:border-accent-gold group-hover:bg-card-bg group-hover:shadow-lg flex-1 flex flex-col justify-start">
           <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark"><?php echo esc_html(ec_get_text_option('ec_impact2_title', 'Certified quality')); ?></h3>

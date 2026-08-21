@@ -19,9 +19,6 @@ $link_contact = ec_get_smart_page_link(array('contact', 'concierge'), '/contact'
     <div class="max-w-7xl mx-auto px-6 md:px-12 text-center space-y-4">
       <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">RETAIL PARTNERS &amp; FLAGSHIP LOCATIONS</span>
       <h1 class="font-serif-luxury text-4xl md:text-5xl font-bold"><?php echo esc_html(ec_get_text_option('ec_stockist_hero_title', 'Where to Find Everything Cacao')); ?></h1>
-      <p class="text-canvas/80 text-sm max-w-3xl mx-auto leading-relaxed">
-        Discover our flagship atelier, luxury boutique hotels, fine dining establishments, and gourmet grocers across Ghana and select international destinations offering Nahar and Cherelle collections.
-      </p>
     </div>
   </section>
 
@@ -131,46 +128,7 @@ $link_contact = ec_get_smart_page_link(array('contact', 'concierge'), '/contact'
 
   </section>
 
-  <!-- Stockist Program Benefits & Terms Section -->
-  <section class="py-20 bg-canvas border-t border-b border-cacao-dark/10">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
-      <div class="text-center max-w-3xl mx-auto space-y-3">
-        <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">WHOLESALE &amp; RETAIL PARTNERSHIPS</span>
-        <h2 class="font-serif-luxury text-3xl md:text-4xl font-bold text-cacao-dark">Why Partner With Everything Cacao</h2>
-        <p class="text-xs text-text-muted leading-relaxed">
-          We empower retailers, hoteliers, and corporate gift partners with premium Ghanaian chocolate backed by reliable supply, elegant presentation, and marketing support.
-        </p>
-      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        
-        <div class="p-6 rounded-xl bg-card-bg border border-cacao-dark/10 space-y-3">
-          <span class="w-8 h-8 rounded-full bg-accent-gold/20 text-accent-gold flex items-center justify-center font-bold text-sm">1</span>
-          <h3 class="font-serif-luxury text-lg font-bold text-cacao-dark">100% Ghanaian Single-Origin</h3>
-          <p class="text-xs text-text-muted leading-relaxed">Authentic bean-to-bar cocoa sourced directly from Suhum &amp; Assin Fosu. FDA &amp; GSA certified quality.</p>
-        </div>
-
-        <div class="p-6 rounded-xl bg-card-bg border border-cacao-dark/10 space-y-3">
-          <span class="w-8 h-8 rounded-full bg-accent-gold/20 text-accent-gold flex items-center justify-center font-bold text-sm">2</span>
-          <h3 class="font-serif-luxury text-lg font-bold text-cacao-dark">Bespoke Counter Displays</h3>
-          <p class="text-xs text-text-muted leading-relaxed">Custom branded wooden and gold-foil countertop display units tailored for luxury retail spaces.</p>
-        </div>
-
-        <div class="p-6 rounded-xl bg-card-bg border border-cacao-dark/10 space-y-3">
-          <span class="w-8 h-8 rounded-full bg-accent-gold/20 text-accent-gold flex items-center justify-center font-bold text-sm">3</span>
-          <h3 class="font-serif-luxury text-lg font-bold text-cacao-dark">Temperature-Controlled Delivery</h3>
-          <p class="text-xs text-text-muted leading-relaxed">Insulated climate-controlled transport guaranteeing fresh arrival across all regions in Ghana.</p>
-        </div>
-
-        <div class="p-6 rounded-xl bg-card-bg border border-cacao-dark/10 space-y-3">
-          <span class="w-8 h-8 rounded-full bg-accent-gold/20 text-accent-gold flex items-center justify-center font-bold text-sm">4</span>
-          <h3 class="font-serif-luxury text-lg font-bold text-cacao-dark">Competitive Wholesale Pricing</h3>
-          <p class="text-xs text-text-muted leading-relaxed">Tiered retail margins, low minimum order quantities (from 50 units), and staff tasting workshops.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
 
   <!-- Elementor / WP Content Support Area -->
   <div class="elementor-content-container">

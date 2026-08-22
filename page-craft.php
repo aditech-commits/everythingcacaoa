@@ -116,7 +116,7 @@ get_header();
           <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta block">Our Purpose</span>
           <h3 class="font-serif-luxury text-3xl font-bold text-cacao-dark">Mission Statement</h3>
           <p class="text-sm text-text-muted leading-relaxed italic font-serif-luxury">
-            "At Everything Cacao, our mission is to transform the rich heritage of Ghanaian cacao into exceptional chocolate experiences that delight the senses. Through our brands—Cherelle, bringing joy to every palate, and Nahar, offering a taste of luxury—we are committed to quality, sustainability, and community empowerment. We strive to create delicious moments that connect people, celebrate our culture, and support local farmers, ensuring that every bite reflects our passion for excellence and the spirit of Ghana."
+            "At Everything Cacao GH Ltd., our mission is to transform the chocolate landscape in Ghana and beyond by producing exceptional products that celebrate the richness of our local cocoa while fostering sustainable practices. We aim to enhance the lives of our consumers through our flavorful offerings, drive economic growth within our community, and promote the cultural significance of cacao."
           </p>
         </div>
 
@@ -125,7 +125,7 @@ get_header();
           <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold block">Our Horizon</span>
           <h3 class="font-serif-luxury text-3xl font-bold text-cacao-dark">Vision Statement</h3>
           <p class="text-sm text-text-muted leading-relaxed italic font-serif-luxury">
-            "Our vision at Everything Cacao is to become a globally recognized leader in premium chocolate, celebrated for our commitment to quality and the rich flavors of Ghanaian cacao. We aspire to create a world where our chocolates, under the Cherelle and Nahar brands, are enjoyed by communities locally and abroad, bridging cultures and bringing people together through the joy of exceptional chocolate. We envision a sustainable future where our partnerships with local farmers empower communities, and every bite of our chocolate tells the story of Ghana’s vibrant heritage."
+            "We envision a world where high-quality chocolate is not a luxury but a delightful experience accessible to all. We aspire to be a leading name in the chocolate industry, known for our innovative products, commitment to quality, and dedication to sustainability."
           </p>
         </div>
       </div>

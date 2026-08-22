@@ -401,16 +401,7 @@ get_header();
     </div>
   </section>
 
-  <!-- SEO Supporting Body Copy Section -->
-  <section class="py-16 bg-card-bg border-t border-cacao-dark/10">
-    <div class="max-w-4xl mx-auto px-6 md:px-12 text-center space-y-4">
-      <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Accra &amp; Nationwide Delivery</span>
-      <h2 class="font-serif-luxury text-3xl md:text-4xl font-bold text-cacao-dark">Ghana's Best Chocolate, Delivered to Your Door</h2>
-      <p class="text-text-muted text-sm leading-relaxed max-w-2xl mx-auto">
-        Everything Cacao GH delivers across Accra and major cities in Ghana. Whether you're ordering a single Cherelle bar or stocking up on Nahar for a special occasion, we make it easy to enjoy premium Ghanaian chocolate wherever you are.
-      </p>
-    </div>
-  </section>
+
 
 
   <!-- ════════════════════════════════════════════════ -->

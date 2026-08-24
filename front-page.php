@@ -266,10 +266,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
     </div>
   </section>
 
-  <!-- Quick Home Contact Form Section -->
-  <section class="py-24 max-w-4xl mx-auto px-6 md:px-12">
-    <?php get_template_part('template-parts/quick-form'); ?>
-  </section>
+
 
   <!-- Elementor / WP Content Support Area -->
   <div class="elementor-content-container">

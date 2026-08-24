@@ -103,7 +103,6 @@ get_header();
                   <select id="form-inquiry" name="inquiry_type" class="w-full px-4 py-3 bg-canvas border border-cacao-dark/20 rounded text-sm focus:outline-none focus:border-accent-gold">
                     <option value="Personal Order Inquiry">Personal Chocolate Order</option>
                     <option value="Wholesale &amp; Stockist Partnership" id="wholesale">Stockist &amp; Wholesale Inquiry</option>
-                    <option value="Tasting Workshop &amp; Tour">Tasting Workshop Booking</option>
                   </select>
                 </div>
               </div>
@@ -189,7 +188,7 @@ get_header();
             <span class="faq-icon text-xl font-sans">+</span>
           </button>
           <div class="accordion-content px-6 pb-6 text-xs text-text-muted leading-relaxed">
-            All purchases are processed directly via WhatsApp or our contact desk to ensure personalized service. Submit an enquiry above or click the WhatsApp trigger to launch a pre-filled chat with our sales representative, who will confirm stock and delivery options in Ghana or internationally.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </div>
         </div>
 
@@ -200,7 +199,7 @@ get_header();
             <span class="faq-icon text-xl font-sans">+</span>
           </button>
           <div class="accordion-content px-6 pb-6 text-xs text-text-muted leading-relaxed">
-            Yes! We ship insulated temperature-controlled micro-batches via express courier to selected destinations across West Africa, Europe, North America, and the UK. Contact our team for shipping quotes.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </div>
         </div>
 
@@ -211,7 +210,7 @@ get_header();
             <span class="faq-icon text-xl font-sans">+</span>
           </button>
           <div class="accordion-content px-6 pb-6 text-xs text-text-muted leading-relaxed">
-            Our wholesale stockist program starts at a minimum order of 50 units. We offer tiered pricing, custom wooden countertop display units, and staff product training. Select "Stockist &amp; Wholesale Inquiry" in our form above to request our trade catalogue.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
           </div>
         </div>
 
@@ -222,7 +221,7 @@ get_header();
             <span class="faq-icon text-xl font-sans">+</span>
           </button>
           <div class="accordion-content px-6 pb-6 text-xs text-text-muted leading-relaxed">
-            Absolutely. We provide custom gold-embossed sleeves, custom wooden presentation hampers, and personalized wax seals for orders of 25 units or more. Submit a request via the form above or WhatsApp us directly for a quotation.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </div>
         </div>
       </div>

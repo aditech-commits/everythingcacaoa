@@ -99,7 +99,6 @@ get_header();
                   <select id="form-inquiry" name="inquiry_type" class="w-full px-4 py-3 bg-canvas border border-cacao-dark/20 rounded text-sm focus:outline-none focus:border-accent-gold">
                     <option value="Personal Order Inquiry">Personal Chocolate Order</option>
                     <option value="Wholesale &amp; Stockist Partnership">Stockist &amp; Wholesale Inquiry</option>
-                    <option value="Tasting Workshop &amp; Tour">Tasting Workshop Booking</option>
                   </select>
                 </div>
               </div>

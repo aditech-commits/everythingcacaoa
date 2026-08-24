@@ -24,7 +24,7 @@ get_header();
 
   <!-- 3 Enquiries Highlight Cards -->
   <section class="py-12 bg-card-bg border-b border-cacao-dark/10">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="max-w-3xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-8">
       <div class="p-8 rounded-xl bg-canvas border border-cacao-dark/10 space-y-3">
         <span class="text-xs font-semibold text-accent-terracotta uppercase tracking-wider block">Retail Partners</span>
         <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Wholesale &amp; Retail Enquiries</h3>
@@ -61,16 +61,13 @@ get_header();
             <a href="https://wa.me/<?php echo esc_attr(get_option('ec_whatsapp_number', '233240000000')); ?>" target="_blank" rel="noopener noreferrer" class="font-semibold text-cacao-dark text-sm hover:text-accent-terracotta transition-colors">
               +<?php echo esc_html(get_option('ec_whatsapp_number', '233240000000')); ?>
             </a>
-            <p class="text-[11px] opacity-80">Click to instantly chat with a rep</p>
+
           </div>
           <div class="space-y-1 border-t border-cacao-dark/10 pt-3">
             <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Email Inquiries</span>
             <a href="mailto:concierge@everythingcacao.com" class="font-semibold text-cacao-dark text-sm hover:text-accent-terracotta transition-colors">concierge@everythingcacao.com</a>
           </div>
-          <div class="space-y-1 border-t border-cacao-dark/10 pt-3">
-            <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Private Gifting &amp; Weddings</span>
-            <p>Use our fast-track booking link for bulk orders and custom corporate packaging.</p>
-          </div>
+
         </div>
 
         <?php
@@ -101,8 +98,6 @@ get_header();
                   <label for="form-inquiry" class="block text-xs font-semibold uppercase text-cacao-dark mb-1">Inquiry Category</label>
                   <select id="form-inquiry" name="inquiry_type" class="w-full px-4 py-3 bg-canvas border border-cacao-dark/20 rounded text-sm focus:outline-none focus:border-accent-gold">
                     <option value="Personal Order Inquiry">Personal Chocolate Order</option>
-                    <option value="Corporate Gifting &amp; Hampers">Corporate Gifting &amp; Hampers</option>
-                    <option value="Weddings &amp; Custom Favors">Weddings &amp; Celebration Favors</option>
                     <option value="Wholesale &amp; Stockist Partnership">Stockist &amp; Wholesale Inquiry</option>
                     <option value="Tasting Workshop &amp; Tour">Tasting Workshop Booking</option>
                   </select>

@@ -24,12 +24,6 @@ $link_contact    = ec_get_smart_page_link(array('contact', 'concierge'), '/conta
           <span class="font-serif-luxury text-lg md:text-xl font-bold tracking-wider text-canvas group-hover:text-accent-gold transition-colors block mt-2 uppercase">
             EVERYTHING CACAO
           </span>
-        </a>
-        <div class="flex items-center gap-2 text-[11px] text-accent-gold font-semibold">
-          <span>✓ FDA Certified</span>
-          <span>•</span>
-          <span>✓ GSA Certified</span>
-        </div>
         <p class="text-xs text-canvas/50">© <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All Rights Reserved.</p>
       </div>
 

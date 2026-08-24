@@ -69,7 +69,12 @@ get_header();
     </div>
   <!-- Gallery Preview Section (2 Landscape Images) -->
   <section class="py-16 md:py-20 bg-canvas border-t border-cacao-dark/10">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 space-y-8">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
+      <!-- Section Heading Divider -->
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">Our Gallery</h2>
+      </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="ec-animate ec-card-hover overflow-hidden rounded-2xl border border-cacao-dark/15 shadow-md aspect-[16/9] group">
           <img src="https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image-300x193.png" 

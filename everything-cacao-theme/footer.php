@@ -10,7 +10,7 @@
 $link_home       = esc_url(home_url('/'));
 $link_collections= ec_get_smart_page_link(array('our-collections', 'collections'), '/our-collections');
 $link_craft      = ec_get_smart_page_link(array('about-us', 'about', 'our-craft', 'craft'), '/about-us');
-$link_team       = ec_get_smart_page_link(array('meet-the-team', 'our-team', 'team'), '/meet-the-team');
+$link_gallery    = ec_get_smart_page_link(array('our-gallery', 'gallery', 'meet-the-team', 'our-team', 'team'), '/our-gallery');
 $link_journal    = ec_get_smart_page_link(array('cacao-journal', 'journal'), '/cacao-journal');
 $link_stockist   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock-lists'), '/stockist');
 $link_contact    = ec_get_smart_page_link(array('contact', 'concierge'), '/contact');
@@ -43,7 +43,7 @@ $link_contact    = ec_get_smart_page_link(array('contact', 'concierge'), '/conta
             ?>
             <a href="<?php echo $link_home; ?>" class="block hover:text-accent-gold transition-colors">Home</a>
             <a href="<?php echo $link_craft; ?>" class="block hover:text-accent-gold transition-colors">ABOUT US</a>
-            <a href="<?php echo $link_team; ?>" class="block hover:text-accent-gold transition-colors">MEET THE TEAM</a>
+            <a href="<?php echo $link_gallery; ?>" class="block hover:text-accent-gold transition-colors">OUR GALLERY</a>
             <a href="<?php echo $link_journal; ?>" class="block hover:text-accent-gold transition-colors">Cacao Journal</a>
             <a href="<?php echo $link_collections; ?>" class="block hover:text-accent-gold transition-colors">Our Collections</a>
             <a href="<?php echo $link_stockist; ?>" class="block hover:text-accent-gold transition-colors">STOCKISTS</a>

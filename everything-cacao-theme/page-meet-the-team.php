@@ -1,33 +1,25 @@
 <?php
 /**
- * Template Name: Meet The Team
+ * Template Name: Our Gallery
  *
- * Everything Cacao GH - Meet The Team Page Template (page-meet-the-team.php)
- * Clean, elegant team picture showcase matching brand design system.
+ * Everything Cacao GH - Our Gallery Page Template (page-meet-the-team.php / page-gallery.php)
+ * Clean, elegant photo gallery matching brand luxury design system.
  *
  * @package EverythingCacao
  */
 
 get_header();
 
-$placeholder_img = 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png';
-
-$team_members = array(
-    array(
-        'name'     => 'Master Chocolatier & Production Lead',
-        'location' => 'Accra, Ghana',
-        'image'    => $placeholder_img,
-    ),
-    array(
-        'name'     => 'Head of Operations & Quality Control',
-        'location' => 'Accra, Ghana',
-        'image'    => $placeholder_img,
-    ),
-    array(
-        'name'     => 'Sustainable Cacao & Farmer Liaison',
-        'location' => 'Ghana Cacao Belt',
-        'image'    => $placeholder_img,
-    ),
+$gallery_images = array(
+    get_template_directory_uri() . '/assets/images/products/cherelle-2.jpg',
+    get_template_directory_uri() . '/assets/images/products/cherelle-3.jpg',
+    get_template_directory_uri() . '/assets/images/products/cherelle-4.jpg',
+    get_template_directory_uri() . '/assets/images/products/cherelle-5.jpg',
+    get_template_directory_uri() . '/assets/images/products/cherelle-6.jpg',
+    get_template_directory_uri() . '/assets/images/products/cherelle-7.jpg',
+    get_template_directory_uri() . '/assets/images/products/cherelle-8.jpg',
+    get_template_directory_uri() . '/assets/images/products/cherelle-9.jpg',
+    get_template_directory_uri() . '/assets/images/products/cherelle-10.jpg',
 );
 ?>
 
@@ -38,40 +30,26 @@ $team_members = array(
       <!-- Highlighted Pill Badge -->
       <div class="inline-block">
         <span class="text-xs md:text-sm font-semibold uppercase tracking-widest bg-accent-gold/20 text-cacao-dark px-6 py-2 rounded-full border border-accent-gold/40 shadow-sm">
-          Our Team
+          Our Gallery
         </span>
       </div>
 
       <h1 class="font-serif-luxury text-4xl md:text-6xl font-bold text-cacao-dark leading-tight">
-        Meet The Everything Cacao Team
+        Our Gallery
       </h1>
     </div>
   </section>
 
-  <!-- Team Member Photo Cards Showcase (Adjusted Spacing & Clean Cards) -->
-  <section class="pt-8 pb-20 md:pt-10 md:pb-24 max-w-7xl mx-auto px-6 md:px-12">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-      <?php foreach ($team_members as $member) : ?>
-        <div class="ec-animate ec-card-hover group bg-card-bg rounded-2xl overflow-hidden border border-cacao-dark/15 shadow-md hover:shadow-2xl hover:border-accent-gold transition-all duration-500 flex flex-col justify-between">
-          <div>
-            <!-- Photo Slot -->
-            <div class="relative w-full aspect-[4/5] overflow-hidden bg-canvas/80 cursor-pointer">
-              <img src="<?php echo esc_url($member['image']); ?>" 
-                   alt="<?php echo esc_attr($member['name']); ?>" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                   loading="lazy" />
-              
-              <span class="absolute top-4 right-4 text-[10px] font-semibold uppercase tracking-wider bg-cacao-dark text-canvas px-3 py-1 rounded-full z-10 shadow-sm">
-                <?php echo esc_html($member['location']); ?>
-              </span>
-            </div>
-
-            <!-- Team Info Card -->
-            <div class="p-6 md:p-8">
-              <h3 class="font-serif-luxury text-xl md:text-2xl font-bold text-cacao-dark leading-snug">
-                <?php echo esc_html($member['name']); ?>
-              </h3>
-            </div>
+  <!-- Gallery Showcase Grid (3 Rows x 3 Columns = 9 Photos) -->
+  <section class="pt-12 pb-20 md:pt-16 md:pb-24 max-w-7xl mx-auto px-6 md:px-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
+      <?php foreach ($gallery_images as $img_url) : ?>
+        <div class="ec-animate ec-card-hover group bg-card-bg rounded-2xl overflow-hidden border border-cacao-dark/15 shadow-md hover:shadow-2xl hover:border-accent-gold transition-all duration-500">
+          <div class="relative w-full aspect-[4/3] overflow-hidden bg-canvas/80 cursor-pointer">
+            <img src="<?php echo esc_url($img_url); ?>" 
+                 alt="Everything Cacao Gallery Image" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                 loading="lazy" />
           </div>
         </div>
       <?php endforeach; ?>

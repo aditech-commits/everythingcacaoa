@@ -67,6 +67,30 @@ get_header();
         </p>
       </div>
     </div>
+  <!-- Gallery Preview Section (2 Landscape Images) -->
+  <section class="py-16 md:py-20 bg-canvas border-t border-cacao-dark/10">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 space-y-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="ec-animate ec-card-hover overflow-hidden rounded-2xl border border-cacao-dark/15 shadow-md aspect-[16/9] group">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/cherelle-2.jpg" 
+               alt="Everything Cacao Gallery" 
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+               loading="lazy" />
+        </div>
+        <div class="ec-animate ec-card-hover overflow-hidden rounded-2xl border border-cacao-dark/15 shadow-md aspect-[16/9] group">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/cherelle-3.jpg" 
+               alt="Everything Cacao Gallery" 
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+               loading="lazy" />
+        </div>
+      </div>
+      <div class="text-center pt-2">
+        <a href="<?php echo ec_get_smart_page_link(array('our-gallery', 'gallery', 'meet-the-team'), '/our-gallery'); ?>" 
+           class="inline-block px-8 py-3.5 bg-cacao-dark text-canvas font-semibold text-xs uppercase tracking-widest rounded-full hover:bg-accent-gold hover:text-cacao-dark transition-all duration-300 shadow-md">
+          View More &rarr;
+        </a>
+      </div>
+    </div>
   </section>
 
   <!-- Two Lineages Write-Up: Cherelle vs Nahar -->

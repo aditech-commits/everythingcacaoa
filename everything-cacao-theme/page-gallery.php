@@ -2,7 +2,7 @@
 /**
  * Template Name: Our Gallery
  *
- * Everything Cacao GH - Our Gallery Page Template (page-meet-the-team.php / page-gallery.php)
+ * Everything Cacao GH - Our Gallery Page Template (page-gallery.php)
  * Clean, elegant photo gallery matching brand luxury design system.
  *
  * @package EverythingCacao

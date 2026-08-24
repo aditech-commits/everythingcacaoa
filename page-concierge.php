@@ -33,13 +33,6 @@ get_header();
         </p>
       </div>
 
-      <div class="p-8 rounded-xl bg-canvas border border-cacao-dark/10 space-y-3 border-t-4 border-accent-gold">
-        <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Bespoke Packages</span>
-        <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Corporate Gifting</h3>
-        <p class="text-xs text-text-muted leading-relaxed">
-          Looking for a premium Ghanaian chocolate gift for your team, clients or an event? Everything Cacao offers bespoke corporate gifting packages. Contact us to find out more.
-        </p>
-      </div>
 
       <div class="p-8 rounded-xl bg-canvas border border-cacao-dark/10 space-y-3">
         <span class="text-xs font-semibold text-accent-terracotta uppercase tracking-wider block">Questions &amp; Support</span>
@@ -64,7 +57,7 @@ get_header();
         <!-- Direct Concierge Contact Info -->
         <div class="p-6 bg-canvas border-l-4 border-accent-gold rounded text-xs text-text-muted space-y-4">
           <div class="space-y-1">
-            <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Direct WhatsApp Chat</span>
+            <span class="text-xs font-semibold text-accent-gold uppercase tracking-wider block">Call/WhatsApp Chat</span>
             <a href="https://wa.me/<?php echo esc_attr(get_option('ec_whatsapp_number', '233240000000')); ?>" target="_blank" rel="noopener noreferrer" class="font-semibold text-cacao-dark text-sm hover:text-accent-terracotta transition-colors">
               +<?php echo esc_html(get_option('ec_whatsapp_number', '233240000000')); ?>
             </a>

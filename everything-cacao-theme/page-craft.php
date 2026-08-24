@@ -72,13 +72,13 @@ get_header();
     <div class="max-w-7xl mx-auto px-6 md:px-12 space-y-8">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="ec-animate ec-card-hover overflow-hidden rounded-2xl border border-cacao-dark/15 shadow-md aspect-[16/9] group">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/cherelle-2.jpg" 
+          <img src="https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image-300x193.png" 
                alt="Everything Cacao Gallery" 
                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                loading="lazy" />
         </div>
         <div class="ec-animate ec-card-hover overflow-hidden rounded-2xl border border-cacao-dark/15 shadow-md aspect-[16/9] group">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/cherelle-3.jpg" 
+          <img src="https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image-300x193.png" 
                alt="Everything Cacao Gallery" 
                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                loading="lazy" />

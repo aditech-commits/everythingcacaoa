@@ -10,16 +10,18 @@
 
 get_header();
 
+$placeholder_url = 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image-300x193.png';
+
 $gallery_images = array(
-    get_template_directory_uri() . '/assets/images/products/cherelle-2.jpg',
-    get_template_directory_uri() . '/assets/images/products/cherelle-3.jpg',
-    get_template_directory_uri() . '/assets/images/products/cherelle-4.jpg',
-    get_template_directory_uri() . '/assets/images/products/cherelle-5.jpg',
-    get_template_directory_uri() . '/assets/images/products/cherelle-6.jpg',
-    get_template_directory_uri() . '/assets/images/products/cherelle-7.jpg',
-    get_template_directory_uri() . '/assets/images/products/cherelle-8.jpg',
-    get_template_directory_uri() . '/assets/images/products/cherelle-9.jpg',
-    get_template_directory_uri() . '/assets/images/products/cherelle-10.jpg',
+    $placeholder_url,
+    $placeholder_url,
+    $placeholder_url,
+    $placeholder_url,
+    $placeholder_url,
+    $placeholder_url,
+    $placeholder_url,
+    $placeholder_url,
+    $placeholder_url,
 );
 ?>
 

@@ -24,7 +24,7 @@ get_header();
 
   <!-- 3 Enquiries Highlight Cards -->
   <section class="py-12 bg-card-bg border-b border-cacao-dark/10">
-    <div class="max-w-3xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="max-w-5xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-8">
       <div class="p-8 rounded-xl bg-canvas border border-cacao-dark/10 space-y-3">
         <span class="text-xs font-semibold text-accent-terracotta uppercase tracking-wider block">Retail Partners</span>
         <h3 class="font-serif-luxury text-xl font-bold text-cacao-dark">Wholesale &amp; Retail Enquiries</h3>
@@ -45,7 +45,7 @@ get_header();
   </section>
 
   <!-- Contact & Concierge Form Section -->
-  <section id="contact" class="py-24 max-w-7xl mx-auto px-6 md:px-12">
+  <section id="contact" class="py-12 md:py-16 max-w-7xl mx-auto px-6 md:px-12">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
       <!-- Column 1: Direct Concierge & Contact Form -->

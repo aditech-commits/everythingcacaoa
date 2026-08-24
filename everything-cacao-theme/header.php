@@ -169,18 +169,11 @@
 
       <!-- Desktop Navigation Menu -->
       <div class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest font-semibold text-cacao-dark">
-        <!-- ABOUT US Dropdown Menu -->
-        <div class="relative group py-2">
-          <button class="nav-link flex items-center gap-1.5 font-semibold uppercase tracking-widest text-xs <?php echo ($is_craft || is_page('meet-the-team')) ? 'active-page' : ''; ?>">
-            <?php if ($is_craft || is_page('meet-the-team')) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1"></span><?php endif; ?>
-            ABOUT US
-            <svg class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180 text-accent-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </button>
-          <div class="absolute left-0 top-full hidden group-hover:flex flex-col bg-cacao-dark text-canvas min-w-[220px] py-3 rounded-lg shadow-2xl border border-canvas/15 transition-all z-50">
-            <a href="<?php echo $link_craft; ?>" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">OUR STORY &amp; CRAFT</a>
-            <a href="<?php echo $link_team; ?>" class="px-5 py-2.5 hover:bg-canvas/10 hover:text-accent-gold transition-colors text-xs font-medium uppercase tracking-wider block">MEET THE TEAM</a>
-          </div>
-        </div>
+        <!-- ABOUT US -->
+        <a href="<?php echo $link_craft; ?>" class="nav-link <?php echo ($is_craft || is_page('meet-the-team')) ? 'active-page' : ''; ?>">
+          <?php if ($is_craft || is_page('meet-the-team')) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
+          ABOUT US
+        </a>
 
         <!-- CACAO JOURNAL -->
         <a href="<?php echo $link_journal; ?>" class="nav-link <?php echo $is_journal ? 'active-page' : ''; ?>">
@@ -222,18 +215,9 @@
         <button id="close-drawer-btn" class="text-canvas text-3xl font-light">&times;</button>
       </div>
       <div class="flex flex-col space-y-4 text-xs uppercase tracking-widest font-semibold">
-        <!-- 1. ABOUT US Dropdown -->
+        <!-- 1. ABOUT US -->
         <div class="border-b border-canvas/10 pb-3">
-          <button type="button" class="mobile-dropdown-btn w-full flex items-center justify-between text-canvas hover:text-accent-gold py-1 text-left focus:outline-none" data-target="mobile-sub-experience">
-            <span class="font-bold tracking-wider">ABOUT US</span>
-            <svg class="w-4 h-4 transition-transform duration-300 transform text-accent-gold icon-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </button>
-          <div id="mobile-sub-experience" class="hidden pl-3 pt-3 space-y-3.5 border-l border-accent-gold/40 mt-2">
-            <a href="<?php echo $link_craft; ?>" class="block text-canvas/80 hover:text-accent-gold">OUR STORY &amp; CRAFT</a>
-            <a href="<?php echo $link_team; ?>" class="block text-canvas/80 hover:text-accent-gold">MEET THE TEAM</a>
-          </div>
+          <a href="<?php echo $link_craft; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">ABOUT US</a>
         </div>
 
         <!-- 2. CACAO JOURNAL -->

@@ -55,7 +55,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
   <section class="py-24 bg-card-bg border-t border-b border-cacao-dark/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       <div class="text-center mb-16 space-y-4 max-w-5xl mx-auto ec-animate">
-        <h2 class="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-bold text-cacao-dark md:whitespace-nowrap"><?php echo esc_html(ec_get_text_option('ec_showcase_title', 'Two Ranges. One Ghanaian Story.')); ?></h2>
+        <h2 class="font-serif-luxury text-2xl sm:text-3xl md:text-4xl font-bold text-cacao-dark md:whitespace-nowrap"><?php echo esc_html(ec_get_text_option('ec_showcase_title', 'Two Ranges. One Ghanaian Story.')); ?></h2>
         <p class="text-text-muted text-sm sm:text-base md:text-lg font-medium leading-relaxed md:whitespace-nowrap"><?php echo esc_html(ec_get_text_option('ec_showcase_subtitle', "Whether you're treating yourself, sharing with family or finding the perfect gift, Everything Cacao has a chocolate for every moment.")); ?></p>
       </div>
 

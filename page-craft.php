@@ -78,20 +78,32 @@ get_header();
       </div>
 
       <!-- Image + Text Container -->
-      <div class="ec-animate max-w-6xl mx-auto rounded-2xl border-2 border-accent-gold/30 shadow-lg overflow-hidden bg-card-bg">
-        <div class="grid grid-cols-1 md:grid-cols-2">
+      <div class="ec-animate max-w-6xl mx-auto rounded-3xl border-2 border-accent-gold/30 shadow-xl overflow-hidden bg-card-bg">
+        <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
           <!-- Left: Image -->
-          <div class="aspect-[4/3] md:aspect-auto overflow-hidden group">
-            <img src="https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image-300x193.png" 
-                 alt="Everything Cacao Gallery" 
-                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                 loading="lazy" />
+          <div class="lg:col-span-6 overflow-hidden group relative p-4 md:p-6 bg-cacao-dark/5 flex items-center justify-center">
+            <div class="w-full h-full aspect-[16/10] md:aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-cacao-dark/10 relative">
+              <img src="https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image-300x193.png" 
+                   alt="Everything Cacao Gallery" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                   loading="lazy" />
+            </div>
           </div>
-          <!-- Right: Text -->
-          <div class="flex items-center p-8 md:p-12">
-            <p class="text-sm md:text-base text-cacao-dark/85 leading-relaxed font-medium">
-              Everything Cacao GH Ltd. is an innovative chocolate manufacturer based in the heart of Ghana, dedicated to crafting exceptional chocolate experiences that cater to diverse audiences. Launched in 2025, we proudly celebrate the rich heritage of Ghanaian cocoa while blending it with contemporary production techniques to create beloved confections.
-            </p>
+
+          <!-- Vertical Divider (LG screens) -->
+          <div class="hidden lg:block w-[1px] bg-gradient-to-b from-transparent via-accent-gold/40 to-transparent my-6"></div>
+
+          <!-- Right: Text with Inner Bordered Box -->
+          <div class="lg:col-span-6 flex items-center p-6 md:p-10 border-t lg:border-t-0 border-cacao-dark/10">
+            <div class="w-full p-6 md:p-8 rounded-2xl border-2 border-dashed border-accent-gold/40 bg-canvas/70 space-y-4 shadow-sm relative">
+              <div class="flex items-center space-x-3 text-accent-gold">
+                <span class="w-8 h-[2px] bg-accent-gold inline-block"></span>
+                <span class="text-[11px] font-semibold uppercase tracking-widest text-accent-gold">CRAFTED IN GHANA</span>
+              </div>
+              <p class="text-sm md:text-base text-cacao-dark/90 leading-relaxed font-medium">
+                Everything Cacao GH Ltd. is an innovative chocolate manufacturer based in the heart of Ghana, dedicated to crafting exceptional chocolate experiences that cater to diverse audiences. Launched in 2025, we proudly celebrate the rich heritage of Ghanaian cocoa while blending it with contemporary production techniques to create beloved confections.
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -34,7 +34,7 @@ $placeholder_img = 'https://everythingcacaogh.com/wp-content/uploads/2026/08/pla
 
   if ($blog_query->have_posts()) :
       $posts_list = $blog_query->posts;
-      $first_post = array_shift($posts_list);
+      $first_post = !empty($posts_list) ? $posts_list[0] : null;
       ?>
 
       <!-- Featured Dispatch Section (Latest Published Post) -->

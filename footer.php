@@ -43,7 +43,7 @@ $link_contact    = ec_get_smart_page_link(array('contact', 'concierge'), '/conta
             ?>
             <a href="<?php echo $link_home; ?>" class="block hover:text-accent-gold transition-colors">Home</a>
             <a href="<?php echo $link_craft; ?>" class="block hover:text-accent-gold transition-colors">ABOUT US</a>
-            <a href="<?php echo $link_gallery; ?>" class="block hover:text-accent-gold transition-colors">OUR GALLERY</a>
+            <a href="<?php echo $link_gallery; ?>" class="block hover:text-accent-gold transition-colors">OUR STORY</a>
             <a href="<?php echo $link_journal; ?>" class="block hover:text-accent-gold transition-colors">Cacao Journal</a>
             <a href="<?php echo $link_collections; ?>" class="block hover:text-accent-gold transition-colors">Our Collections</a>
             <a href="<?php echo $link_stockist; ?>" class="block hover:text-accent-gold transition-colors">STOCKISTS</a>

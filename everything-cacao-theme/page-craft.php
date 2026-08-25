@@ -74,7 +74,7 @@ get_header();
     <div class="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
       <!-- Section Heading Divider -->
       <div class="text-center max-w-2xl mx-auto">
-        <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">Our Gallery</h2>
+        <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">Our Story</h2>
       </div>
 
       <!-- Image + Text Container -->
@@ -83,8 +83,8 @@ get_header();
           <!-- Left: Image -->
           <div class="p-6 md:p-8 border-b md:border-b-0 md:border-r border-cacao-dark/15 h-full flex items-center justify-center">
             <div class="w-full aspect-[16/10] md:aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-cacao-dark/10 group">
-              <img src="https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image-300x193.png" 
-                   alt="Everything Cacao Gallery" 
+              <img src="https://everythingcacaogh.com/wp-content/uploads/2026/08/team_everythingcacao.jpg" 
+                   alt="Everything Cacao Team" 
                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                    loading="lazy" />
             </div>
@@ -97,9 +97,17 @@ get_header();
                 <span class="w-8 h-[2px] bg-accent-gold inline-block"></span>
                 <span class="text-[11px] font-semibold uppercase tracking-widest text-accent-gold">CRAFTED IN GHANA</span>
               </div>
-              <p class="text-sm md:text-base text-cacao-dark/90 leading-relaxed font-medium">
-                Everything Cacao GH Ltd. is an innovative chocolate manufacturer based in the heart of Ghana, dedicated to crafting exceptional chocolate experiences that cater to diverse audiences. Launched in 2025, we proudly celebrate the rich heritage of Ghanaian cocoa while blending it with contemporary production techniques to create beloved confections.
-              </p>
+              <div class="space-y-3 text-sm md:text-base text-cacao-dark/90 leading-relaxed font-medium">
+                <p>
+                  Everything Cacao GH Ltd. is a proudly Ghanaian chocolate manufacturer, born in 2025 from a deep love for Ghana's cacao and a vision to share it with the world.
+                </p>
+                <p>
+                  We craft premium chocolate right here in Ghana — celebrating the farmers, the land and the heritage behind every bar. From our everyday Cherelle range to our luxury Nahar collection, each piece of chocolate we make is a testament to what Ghanaian cocoa can become in the right hands.
+                </p>
+                <p class="font-semibold text-cacao-dark">
+                  We are more than a chocolate company. We are a celebration of Ghana.
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -52,7 +52,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
   </section>
 
   <!-- Brand Showcase: Dual-Line Expressions -->
-  <section class="py-24 bg-card-bg border-t border-b border-cacao-dark/10">
+  <section class="py-10 md:py-14 bg-card-bg border-t border-b border-cacao-dark/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       <div class="text-center mb-16 space-y-4 max-w-5xl mx-auto ec-animate">
         <h2 class="font-serif-luxury text-2xl sm:text-3xl md:text-4xl font-bold text-cacao-dark md:whitespace-nowrap"><?php echo esc_html(ec_get_text_option('ec_showcase_title', 'Two Ranges. One Ghanaian Story.')); ?></h2>
@@ -213,7 +213,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
   </section>
 
   <!-- Live In-Store Sampling Video Experience Section -->
-  <section class="py-24 bg-card-bg border-t border-b border-cacao-dark/10">
+  <section class="py-10 md:py-14 bg-card-bg border-t border-b border-cacao-dark/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
         <div class="space-y-4 max-w-2xl">

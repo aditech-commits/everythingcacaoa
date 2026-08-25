@@ -11,7 +11,7 @@ get_header();
 ?>
 
   <!-- Hero Banner -->
-  <section class="py-20 bg-cacao-dark text-canvas border-b border-canvas/10">
+  <section class="py-10 md:py-14 bg-cacao-dark text-canvas border-b border-canvas/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12 text-center space-y-6">
       <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Official Brand Story &amp; Vision</span>
       <h1 class="font-serif-luxury text-4xl md:text-6xl font-bold leading-tight"><?php echo esc_html(ec_get_text_option('ec_craft_hero_title', 'Everything Cacao')); ?></h1>
@@ -24,8 +24,8 @@ get_header();
   </section>
 
   <!-- Brand Story & Core Pillars Section -->
-  <section id="about" class="py-24 md:py-32 max-w-7xl mx-auto px-6 md:px-12">
-    <div class="text-center max-w-3xl mx-auto space-y-5 mb-20 ec-animate">
+  <section id="about" class="py-10 md:py-14 max-w-7xl mx-auto px-6 md:px-12">
+    <div class="text-center max-w-3xl mx-auto space-y-5 mb-8 md:mb-10 ec-animate">
       <span class="text-sm font-semibold uppercase tracking-widest text-accent-terracotta">Our Journey</span>
       <h2 class="font-serif-luxury text-4xl md:text-5xl lg:text-6xl font-bold text-cacao-dark leading-tight"><?php echo esc_html(ec_get_text_option('ec_craft_sec_title', "Ghana's Chocolate Story — Grown Here, Made Here")); ?></h2>
       <p class="text-cacao-dark/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
@@ -70,7 +70,7 @@ get_header();
   </section>
 
   <!-- Gallery Preview Section -->
-  <section class="py-16 md:py-20 bg-canvas border-t border-cacao-dark/10">
+  <section class="py-8 md:py-12 bg-canvas border-t border-cacao-dark/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
       <!-- Section Heading Divider -->
       <div class="text-center max-w-2xl mx-auto">

@@ -11,7 +11,7 @@ $placeholder_img = 'https://everythingcacaogh.com/wp-content/uploads/2026/08/pla
 ?>
 
   <!-- Hero Banner -->
-  <section class="py-20 bg-cacao-dark text-canvas border-b border-canvas/10">
+  <section class="py-10 md:py-14 bg-cacao-dark text-canvas border-b border-canvas/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12 text-center space-y-4">
       <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">Dispatches from the Cacao Heartland</span>
       <h1 class="font-serif-luxury text-4xl md:text-6xl font-bold">The Cacao Journal</h1>
@@ -46,7 +46,7 @@ $placeholder_img = 'https://everythingcacaogh.com/wp-content/uploads/2026/08/pla
           $feat_date    = get_the_date('F j, Y', $feat_id);
           $feat_excerpt = get_the_excerpt($feat_id) ?: wp_trim_words($first_post->post_content, 35);
           ?>
-          <section class="py-16 md:py-24 max-w-7xl mx-auto px-6 md:px-12">
+          <section class="pt-8 pb-4 md:pt-10 md:pb-6 max-w-7xl mx-auto px-6 md:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center bg-card-bg rounded-2xl p-6 md:p-10 border border-cacao-dark/15 shadow-md hover:shadow-xl transition-all duration-300">
               <div class="lg:col-span-7 aspect-video rounded-xl overflow-hidden border border-cacao-dark/10 bg-canvas group cursor-pointer" onclick="window.location.href='<?php echo esc_url($feat_link); ?>'">
                 <img src="<?php echo esc_url($feat_thumb); ?>" alt="<?php echo esc_attr($feat_title); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
@@ -79,7 +79,7 @@ $placeholder_img = 'https://everythingcacaogh.com/wp-content/uploads/2026/08/pla
 
       <!-- Remaining Published Articles Grid -->
       <?php if (!empty($posts_list)) : ?>
-        <section class="py-16 md:py-24 bg-card-bg border-t border-b border-cacao-dark/10">
+        <section class="py-10 md:py-14 bg-card-bg border-t border-b border-cacao-dark/10">
           <div class="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
             <div class="text-center max-w-2xl mx-auto space-y-3">
               <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Field Notes &amp; Stories</span>

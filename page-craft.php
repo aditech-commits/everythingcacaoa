@@ -114,7 +114,7 @@ get_header();
       </div>
 
       <div class="text-center pt-2">
-        <a href="<?php echo ec_get_smart_page_link(array('our-gallery', 'gallery', 'meet-the-team'), '/our-gallery'); ?>" 
+        <a href="<?php echo ec_get_smart_page_link(array('our-story', 'story', 'our-gallery', 'gallery', 'meet-the-team'), '/our-story'); ?>" 
            class="inline-block px-8 py-3.5 bg-cacao-dark text-canvas font-semibold text-xs uppercase tracking-widest rounded-full hover:bg-accent-gold hover:text-cacao-dark transition-all duration-300 shadow-md">
           View More &rarr;
         </a>

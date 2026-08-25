@@ -79,10 +79,10 @@ get_header();
 
       <!-- Image + Text Container -->
       <div class="ec-animate max-w-6xl mx-auto rounded-3xl border-2 border-accent-gold/30 shadow-xl overflow-hidden bg-card-bg">
-        <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center">
           <!-- Left: Image -->
-          <div class="lg:col-span-6 overflow-hidden group relative p-4 md:p-6 bg-cacao-dark/5 flex items-center justify-center">
-            <div class="w-full h-full aspect-[16/10] md:aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-cacao-dark/10 relative">
+          <div class="p-6 md:p-8 border-b md:border-b-0 md:border-r border-cacao-dark/15 h-full flex items-center justify-center">
+            <div class="w-full aspect-[16/10] md:aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-cacao-dark/10 group">
               <img src="https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image-300x193.png" 
                    alt="Everything Cacao Gallery" 
                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
@@ -90,11 +90,8 @@ get_header();
             </div>
           </div>
 
-          <!-- Vertical Divider (LG screens) -->
-          <div class="hidden lg:block w-[1px] bg-gradient-to-b from-transparent via-accent-gold/40 to-transparent my-6"></div>
-
-          <!-- Right: Text with Inner Bordered Box -->
-          <div class="lg:col-span-6 flex items-center p-6 md:p-10 border-t lg:border-t-0 border-cacao-dark/10">
+          <!-- Right: Text with Inner Dashed Border Box -->
+          <div class="p-6 md:p-8 h-full flex items-center">
             <div class="w-full p-6 md:p-8 rounded-2xl border-2 border-dashed border-accent-gold/40 bg-canvas/70 space-y-4 shadow-sm relative">
               <div class="flex items-center space-x-3 text-accent-gold">
                 <span class="w-8 h-[2px] bg-accent-gold inline-block"></span>

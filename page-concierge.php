@@ -169,51 +169,75 @@ get_header();
 
       <div class="space-y-4">
         <!-- FAQ 1 -->
-        <div class="border border-cacao-dark/10 rounded-lg bg-card-bg overflow-hidden">
-          <button class="faq-trigger w-full p-6 text-left font-serif-luxury font-bold text-lg text-cacao-dark flex justify-between items-center hover:bg-canvas/50">
+        <div class="faq-item border border-cacao-dark/10 rounded-lg bg-card-bg overflow-hidden transition-all duration-300">
+          <button type="button" class="faq-trigger w-full p-6 text-left font-serif-luxury font-bold text-lg text-cacao-dark flex justify-between items-center hover:bg-canvas/50 transition-colors">
             <span>How do I place an order for chocolate bars or gift sets?</span>
-            <span class="faq-icon text-xl font-sans">+</span>
+            <span class="faq-icon text-xl font-sans font-semibold text-accent-gold transition-transform duration-300">+</span>
           </button>
-          <div class="accordion-content px-6 pb-6 text-xs text-text-muted leading-relaxed">
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-text-muted leading-relaxed border-t border-cacao-dark/5 pt-4">
             All purchases are processed directly via WhatsApp to ensure personalized service. Click any "Order via WhatsApp" button across our site to launch a pre-filled chat with our sales concierge, who will confirm stock, delivery address in Ghana or international shipping options.
           </div>
         </div>
 
         <!-- FAQ 2 -->
-        <div class="border border-cacao-dark/10 rounded-lg bg-card-bg overflow-hidden">
-          <button class="faq-trigger w-full p-6 text-left font-serif-luxury font-bold text-lg text-cacao-dark flex justify-between items-center hover:bg-canvas/50">
+        <div class="faq-item border border-cacao-dark/10 rounded-lg bg-card-bg overflow-hidden transition-all duration-300">
+          <button type="button" class="faq-trigger w-full p-6 text-left font-serif-luxury font-bold text-lg text-cacao-dark flex justify-between items-center hover:bg-canvas/50 transition-colors">
             <span>Do you ship internationally outside Ghana?</span>
-            <span class="faq-icon text-xl font-sans">+</span>
+            <span class="faq-icon text-xl font-sans font-semibold text-accent-gold transition-transform duration-300">+</span>
           </button>
-          <div class="accordion-content px-6 pb-6 text-xs text-text-muted leading-relaxed">
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-text-muted leading-relaxed border-t border-cacao-dark/5 pt-4">
             Yes! We ship insulated temperature-controlled micro-batches via express international courier to selected destinations in West Africa, Europe, North America, and the UK. Contact our concierge desk for shipping rates.
           </div>
         </div>
 
         <!-- FAQ 3 -->
-        <div class="border border-cacao-dark/10 rounded-lg bg-card-bg overflow-hidden">
-          <button class="faq-trigger w-full p-6 text-left font-serif-luxury font-bold text-lg text-cacao-dark flex justify-between items-center hover:bg-canvas/50">
+        <div class="faq-item border border-cacao-dark/10 rounded-lg bg-card-bg overflow-hidden transition-all duration-300">
+          <button type="button" class="faq-trigger w-full p-6 text-left font-serif-luxury font-bold text-lg text-cacao-dark flex justify-between items-center hover:bg-canvas/50 transition-colors">
             <span>What are the minimum wholesale order quantities?</span>
-            <span class="faq-icon text-xl font-sans">+</span>
+            <span class="faq-icon text-xl font-sans font-semibold text-accent-gold transition-transform duration-300">+</span>
           </button>
-          <div class="accordion-content px-6 pb-6 text-xs text-text-muted leading-relaxed">
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-text-muted leading-relaxed border-t border-cacao-dark/5 pt-4">
             Our wholesale partnership program begins at 50 units minimum order. We offer tiered pricing, custom gold-embossed packaging for corporate clients, and dedicated account management. Select the "Stockist &amp; Wholesale Inquiry" option in our form above.
           </div>
         </div>
 
         <!-- FAQ 4 -->
-        <div class="border border-cacao-dark/10 rounded-lg bg-card-bg overflow-hidden">
-          <button class="faq-trigger w-full p-6 text-left font-serif-luxury font-bold text-lg text-cacao-dark flex justify-between items-center hover:bg-canvas/50">
+        <div class="faq-item border border-cacao-dark/10 rounded-lg bg-card-bg overflow-hidden transition-all duration-300">
+          <button type="button" class="faq-trigger w-full p-6 text-left font-serif-luxury font-bold text-lg text-cacao-dark flex justify-between items-center hover:bg-canvas/50 transition-colors">
             <span>Can we request custom gold-foil branding for corporate events?</span>
-            <span class="faq-icon text-xl font-sans">+</span>
+            <span class="faq-icon text-xl font-sans font-semibold text-accent-gold transition-transform duration-300">+</span>
           </button>
-          <div class="accordion-content px-6 pb-6 text-xs text-text-muted leading-relaxed">
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-text-muted leading-relaxed border-t border-cacao-dark/5 pt-4">
             Absolutely. We provide custom gold-embossed sleeves, custom wooden presentation hampers, and personalized wax seals for orders of 25 units or more. Submit a request via the form above or WhatsApp us directly for a 24-hour quotation.
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const triggers = document.querySelectorAll('.faq-trigger');
+      triggers.forEach(function(trigger) {
+        trigger.addEventListener('click', function() {
+          const parent = trigger.closest('.faq-item') || trigger.parentElement;
+          const content = parent.querySelector('.accordion-content');
+          const icon = trigger.querySelector('.faq-icon');
+          if (!content) return;
+          const isHidden = content.classList.contains('hidden');
+          if (isHidden) {
+            content.classList.remove('hidden');
+            if (icon) icon.textContent = '−';
+            parent.classList.add('border-accent-gold/40', 'shadow-sm');
+          } else {
+            content.classList.add('hidden');
+            if (icon) icon.textContent = '+';
+            parent.classList.remove('border-accent-gold/40', 'shadow-sm');
+          }
+        });
+      });
+    });
+  </script>
 
 <?php
 get_footer();

@@ -6,7 +6,34 @@ document.addEventListener("DOMContentLoaded", () => {
   initQuickForms();
   initPaletteClubForm();
   initScrollAnimations();
+  initFaqAccordion();
 });
+
+function initFaqAccordion() {
+  const triggers = document.querySelectorAll(".faq-trigger");
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      const parent = trigger.closest(".faq-item") || trigger.parentElement;
+      const content = parent.querySelector(".accordion-content");
+      const icon = trigger.querySelector(".faq-icon");
+
+      if (!content) return;
+
+      const isHidden = content.classList.contains("hidden");
+
+      if (isHidden) {
+        content.classList.remove("hidden");
+        if (icon) icon.textContent = "−";
+        parent.classList.add("border-accent-gold/40", "shadow-sm");
+      } else {
+        content.classList.add("hidden");
+        if (icon) icon.textContent = "+";
+        parent.classList.remove("border-accent-gold/40", "shadow-sm");
+      }
+    });
+  });
+}
 
 /**
  * Global Scroll-Reveal Animation Engine

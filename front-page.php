@@ -12,7 +12,7 @@ get_header();
 
 // Resolve page URLs using the same smart resolver as header/footer
 $link_collections = ec_get_smart_page_link(array('our-collections', 'collections'), '/our-collections');
-$link_craft       = ec_get_smart_page_link(array('our-craft', 'craft'), '/our-craft');
+$link_craft       = esc_url(home_url('/about-us/'));
 $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock-lists', 'concierge'), '/stockist');
 ?>
 
@@ -33,7 +33,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
           <a href="<?php echo $link_collections; ?>" class="px-8 py-4 bg-cacao-dark text-canvas font-semibold text-xs uppercase tracking-widest hover:bg-accent-terracotta transition-all duration-300 shadow-xl">
             SHOP ALL CHOCOLATE
           </a>
-          <a href="<?php echo $link_craft; ?>" class="px-8 py-4 border border-cacao-dark text-cacao-dark font-semibold text-xs uppercase tracking-widest hover:bg-cacao-dark hover:text-canvas transition-all duration-300">
+          <a href="https://everythingcacaogh.com/about-us/" class="px-8 py-4 border border-cacao-dark text-cacao-dark font-semibold text-xs uppercase tracking-widest hover:bg-cacao-dark hover:text-canvas transition-all duration-300">
             OUR STORY
           </a>
         </div>
@@ -65,10 +65,10 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
           <div class="relative z-10 space-y-4">
             <div class="space-y-2">
               <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold block">THE ESSENCE OF LUXURY</span>
-              <h3 class="font-serif-luxury text-4xl sm:text-5xl font-bold text-canvas">Nahar</h3>
+              <h3 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-canvas">Nahar</h3>
               <p class="font-serif-luxury text-xl text-accent-gold italic">Luxury Ghanaian Chocolate</p>
             </div>
-            <p class="font-sans text-base md:text-lg lg:text-xl font-medium text-canvas/90 leading-relaxed">
+            <p class="font-sans text-sm sm:text-base font-medium text-canvas/90 leading-relaxed">
               <?php echo esc_html(ec_get_text_option('ec_nahar_desc', 'Nahar is our premium chocolate range, crafted for discerning palates. Rich, complex flavours made from the finest Ghanaian cocoa, wrapped in elegant packaging. Perfect for gifts, special occasions and personal indulgence.')); ?>
             </p>
           </div>
@@ -98,10 +98,10 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
           <div class="relative z-10 space-y-4">
             <div class="space-y-2">
               <span class="text-xs font-semibold uppercase tracking-widest text-cherelle-caramel block">DELIGHT IN EVERY BITE</span>
-              <h3 class="font-serif-luxury text-4xl sm:text-5xl font-bold text-cacao-dark">Cherelle</h3>
+              <h3 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-cacao-dark">Cherelle</h3>
               <p class="font-serif-luxury text-xl text-accent-terracotta italic">Everyday Chocolate for Everyone</p>
             </div>
-            <p class="font-sans text-base md:text-lg lg:text-xl font-medium text-cacao-dark/85 leading-relaxed">
+            <p class="font-sans text-sm sm:text-base font-medium text-cacao-dark/85 leading-relaxed">
               <?php echo esc_html(ec_get_text_option('ec_cherelle_desc', 'Cherelle is everyday chocolate for everyone. Affordable, joyful and bursting with the natural taste of Ghanaian cacao. Made for sharing, gifting and sweet everyday moments.')); ?>
             </p>
           </div>

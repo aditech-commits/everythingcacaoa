@@ -129,9 +129,9 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
     </div>
   </section>
 
-  <!-- Why Choose Everything Cacao GH Section -->
-  <section class="py-24 max-w-7xl mx-auto px-6 md:px-12">
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
+  <!-- Brand Story & Impact Grid -->
+  <section class="pt-12 pb-8 md:pt-20 md:pb-12 bg-canvas border-b border-cacao-dark/10">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
       <div class="max-w-2xl space-y-4">
         <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark leading-tight"><?php echo esc_html(ec_get_text_option('ec_why_title', 'Why Choose Us?')); ?></h2>
         <p class="text-text-muted text-base leading-relaxed"><?php echo esc_html(ec_get_text_option('ec_why_subtitle', 'We celebrate our land, the farmers and our heritage with every bite.')); ?></p>
@@ -142,7 +142,7 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
       </a>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-stretch">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-stretch max-w-7xl mx-auto px-6 md:px-12">
       <!-- Item 1: Locally sourced cacao -->
       <div class="ec-animate ec-card-hover flex flex-col justify-between space-y-6 group h-full">
         <div class="w-full h-[380px] bg-card-bg overflow-hidden rounded-xl border border-cacao-dark/10 shadow-sm flex-shrink-0">
@@ -187,11 +187,30 @@ $link_concierge   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock
 
 
   <!-- Stockist Banner Marquee -->
-  <section class="bg-canvas py-8 border-y border-cacao-dark/10 overflow-hidden">
-    <div class="flex whitespace-nowrap space-x-12 text-xs md:text-sm font-semibold uppercase tracking-widest text-cacao-dark/80 justify-center items-center">
-      <span><?php echo esc_html(ec_get_text_option('ec_ticker_1', 'Now Available in Supermarkets & Malls Across Ghana')); ?></span>
-      <span class="text-accent-gold">&bull;</span>
-      <span><?php echo esc_html(ec_get_text_option('ec_ticker_2', 'Shipping Worldwide')); ?></span>
+  <section class="bg-canvas py-3 md:py-4 border-y border-cacao-dark/10 overflow-hidden select-none">
+    <div class="ec-marquee-wrapper w-full">
+      <div class="ec-marquee-track">
+        <div class="flex items-center space-x-8 md:space-x-12 text-xs md:text-sm font-semibold uppercase tracking-widest text-cacao-dark/80 px-4">
+          <span><?php echo esc_html(ec_get_text_option('ec_ticker_1', 'Now Available in Supermarkets & Malls Across Ghana')); ?></span>
+          <span class="text-accent-gold">&bull;</span>
+          <span><?php echo esc_html(ec_get_text_option('ec_ticker_2', 'Shipping Worldwide')); ?></span>
+          <span class="text-accent-gold">&bull;</span>
+          <span><?php echo esc_html(ec_get_text_option('ec_ticker_1', 'Now Available in Supermarkets & Malls Across Ghana')); ?></span>
+          <span class="text-accent-gold">&bull;</span>
+          <span><?php echo esc_html(ec_get_text_option('ec_ticker_2', 'Shipping Worldwide')); ?></span>
+          <span class="text-accent-gold">&bull;</span>
+        </div>
+        <div class="flex items-center space-x-8 md:space-x-12 text-xs md:text-sm font-semibold uppercase tracking-widest text-cacao-dark/80 px-4">
+          <span><?php echo esc_html(ec_get_text_option('ec_ticker_1', 'Now Available in Supermarkets & Malls Across Ghana')); ?></span>
+          <span class="text-accent-gold">&bull;</span>
+          <span><?php echo esc_html(ec_get_text_option('ec_ticker_2', 'Shipping Worldwide')); ?></span>
+          <span class="text-accent-gold">&bull;</span>
+          <span><?php echo esc_html(ec_get_text_option('ec_ticker_1', 'Now Available in Supermarkets & Malls Across Ghana')); ?></span>
+          <span class="text-accent-gold">&bull;</span>
+          <span><?php echo esc_html(ec_get_text_option('ec_ticker_2', 'Shipping Worldwide')); ?></span>
+          <span class="text-accent-gold">&bull;</span>
+        </div>
+      </div>
     </div>
   </section>
 

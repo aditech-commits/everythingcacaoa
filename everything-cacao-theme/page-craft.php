@@ -67,7 +67,9 @@ get_header();
         </p>
       </div>
     </div>
-  <!-- Gallery Preview Section (2 Landscape Images) -->
+  </section>
+
+  <!-- Gallery Preview Section -->
   <section class="py-16 md:py-20 bg-canvas border-t border-cacao-dark/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
       <!-- Section Heading Divider -->
@@ -75,20 +77,25 @@ get_header();
         <h2 class="font-serif-luxury text-3xl md:text-5xl font-bold text-cacao-dark">Our Gallery</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="ec-animate ec-card-hover overflow-hidden rounded-2xl border border-cacao-dark/15 shadow-md aspect-[16/9] group">
-          <img src="https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image-300x193.png" 
-               alt="Everything Cacao Gallery" 
-               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-               loading="lazy" />
-        </div>
-        <div class="ec-animate ec-card-hover overflow-hidden rounded-2xl border border-cacao-dark/15 shadow-md aspect-[16/9] group">
-          <img src="https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image-300x193.png" 
-               alt="Everything Cacao Gallery" 
-               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-               loading="lazy" />
+      <!-- Image + Text Container -->
+      <div class="ec-animate max-w-6xl mx-auto rounded-2xl border-2 border-accent-gold/30 shadow-lg overflow-hidden bg-card-bg">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <!-- Left: Image -->
+          <div class="aspect-[4/3] md:aspect-auto overflow-hidden group">
+            <img src="https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image-300x193.png" 
+                 alt="Everything Cacao Gallery" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                 loading="lazy" />
+          </div>
+          <!-- Right: Text -->
+          <div class="flex items-center p-8 md:p-12">
+            <p class="text-sm md:text-base text-cacao-dark/85 leading-relaxed font-medium">
+              Everything Cacao GH Ltd. is an innovative chocolate manufacturer based in the heart of Ghana, dedicated to crafting exceptional chocolate experiences that cater to diverse audiences. Launched in 2025, we proudly celebrate the rich heritage of Ghanaian cocoa while blending it with contemporary production techniques to create beloved confections.
+            </p>
+          </div>
         </div>
       </div>
+
       <div class="text-center pt-2">
         <a href="<?php echo ec_get_smart_page_link(array('our-gallery', 'gallery', 'meet-the-team'), '/our-gallery'); ?>" 
            class="inline-block px-8 py-3.5 bg-cacao-dark text-canvas font-semibold text-xs uppercase tracking-widest rounded-full hover:bg-accent-gold hover:text-cacao-dark transition-all duration-300 shadow-md">
@@ -97,6 +104,7 @@ get_header();
       </div>
     </div>
   </section>
+
 
   <!-- Two Lineages Write-Up: Cherelle vs Nahar -->
   <section class="py-20 md:py-24 bg-card-bg border-t border-b border-cacao-dark/10">
@@ -233,7 +241,7 @@ get_header();
   </section>
 
   <!-- Elementor / WP Content Support Area -->
-  <div class="elementor-content-container">
+  <div class="elementor-content-container" style="margin:0;padding:0;">
     <?php
     if (have_posts()) :
         while (have_posts()) : the_post();

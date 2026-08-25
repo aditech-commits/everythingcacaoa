@@ -153,6 +153,12 @@ function ec_enqueue_assets() {
 }
 add_action('wp_enqueue_scripts', 'ec_enqueue_assets');
 
+// Prevent empty Elementor content containers from creating whitespace
+add_action('wp_enqueue_scripts', function() {
+    wp_add_inline_style('ec-tailwind', '.elementor-content-container:empty { display:none; } .elementor-content-container { margin:0; padding:0; }');
+});
+
+
 /**
  * Smart Template Router Fallback
  * Guarantees /contact and /stockist URLs render their custom page templates cleanly.

@@ -32,12 +32,12 @@ $gallery_images = array(
       <!-- Highlighted Pill Badge -->
       <div class="inline-block">
         <span class="text-xs md:text-sm font-semibold uppercase tracking-widest bg-accent-gold/20 text-cacao-dark px-6 py-2 rounded-full border border-accent-gold/40 shadow-sm">
-          Our Gallery
+          Our Story
         </span>
       </div>
 
       <h1 class="font-serif-luxury text-4xl md:text-6xl font-bold text-cacao-dark leading-tight">
-        Our Gallery
+        Our Story
       </h1>
     </div>
   </section>

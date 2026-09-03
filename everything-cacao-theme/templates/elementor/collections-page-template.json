@@ -1,0 +1,104 @@
+{
+  "title": "Everything Cacao — Collections Catalog Template",
+  "type": "page",
+  "version": "0.4",
+  "page_settings": {
+    "template": "elementor_header_footer"
+  },
+  "content": [
+    {
+      "id": "919dd9e",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width",
+        "background_background": "classic",
+        "background_color": "#1A0F0A",
+        "padding": {
+          "unit": "px",
+          "top": "80",
+          "bottom": "60",
+          "right": "20",
+          "left": "20"
+        }
+      },
+      "elements": [
+        {
+          "id": "bd58085",
+          "elType": "column",
+          "isInner": false,
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": 100
+          },
+          "elements": [
+            {
+              "id": "4e25e44",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "heading",
+              "settings": {
+                "title": "Our Confection Collections",
+                "header_size": "h1",
+                "align": "center",
+                "title_color": "#FAF7F2",
+                "typography_font_family": "Playfair Display"
+              },
+              "elements": []
+            },
+            {
+              "id": "d86612d",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p style='text-align:center; color:#D4AF37;'>Explore our handcrafted range of Nahar luxury dark bars and Cherelle everyday delights.</p>"
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "469c740",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width",
+        "background_background": "classic",
+        "background_color": "#FAF7F2",
+        "padding": {
+          "unit": "px",
+          "top": "60",
+          "bottom": "60",
+          "right": "20",
+          "left": "20"
+        }
+      },
+      "elements": [
+        {
+          "id": "35c54fa",
+          "elType": "column",
+          "isInner": false,
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": 100
+          },
+          "elements": [
+            {
+              "id": "7346c6b",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "html",
+              "settings": {
+                "html": "<div id='public-product-grid' class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'><!-- Dynamic WP Confection Catalog Loop --></div>"
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "title": "Everything Cacao — Concierge Contact Template",
+  "title": "Everything Cacao — Sharp Concierge Contact Template",
   "type": "page",
   "version": "0.4",
   "page_settings": {
@@ -7,52 +7,44 @@
   },
   "content": [
     {
-      "id": "37cb054",
+      "id": "273e0cb",
       "elType": "section",
       "isInner": false,
       "settings": {
         "layout": "full_width",
-        "background_background": "classic",
-        "background_color": "#1A0F0A",
+        "gap": "no",
         "padding": {
           "unit": "px",
-          "top": "80",
-          "bottom": "60",
-          "right": "20",
-          "left": "20"
+          "top": "0",
+          "bottom": "0",
+          "right": "0",
+          "left": "0"
         }
       },
       "elements": [
         {
-          "id": "8a3eeb5",
+          "id": "aa0b349",
           "elType": "column",
           "isInner": false,
           "settings": {
             "_column_size": 100,
-            "_inline_size": 100
+            "_inline_size": 100,
+            "padding": {
+              "unit": "px",
+              "top": "0",
+              "bottom": "0",
+              "right": "0",
+              "left": "0"
+            }
           },
           "elements": [
             {
-              "id": "c324c83",
+              "id": "d528c21",
               "elType": "widget",
               "isInner": false,
-              "widgetType": "heading",
+              "widgetType": "html",
               "settings": {
-                "title": "Concierge & Contact",
-                "header_size": "h1",
-                "align": "center",
-                "title_color": "#FAF7F2",
-                "typography_font_family": "Playfair Display"
-              },
-              "elements": []
-            },
-            {
-              "id": "e65d807",
-              "elType": "widget",
-              "isInner": false,
-              "widgetType": "text-editor",
-              "settings": {
-                "editor": "<p style='text-align:center; color:#FAF7F2;'>Reach our Accra showroom concierge for orders, wholesale, or inquiries.</p>"
+                "html": "<section class=\"py-16 bg-[#1A0F0A] text-[#FAF7F2]\">\n  <div class=\"max-w-7xl mx-auto px-6 md:px-12 text-center space-y-4\">\n    <h1 class=\"font-serif-luxury text-4xl md:text-5xl font-bold\">Concierge & Showroom Contact</h1>\n    <p class=\"text-base text-[#D4AF37] max-w-2xl mx-auto\">Get in touch with our Accra concierge team for inquiries, stockist availability, or direct ordering.</p>\n  </div>\n</section>"
               },
               "elements": []
             }
@@ -61,83 +53,44 @@
       ]
     },
     {
-      "id": "0d0016e",
+      "id": "298219f",
       "elType": "section",
       "isInner": false,
       "settings": {
         "layout": "full_width",
-        "background_background": "classic",
-        "background_color": "#FAF7F2",
+        "gap": "no",
         "padding": {
           "unit": "px",
-          "top": "60",
-          "bottom": "60",
-          "right": "20",
-          "left": "20"
+          "top": "0",
+          "bottom": "0",
+          "right": "0",
+          "left": "0"
         }
       },
       "elements": [
         {
-          "id": "4ef1487",
+          "id": "264fbbe",
           "elType": "column",
           "isInner": false,
           "settings": {
-            "_column_size": 50,
-            "_inline_size": 50
-          },
-          "elements": [
-            {
-              "id": "0547cfd",
-              "elType": "widget",
-              "isInner": false,
-              "widgetType": "heading",
-              "settings": {
-                "title": "Accra Showroom & HQ",
-                "header_size": "h2",
-                "title_color": "#1A0F0A"
-              },
-              "elements": []
-            },
-            {
-              "id": "76d35e8",
-              "elType": "widget",
-              "isInner": false,
-              "widgetType": "text-editor",
-              "settings": {
-                "editor": "<p><strong>Location:</strong> Accra, Ghana<br><strong>Email:</strong> info@everythingcacaogh.com<br><strong>WhatsApp:</strong> +233 24 066 1866</p>"
-              },
-              "elements": []
+            "_column_size": 100,
+            "_inline_size": 100,
+            "padding": {
+              "unit": "px",
+              "top": "0",
+              "bottom": "0",
+              "right": "0",
+              "left": "0"
             }
-          ]
-        },
-        {
-          "id": "75ee7ce",
-          "elType": "column",
-          "isInner": false,
-          "settings": {
-            "_column_size": 50,
-            "_inline_size": 50
           },
           "elements": [
             {
-              "id": "0e3df26",
-              "elType": "widget",
-              "isInner": false,
-              "widgetType": "heading",
-              "settings": {
-                "title": "Send a Concierge Request",
-                "header_size": "h2",
-                "title_color": "#1A0F0A"
-              },
-              "elements": []
-            },
-            {
-              "id": "0a58e09",
+              "id": "f4aa44f",
               "elType": "widget",
               "isInner": false,
               "widgetType": "html",
               "settings": {
-                "html": "<form id='concierge-contact-form' class='space-y-4'><input type='text' placeholder='Full Name' class='w-full p-3 border rounded'/><input type='email' placeholder='Email' class='w-full p-3 border rounded'/><textarea placeholder='Message' rows='4' class='w-full p-3 border rounded'></textarea><button type='submit' class='px-6 py-3 bg-cacao-dark text-canvas font-bold'>Submit Request</button></form>"
+                "html": "<section class=\"py-16 bg-[#FAF7F2]\">\n  <div class=\"max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12\">\n    <div class=\"p-8 bg-[#F5EDE4] rounded-2xl border border-[#1A0F0A]/10 space-y-6\">\n      <h2 class=\"font-serif-luxury text-2xl font-bold text-[#1A0F0A]\">Accra Showroom & HQ</h2>\n      <div class=\"space-y-4 text-sm text-[#5C4A3E]\">\n        <p>📍 <strong>Location:</strong> Accra, Ghana</p>\n        <p>✉️ <strong>Email:</strong> info@everythingcacaogh.com</p>\n        <p>💬 <strong>WhatsApp:</strong> +233 24 066 1866</p>\n      </div>\n    </div>\n    <div class=\"p-8 bg-[#F5EDE4] rounded-2xl border border-[#1A0F0A]/10 space-y-6\">\n      <h2 class=\"font-serif-luxury text-2xl font-bold text-[#1A0F0A]\">Send a Concierge Request</h2>\n      <form class=\"space-y-4\">\n        <input type=\"text\" placeholder=\"Full Name\" class=\"w-full p-3.5 bg-[#FAF7F2] border border-[#1A0F0A]/20 rounded-lg text-sm text-[#1A0F0A]\" />\n        <input type=\"email\" placeholder=\"Email Address\" class=\"w-full p-3.5 bg-[#FAF7F2] border border-[#1A0F0A]/20 rounded-lg text-sm text-[#1A0F0A]\" />\n        <textarea placeholder=\"How can our concierge assist you?\" rows=\"4\" class=\"w-full p-3.5 bg-[#FAF7F2] border border-[#1A0F0A]/20 rounded-lg text-sm text-[#1A0F0A]\"></textarea>\n        <button type=\"button\" class=\"w-full py-4 bg-[#1A0F0A] text-[#FAF7F2] font-bold text-xs uppercase tracking-widest hover:bg-[#C86D51] transition-colors rounded-lg\">\n          Submit Concierge Request\n        </button>\n      </form>\n    </div>\n  </div>\n</section>"
               },
               "elements": []
             }

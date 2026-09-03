@@ -1,5 +1,5 @@
 {
-  "title": "Everything Cacao — Home Page Template",
+  "title": "Everything Cacao — Sharp Home Page Template",
   "type": "page",
   "version": "0.4",
   "page_settings": {
@@ -7,147 +7,44 @@
   },
   "content": [
     {
-      "id": "5e5da64",
+      "id": "559a274",
       "elType": "section",
       "isInner": false,
       "settings": {
         "layout": "full_width",
-        "background_background": "classic",
-        "background_color": "#FAF7F2",
+        "gap": "no",
         "padding": {
           "unit": "px",
-          "top": "80",
-          "bottom": "80",
-          "right": "20",
-          "left": "20"
+          "top": "0",
+          "bottom": "0",
+          "right": "0",
+          "left": "0"
         }
       },
       "elements": [
         {
-          "id": "2578eed",
-          "elType": "column",
-          "isInner": false,
-          "settings": {
-            "_column_size": 50,
-            "_inline_size": 50
-          },
-          "elements": [
-            {
-              "id": "3e20329",
-              "elType": "widget",
-              "isInner": false,
-              "widgetType": "heading",
-              "settings": {
-                "title": "Ghana's Finest Chocolate — Crafted from Local Cacao",
-                "header_size": "h1",
-                "typography_font_family": "Playfair Display",
-                "title_color": "#1A0F0A"
-              },
-              "elements": []
-            },
-            {
-              "id": "c792b06",
-              "elType": "widget",
-              "isInner": false,
-              "widgetType": "text-editor",
-              "settings": {
-                "editor": "<p>Everything Cacao GH makes premium chocolate from Ghana's finest locally sourced cacao. Our two iconic ranges — Nahar for luxury occasions and Cherelle for everyday delight — bring world-class Ghanaian chocolate to your table.</p>",
-                "typography_font_family": "Hanken Grotesk",
-                "text_color": "#5C4A3E"
-              },
-              "elements": []
-            },
-            {
-              "id": "892f70e",
-              "elType": "widget",
-              "isInner": false,
-              "widgetType": "button",
-              "settings": {
-                "text": "SHOP ALL CHOCOLATE",
-                "link": {
-                  "url": "/our-collections"
-                },
-                "button_type": "default",
-                "background_color": "#1A0F0A",
-                "text_color": "#FAF7F2"
-              },
-              "elements": []
-            }
-          ]
-        },
-        {
-          "id": "5de26cb",
-          "elType": "column",
-          "isInner": false,
-          "settings": {
-            "_column_size": 50,
-            "_inline_size": 50
-          },
-          "elements": [
-            {
-              "id": "27ad571",
-              "elType": "widget",
-              "isInner": false,
-              "widgetType": "image",
-              "settings": {
-                "image": {
-                  "url": "https://everythingcacaogh.com/wp-content/uploads/2026/08/cocoa-farm.jpg"
-                }
-              },
-              "elements": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "6a971e7",
-      "elType": "section",
-      "isInner": false,
-      "settings": {
-        "layout": "full_width",
-        "background_background": "classic",
-        "background_color": "#F5EDE4",
-        "padding": {
-          "unit": "px",
-          "top": "60",
-          "bottom": "60",
-          "right": "20",
-          "left": "20"
-        }
-      },
-      "elements": [
-        {
-          "id": "918d461",
+          "id": "7d09d84",
           "elType": "column",
           "isInner": false,
           "settings": {
             "_column_size": 100,
-            "_inline_size": 100
+            "_inline_size": 100,
+            "padding": {
+              "unit": "px",
+              "top": "0",
+              "bottom": "0",
+              "right": "0",
+              "left": "0"
+            }
           },
           "elements": [
             {
-              "id": "591384b",
+              "id": "8c9e046",
               "elType": "widget",
               "isInner": false,
-              "widgetType": "heading",
+              "widgetType": "html",
               "settings": {
-                "title": "Two Ranges. One Ghanaian Story.",
-                "header_size": "h2",
-                "align": "center",
-                "typography_font_family": "Playfair Display",
-                "title_color": "#1A0F0A"
-              },
-              "elements": []
-            },
-            {
-              "id": "c22e2d8",
-              "elType": "widget",
-              "isInner": false,
-              "widgetType": "text-editor",
-              "settings": {
-                "editor": "<p style='text-align:center;'>Whether you're treating yourself, sharing with family or finding the perfect gift, Everything Cacao has a chocolate for every moment.</p>",
-                "text_color": "#5C4A3E"
+                "html": "<section class=\"relative min-h-[85vh] flex items-center overflow-hidden py-16 bg-[#FAF7F2]\">\n  <div class=\"max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full\">\n    <div class=\"lg:col-span-6 z-10 space-y-8\">\n      <h1 class=\"font-serif-luxury text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-[#1A0F0A]\">\n        Ghana's Finest Chocolate — Crafted from Local Cacao\n      </h1>\n      <p class=\"text-base sm:text-lg text-[#5C4A3E] max-w-lg leading-relaxed font-normal\">\n        Everything Cacao GH makes premium chocolate from Ghana's finest locally sourced cacao. Our two iconic ranges — Nahar for luxury occasions and Cherelle for everyday delight — bring world-class Ghanaian chocolate to your table.\n      </p>\n      <div class=\"flex flex-wrap gap-4 pt-4\">\n        <a href=\"/our-collections\" class=\"px-8 py-4 bg-[#1A0F0A] text-[#FAF7F2] font-semibold text-xs uppercase tracking-widest hover:bg-[#C86D51] transition-all duration-300 shadow-xl\">\n          SHOP ALL CHOCOLATE\n        </a>\n        <a href=\"/about-us\" class=\"px-8 py-4 border border-[#1A0F0A] text-[#1A0F0A] font-semibold text-xs uppercase tracking-widest hover:bg-[#1A0F0A] hover:text-[#FAF7F2] transition-all duration-300\">\n          OUR STORY\n        </a>\n      </div>\n    </div>\n    <div class=\"lg:col-span-6 relative aspect-square group flex items-center justify-center\">\n      <div class=\"absolute inset-0 bg-[#1A0F0A]/5 rounded-2xl border border-[#1A0F0A]/10 transform rotate-3 scale-95 transition-transform duration-700 group-hover:rotate-0\"></div>\n      <div class=\"relative w-full h-full p-2 flex items-center justify-center bg-[#F5EDE4] rounded-2xl shadow-xl z-10 border border-[#1A0F0A]/10 overflow-hidden transform -rotate-3 transition-transform duration-700 group-hover:rotate-0\">\n        <img class=\"w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105\" \n             alt=\"Ghanaian Cocoa Farm\" \n             src=\"https://everythingcacaogh.com/wp-content/uploads/2026/08/cocoa-farm.jpg\" />\n      </div>\n    </div>\n  </div>\n</section>"
               },
               "elements": []
             }
@@ -156,117 +53,44 @@
       ]
     },
     {
-      "id": "3970977",
+      "id": "a084cf0",
       "elType": "section",
       "isInner": false,
       "settings": {
         "layout": "full_width",
-        "background_background": "classic",
-        "background_color": "#F5EDE4",
+        "gap": "no",
         "padding": {
           "unit": "px",
-          "top": "20",
-          "bottom": "60",
-          "right": "20",
-          "left": "20"
+          "top": "0",
+          "bottom": "0",
+          "right": "0",
+          "left": "0"
         }
       },
       "elements": [
         {
-          "id": "6f54d47",
+          "id": "9e597ee",
           "elType": "column",
           "isInner": false,
           "settings": {
-            "_column_size": 50,
-            "_inline_size": 50
-          },
-          "elements": [
-            {
-              "id": "bdfe448",
-              "elType": "widget",
-              "isInner": false,
-              "widgetType": "heading",
-              "settings": {
-                "title": "Nahar — The Essence of Luxury",
-                "header_size": "h3",
-                "title_color": "#D4AF37",
-                "typography_font_family": "Playfair Display"
-              },
-              "elements": []
-            },
-            {
-              "id": "17c3dd8",
-              "elType": "widget",
-              "isInner": false,
-              "widgetType": "text-editor",
-              "settings": {
-                "editor": "<p>Nahar is our premium chocolate range, crafted for discerning palates. Rich, complex flavours made from the finest Ghanaian cocoa, wrapped in elegant packaging. Perfect for gifts, special occasions and personal indulgence.</p>",
-                "text_color": "#FFFFFF"
-              },
-              "elements": []
-            },
-            {
-              "id": "44a3ffd",
-              "elType": "widget",
-              "isInner": false,
-              "widgetType": "button",
-              "settings": {
-                "text": "EXPLORE NAHAR COLLECTION",
-                "link": {
-                  "url": "/our-collections?lineage=nahar"
-                },
-                "background_color": "#D4AF37",
-                "text_color": "#1A0F0A"
-              },
-              "elements": []
+            "_column_size": 100,
+            "_inline_size": 100,
+            "padding": {
+              "unit": "px",
+              "top": "0",
+              "bottom": "0",
+              "right": "0",
+              "left": "0"
             }
-          ]
-        },
-        {
-          "id": "707d1bd",
-          "elType": "column",
-          "isInner": false,
-          "settings": {
-            "_column_size": 50,
-            "_inline_size": 50
           },
           "elements": [
             {
-              "id": "cacad9c",
+              "id": "be5b712",
               "elType": "widget",
               "isInner": false,
-              "widgetType": "heading",
+              "widgetType": "html",
               "settings": {
-                "title": "Cherelle — Everyday Delight",
-                "header_size": "h3",
-                "title_color": "#C86D51",
-                "typography_font_family": "Playfair Display"
-              },
-              "elements": []
-            },
-            {
-              "id": "6ab66d9",
-              "elType": "widget",
-              "isInner": false,
-              "widgetType": "text-editor",
-              "settings": {
-                "editor": "<p>Cherelle is everyday chocolate for everyone. Affordable, joyful and bursting with the natural taste of Ghanaian cacao. Made for sharing, gifting and sweet everyday moments.</p>",
-                "text_color": "#1A0F0A"
-              },
-              "elements": []
-            },
-            {
-              "id": "f43fe2a",
-              "elType": "widget",
-              "isInner": false,
-              "widgetType": "button",
-              "settings": {
-                "text": "DISCOVER CHERELLE RANGE",
-                "link": {
-                  "url": "/our-collections?lineage=cherelle"
-                },
-                "background_color": "#C86D51",
-                "text_color": "#FFFFFF"
+                "html": "<section class=\"py-16 bg-[#F5EDE4] border-t border-b border-[#1A0F0A]/10\">\n  <div class=\"max-w-7xl mx-auto px-6 md:px-12\">\n    <div class=\"text-center mb-16 space-y-4 max-w-3xl mx-auto\">\n      <h2 class=\"font-serif-luxury text-3xl md:text-4xl font-bold text-[#1A0F0A]\">Two Ranges. One Ghanaian Story.</h2>\n      <p class=\"text-[#5C4A3E] text-base md:text-lg\">Whether you're treating yourself, sharing with family or finding the perfect gift, Everything Cacao has a chocolate for every moment.</p>\n    </div>\n    <div class=\"grid grid-cols-1 md:grid-cols-2 gap-10\">\n      <!-- Nahar Card -->\n      <div class=\"bg-[#1A0F0A] text-[#FAF7F2] rounded-xl p-8 md:p-12 flex flex-col justify-between min-h-[520px] border border-[#1A0F0A]/10 shadow-xl group\">\n        <div class=\"space-y-4\">\n          <span class=\"text-xs font-semibold uppercase tracking-widest text-[#D4AF37] block\">THE ESSENCE OF LUXURY</span>\n          <h3 class=\"font-serif-luxury text-4xl font-bold text-[#FAF7F2]\">Nahar</h3>\n          <p class=\"font-serif-luxury text-xl text-[#D4AF37] italic\">Luxury Ghanaian Chocolate</p>\n          <p class=\"text-sm font-medium text-[#FAF7F2]/90 leading-relaxed\">\n            Nahar is our premium chocolate range, crafted for discerning palates. Rich, complex flavours made from the finest Ghanaian cocoa, wrapped in elegant packaging. Perfect for gifts, special occasions and personal indulgence.\n          </p>\n        </div>\n        <div class=\"pt-6\">\n          <a href=\"/our-collections?lineage=nahar\" class=\"px-8 py-4 bg-[#D4AF37] text-[#1A0F0A] font-bold text-xs uppercase tracking-widest hover:bg-[#FAF7F2] transition-colors inline-block rounded\">\n            EXPLORE NAHAR COLLECTION &rarr;\n          </a>\n        </div>\n      </div>\n\n      <!-- Cherelle Card -->\n      <div class=\"bg-[#FAF7F2] text-[#1A0F0A] rounded-xl p-8 md:p-12 flex flex-col justify-between min-h-[520px] border border-[#1A0F0A]/10 shadow-xl group\">\n        <div class=\"space-y-4\">\n          <span class=\"text-xs font-semibold uppercase tracking-widest text-[#C86D51] block\">EVERYDAY DELIGHT</span>\n          <h3 class=\"font-serif-luxury text-4xl font-bold text-[#1A0F0A]\">Cherelle</h3>\n          <p class=\"font-serif-luxury text-xl text-[#B8854A] italic\">Everyday Chocolate for Everyone</p>\n          <p class=\"text-sm font-medium text-[#5C4A3E] leading-relaxed\">\n            Cherelle is everyday chocolate for everyone. Affordable, joyful and bursting with the natural taste of Ghanaian cacao. Made for sharing, gifting and sweet everyday moments.\n          </p>\n        </div>\n        <div class=\"pt-6\">\n          <a href=\"/our-collections?lineage=cherelle\" class=\"px-8 py-4 bg-[#C86D51] text-[#FAF7F2] font-bold text-xs uppercase tracking-widest hover:bg-[#1A0F0A] transition-colors inline-block rounded\">\n            DISCOVER CHERELLE RANGE &rarr;\n          </a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>"
               },
               "elements": []
             }
@@ -275,119 +99,90 @@
       ]
     },
     {
-      "id": "b2412f3",
+      "id": "df9f873",
       "elType": "section",
       "isInner": false,
       "settings": {
         "layout": "full_width",
-        "background_background": "classic",
-        "background_color": "#FAF7F2",
+        "gap": "no",
         "padding": {
           "unit": "px",
-          "top": "60",
-          "bottom": "60",
-          "right": "20",
-          "left": "20"
+          "top": "0",
+          "bottom": "0",
+          "right": "0",
+          "left": "0"
         }
       },
       "elements": [
         {
-          "id": "878b6c2",
+          "id": "9539b1c",
           "elType": "column",
           "isInner": false,
           "settings": {
-            "_column_size": 33.33,
-            "_inline_size": 33.33
+            "_column_size": 100,
+            "_inline_size": 100,
+            "padding": {
+              "unit": "px",
+              "top": "0",
+              "bottom": "0",
+              "right": "0",
+              "left": "0"
+            }
           },
           "elements": [
             {
-              "id": "19de06a",
+              "id": "d18311d",
               "elType": "widget",
               "isInner": false,
-              "widgetType": "heading",
+              "widgetType": "html",
               "settings": {
-                "title": "Locally Sourced Cacao",
-                "header_size": "h4",
-                "title_color": "#1A0F0A"
-              },
-              "elements": []
-            },
-            {
-              "id": "8f33215",
-              "elType": "widget",
-              "isInner": false,
-              "widgetType": "text-editor",
-              "settings": {
-                "editor": "<p>We work directly with Ghanaian farmers and local suppliers to source the highest quality processed cocoa.</p>",
-                "text_color": "#5C4A3E"
+                "html": "<section class=\"py-16 bg-[#FAF7F2]\">\n  <div class=\"max-w-7xl mx-auto px-6 md:px-12\">\n    <div class=\"text-center mb-16 space-y-3\">\n      <h2 class=\"font-serif-luxury text-3xl md:text-4xl font-bold text-[#1A0F0A]\">Why Choose Us?</h2>\n      <p class=\"text-[#5C4A3E] text-base md:text-lg\">We celebrate our land, the farmers and our heritage with every bite.</p>\n    </div>\n    <div class=\"grid grid-cols-1 md:grid-cols-3 gap-8\">\n      <div class=\"p-8 bg-[#F5EDE4] rounded-2xl border border-[#1A0F0A]/10 space-y-4\">\n        <div class=\"w-12 h-12 rounded-xl bg-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37]\">🌱</div>\n        <h3 class=\"font-serif-luxury text-xl font-bold text-[#1A0F0A]\">Locally sourced cacao</h3>\n        <p class=\"text-sm text-[#5C4A3E] leading-relaxed\">We work directly with Ghanaian farmers and local suppliers to source the highest quality processed cocoa — supporting communities and ensuring exceptional flavour.</p>\n      </div>\n      <div class=\"p-8 bg-[#F5EDE4] rounded-2xl border border-[#1A0F0A]/10 space-y-4\">\n        <div class=\"w-12 h-12 rounded-xl bg-[#C86D51]/20 flex items-center justify-center text-[#C86D51]\">🛡️</div>\n        <h3 class=\"font-serif-luxury text-xl font-bold text-[#1A0F0A]\">Certified quality</h3>\n        <p class=\"text-sm text-[#5C4A3E] leading-relaxed\">Every Everything Cacao product is certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA). Quality and safety you can trust.</p>\n      </div>\n      <div class=\"p-8 bg-[#F5EDE4] rounded-2xl border border-[#1A0F0A]/10 space-y-4\">\n        <div class=\"w-12 h-12 rounded-xl bg-[#1A0F0A]/20 flex items-center justify-center text-[#1A0F0A]\">🇬🇭</div>\n        <h3 class=\"font-serif-luxury text-xl font-bold text-[#1A0F0A]\">Made in Ghana</h3>\n        <p class=\"text-sm text-[#5C4A3E] leading-relaxed\">From bean to bar, our chocolate is made in Ghana — celebrating our land, our farmers and our heritage with every bite.</p>\n      </div>\n    </div>\n  </div>\n</section>"
               },
               "elements": []
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "cbd5e28",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width",
+        "gap": "no",
+        "padding": {
+          "unit": "px",
+          "top": "0",
+          "bottom": "0",
+          "right": "0",
+          "left": "0"
+        }
+      },
+      "elements": [
         {
-          "id": "21d97fb",
+          "id": "5bc418a",
           "elType": "column",
           "isInner": false,
           "settings": {
-            "_column_size": 33.33,
-            "_inline_size": 33.33
-          },
-          "elements": [
-            {
-              "id": "62dd84d",
-              "elType": "widget",
-              "isInner": false,
-              "widgetType": "heading",
-              "settings": {
-                "title": "Certified Quality",
-                "header_size": "h4",
-                "title_color": "#1A0F0A"
-              },
-              "elements": []
-            },
-            {
-              "id": "9bb7f6f",
-              "elType": "widget",
-              "isInner": false,
-              "widgetType": "text-editor",
-              "settings": {
-                "editor": "<p>Every product is certified by the FDA and Ghana Standards Authority (GSA).</p>",
-                "text_color": "#5C4A3E"
-              },
-              "elements": []
+            "_column_size": 100,
+            "_inline_size": 100,
+            "padding": {
+              "unit": "px",
+              "top": "0",
+              "bottom": "0",
+              "right": "0",
+              "left": "0"
             }
-          ]
-        },
-        {
-          "id": "cb34eff",
-          "elType": "column",
-          "isInner": false,
-          "settings": {
-            "_column_size": 33.33,
-            "_inline_size": 33.33
           },
           "elements": [
             {
-              "id": "d6723ad",
+              "id": "d3d2573",
               "elType": "widget",
               "isInner": false,
-              "widgetType": "heading",
+              "widgetType": "html",
               "settings": {
-                "title": "100% Made in Ghana",
-                "header_size": "h4",
-                "title_color": "#1A0F0A"
-              },
-              "elements": []
-            },
-            {
-              "id": "e51a042",
-              "elType": "widget",
-              "isInner": false,
-              "widgetType": "text-editor",
-              "settings": {
-                "editor": "<p>From bean to bar, our chocolate celebrates Ghanaian heritage with every bite.</p>",
-                "text_color": "#5C4A3E"
+                "html": "<div class=\"bg-[#1A0F0A] py-4 overflow-hidden border-t border-b border-[#D4AF37]/30\">\n  <div class=\"flex whitespace-nowrap text-xs font-semibold uppercase tracking-widest text-[#D4AF37] gap-8 animate-marquee\">\n    <span>✨ Now Available in Supermarkets & Malls Across Ghana</span>\n    <span>•</span>\n    <span>🏆 FDA & GSA Certified Premium Ghanaian Cacao</span>\n    <span>•</span>\n    <span>📦 Worldwide Shipping & Local Express Delivery</span>\n    <span>•</span>\n    <span>✨ Now Available in Supermarkets & Malls Across Ghana</span>\n  </div>\n</div>"
               },
               "elements": []
             }

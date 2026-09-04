@@ -428,21 +428,28 @@ if (!function_exists('ec_get_smart_page_link')) {
  * 9. Customizer Settings & Admin Theme Options Panel
  * Allows easy management of Meta Pixel ID, WhatsApp Number, and Concierge Email in WP Admin
  */
+
+/**
+ * 9. Customizer Settings & Admin Theme Options Panel
+ * Clean, Unified Hierarchy for Homepage Management & Theme Options
+ */
 function ec_customize_register($wp_customize) {
 
     // =========================================================================
-    // DEDICATED "HOMEPAGE SETTINGS" PANEL & SECTIONS
+    // UNIFIED "HOMEPAGE MANAGEMENT" PANEL
     // =========================================================================
-    $wp_customize->add_panel('ec_homepage_panel', array(
-        'priority'    => 25,
-        'title'       => __('Homepage Settings', 'everything-cacao'),
-        'description' => __('Manage all text, images, buttons, cards, and video reviews on the Homepage.', 'everything-cacao'),
+    $wp_customize->add_panel('theme_homepage_panel', array(
+        'priority'    => 20,
+        'title'       => __('Homepage Management', 'everything-cacao'),
+        'description' => __('Manage all sections, text, images, buttons, announcement tickers, and customer reviews on the Homepage.', 'everything-cacao'),
     ));
 
-    // 1. HERO SECTION
-    $wp_customize->add_section('ec_hp_hero_section', array(
-        'title'       => __('1. Hero Section', 'everything-cacao'),
-        'panel'       => 'ec_homepage_panel',
+    // -------------------------------------------------------------------------
+    // SECTION 1: HERO & MAIN BANNER CONTENT
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_hp_hero_section', array(
+        'title'       => __('Section 1: Hero & Main Banner Content', 'everything-cacao'),
+        'panel'       => 'theme_homepage_panel',
         'priority'    => 1,
     ));
 
@@ -463,7 +470,7 @@ function ec_customize_register($wp_customize) {
         ));
         $wp_customize->add_control($setting_id, array(
             'label'    => $data['label'],
-            'section'  => 'ec_hp_hero_section',
+            'section'  => 'theme_hp_hero_section',
             'type'     => $data['type'],
         ));
     }
@@ -474,19 +481,49 @@ function ec_customize_register($wp_customize) {
         'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'ec_hero_image', array(
-        'label'    => __('Hero Featured Image', 'everything-cacao'),
-        'section'  => 'ec_hp_hero_section',
+        'label'    => __('Hero Background / Featured Image', 'everything-cacao'),
+        'section'  => 'theme_hp_hero_section',
         'settings' => 'ec_hero_image',
     )));
 
-    // 2. TWO RANGES SECTION ("Two Ranges. One Ghanaian Story.")
-    $wp_customize->add_section('ec_hp_showcase_section', array(
-        'title'       => __('2. Two Ranges Section', 'everything-cacao'),
-        'panel'       => 'ec_homepage_panel',
+    // -------------------------------------------------------------------------
+    // SECTION 2: SCROLLING ANNOUNCEMENT TICKER
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_hp_ticker_section', array(
+        'title'       => __('Section 2: Scrolling Announcement Ticker', 'everything-cacao'),
+        'panel'       => 'theme_homepage_panel',
         'priority'    => 2,
     ));
 
-    $showcase_controls = array(
+    $ticker_controls = array(
+        'ec_ticker_1' => array('label' => __('Ticker Item 1', 'everything-cacao'), 'type' => 'text', 'default' => "NOW AVAILABLE IN SUPERMARKETS & MALLS ACROSS GHANA"),
+        'ec_ticker_2' => array('label' => __('Ticker Item 2', 'everything-cacao'), 'type' => 'text', 'default' => "SHIPPING WORLDWIDE"),
+        'ec_ticker_3' => array('label' => __('Ticker Item 3', 'everything-cacao'), 'type' => 'text', 'default' => "FDA & GSA CERTIFIED PREMIUM GHANAIAN CACAO"),
+    );
+
+    foreach ($ticker_controls as $setting_id => $data) {
+        $wp_customize->add_setting($setting_id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($setting_id, array(
+            'label'    => $data['label'],
+            'section'  => 'theme_hp_ticker_section',
+            'type'     => $data['type'],
+        ));
+    }
+
+    // -------------------------------------------------------------------------
+    // SECTION 3: PRODUCT RANGES ("Two Ranges. One Ghanaian Story.")
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_hp_ranges_section', array(
+        'title'       => __('Section 3: Product Ranges ("Two Ranges. One Ghanaian Story.")', 'everything-cacao'),
+        'panel'       => 'theme_homepage_panel',
+        'priority'    => 3,
+    ));
+
+    $ranges_controls = array(
         'ec_showcase_title'      => array('label' => __('Section Title', 'everything-cacao'), 'type' => 'text', 'default' => "Two Ranges. One Ghanaian Story."),
         'ec_showcase_subtitle'   => array('label' => __('Section Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "Whether you're treating yourself, sharing with family or finding the perfect gift, Everything Cacao has a chocolate for every moment."),
         // Nahar Card
@@ -509,7 +546,7 @@ function ec_customize_register($wp_customize) {
         'ec_cherelle_btn_url'    => array('label' => __('Cherelle Button URL', 'everything-cacao'), 'type' => 'text', 'default' => "/our-collections?lineage=cherelle"),
     );
 
-    foreach ($showcase_controls as $setting_id => $data) {
+    foreach ($ranges_controls as $setting_id => $data) {
         $wp_customize->add_setting($setting_id, array(
             'default'           => $data['default'],
             'type'              => 'theme_mod',
@@ -517,17 +554,17 @@ function ec_customize_register($wp_customize) {
         ));
         $wp_customize->add_control($setting_id, array(
             'label'    => $data['label'],
-            'section'  => 'ec_hp_showcase_section',
+            'section'  => 'theme_hp_ranges_section',
             'type'     => $data['type'],
         ));
     }
 
-    $showcase_images = array(
+    $ranges_images = array(
         'ec_nahar_image'    => array('label' => __('Nahar Card Product Image', 'everything-cacao'), 'default' => 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png'),
         'ec_cherelle_image' => array('label' => __('Cherelle Card Product Image', 'everything-cacao'), 'default' => 'https://everythingcacaogh.com/wp-content/uploads/2026/08/placeholder_image.png'),
     );
 
-    foreach ($showcase_images as $setting_id => $data) {
+    foreach ($ranges_images as $setting_id => $data) {
         $wp_customize->add_setting($setting_id, array(
             'default'           => $data['default'],
             'type'              => 'theme_mod',
@@ -535,16 +572,18 @@ function ec_customize_register($wp_customize) {
         ));
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $setting_id, array(
             'label'    => $data['label'],
-            'section'  => 'ec_hp_showcase_section',
+            'section'  => 'theme_hp_ranges_section',
             'settings' => $setting_id,
         )));
     }
 
-    // 3. WHY CHOOSE US SECTION
-    $wp_customize->add_section('ec_hp_why_section', array(
-        'title'       => __('3. Why Choose Us Section', 'everything-cacao'),
-        'panel'       => 'ec_homepage_panel',
-        'priority'    => 3,
+    // -------------------------------------------------------------------------
+    // SECTION 4: WHY CHOOSE US
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_hp_why_section', array(
+        'title'       => __('Section 4: Why Choose Us', 'everything-cacao'),
+        'panel'       => 'theme_homepage_panel',
+        'priority'    => 4,
     ));
 
     $why_controls = array(
@@ -571,7 +610,7 @@ function ec_customize_register($wp_customize) {
         ));
         $wp_customize->add_control($setting_id, array(
             'label'    => $data['label'],
-            'section'  => 'ec_hp_why_section',
+            'section'  => 'theme_hp_why_section',
             'type'     => $data['type'],
         ));
     }
@@ -590,16 +629,18 @@ function ec_customize_register($wp_customize) {
         ));
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $setting_id, array(
             'label'    => $data['label'],
-            'section'  => 'ec_hp_why_section',
+            'section'  => 'theme_hp_why_section',
             'settings' => $setting_id,
         )));
     }
 
-    // 4. TESTIMONIALS / REVIEWS SECTION
-    $wp_customize->add_section('ec_hp_testimonials_section', array(
-        'title'       => __('4. Testimonials / Reviews Section', 'everything-cacao'),
-        'panel'       => 'ec_homepage_panel',
-        'priority'    => 4,
+    // -------------------------------------------------------------------------
+    // SECTION 5: CUSTOMER REVIEWS & SOCIAL PROOF
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_hp_reviews_section', array(
+        'title'       => __('Section 5: Customer Reviews & Social Proof', 'everything-cacao'),
+        'panel'       => 'theme_homepage_panel',
+        'priority'    => 5,
     ));
 
     $reviews_controls = array(
@@ -636,154 +677,32 @@ function ec_customize_register($wp_customize) {
         ));
         $wp_customize->add_control($setting_id, array(
             'label'    => $data['label'],
-            'section'  => 'ec_hp_testimonials_section',
+            'section'  => 'theme_hp_reviews_section',
             'type'     => $data['type'],
         ));
     }
 
-    // Add "Brand & Marketing Settings" Section
+    // =========================================================================
+    // BRAND & MARKETING SETTINGS (Separate Section)
+    // =========================================================================
     $wp_customize->add_section('ec_brand_settings', array(
         'title'       => __('Brand & Marketing Settings', 'everything-cacao'),
         'priority'    => 30,
         'description' => __('Configure Meta (Facebook) Pixel ID, WhatsApp Concierge Number, and Concierge Email Address.', 'everything-cacao'),
     ));
 
-    // 1. Meta Pixel ID Setting
-    $wp_customize->add_setting('ec_pixel_id', array(
-        'default'           => '',
-        'type'              => 'option',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-    $wp_customize->add_control('ec_pixel_id', array(
-        'label'       => __('Meta (Facebook) Pixel ID', 'everything-cacao'),
-        'description' => __('Enter your 15-16 digit Meta Pixel ID (e.g. 123456789012345). Leave blank or enter ID to start tracking ads & leads.', 'everything-cacao'),
-        'section'     => 'ec_brand_settings',
-        'type'        => 'text',
-    ));
+    $wp_customize->add_setting('ec_pixel_id', array('default' => '', 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('ec_pixel_id', array('label' => __('Meta (Facebook) Pixel ID', 'everything-cacao'), 'section' => 'ec_brand_settings', 'type' => 'text'));
 
-    // 2. WhatsApp Concierge Number Setting
-    $wp_customize->add_setting('ec_whatsapp_number', array(
-        'default'           => '233240661866',
-        'type'              => 'option',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-    $wp_customize->add_control('ec_whatsapp_number', array(
-        'label'       => __('WhatsApp Concierge Number', 'everything-cacao'),
-        'description' => __('Enter number in international format without + sign (e.g. 233240000000 for Ghana).', 'everything-cacao'),
-        'section'     => 'ec_brand_settings',
-        'type'        => 'text',
-    ));
+    $wp_customize->add_setting('ec_whatsapp_number', array('default' => '233240661866', 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('ec_whatsapp_number', array('label' => __('WhatsApp Concierge Number', 'everything-cacao'), 'section' => 'ec_brand_settings', 'type' => 'text'));
 
-    // 3. Concierge Email Setting
-    $wp_customize->add_setting('ec_concierge_email', array(
-        'default'           => 'info@everythingcacaogh.com',
-        'type'              => 'option',
-        'sanitize_callback' => 'sanitize_email',
-    ));
-    $wp_customize->add_control('ec_concierge_email', array(
-        'label'       => __('Concierge Email Address', 'everything-cacao'),
-        'description' => __('Email address where customer concierge inquiries will be sent.', 'everything-cacao'),
-        'section'     => 'ec_brand_settings',
-        'type'        => 'email',
-    ));
+    $wp_customize->add_setting('ec_concierge_email', array('default' => 'info@everythingcacaogh.com', 'type' => 'option', 'sanitize_callback' => 'sanitize_email'));
+    $wp_customize->add_control('ec_concierge_email', array('label' => __('Concierge Email Address', 'everything-cacao'), 'section' => 'ec_brand_settings', 'type' => 'email'));
 
-    // 4. Homepage Images Section
-    $wp_customize->add_section('ec_homepage_images', array(
-        'title'       => __('Homepage Images', 'everything-cacao'),
-        'priority'    => 31,
-        'description' => __('Manage images displayed on the homepage. Upload or replace images directly from Media Library.', 'everything-cacao'),
-    ));
-
-    $hp_image_fields = array(
-        'ec_hero_image'      => __('Hero Main Product Image', 'everything-cacao'),
-        'ec_cherelle_image'  => __('Cherelle Brand Showcase Card Image', 'everything-cacao'),
-        'ec_nahar_image'     => __('Nahar Brand Showcase Card Image', 'everything-cacao'),
-        'ec_impact_image_1'  => __('Impact #1: Direct Farmer Partnerships', 'everything-cacao'),
-        'ec_impact_image_2'  => __('Impact #2: 100% Ghanaian Value Chain', 'everything-cacao'),
-        'ec_impact_image_3'  => __('Impact #3: Sustainable Fair-Trade', 'everything-cacao'),
-        'ec_seasonal_1'      => __('Seasonal #1: Dark Ghanaian Forest', 'everything-cacao'),
-        'ec_seasonal_2'      => __('Seasonal #2: Heritage Sampler', 'everything-cacao'),
-        'ec_seasonal_3'      => __('Seasonal #3: Ashanti Gold', 'everything-cacao'),
-        'ec_seasonal_4'      => __('Seasonal #4: Nahar Private Reserve', 'everything-cacao'),
-    );
-
-    foreach ($hp_image_fields as $setting_id => $label) {
-        $wp_customize->add_setting($setting_id, array(
-            'default'           => '',
-            'type'              => 'theme_mod',
-            'sanitize_callback' => 'esc_url_raw',
-        ));
-        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $setting_id, array(
-            'label'    => $label,
-            'section'  => 'ec_homepage_images',
-            'settings' => $setting_id,
-        )));
-    }
-
-    // 5. Our Craft Page Images Section
-    $wp_customize->add_section('ec_craft_images', array(
-        'title'       => __('Our Craft Page Images', 'everything-cacao'),
-        'priority'    => 32,
-        'description' => __('Manage gallery images displayed on the Our Craft page.', 'everything-cacao'),
-    ));
-
-    for ($i = 1; $i <= 6; $i++) {
-        $setting_id = "ec_gallery_$i";
-        $wp_customize->add_setting($setting_id, array(
-            'default'           => '',
-            'type'              => 'theme_mod',
-            'sanitize_callback' => 'esc_url_raw',
-        ));
-        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $setting_id, array(
-            'label'    => sprintf(__('Gallery Image #%d', 'everything-cacao'), $i),
-            'section'  => 'ec_craft_images',
-            'settings' => $setting_id,
-        )));
-    }
-
-    // 6. Homepage Content Settings
-    $wp_customize->add_section('ec_homepage_content', array(
-        'title'       => __('Homepage Text & Banner Content', 'everything-cacao'),
-        'priority'    => 33,
-        'description' => __('Edit headlines, subheadings, ticker banner, and card descriptions for the Homepage.', 'everything-cacao'),
-    ));
-
-    $hp_text_controls = array(
-        'ec_hero_title'        => array('label' => __('Hero Section Title', 'everything-cacao'), 'type' => 'textarea', 'default' => "Ghana's Finest Chocolate — Crafted from Local Cacao"),
-        'ec_hero_subtitle'     => array('label' => __('Hero Section Subtitle', 'everything-cacao'), 'type' => 'textarea', 'default' => "Everything Cacao GH makes premium chocolate from Ghana's finest locally sourced cacao. Our two iconic ranges — Nahar for luxury occasions and Cherelle for everyday delight — bring world-class Ghanaian chocolate to your table."),
-        'ec_showcase_title'    => array('label' => __('Dual Showcase Title', 'everything-cacao'), 'type' => 'text', 'default' => "Two Ranges. One Ghanaian Story."),
-        'ec_showcase_subtitle' => array('label' => __('Dual Showcase Subtitle', 'everything-cacao'), 'type' => 'textarea', 'default' => "Whether you're treating yourself, sharing with family or finding the perfect gift, Everything Cacao has a chocolate for every moment."),
-        'ec_nahar_desc'        => array('label' => __('Nahar Card Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "Nahar is our premium chocolate range, crafted for discerning palates. Rich, complex flavours made from the finest Ghanaian cocoa, wrapped in elegant packaging. Perfect for gifts, special occasions and personal indulgence."),
-        'ec_cherelle_desc'     => array('label' => __('Cherelle Card Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "Cherelle is everyday chocolate for everyone. Affordable, joyful and bursting with the natural taste of Ghanaian cacao. Made for sharing, gifting and sweet everyday moments."),
-        'ec_why_title'         => array('label' => __('Why Choose Us Title', 'everything-cacao'), 'type' => 'text', 'default' => "Why Choose Us?"),
-        'ec_why_subtitle'      => array('label' => __('Why Choose Us Subtitle', 'everything-cacao'), 'type' => 'textarea', 'default' => "We celebrate our land, the farmers and our heritage with every bite."),
-        'ec_impact1_title'     => array('label' => __('Impact #1 Title', 'everything-cacao'), 'type' => 'text', 'default' => "Locally sourced cacao"),
-        'ec_impact1_text'      => array('label' => __('Impact #1 Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "We work directly with Ghanaian farmers and local suppliers to source the highest quality processed cocoa — supporting communities and ensuring exceptional flavour in every bar."),
-        'ec_impact2_title'     => array('label' => __('Impact #2 Title', 'everything-cacao'), 'type' => 'text', 'default' => "Certified quality"),
-        'ec_impact2_text'      => array('label' => __('Impact #2 Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "Every Everything Cacao product is certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA). Quality and safety you can trust."),
-        'ec_impact3_title'     => array('label' => __('Impact #3 Title', 'everything-cacao'), 'type' => 'text', 'default' => "Made in Ghana"),
-        'ec_impact3_text'      => array('label' => __('Impact #3 Description', 'everything-cacao'), 'type' => 'textarea', 'default' => "From bean to bar, our chocolate is made in Ghana — celebrating our land, our farmers and our heritage with every bite."),
-        'ec_seasonal_badge'    => array('label' => __('Featured Grid Badge', 'everything-cacao'), 'type' => 'text', 'default' => "LIMITED & SEASONAL RELEASE"),
-        'ec_seasonal_title'    => array('label' => __('Featured Grid Title', 'everything-cacao'), 'type' => 'text', 'default' => "Signature Ghanaian Confections"),
-        'ec_seasonal_subtitle' => array('label' => __('Featured Grid Subtitle', 'everything-cacao'), 'type' => 'textarea', 'default' => "Handcrafted single-origin bars and luxury gift reserves made from Ghana's finest cacao."),
-        'ec_ticker_1'          => array('label' => __('Marquee Ticker #1', 'everything-cacao'), 'type' => 'text', 'default' => "Now Available in Supermarkets & Malls Across Ghana"),
-        'ec_ticker_2'          => array('label' => __('Marquee Ticker #2', 'everything-cacao'), 'type' => 'text', 'default' => "Shipping Worldwide"),
-    );
-
-    foreach ($hp_text_controls as $setting_id => $data) {
-        $wp_customize->add_setting($setting_id, array(
-            'default'           => $data['default'],
-            'type'              => 'theme_mod',
-            'sanitize_callback' => 'sanitize_text_field',
-        ));
-        $wp_customize->add_control($setting_id, array(
-            'label'    => $data['label'],
-            'section'  => 'ec_homepage_content',
-            'type'     => $data['type'],
-        ));
-    }
-
-    // 7. Our Craft Page Content Settings
+    // =========================================================================
+    // OTHER PAGES CONTENT SETTINGS
+    // =========================================================================
     $wp_customize->add_section('ec_craft_content', array(
         'title'       => __('Our Craft Page Content', 'everything-cacao'),
         'priority'    => 34,
@@ -806,19 +725,10 @@ function ec_customize_register($wp_customize) {
     );
 
     foreach ($craft_text_controls as $setting_id => $data) {
-        $wp_customize->add_setting($setting_id, array(
-            'default'           => $data['default'],
-            'type'              => 'theme_mod',
-            'sanitize_callback' => 'sanitize_text_field',
-        ));
-        $wp_customize->add_control($setting_id, array(
-            'label'    => $data['label'],
-            'section'  => 'ec_craft_content',
-            'type'     => $data['type'],
-        ));
+        $wp_customize->add_setting($setting_id, array('default' => $data['default'], 'type' => 'theme_mod', 'sanitize_callback' => 'sanitize_text_field'));
+        $wp_customize->add_control($setting_id, array('label' => $data['label'], 'section' => 'ec_craft_content', 'type' => $data['type']));
     }
 
-    // 8. Stockist Page Content Settings
     $wp_customize->add_section('ec_stockist_content', array(
         'title'       => __('Stockists Page Content', 'everything-cacao'),
         'priority'    => 35,
@@ -833,19 +743,12 @@ function ec_customize_register($wp_customize) {
     );
 
     foreach ($stockist_text_controls as $setting_id => $data) {
-        $wp_customize->add_setting($setting_id, array(
-            'default'           => $data['default'],
-            'type'              => 'theme_mod',
-            'sanitize_callback' => 'sanitize_text_field',
-        ));
-        $wp_customize->add_control($setting_id, array(
-            'label'    => $data['label'],
-            'section'  => 'ec_stockist_content',
-            'type'     => $data['type'],
-        ));
+        $wp_customize->add_setting($setting_id, array('default' => $data['default'], 'type' => 'theme_mod', 'sanitize_callback' => 'sanitize_text_field'));
+        $wp_customize->add_control($setting_id, array('label' => $data['label'], 'section' => 'ec_stockist_content', 'type' => $data['type']));
     }
 }
 add_action('customize_register', 'ec_customize_register');
+
 
 /**
  * 9a. Helper: Get Customizer Text Option with Fallback

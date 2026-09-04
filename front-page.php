@@ -4,7 +4,7 @@
  *
  * Everything Cacao GH - Front Page Template (front-page.php)
  * Matches the uploaded UI/UX design specification & image assets exactly.
- * Fully dynamic via WordPress Customizer (Appearance -> Customize -> Homepage Settings).
+ * Fully dynamic via WordPress Customizer (Appearance -> Customize -> Homepage Management).
  *
  * @package EverythingCacao
  */
@@ -51,7 +51,7 @@ $link_craft_fallback       = esc_url(home_url('/about-us/'));
     </div>
   </section>
 
-  <!-- 2. Brand Showcase: Two Ranges Section -->
+  <!-- 2. Brand Showcase: Product Ranges Section -->
   <section class="py-10 md:py-14 bg-card-bg border-t border-b border-cacao-dark/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       <div class="text-center mb-16 space-y-4 max-w-5xl mx-auto ec-animate">
@@ -184,35 +184,31 @@ $link_craft_fallback       = esc_url(home_url('/about-us/'));
     </div>
   </section>
 
-  <!-- Stockist Banner Marquee -->
+  <!-- Section 2: Stockist Banner Marquee Ticker -->
   <section class="bg-canvas py-3 md:py-4 border-y border-cacao-dark/10 overflow-hidden select-none">
     <div class="ec-marquee-wrapper w-full">
       <div class="ec-marquee-track">
         <div class="flex items-center space-x-8 md:space-x-12 text-xs md:text-sm font-semibold uppercase tracking-widest text-cacao-dark/80 px-4">
-          <span><?php echo esc_html(ec_get_text_option('ec_ticker_1', 'Now Available in Supermarkets & Malls Across Ghana')); ?></span>
+          <span><?php echo esc_html(ec_get_text_option('ec_ticker_1', 'NOW AVAILABLE IN SUPERMARKETS & MALLS ACROSS GHANA')); ?></span>
           <span class="text-accent-gold">&bull;</span>
-          <span><?php echo esc_html(ec_get_text_option('ec_ticker_2', 'Shipping Worldwide')); ?></span>
+          <span><?php echo esc_html(ec_get_text_option('ec_ticker_2', 'SHIPPING WORLDWIDE')); ?></span>
           <span class="text-accent-gold">&bull;</span>
-          <span><?php echo esc_html(ec_get_text_option('ec_ticker_1', 'Now Available in Supermarkets & Malls Across Ghana')); ?></span>
-          <span class="text-accent-gold">&bull;</span>
-          <span><?php echo esc_html(ec_get_text_option('ec_ticker_2', 'Shipping Worldwide')); ?></span>
+          <span><?php echo esc_html(ec_get_text_option('ec_ticker_3', 'FDA & GSA CERTIFIED PREMIUM GHANAIAN CACAO')); ?></span>
           <span class="text-accent-gold">&bull;</span>
         </div>
         <div class="flex items-center space-x-8 md:space-x-12 text-xs md:text-sm font-semibold uppercase tracking-widest text-cacao-dark/80 px-4">
-          <span><?php echo esc_html(ec_get_text_option('ec_ticker_1', 'Now Available in Supermarkets & Malls Across Ghana')); ?></span>
+          <span><?php echo esc_html(ec_get_text_option('ec_ticker_1', 'NOW AVAILABLE IN SUPERMARKETS & MALLS ACROSS GHANA')); ?></span>
           <span class="text-accent-gold">&bull;</span>
-          <span><?php echo esc_html(ec_get_text_option('ec_ticker_2', 'Shipping Worldwide')); ?></span>
+          <span><?php echo esc_html(ec_get_text_option('ec_ticker_2', 'SHIPPING WORLDWIDE')); ?></span>
           <span class="text-accent-gold">&bull;</span>
-          <span><?php echo esc_html(ec_get_text_option('ec_ticker_1', 'Now Available in Supermarkets & Malls Across Ghana')); ?></span>
-          <span class="text-accent-gold">&bull;</span>
-          <span><?php echo esc_html(ec_get_text_option('ec_ticker_2', 'Shipping Worldwide')); ?></span>
+          <span><?php echo esc_html(ec_get_text_option('ec_ticker_3', 'FDA & GSA CERTIFIED PREMIUM GHANAIAN CACAO')); ?></span>
           <span class="text-accent-gold">&bull;</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. Testimonials / Reviews Section -->
+  <!-- 5. Customer Reviews & Social Proof Section -->
   <section class="py-10 md:py-14 bg-card-bg border-t border-b border-cacao-dark/10">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">

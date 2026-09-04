@@ -7,7 +7,7 @@
   },
   "content": [
     {
-      "id": "559a274",
+      "id": "504d378",
       "elType": "section",
       "isInner": false,
       "settings": {
@@ -23,7 +23,7 @@
       },
       "elements": [
         {
-          "id": "7d09d84",
+          "id": "aadb9bf",
           "elType": "column",
           "isInner": false,
           "settings": {
@@ -39,7 +39,7 @@
           },
           "elements": [
             {
-              "id": "8c9e046",
+              "id": "3cc525d",
               "elType": "widget",
               "isInner": false,
               "widgetType": "html",
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "id": "a084cf0",
+      "id": "5017f72",
       "elType": "section",
       "isInner": false,
       "settings": {
@@ -69,7 +69,7 @@
       },
       "elements": [
         {
-          "id": "9e597ee",
+          "id": "899dcf2",
           "elType": "column",
           "isInner": false,
           "settings": {
@@ -85,12 +85,12 @@
           },
           "elements": [
             {
-              "id": "be5b712",
+              "id": "4c2aab6",
               "elType": "widget",
               "isInner": false,
               "widgetType": "html",
               "settings": {
-                "html": "<section class=\"py-16 bg-[#F5EDE4] border-t border-b border-[#1A0F0A]/10\">\n  <div class=\"max-w-7xl mx-auto px-6 md:px-12\">\n    <div class=\"text-center mb-16 space-y-4 max-w-3xl mx-auto\">\n      <h2 class=\"font-serif-luxury text-3xl md:text-4xl font-bold text-[#1A0F0A]\">Two Ranges. One Ghanaian Story.</h2>\n      <p class=\"text-[#5C4A3E] text-base md:text-lg\">Whether you're treating yourself, sharing with family or finding the perfect gift, Everything Cacao has a chocolate for every moment.</p>\n    </div>\n    <div class=\"grid grid-cols-1 md:grid-cols-2 gap-10\">\n      <!-- Nahar Card -->\n      <div class=\"bg-[#1A0F0A] text-[#FAF7F2] rounded-xl p-8 md:p-12 flex flex-col justify-between min-h-[520px] border border-[#1A0F0A]/10 shadow-xl group\">\n        <div class=\"space-y-4\">\n          <span class=\"text-xs font-semibold uppercase tracking-widest text-[#D4AF37] block\">THE ESSENCE OF LUXURY</span>\n          <h3 class=\"font-serif-luxury text-4xl font-bold text-[#FAF7F2]\">Nahar</h3>\n          <p class=\"font-serif-luxury text-xl text-[#D4AF37] italic\">Luxury Ghanaian Chocolate</p>\n          <p class=\"text-sm font-medium text-[#FAF7F2]/90 leading-relaxed\">\n            Nahar is our premium chocolate range, crafted for discerning palates. Rich, complex flavours made from the finest Ghanaian cocoa, wrapped in elegant packaging. Perfect for gifts, special occasions and personal indulgence.\n          </p>\n        </div>\n        <div class=\"pt-6\">\n          <a href=\"/our-collections?lineage=nahar\" class=\"px-8 py-4 bg-[#D4AF37] text-[#1A0F0A] font-bold text-xs uppercase tracking-widest hover:bg-[#FAF7F2] transition-colors inline-block rounded\">\n            EXPLORE NAHAR COLLECTION &rarr;\n          </a>\n        </div>\n      </div>\n\n      <!-- Cherelle Card -->\n      <div class=\"bg-[#FAF7F2] text-[#1A0F0A] rounded-xl p-8 md:p-12 flex flex-col justify-between min-h-[520px] border border-[#1A0F0A]/10 shadow-xl group\">\n        <div class=\"space-y-4\">\n          <span class=\"text-xs font-semibold uppercase tracking-widest text-[#C86D51] block\">EVERYDAY DELIGHT</span>\n          <h3 class=\"font-serif-luxury text-4xl font-bold text-[#1A0F0A]\">Cherelle</h3>\n          <p class=\"font-serif-luxury text-xl text-[#B8854A] italic\">Everyday Chocolate for Everyone</p>\n          <p class=\"text-sm font-medium text-[#5C4A3E] leading-relaxed\">\n            Cherelle is everyday chocolate for everyone. Affordable, joyful and bursting with the natural taste of Ghanaian cacao. Made for sharing, gifting and sweet everyday moments.\n          </p>\n        </div>\n        <div class=\"pt-6\">\n          <a href=\"/our-collections?lineage=cherelle\" class=\"px-8 py-4 bg-[#C86D51] text-[#FAF7F2] font-bold text-xs uppercase tracking-widest hover:bg-[#1A0F0A] transition-colors inline-block rounded\">\n            DISCOVER CHERELLE RANGE &rarr;\n          </a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>"
+                "html": "<section class=\"py-16 bg-[#F5EDE4] border-t border-b border-[#1A0F0A]/10\">\n  <div class=\"max-w-7xl mx-auto px-6 md:px-12\">\n    <div class=\"text-center mb-16 space-y-4 max-w-3xl mx-auto\">\n      <h2 class=\"font-serif-luxury text-3xl md:text-4xl font-bold text-[#1A0F0A]\">Two Ranges. One Ghanaian Story.</h2>\n      <p class=\"text-[#5C4A3E] text-base md:text-lg\">Whether you're treating yourself, sharing with family or finding the perfect gift, Everything Cacao has a chocolate for every moment.</p>\n    </div>\n    <div class=\"grid grid-cols-1 md:grid-cols-2 gap-10\">\n      <!-- Nahar Card -->\n      <div class=\"bg-[#1A0F0A] text-[#FAF7F2] rounded-xl p-8 md:p-12 flex flex-col justify-between min-h-[520px] border border-[#1A0F0A]/10 shadow-xl group\">\n        <div class=\"space-y-4\">\n          <span class=\"text-xs font-semibold uppercase tracking-widest text-[#D4AF37] block\">THE ESSENCE OF LUXURY</span>\n          <h3 class=\"font-serif-luxury text-4xl font-bold text-[#FAF7F2]\">Nahar</h3>\n          <p class=\"font-serif-luxury text-xl text-[#D4AF37] italic\">Luxury Ghanaian Chocolate</p>\n          <p class=\"text-sm font-medium text-[#FAF7F2]/90 leading-relaxed\">\n            Nahar is our premium chocolate range, crafted for discerning palates. Rich, complex flavours made from the finest Ghanaian cocoa, wrapped in elegant packaging. Perfect for gifts, special occasions and personal indulgence.\n          </p>\n        </div>\n        <div class=\"pt-6\">\n          <a href=\"/our-collections?lineage=nahar\" class=\"px-8 py-4 bg-[#D4AF37] text-[#1A0F0A] font-bold text-xs uppercase tracking-widest hover:bg-[#FAF7F2] transition-colors inline-block rounded\">\n            SHOP NAHAR &rarr;\n          </a>\n        </div>\n      </div>\n\n      <!-- Cherelle Card -->\n      <div class=\"bg-[#FAF7F2] text-[#1A0F0A] rounded-xl p-8 md:p-12 flex flex-col justify-between min-h-[520px] border border-[#1A0F0A]/10 shadow-xl group\">\n        <div class=\"space-y-4\">\n          <span class=\"text-xs font-semibold uppercase tracking-widest text-[#C86D51] block\">DELIGHT IN EVERY BITE</span>\n          <h3 class=\"font-serif-luxury text-4xl font-bold text-[#1A0F0A]\">Cherelle</h3>\n          <p class=\"font-serif-luxury text-xl text-[#B8854A] italic\">Everyday Chocolate for Everyone</p>\n          <p class=\"text-sm font-medium text-[#5C4A3E] leading-relaxed\">\n            Cherelle is everyday chocolate for everyone. Affordable, joyful and bursting with the natural taste of Ghanaian cacao. Made for sharing, gifting and sweet everyday moments.\n          </p>\n        </div>\n        <div class=\"pt-6\">\n          <a href=\"/our-collections?lineage=cherelle\" class=\"px-8 py-4 bg-[#C86D51] text-[#FAF7F2] font-bold text-xs uppercase tracking-widest hover:bg-[#1A0F0A] transition-colors inline-block rounded\">\n            SHOP CHERELLE &rarr;\n          </a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>"
               },
               "elements": []
             }
@@ -99,7 +99,7 @@
       ]
     },
     {
-      "id": "df9f873",
+      "id": "a9ded6b",
       "elType": "section",
       "isInner": false,
       "settings": {
@@ -115,7 +115,7 @@
       },
       "elements": [
         {
-          "id": "9539b1c",
+          "id": "3e2ca54",
           "elType": "column",
           "isInner": false,
           "settings": {
@@ -131,12 +131,12 @@
           },
           "elements": [
             {
-              "id": "d18311d",
+              "id": "cfca722",
               "elType": "widget",
               "isInner": false,
               "widgetType": "html",
               "settings": {
-                "html": "<section class=\"py-16 bg-[#FAF7F2]\">\n  <div class=\"max-w-7xl mx-auto px-6 md:px-12\">\n    <div class=\"text-center mb-16 space-y-3\">\n      <h2 class=\"font-serif-luxury text-3xl md:text-4xl font-bold text-[#1A0F0A]\">Why Choose Us?</h2>\n      <p class=\"text-[#5C4A3E] text-base md:text-lg\">We celebrate our land, the farmers and our heritage with every bite.</p>\n    </div>\n    <div class=\"grid grid-cols-1 md:grid-cols-3 gap-8\">\n      <div class=\"p-8 bg-[#F5EDE4] rounded-2xl border border-[#1A0F0A]/10 space-y-4\">\n        <div class=\"w-12 h-12 rounded-xl bg-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37]\">🌱</div>\n        <h3 class=\"font-serif-luxury text-xl font-bold text-[#1A0F0A]\">Locally sourced cacao</h3>\n        <p class=\"text-sm text-[#5C4A3E] leading-relaxed\">We work directly with Ghanaian farmers and local suppliers to source the highest quality processed cocoa — supporting communities and ensuring exceptional flavour.</p>\n      </div>\n      <div class=\"p-8 bg-[#F5EDE4] rounded-2xl border border-[#1A0F0A]/10 space-y-4\">\n        <div class=\"w-12 h-12 rounded-xl bg-[#C86D51]/20 flex items-center justify-center text-[#C86D51]\">🛡️</div>\n        <h3 class=\"font-serif-luxury text-xl font-bold text-[#1A0F0A]\">Certified quality</h3>\n        <p class=\"text-sm text-[#5C4A3E] leading-relaxed\">Every Everything Cacao product is certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA). Quality and safety you can trust.</p>\n      </div>\n      <div class=\"p-8 bg-[#F5EDE4] rounded-2xl border border-[#1A0F0A]/10 space-y-4\">\n        <div class=\"w-12 h-12 rounded-xl bg-[#1A0F0A]/20 flex items-center justify-center text-[#1A0F0A]\">🇬🇭</div>\n        <h3 class=\"font-serif-luxury text-xl font-bold text-[#1A0F0A]\">Made in Ghana</h3>\n        <p class=\"text-sm text-[#5C4A3E] leading-relaxed\">From bean to bar, our chocolate is made in Ghana — celebrating our land, our farmers and our heritage with every bite.</p>\n      </div>\n    </div>\n  </div>\n</section>"
+                "html": "<section class=\"py-16 bg-[#FAF7F2]\">\n  <div class=\"max-w-7xl mx-auto px-6 md:px-12\">\n    <div class=\"flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6\">\n      <div class=\"max-w-2xl space-y-4\">\n        <h2 class=\"font-serif-luxury text-3xl md:text-5xl font-bold text-[#1A0F0A]\">Why Choose Us?</h2>\n        <p class=\"text-[#5C4A3E] text-base leading-relaxed\">We celebrate our land, the farmers and our heritage with every bite.</p>\n      </div>\n      <a class=\"font-semibold text-xs uppercase tracking-widest text-[#1A0F0A] border-b-2 border-[#1A0F0A] pb-1 hover:text-[#C86D51] hover:border-[#C86D51] transition-colors\" href=\"/about-us\">\n        OUR STORY &rarr;\n      </a>\n    </div>\n    <div class=\"grid grid-cols-1 md:grid-cols-3 gap-8\">\n      <div class=\"p-8 bg-[#F5EDE4] rounded-2xl border border-[#1A0F0A]/10 space-y-4\">\n        <h3 class=\"font-serif-luxury text-xl font-bold text-[#1A0F0A]\">Locally sourced cacao</h3>\n        <p class=\"text-sm text-[#5C4A3E] leading-relaxed\">We work directly with Ghanaian farmers and local suppliers to source the highest quality processed cocoa — supporting communities and ensuring exceptional flavour in every bar.</p>\n      </div>\n      <div class=\"p-8 bg-[#F5EDE4] rounded-2xl border border-[#1A0F0A]/10 space-y-4\">\n        <h3 class=\"font-serif-luxury text-xl font-bold text-[#1A0F0A]\">Made in Ghana</h3>\n        <p class=\"text-sm text-[#5C4A3E] leading-relaxed\">From bean to bar, our chocolate is made in Ghana — celebrating our land, our farmers and our heritage with every bite.</p>\n      </div>\n      <div class=\"p-8 bg-[#F5EDE4] rounded-2xl border border-[#1A0F0A]/10 space-y-4\">\n        <h3 class=\"font-serif-luxury text-xl font-bold text-[#1A0F0A]\">Certified quality</h3>\n        <p class=\"text-sm text-[#5C4A3E] leading-relaxed\">Every Everything Cacao product is certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA). Quality and safety you can trust.</p>\n      </div>\n    </div>\n  </div>\n</section>"
               },
               "elements": []
             }
@@ -145,7 +145,7 @@
       ]
     },
     {
-      "id": "cbd5e28",
+      "id": "cee3785",
       "elType": "section",
       "isInner": false,
       "settings": {
@@ -161,7 +161,7 @@
       },
       "elements": [
         {
-          "id": "5bc418a",
+          "id": "4dda329",
           "elType": "column",
           "isInner": false,
           "settings": {
@@ -177,7 +177,53 @@
           },
           "elements": [
             {
-              "id": "d3d2573",
+              "id": "aec5fc7",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "html",
+              "settings": {
+                "html": "<section class=\"py-14 bg-[#F5EDE4] border-t border-b border-[#1A0F0A]/10\">\n  <div class=\"max-w-7xl mx-auto px-6 md:px-12\">\n    <div class=\"mb-12 space-y-3\">\n      <span class=\"text-xs font-semibold uppercase tracking-widest text-[#C86D51]\">Real People, Real Joy</span>\n      <h2 class=\"font-serif-luxury text-3xl md:text-5xl font-bold text-[#1A0F0A]\">What our customers say about our chocolate</h2>\n      <p class=\"text-[#5C4A3E] text-base leading-relaxed max-w-2xl\">Watch chocolate lovers across Ghana sample Cherelle and Nahar artisanal creations live in supermarkets, pop-up lounges, and luxury retail stores.</p>\n    </div>\n    <div class=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8\">\n      <!-- Reel 1 -->\n      <div class=\"bg-[#1A0F0A] rounded-xl overflow-hidden border border-[#1A0F0A]/10 shadow-lg flex flex-col justify-between\">\n        <div class=\"aspect-[9/16] relative overflow-hidden\">\n          <iframe class=\"w-full h-full border-0\" src=\"https://drive.google.com/file/d/1JUC7nwQjQpqLD8z7WnyhiyPtkV6rkcvG/preview\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>\n          <div class=\"absolute top-3 left-3 bg-[#D4AF37] text-[#1A0F0A] text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow pointer-events-none\">Live Sampling</div>\n        </div>\n        <div class=\"p-5 bg-[#F5EDE4] space-y-1\">\n          <h5 class=\"font-serif-luxury text-base font-bold text-[#1A0F0A]\">Supermarket Tasting Reel #1</h5>\n          <p class=\"text-xs text-[#5C4A3E]\">Customers discovering Cherelle 45% Milk Chocolate.</p>\n        </div>\n      </div>\n      <!-- Reel 2 -->\n      <div class=\"bg-[#1A0F0A] rounded-xl overflow-hidden border border-[#1A0F0A]/10 shadow-lg flex flex-col justify-between\">\n        <div class=\"aspect-[9/16] relative overflow-hidden\">\n          <iframe class=\"w-full h-full border-0\" src=\"https://drive.google.com/file/d/1pKLN1VVG15IKg_WP6RUlZ8eD3UJnX1yW/preview\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>\n          <div class=\"absolute top-3 left-3 bg-[#C86D51] text-white text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow pointer-events-none\">Nahar Luxury Tasting</div>\n        </div>\n        <div class=\"p-5 bg-[#F5EDE4] space-y-1\">\n          <h5 class=\"font-serif-luxury text-base font-bold text-[#1A0F0A]\">Grand Reserve Sampling #2</h5>\n          <p class=\"text-xs text-[#5C4A3E]\">Discerning palates savoring Nahar 72% Obsidian Dark.</p>\n        </div>\n      </div>\n      <!-- Reel 3 -->\n      <div class=\"bg-[#1A0F0A] rounded-xl overflow-hidden border border-[#1A0F0A]/10 shadow-lg flex flex-col justify-between\">\n        <div class=\"aspect-[9/16] relative overflow-hidden\">\n          <iframe class=\"w-full h-full border-0\" src=\"https://drive.google.com/file/d/15lB6wkq0Cg6NT4pACbXxZiokmdDYtcE0/preview\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>\n          <div class=\"absolute top-3 left-3 bg-[#D4AF37] text-[#1A0F0A] text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow pointer-events-none\">Retail Pop-Up</div>\n        </div>\n        <div class=\"p-5 bg-[#F5EDE4] space-y-1\">\n          <h5 class=\"font-serif-luxury text-base font-bold text-[#1A0F0A]\">Accra Retail Pop-Up #3</h5>\n          <p class=\"text-xs text-[#5C4A3E]\">Interactive tasting counter at Accra shopping mall.</p>\n        </div>\n      </div>\n      <!-- Reel 4 -->\n      <div class=\"bg-[#1A0F0A] rounded-xl overflow-hidden border border-[#1A0F0A]/10 shadow-lg flex flex-col justify-between\">\n        <div class=\"aspect-[9/16] relative overflow-hidden\">\n          <iframe class=\"w-full h-full border-0\" src=\"https://drive.google.com/file/d/1FQK5L6ErULSbr0Wd_VKoGYcJo463HVYC/preview\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>\n          <div class=\"absolute top-3 left-3 bg-[#B8854A] text-white text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow pointer-events-none\">Family & Kids Joy</div>\n        </div>\n        <div class=\"p-5 bg-[#F5EDE4] space-y-1\">\n          <h5 class=\"font-serif-luxury text-base font-bold text-[#1A0F0A]\">Joy in Every Bite #4</h5>\n          <p class=\"text-xs text-[#5C4A3E]\">Delighting young chocolate lovers with Cherelle treats.</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>"
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "81de100",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width",
+        "gap": "no",
+        "padding": {
+          "unit": "px",
+          "top": "0",
+          "bottom": "0",
+          "right": "0",
+          "left": "0"
+        }
+      },
+      "elements": [
+        {
+          "id": "77f1a49",
+          "elType": "column",
+          "isInner": false,
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": 100,
+            "padding": {
+              "unit": "px",
+              "top": "0",
+              "bottom": "0",
+              "right": "0",
+              "left": "0"
+            }
+          },
+          "elements": [
+            {
+              "id": "f67de0e",
               "elType": "widget",
               "isInner": false,
               "widgetType": "html",

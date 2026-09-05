@@ -170,9 +170,80 @@ get_header();
       </div>
 
     </div>
+  <!-- FAQ Accordion Section (Redesigned & Interactive) -->
+  <section class="py-20 bg-canvas border-t border-cacao-dark/10">
+    <div class="max-w-4xl mx-auto px-6 md:px-12 space-y-12">
+      <div class="text-center space-y-3">
+        <span class="text-xs font-semibold uppercase tracking-widest text-accent-terracotta">Common Questions</span>
+        <h2 class="font-serif-luxury text-3xl md:text-4xl font-bold text-cacao-dark">Frequently Asked Questions</h2>
+        <p class="text-xs md:text-sm text-text-muted max-w-xl mx-auto">Everything you need to know about our artisanal chocolate collections, shipping policies, stockist partnerships, and custom gifting.</p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <!-- FAQ 1 -->
+        <details class="group border border-cacao-dark/10 rounded-2xl bg-card-bg overflow-hidden transition-all duration-300 hover:border-accent-gold/50 shadow-sm open:border-accent-gold/40 open:shadow-md">
+          <summary class="flex justify-between items-center p-6 cursor-pointer select-none font-serif-luxury font-bold text-base md:text-lg text-cacao-dark list-none focus:outline-none">
+            <span>How do I place an order for chocolate bars or gift sets?</span>
+            <div class="w-8 h-8 rounded-full bg-canvas/80 flex items-center justify-center shrink-0 text-accent-gold group-open:rotate-180 transition-transform duration-300 border border-cacao-dark/10">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+          </summary>
+          <div class="px-6 pb-6 text-xs md:text-sm text-text-muted leading-relaxed border-t border-cacao-dark/5 pt-4">
+            All purchases are processed directly via WhatsApp or our online concierge to ensure personalized service. Click any "Order via WhatsApp" button across our site to launch a pre-filled chat with our sales desk, who will confirm stock, local delivery in Ghana, or express international shipping options.
+          </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="group border border-cacao-dark/10 rounded-2xl bg-card-bg overflow-hidden transition-all duration-300 hover:border-accent-gold/50 shadow-sm open:border-accent-gold/40 open:shadow-md">
+          <summary class="flex justify-between items-center p-6 cursor-pointer select-none font-serif-luxury font-bold text-base md:text-lg text-cacao-dark list-none focus:outline-none">
+            <span>Do you ship internationally outside Ghana?</span>
+            <div class="w-8 h-8 rounded-full bg-canvas/80 flex items-center justify-center shrink-0 text-accent-gold group-open:rotate-180 transition-transform duration-300 border border-cacao-dark/10">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+          </summary>
+          <div class="px-6 pb-6 text-xs md:text-sm text-text-muted leading-relaxed border-t border-cacao-dark/5 pt-4">
+            Yes! We ship insulated, temperature-controlled micro-batches via express international courier to selected destinations in West Africa, Europe, North America, and the UK. Contact our concierge desk for direct international shipping rates and delivery timelines.
+          </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="group border border-cacao-dark/10 rounded-2xl bg-card-bg overflow-hidden transition-all duration-300 hover:border-accent-gold/50 shadow-sm open:border-accent-gold/40 open:shadow-md">
+          <summary class="flex justify-between items-center p-6 cursor-pointer select-none font-serif-luxury font-bold text-base md:text-lg text-cacao-dark list-none focus:outline-none">
+            <span>What are the minimum wholesale order quantities for stockists?</span>
+            <div class="w-8 h-8 rounded-full bg-canvas/80 flex items-center justify-center shrink-0 text-accent-gold group-open:rotate-180 transition-transform duration-300 border border-cacao-dark/10">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+          </summary>
+          <div class="px-6 pb-6 text-xs md:text-sm text-text-muted leading-relaxed border-t border-cacao-dark/5 pt-4">
+            Our wholesale partnership program for hotels, cafes, and boutique outlets begins at 50 units minimum order. We offer tiered wholesale pricing, custom gold-embossed counter displays, and dedicated account management. Submit an inquiry through the form above to receive our wholesale catalog.
+          </div>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="group border border-cacao-dark/10 rounded-2xl bg-card-bg overflow-hidden transition-all duration-300 hover:border-accent-gold/50 shadow-sm open:border-accent-gold/40 open:shadow-md">
+          <summary class="flex justify-between items-center p-6 cursor-pointer select-none font-serif-luxury font-bold text-base md:text-lg text-cacao-dark list-none focus:outline-none">
+            <span>Can we request custom gold-foil branding for corporate events &amp; weddings?</span>
+            <div class="w-8 h-8 rounded-full bg-canvas/80 flex items-center justify-center shrink-0 text-accent-gold group-open:rotate-180 transition-transform duration-300 border border-cacao-dark/10">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+          </summary>
+          <div class="px-6 pb-6 text-xs md:text-sm text-text-muted leading-relaxed border-t border-cacao-dark/5 pt-4">
+            Absolutely. We provide custom gold-embossed sleeves, bespoke wooden presentation hampers, and personalized wax seals for luxury corporate gifting and private events. Submit a request via our concierge form or WhatsApp us directly for a 24-hour custom quote.
+          </div>
+        </details>
+
+      </div>
+    </div>
   </section>
-
-
 
   <!-- Elementor / WP Content Support Area -->
   <div class="elementor-content-container">

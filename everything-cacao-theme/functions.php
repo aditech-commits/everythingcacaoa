@@ -1312,6 +1312,357 @@ function ec_customize_register($wp_customize) {
     // =========================================================================
     // END OUR COLLECTIONS MANAGEMENT PANEL
     // =========================================================================
+
+    // =========================================================================
+    // STOCKISTS PAGE MANAGEMENT PANEL
+    // =========================================================================
+    $wp_customize->add_panel('theme_stockists_page_panel', array(
+        'title'       => __('Stockists Page Management', 'everything-cacao'),
+        'description' => __('Manage all hero copy, intro text, store categories, locations, descriptions, and address pins on the Stockists page.', 'everything-cacao'),
+        'priority'    => 28,
+    ));
+
+    // Section 1: Hero Banner Section
+    $wp_customize->add_section('theme_stockist_hero_section', array(
+        'title'    => __('Hero Banner Section', 'everything-cacao'),
+        'panel'    => 'theme_stockists_page_panel',
+        'priority' => 10,
+    ));
+
+    $stockist_hero_controls = array(
+        'ec_stockist_hero_tagline' => array(
+            'label'   => __('Hero Tagline / Top Subheading', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'RETAIL PARTNERS & FLAGSHIP LOCATIONS',
+        ),
+        'ec_stockist_hero_title' => array(
+            'label'   => __('Main Page Title', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Where to Find Everything Cacao',
+        ),
+    );
+
+    foreach ($stockist_hero_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_stockist_hero_section',
+            'type'    => $data['type'],
+        ));
+    }
+
+    // Section 2: Section Intro Header
+    $wp_customize->add_section('theme_stockist_intro_section', array(
+        'title'    => __('Section Intro Header', 'everything-cacao'),
+        'panel'    => 'theme_stockists_page_panel',
+        'priority' => 20,
+    ));
+
+    $stockist_intro_controls = array(
+        'ec_stockist_intro_tagline' => array(
+            'label'   => __('Top Subheading', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'ACCRA & REGIONAL OUTLETS',
+        ),
+        'ec_stockist_intro_title' => array(
+            'label'   => __('Section Main Heading', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Find Cherelle and Nahar Bars stocked at the following stores',
+        ),
+    );
+
+    foreach ($stockist_intro_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_stockist_intro_section',
+            'type'    => $data['type'],
+        ));
+    }
+
+    // Section 3: Category 1: Luxury Hotels & Resorts
+    $wp_customize->add_section('theme_stockist_cat1_section', array(
+        'title'    => __('Category 1: Luxury Hotels & Resorts', 'everything-cacao'),
+        'panel'    => 'theme_stockists_page_panel',
+        'priority' => 30,
+    ));
+
+    $stockist_cat1_controls = array(
+        'ec_stockist_cat1_title' => array(
+            'label'   => __('Category Section Title', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'LUXURY HOTELS & RESORTS',
+        ),
+        // Store Card 1
+        'ec_stockist_c1_s1_tag' => array(
+            'label'   => __('Store 1 — Location Tag', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'LABONE • ACCRA',
+        ),
+        'ec_stockist_c1_s1_name' => array(
+            'label'   => __('Store 1 — Store Name', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Crown Heritage Boutique Hotel',
+        ),
+        'ec_stockist_c1_s1_desc' => array(
+            'label'   => __('Store 1 — Description', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Carrying Nahar Executive Dark Boxes and Cherelle Milk bars at the lobby boutique & room amenities.',
+        ),
+        'ec_stockist_c1_s1_pin' => array(
+            'label'   => __('Store 1 — Address Pin', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Ring Road East, Labone',
+        ),
+        // Store Card 2
+        'ec_stockist_c1_s2_tag' => array(
+            'label'   => __('Store 2 — Location Tag', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'AKOSOMBO • EASTERN REGION',
+        ),
+        'ec_stockist_c1_s2_name' => array(
+            'label'   => __('Store 2 — Store Name', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Royal Senchi Resort & Spa',
+        ),
+        'ec_stockist_c1_s2_desc' => array(
+            'label'   => __('Store 2 — Description', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Featured at the resort gift shop and seasonal holiday turn-down chocolate amenity service.',
+        ),
+        'ec_stockist_c1_s2_pin' => array(
+            'label'   => __('Store 2 — Address Pin', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Volta River Front, Akosombo',
+        ),
+        // Store Card 3
+        'ec_stockist_c1_s3_tag' => array(
+            'label'   => __('Store 3 — Location Tag', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'BUSUA • WESTERN REGION',
+        ),
+        'ec_stockist_c1_s3_name' => array(
+            'label'   => __('Store 3 — Store Name', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'The Sanctuary Beach Resort',
+        ),
+        'ec_stockist_c1_s3_desc' => array(
+            'label'   => __('Store 3 — Description', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Artisanal coastal lounge stocking Cherelle Spiced Ginger and Nahar 70% Dark Cacao.',
+        ),
+        'ec_stockist_c1_s3_pin' => array(
+            'label'   => __('Store 3 — Address Pin', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Busua Beachfront, Western Region',
+        ),
+    );
+
+    foreach ($stockist_cat1_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_stockist_cat1_section',
+            'type'    => $data['type'],
+        ));
+    }
+
+    // Section 4: Category 2: Gourmet Cafes & Espresso Bars
+    $wp_customize->add_section('theme_stockist_cat2_section', array(
+        'title'    => __('Category 2: Gourmet Cafes & Espresso Bars', 'everything-cacao'),
+        'panel'    => 'theme_stockists_page_panel',
+        'priority' => 40,
+    ));
+
+    $stockist_cat2_controls = array(
+        'ec_stockist_cat2_title' => array(
+            'label'   => __('Category Section Title', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'GOURMET CAFES & ESPRESSO BARS',
+        ),
+        // Store Card 1
+        'ec_stockist_c2_s1_tag' => array(
+            'label'   => __('Store 1 — Location Tag', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'CANTONMENTS • ACCRA',
+        ),
+        'ec_stockist_c2_s1_name' => array(
+            'label'   => __('Store 1 — Store Name', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'The Gold Coast Roastery',
+        ),
+        'ec_stockist_c2_s1_desc' => array(
+            'label'   => __('Store 1 — Description', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Specialty espresso bar offering Everything Cacao single-origin dark chocolate bar pairings.',
+        ),
+        'ec_stockist_c2_s1_pin' => array(
+            'label'   => __('Store 1 — Address Pin', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Cantonments Road, Accra',
+        ),
+        // Store Card 2
+        'ec_stockist_c2_s2_tag' => array(
+            'label'   => __('Store 2 — Location Tag', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'OSU • ACCRA',
+        ),
+        'ec_stockist_c2_s2_name' => array(
+            'label'   => __('Store 2 — Store Name', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Atelier Cacao & Espresso Bar',
+        ),
+        'ec_stockist_c2_s2_desc' => array(
+            'label'   => __('Store 2 — Description', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Urban cafe featuring full seasonal Cherelle flavor bars and Nahar gift sets.',
+        ),
+        'ec_stockist_c2_s2_pin' => array(
+            'label'   => __('Store 2 — Address Pin', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Oxford Street Corridor, Osu',
+        ),
+        // Store Card 3
+        'ec_stockist_c2_s3_tag' => array(
+            'label'   => __('Store 3 — Location Tag', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'AIRPORT CITY • ACCRA',
+        ),
+        'ec_stockist_c2_s3_name' => array(
+            'label'   => __('Store 3 — Store Name', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Koffee Lounge & Roastery',
+        ),
+        'ec_stockist_c2_s3_desc' => array(
+            'label'   => __('Store 3 — Description', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Convenient business district cafe stocking executive 24-piece mini chocolate boxes.',
+        ),
+        'ec_stockist_c2_s3_pin' => array(
+            'label'   => __('Store 3 — Address Pin', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Marina Mall Plaza, Airport City',
+        ),
+    );
+
+    foreach ($stockist_cat2_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_stockist_cat2_section',
+            'type'    => $data['type'],
+        ));
+    }
+
+    // Section 5: Category 3: Airport Duty Free & Retail Pavilions
+    $wp_customize->add_section('theme_stockist_cat3_section', array(
+        'title'    => __('Category 3: Airport Duty Free & Retail Pavilions', 'everything-cacao'),
+        'panel'    => 'theme_stockists_page_panel',
+        'priority' => 50,
+    ));
+
+    $stockist_cat3_controls = array(
+        'ec_stockist_cat3_title' => array(
+            'label'   => __('Category Section Title', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'AIRPORT DUTY FREE & RETAIL PAVILIONS',
+        ),
+        // Store Card 1
+        'ec_stockist_c3_s1_tag' => array(
+            'label'   => __('Store 1 — Location Tag', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'TERMINAL 3 • ACCRA',
+        ),
+        'ec_stockist_c3_s1_name' => array(
+            'label'   => __('Store 1 — Store Name', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'KIA International Duty Free',
+        ),
+        'ec_stockist_c3_s1_desc' => array(
+            'label'   => __('Store 1 — Description', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Official Ghanaian souvenir departure pavilion carrying premium gold-embossed gift boxes.',
+        ),
+        'ec_stockist_c3_s1_pin' => array(
+            'label'   => __('Store 1 — Address Pin', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Kotoka International Airport',
+        ),
+        // Store Card 2
+        'ec_stockist_c3_s2_tag' => array(
+            'label'   => __('Store 2 — Location Tag', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'RIDGE • ACCRA',
+        ),
+        'ec_stockist_c3_s2_name' => array(
+            'label'   => __('Store 2 — Store Name', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'The Heritage Concept Store',
+        ),
+        'ec_stockist_c3_s2_desc' => array(
+            'label'   => __('Store 2 — Description', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'High-end lifestyle boutique promoting authentic West African fashion, arts, and gourmet foods.',
+        ),
+        'ec_stockist_c3_s2_pin' => array(
+            'label'   => __('Store 2 — Address Pin', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Independence Avenue, Ridge',
+        ),
+        // Store Card 3
+        'ec_stockist_c3_s3_tag' => array(
+            'label'   => __('Store 3 — Location Tag', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'REGIONAL HUB • TAKORADI',
+        ),
+        'ec_stockist_c3_s3_name' => array(
+            'label'   => __('Store 3 — Store Name', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Takoradi Artisanal Hub',
+        ),
+        'ec_stockist_c3_s3_desc' => array(
+            'label'   => __('Store 3 — Description', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Western Region partner stocking farm-traceable Suhum and Assin Fosu bean-to-bar chocolate.',
+        ),
+        'ec_stockist_c3_s3_pin' => array(
+            'label'   => __('Store 3 — Address Pin', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Market Circle Precinct, Takoradi',
+        ),
+    );
+
+    foreach ($stockist_cat3_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_stockist_cat3_section',
+            'type'    => $data['type'],
+        ));
+    }
+    // =========================================================================
+    // END STOCKISTS PAGE MANAGEMENT PANEL
+    // =========================================================================
 }
 add_action('customize_register', 'ec_customize_register');
 

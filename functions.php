@@ -118,7 +118,7 @@ add_action('wp_head', 'ec_seo_meta_description', 1);
  */
 add_action('elementor/editor/before_enqueue_scripts', function() {
     wp_enqueue_style('ec-tailwind', get_template_directory_uri() . '/assets/css/tailwind.css', array(), '1.0.0');
-    wp_enqueue_style('ec-google-fonts', 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap', array(), null);
+    wp_enqueue_style('ec-google-fonts', 'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap', array(), null);
 });
 
 /**
@@ -136,7 +136,7 @@ function ec_enqueue_assets() {
     wp_enqueue_style('ec-tailwind', get_template_directory_uri() . '/assets/css/tailwind.css', array(), '1.0.0');
 
     // Google Fonts (Playfair Display & Hanken Grotesk)
-    wp_enqueue_style('ec-google-fonts', 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap', array(), null);
+    wp_enqueue_style('ec-google-fonts', 'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap', array(), null);
 
     // Theme JS Scripts
     wp_enqueue_script('ec-pixel', get_template_directory_uri() . '/assets/js/pixel-events.js', array(), '1.0.0', true);

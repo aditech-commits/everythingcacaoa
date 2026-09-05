@@ -4,9 +4,10 @@
   <meta charset="<?php bloginfo('charset'); ?>"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- Google Fonts Preconnect -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap"/>
 
   <!-- Tailwind CSS Engine & Brand Configuration -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -29,6 +30,7 @@
           fontFamily: {
             'serif-luxury': ['Playfair Display', 'serif'],
             'sans': ['Hanken Grotesk', 'sans-serif'],
+            'brand-logo': ['Fraunces', 'Playfair Display', 'serif'],
           }
         }
       }
@@ -37,6 +39,10 @@
 
   <!-- Luxury Nav Menu Hover & Active Indicator Styles -->
   <style>
+    .font-brand-logo {
+      font-family: 'Fraunces', 'Playfair Display', serif !important;
+      letter-spacing: 0.04em;
+    }
     .nav-link {
       position: relative;
       display: inline-flex;
@@ -161,7 +167,7 @@
           <?php else : ?>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand/logo.png" alt="<?php bloginfo('name'); ?>" class="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
           <?php endif; ?>
-          <span class="font-serif-luxury text-base md:text-xl font-bold tracking-wider text-cacao-dark group-hover:text-accent-terracotta transition-colors uppercase whitespace-nowrap">
+          <span class="font-brand-logo text-lg md:text-2xl font-bold tracking-wider text-cacao-dark group-hover:text-accent-terracotta transition-colors uppercase whitespace-nowrap">
             EVERYTHING CACAO
           </span>
         </a>
@@ -211,7 +217,7 @@
   <div id="mobile-drawer" class="fixed inset-0 bg-cacao-dark text-canvas z-50 transform translate-x-full transition-transform duration-300 overflow-y-auto">
     <div class="p-6 space-y-6">
       <div class="flex justify-between items-center border-b border-canvas/20 pb-4">
-        <span class="font-serif-luxury text-xl font-bold text-accent-gold">EVERYTHING CACAO GH</span>
+        <span class="font-brand-logo text-xl font-bold text-accent-gold">EVERYTHING CACAO GH</span>
         <button id="close-drawer-btn" class="text-canvas text-3xl font-light">&times;</button>
       </div>
       <div class="flex flex-col space-y-4 text-xs uppercase tracking-widest font-semibold">

@@ -153,9 +153,9 @@ function ec_enqueue_assets() {
 }
 add_action('wp_enqueue_scripts', 'ec_enqueue_assets');
 
-// Prevent empty Elementor content containers from creating whitespace and provide continuous marquee animation
+// Prevent empty Elementor content containers from creating whitespace, provide continuous marquee animation and ensure hidden elements hide cleanly
 add_action('wp_enqueue_scripts', function() {
-    wp_add_inline_style('ec-tailwind', '.elementor-content-container:empty { display:none; } .elementor-content-container { margin:0; padding:0; } @keyframes ecMarquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } } .ec-marquee-wrapper { display: flex; overflow: hidden; white-space: nowrap; user-select: none; } .ec-marquee-track { display: flex; flex-shrink: 0; min-width: 100%; animation: ecMarquee 25s linear infinite; } .ec-marquee-wrapper:hover .ec-marquee-track { animation-play-state: paused; }');
+    wp_add_inline_style('ec-tailwind', '.hidden { display: none !important; } .elementor-content-container:empty { display:none; } .elementor-content-container { margin:0; padding:0; } @keyframes ecMarquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } } .ec-marquee-wrapper { display: flex; overflow: hidden; white-space: nowrap; user-select: none; } .ec-marquee-track { display: flex; flex-shrink: 0; min-width: 100%; animation: ecMarquee 25s linear infinite; } .ec-marquee-wrapper:hover .ec-marquee-track { animation-play-state: paused; }');
 });
 
 

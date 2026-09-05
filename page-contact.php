@@ -183,45 +183,45 @@ get_header();
       <div class="space-y-4">
         <!-- FAQ 1 -->
         <div class="faq-item border border-cacao-dark/10 rounded-lg bg-card-bg overflow-hidden transition-all duration-300">
-          <button type="button" class="faq-trigger w-full p-6 text-left font-serif-luxury font-bold text-lg text-cacao-dark flex justify-between items-center hover:bg-canvas/50 transition-colors">
+          <button type="button" onclick="ecToggleFaq(this)" class="faq-trigger cursor-pointer w-full p-6 text-left font-serif-luxury font-bold text-lg text-cacao-dark flex justify-between items-center hover:bg-canvas/50 transition-colors">
             <span>How do I place an order for chocolate bars or gift sets?</span>
             <span class="faq-icon text-xl font-sans font-semibold text-accent-gold transition-transform duration-300">+</span>
           </button>
-          <div class="accordion-content hidden px-6 pb-6 text-sm text-text-muted leading-relaxed border-t border-cacao-dark/5 pt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-text-muted leading-relaxed border-t border-cacao-dark/5 pt-4" style="display: none;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </div>
         </div>
 
         <!-- FAQ 2 -->
         <div class="faq-item border border-cacao-dark/10 rounded-lg bg-card-bg overflow-hidden transition-all duration-300">
-          <button type="button" class="faq-trigger w-full p-6 text-left font-serif-luxury font-bold text-lg text-cacao-dark flex justify-between items-center hover:bg-canvas/50 transition-colors">
+          <button type="button" onclick="ecToggleFaq(this)" class="faq-trigger cursor-pointer w-full p-6 text-left font-serif-luxury font-bold text-lg text-cacao-dark flex justify-between items-center hover:bg-canvas/50 transition-colors">
             <span>Do you ship internationally outside Ghana?</span>
             <span class="faq-icon text-xl font-sans font-semibold text-accent-gold transition-transform duration-300">+</span>
           </button>
-          <div class="accordion-content hidden px-6 pb-6 text-sm text-text-muted leading-relaxed border-t border-cacao-dark/5 pt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-text-muted leading-relaxed border-t border-cacao-dark/5 pt-4" style="display: none;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
           </div>
         </div>
 
         <!-- FAQ 3 -->
         <div class="faq-item border border-cacao-dark/10 rounded-lg bg-card-bg overflow-hidden transition-all duration-300">
-          <button type="button" class="faq-trigger w-full p-6 text-left font-serif-luxury font-bold text-lg text-cacao-dark flex justify-between items-center hover:bg-canvas/50 transition-colors">
+          <button type="button" onclick="ecToggleFaq(this)" class="faq-trigger cursor-pointer w-full p-6 text-left font-serif-luxury font-bold text-lg text-cacao-dark flex justify-between items-center hover:bg-canvas/50 transition-colors">
             <span>What are the minimum wholesale order quantities for stockists?</span>
             <span class="faq-icon text-xl font-sans font-semibold text-accent-gold transition-transform duration-300">+</span>
           </button>
-          <div class="accordion-content hidden px-6 pb-6 text-sm text-text-muted leading-relaxed border-t border-cacao-dark/5 pt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-text-muted leading-relaxed border-t border-cacao-dark/5 pt-4" style="display: none;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </div>
         </div>
 
         <!-- FAQ 4 -->
         <div class="faq-item border border-cacao-dark/10 rounded-lg bg-card-bg overflow-hidden transition-all duration-300">
-          <button type="button" class="faq-trigger w-full p-6 text-left font-serif-luxury font-bold text-lg text-cacao-dark flex justify-between items-center hover:bg-canvas/50 transition-colors">
+          <button type="button" onclick="ecToggleFaq(this)" class="faq-trigger cursor-pointer w-full p-6 text-left font-serif-luxury font-bold text-lg text-cacao-dark flex justify-between items-center hover:bg-canvas/50 transition-colors">
             <span>Can we request custom gold-foil branding for corporate events &amp; weddings?</span>
             <span class="faq-icon text-xl font-sans font-semibold text-accent-gold transition-transform duration-300">+</span>
           </button>
-          <div class="accordion-content hidden px-6 pb-6 text-sm text-text-muted leading-relaxed border-t border-cacao-dark/5 pt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-text-muted leading-relaxed border-t border-cacao-dark/5 pt-4" style="display: none;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
           </div>
         </div>
       </div>
@@ -229,37 +229,34 @@ get_header();
   </section>
 
   <script>
-    (function() {
-      function initFaq() {
-        if (window._ecFaqPageBound) return;
-        window._ecFaqPageBound = true;
-        document.addEventListener('click', function(e) {
-          const trigger = e.target.closest('.faq-trigger');
-          if (!trigger) return;
-          e.preventDefault();
-          const parent = trigger.closest('.faq-item') || trigger.parentElement;
-          if (!parent) return;
-          const content = parent.querySelector('.accordion-content');
-          const icon = trigger.querySelector('.faq-icon');
-          if (!content) return;
-          const isHidden = content.classList.contains('hidden');
-          if (isHidden) {
-            content.classList.remove('hidden');
-            if (icon) icon.textContent = '−';
-            parent.classList.add('border-accent-gold/40', 'shadow-sm');
-          } else {
-            content.classList.add('hidden');
-            if (icon) icon.textContent = '+';
-            parent.classList.remove('border-accent-gold/40', 'shadow-sm');
-          }
-        });
-      }
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initFaq);
+    window.ecToggleFaq = function(btn) {
+      var item = btn.closest('.faq-item') || btn.parentElement;
+      if (!item) return;
+      var content = item.querySelector('.accordion-content');
+      var icon = item.querySelector('.faq-icon');
+      if (!content) return;
+
+      var isHidden = (window.getComputedStyle(content).display === 'none' || content.classList.contains('hidden') || content.style.display === 'none');
+
+      if (isHidden) {
+        content.style.display = 'block';
+        content.classList.remove('hidden');
+        if (icon) icon.textContent = '−';
+        item.classList.add('border-accent-gold/40', 'shadow-sm');
       } else {
-        initFaq();
+        content.style.display = 'none';
+        content.classList.add('hidden');
+        if (icon) icon.textContent = '+';
+        item.classList.remove('border-accent-gold/40', 'shadow-sm');
       }
-    })();
+    };
+
+    document.addEventListener('click', function(e) {
+      const trigger = e.target.closest('.faq-trigger');
+      if (trigger && !trigger.getAttribute('onclick')) {
+        window.ecToggleFaq(trigger);
+      }
+    });
   </script>
 
   <!-- Elementor / WP Content Support Area -->

@@ -746,6 +746,273 @@ function ec_customize_register($wp_customize) {
         $wp_customize->add_setting($setting_id, array('default' => $data['default'], 'type' => 'theme_mod', 'sanitize_callback' => 'sanitize_text_field'));
         $wp_customize->add_control($setting_id, array('label' => $data['label'], 'section' => 'ec_stockist_content', 'type' => $data['type']));
     }
+
+    // =========================================================================
+    // "ABOUT US MANAGEMENT" PANEL  (ID: theme_about_page_panel)
+    // Dedicated Customizer Panel for the About Us / Our Craft page.
+    // Covers all 6 content sections with clean hierarchy.
+    // =========================================================================
+    $wp_customize->add_panel('theme_about_page_panel', array(
+        'priority'    => 22,
+        'title'       => __('About Us Management', 'everything-cacao'),
+        'description' => __('Manage all sections, text, images, videos and buttons on the About Us / Our Craft page.', 'everything-cacao'),
+    ));
+
+    // -------------------------------------------------------------------------
+    // ABOUT SECTION 1: HERO BANNER
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_about_hero_section', array(
+        'title'    => __('1. Hero Banner', 'everything-cacao'),
+        'panel'    => 'theme_about_page_panel',
+        'priority' => 10,
+    ));
+
+    $about_hero_controls = array(
+        'ec_about_hero_tagline'  => array(
+            'label'   => __('Tagline / Top Subheading', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Official Brand Story & Vision',
+        ),
+        'ec_about_hero_title'    => array(
+            'label'   => __('Main Page Title', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Everything Cacao',
+        ),
+        'ec_about_hero_subtitle' => array(
+            'label'   => __('Subtitle / Description Text', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => "Celebrating the rich heritage of Ghana's cacao and the art of transforming processed cocoa into premium chocolate.",
+        ),
+    );
+
+    foreach ($about_hero_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_about_hero_section',
+            'type'    => $data['type'],
+        ));
+    }
+
+    // -------------------------------------------------------------------------
+    // ABOUT SECTION 2: OUR VALUES (Brand Pillars)
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_about_values_section', array(
+        'title'    => __('2. Our Values (Brand Pillars)', 'everything-cacao'),
+        'panel'    => 'theme_about_page_panel',
+        'priority' => 20,
+    ));
+
+    $about_values_controls = array(
+        'ec_about_values_title'    => array(
+            'label'   => __('Section Main Title', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => "Ghana's Chocolate Story — Grown Here, Made Here",
+        ),
+        'ec_about_values_subtitle' => array(
+            'label'   => __('Section Intro Paragraph', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => "Everything Cacao was born from a passion for Ghana's cacao and a belief that the world's finest chocolate starts right here. We transform premium Ghanaian cocoa into exceptional chocolate — honouring our land, our farmers and the traditions that make Ghanaian cacao among the best in the world.",
+        ),
+        // Card 01
+        'ec_about_v1_number'  => array('label' => __('Value Card 01 — Number', 'everything-cacao'),  'type' => 'text',     'default' => '01'),
+        'ec_about_v1_heading' => array('label' => __('Value Card 01 — Heading', 'everything-cacao'), 'type' => 'text',     'default' => 'Crafting Chocolate with Care'),
+        'ec_about_v1_body'    => array('label' => __('Value Card 01 — Body Text', 'everything-cacao'), 'type' => 'textarea', 'default' => 'We source high-quality, processed cocoa from local suppliers who share our commitment to excellence. By collaborating closely with these farmers, we ensure that every batch reflects the unique flavors and characteristics of Ghanaian cacao. Our team of skilled artisans takes this exceptional cocoa and transforms it into a range of delightful chocolate bars, each crafted with precision and love.'),
+        // Card 02
+        'ec_about_v2_number'  => array('label' => __('Value Card 02 — Number', 'everything-cacao'),  'type' => 'text',     'default' => '02'),
+        'ec_about_v2_heading' => array('label' => __('Value Card 02 — Heading', 'everything-cacao'), 'type' => 'text',     'default' => 'Quality You Can Trust'),
+        'ec_about_v2_body'    => array('label' => __('Value Card 02 — Body Text', 'everything-cacao'), 'type' => 'textarea', 'default' => 'Certified by the Food and Drug Authority (FDA) and the Ghana Standards Authority (GSA), Everything Cacao is dedicated to maintaining the highest standards of safety and quality. Our rigorous processes ensure that every chocolate bar you enjoy is not only delicious but also meets stringent regulatory requirements, giving you peace of mind with every bite.'),
+        // Card 03
+        'ec_about_v3_number'  => array('label' => __('Value Card 03 — Number', 'everything-cacao'),  'type' => 'text',     'default' => '03'),
+        'ec_about_v3_heading' => array('label' => __('Value Card 03 — Heading', 'everything-cacao'), 'type' => 'text',     'default' => 'Empowering Communities'),
+        'ec_about_v3_body'    => array('label' => __('Value Card 03 — Body Text', 'everything-cacao'), 'type' => 'textarea', 'default' => 'We believe chocolate should benefit everyone involved in its creation. Everything Cacao works closely with local cocoa processing companies and cocoa farmers in Ghana, ensuring fair trade practices and sustainable livelihoods. By choosing our chocolate, you contribute to empowering communities and supporting local industry in Ghana.'),
+        // Card 04
+        'ec_about_v4_number'  => array('label' => __('Value Card 04 — Number', 'everything-cacao'),  'type' => 'text',     'default' => '04'),
+        'ec_about_v4_heading' => array('label' => __('Value Card 04 — Heading', 'everything-cacao'), 'type' => 'text',     'default' => 'A Taste of Ghana'),
+        'ec_about_v4_body'    => array('label' => __('Value Card 04 — Body Text', 'everything-cacao'), 'type' => 'textarea', 'default' => "Every bar of Everything Cacao tells a story of Ghanaian heritage and artisanal pride. From rich dark chocolate bars to creamy milk varieties and delightful treats, our products celebrate the distinct flavor of Ghana's cacao. Experience the true taste of Ghana with every bite."),
+    );
+
+    foreach ($about_values_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_about_values_section',
+            'type'    => $data['type'],
+        ));
+    }
+
+    // -------------------------------------------------------------------------
+    // ABOUT SECTION 3: OUR STORY
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_about_story_section', array(
+        'title'    => __('3. Our Story', 'everything-cacao'),
+        'panel'    => 'theme_about_page_panel',
+        'priority' => 30,
+    ));
+
+    $about_story_text = array(
+        'ec_about_story_heading'  => array('label' => __('Section Heading', 'everything-cacao'),       'type' => 'text',     'default' => 'Our Story'),
+        'ec_about_story_tagline'  => array('label' => __('Inner Tagline (e.g. CRAFTED IN GHANA)', 'everything-cacao'), 'type' => 'text', 'default' => 'CRAFTED IN GHANA'),
+        'ec_about_story_para1'    => array('label' => __('Story Paragraph 1', 'everything-cacao'),     'type' => 'textarea', 'default' => "Everything Cacao GH Ltd. is a proudly Ghanaian chocolate manufacturer, born in 2025 from a deep love for Ghana's cacao and a vision to share it with the world."),
+        'ec_about_story_para2'    => array('label' => __('Story Paragraph 2', 'everything-cacao'),     'type' => 'textarea', 'default' => 'We craft premium chocolate right here in Ghana — celebrating the farmers, the land and the heritage behind every bar. From our everyday Cherelle range to our luxury Nahar collection, each piece of chocolate we make is a testament to what Ghanaian cocoa can become in the right hands.'),
+        'ec_about_story_para3'    => array('label' => __('Story Paragraph 3 (Bold Closer)', 'everything-cacao'), 'type' => 'textarea', 'default' => 'We are more than a chocolate company. We are a celebration of Ghana.'),
+        'ec_about_story_btn_label'=> array('label' => __('Button Label', 'everything-cacao'),          'type' => 'text',     'default' => 'View More →'),
+        'ec_about_story_btn_url'  => array('label' => __('Button URL', 'everything-cacao'),            'type' => 'text',     'default' => '/our-story'),
+    );
+
+    foreach ($about_story_text as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_about_story_section',
+            'type'    => $data['type'],
+        ));
+    }
+
+    // Featured Story Image
+    $wp_customize->add_setting('ec_about_story_image', array(
+        'default'           => 'https://everythingcacaogh.com/wp-content/uploads/2026/08/team_everythingcacao.jpg',
+        'type'              => 'theme_mod',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'ec_about_story_image', array(
+        'label'    => __('Featured Story Image', 'everything-cacao'),
+        'section'  => 'theme_about_story_section',
+        'settings' => 'ec_about_story_image',
+    )));
+
+    // -------------------------------------------------------------------------
+    // ABOUT SECTION 4: BRAND HIGHLIGHTS (Cherelle & Nahar)
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_about_highlights_section', array(
+        'title'    => __('4. Brand Highlights — Cherelle & Nahar', 'everything-cacao'),
+        'panel'    => 'theme_about_page_panel',
+        'priority' => 40,
+    ));
+
+    $about_highlights_controls = array(
+        'ec_about_hl_title'    => array('label' => __('Section Main Title', 'everything-cacao'),    'type' => 'text',     'default' => 'Cherelle & Nahar'),
+        'ec_about_hl_subtitle' => array('label' => __('Section Subtitle / Intro', 'everything-cacao'), 'type' => 'textarea', 'default' => "Together, Cherelle and Nahar represent our commitment to quality and passion for chocolate, ensuring there's something for everyone to enjoy at Everything Cacao"),
+        // Cherelle Card
+        'ec_about_ch_tag'    => array('label' => __('Cherelle — Eyebrow Tag', 'everything-cacao'),    'type' => 'text',     'default' => 'Everyday Lifestyle'),
+        'ec_about_ch_badge'  => array('label' => __('Cherelle — Badge Text', 'everything-cacao'),     'type' => 'text',     'default' => 'Joy & Togetherness'),
+        'ec_about_ch_title'  => array('label' => __('Cherelle — Card Title', 'everything-cacao'),     'type' => 'text',     'default' => 'Cherelle: Delight in Every Bite'),
+        'ec_about_ch_body'   => array('label' => __('Cherelle — Body Text', 'everything-cacao'),      'type' => 'textarea', 'default' => 'Cherelle brings chocolate joy to everyone. Made from quality Ghanaian cocoa, our affordable bars are perfect for everyday moments — sharing with loved ones or treating yourself. Playful, approachable, and made for all ages, Cherelle keeps delicious moments within easy reach.'),
+        // Nahar Card
+        'ec_about_nh_tag'    => array('label' => __('Nahar — Eyebrow Tag', 'everything-cacao'),       'type' => 'text',     'default' => 'Artisanal Grand Luxury'),
+        'ec_about_nh_badge'  => array('label' => __('Nahar — Badge Text', 'everything-cacao'),        'type' => 'text',     'default' => 'Pinnacle Reserve'),
+        'ec_about_nh_title'  => array('label' => __('Nahar — Card Title', 'everything-cacao'),        'type' => 'text',     'default' => 'Nahar: The Essence of Luxury'),
+        'ec_about_nh_body'   => array('label' => __('Nahar — Body Text', 'everything-cacao'),         'type' => 'textarea', 'default' => "Nahar is our premium chocolate brand for the discerning palate. Crafted from the finest Ghanaian cocoa, each bar delivers sophisticated, complex flavor rooted in Ghana's cacao heritage. With elegant packaging and curated craftsmanship, Nahar is the perfect choice for gifting, special occasions, or personal indulgence."),
+    );
+
+    foreach ($about_highlights_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_about_highlights_section',
+            'type'    => $data['type'],
+        ));
+    }
+
+    // -------------------------------------------------------------------------
+    // ABOUT SECTION 5: MISSION & VISION
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_about_mission_section', array(
+        'title'    => __('5. Mission & Vision', 'everything-cacao'),
+        'panel'    => 'theme_about_page_panel',
+        'priority' => 50,
+    ));
+
+    $about_mission_controls = array(
+        // Mission Card
+        'ec_about_mission_tag'     => array('label' => __('Mission — Eyebrow Tag', 'everything-cacao'),    'type' => 'text',     'default' => 'Our Purpose'),
+        'ec_about_mission_heading' => array('label' => __('Mission — Card Heading', 'everything-cacao'),   'type' => 'text',     'default' => 'Mission Statement'),
+        'ec_about_mission_body'    => array('label' => __('Mission — Body Text', 'everything-cacao'),      'type' => 'textarea', 'default' => '"At Everything Cacao GH Ltd., our mission is to transform the chocolate landscape in Ghana and beyond by producing exceptional products that celebrate the richness of our local cocoa while fostering sustainable practices. We aim to enhance the lives of our consumers through our flavorful offerings, drive economic growth within our community, and promote the cultural significance of cacao."'),
+        // Vision Card
+        'ec_about_vision_tag'      => array('label' => __('Vision — Eyebrow Tag', 'everything-cacao'),     'type' => 'text',     'default' => 'Our Horizon'),
+        'ec_about_vision_heading'  => array('label' => __('Vision — Card Heading', 'everything-cacao'),    'type' => 'text',     'default' => 'Vision Statement'),
+        'ec_about_vision_body'     => array('label' => __('Vision — Body Text', 'everything-cacao'),       'type' => 'textarea', 'default' => '"We envision a world where high-quality chocolate is not a luxury but a delightful experience accessible to all. We aspire to be a leading name in the chocolate industry, known for our innovative products, commitment to quality, and dedication to sustainability."'),
+    );
+
+    foreach ($about_mission_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_about_mission_section',
+            'type'    => $data['type'],
+        ));
+    }
+
+    // -------------------------------------------------------------------------
+    // ABOUT SECTION 6: CUSTOMER REVIEWS / TESTIMONIALS
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_about_reviews_section', array(
+        'title'    => __('6. Customer Reviews / Testimonials', 'everything-cacao'),
+        'panel'    => 'theme_about_page_panel',
+        'priority' => 60,
+    ));
+
+    $about_reviews_controls = array(
+        'ec_about_rev_tag'     => array('label' => __('Section Eyebrow Tag', 'everything-cacao'),    'type' => 'text',     'default' => 'Real People, Real Joy'),
+        'ec_about_rev_title'   => array('label' => __('Section Main Title', 'everything-cacao'),     'type' => 'text',     'default' => 'What our Customer says about us'),
+        'ec_about_rev_desc'    => array('label' => __('Section Description', 'everything-cacao'),    'type' => 'textarea', 'default' => 'Watch chocolate lovers across Ghana sample Cherelle and Nahar artisanal creations live in supermarkets, pop-up lounges, and luxury retail stores.'),
+        // Reel 1
+        'ec_about_r1_url'      => array('label' => __('Reel 1 — Video iFrame URL', 'everything-cacao'),   'type' => 'text',     'default' => 'https://drive.google.com/file/d/1JUC7nwQjQpqLD8z7WnyhiyPtkV6rkcvG/preview'),
+        'ec_about_r1_badge'    => array('label' => __('Reel 1 — Badge Label', 'everything-cacao'),        'type' => 'text',     'default' => 'Live Sampling'),
+        'ec_about_r1_title'    => array('label' => __('Reel 1 — Card Title', 'everything-cacao'),         'type' => 'text',     'default' => 'Supermarket Tasting Reel #1'),
+        'ec_about_r1_desc'     => array('label' => __('Reel 1 — Card Description', 'everything-cacao'),   'type' => 'textarea', 'default' => 'Customers discovering Cherelle 45% Milk Chocolate.'),
+        // Reel 2
+        'ec_about_r2_url'      => array('label' => __('Reel 2 — Video iFrame URL', 'everything-cacao'),   'type' => 'text',     'default' => 'https://drive.google.com/file/d/1pKLN1VVG15IKg_WP6RUlZ8eD3UJnX1yW/preview'),
+        'ec_about_r2_badge'    => array('label' => __('Reel 2 — Badge Label', 'everything-cacao'),        'type' => 'text',     'default' => 'Nahar Luxury Tasting'),
+        'ec_about_r2_title'    => array('label' => __('Reel 2 — Card Title', 'everything-cacao'),         'type' => 'text',     'default' => 'Grand Reserve Sampling #2'),
+        'ec_about_r2_desc'     => array('label' => __('Reel 2 — Card Description', 'everything-cacao'),   'type' => 'textarea', 'default' => 'Discerning palates savoring Nahar 72% Obsidian Dark.'),
+        // Reel 3
+        'ec_about_r3_url'      => array('label' => __('Reel 3 — Video iFrame URL', 'everything-cacao'),   'type' => 'text',     'default' => 'https://drive.google.com/file/d/15lB6wkq0Cg6NT4pACbXxZiokmdDYtcE0/preview'),
+        'ec_about_r3_badge'    => array('label' => __('Reel 3 — Badge Label', 'everything-cacao'),        'type' => 'text',     'default' => 'Retail Pop-Up'),
+        'ec_about_r3_title'    => array('label' => __('Reel 3 — Card Title', 'everything-cacao'),         'type' => 'text',     'default' => 'Accra Retail Pop-Up #3'),
+        'ec_about_r3_desc'     => array('label' => __('Reel 3 — Card Description', 'everything-cacao'),   'type' => 'textarea', 'default' => 'Interactive tasting counter at Accra shopping mall.'),
+        // Reel 4
+        'ec_about_r4_url'      => array('label' => __('Reel 4 — Video iFrame URL', 'everything-cacao'),   'type' => 'text',     'default' => 'https://drive.google.com/file/d/1FQK5L6ErULSbr0Wd_VKoGYcJo463HVYC/preview'),
+        'ec_about_r4_badge'    => array('label' => __('Reel 4 — Badge Label', 'everything-cacao'),        'type' => 'text',     'default' => 'Family & Kids Joy'),
+        'ec_about_r4_title'    => array('label' => __('Reel 4 — Card Title', 'everything-cacao'),         'type' => 'text',     'default' => 'Joy in Every Bite #4'),
+        'ec_about_r4_desc'     => array('label' => __('Reel 4 — Card Description', 'everything-cacao'),   'type' => 'textarea', 'default' => 'Delighting young chocolate lovers with Cherelle treats.'),
+    );
+
+    foreach ($about_reviews_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_about_reviews_section',
+            'type'    => $data['type'],
+        ));
+    }
+    // =========================================================================
+    // END ABOUT US MANAGEMENT PANEL
+    // =========================================================================
 }
 add_action('customize_register', 'ec_customize_register');
 

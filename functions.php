@@ -1165,6 +1165,153 @@ function ec_customize_register($wp_customize) {
     // =========================================================================
     // END CACAO JOURNAL MANAGEMENT PANEL
     // =========================================================================
+
+    // =========================================================================
+    // "OUR COLLECTIONS MANAGEMENT" PANEL  (ID: theme_collections_page_panel)
+    // Controls all page headers, tab labels, badge text, and static copy on
+    // the Collections / Catalog page (page-collections.php).
+    // Product grids, prices, titles, images, and queries remain 100% dynamic
+    // via WP_Query / CPT — managed in WP Admin → Confection Catalog.
+    // =========================================================================
+    $wp_customize->add_panel('theme_collections_page_panel', array(
+        'priority'    => 26,
+        'title'       => __('Our Collections Management', 'everything-cacao'),
+        'description' => __('Edit the page banner, filter tab labels, card badge defaults, and empty-state text on the Our Collections catalog page.', 'everything-cacao'),
+    ));
+
+    // -------------------------------------------------------------------------
+    // COLLECTIONS SECTION 1: HERO BANNER
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_coll_hero_section', array(
+        'title'    => __('1. Hero Banner', 'everything-cacao'),
+        'panel'    => 'theme_collections_page_panel',
+        'priority' => 10,
+    ));
+
+    $coll_hero_controls = array(
+        'ec_coll_hero_tagline'  => array(
+            'label'   => __('Top Subheading / Tagline', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'FDA & GSA CERTIFIED GHANAIAN CHOCOLATE',
+        ),
+        'ec_coll_hero_title'    => array(
+            'label'   => __('Main Page Title', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Shop Everything Cacao — Nahar & Cherelle',
+        ),
+        'ec_coll_hero_subtitle' => array(
+            'label'   => __('Subtitle / Description Text', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => "Browse our full range of Ghanaian chocolate bars. From Nahar's luxury dark and milk collections to Cherelle's affordable everyday bars — there's an Everything Cacao chocolate for every taste, budget and occasion.",
+        ),
+    );
+
+    foreach ($coll_hero_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_coll_hero_section',
+            'type'    => $data['type'],
+        ));
+    }
+
+    // -------------------------------------------------------------------------
+    // COLLECTIONS SECTION 2: FILTER TAB LABELS
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_coll_tabs_section', array(
+        'title'       => __('2. Collection Filter Tabs', 'everything-cacao'),
+        'panel'       => 'theme_collections_page_panel',
+        'priority'    => 20,
+        'description' => __('Edit the display label for each filter tab. The data-category attribute (all / cherelle / nahar / gifting) used for JS filtering is fixed and not changed here.', 'everything-cacao'),
+    ));
+
+    $coll_tab_controls = array(
+        'ec_coll_tab_all'      => array('label' => __('Tab 1 — All Collections Label', 'everything-cacao'), 'type' => 'text', 'default' => 'ALL COLLECTIONS'),
+        'ec_coll_tab_cherelle' => array('label' => __('Tab 2 — Cherelle Label',         'everything-cacao'), 'type' => 'text', 'default' => 'CHERELLE'),
+        'ec_coll_tab_nahar'    => array('label' => __('Tab 3 — Nahar Label',             'everything-cacao'), 'type' => 'text', 'default' => 'NAHAR'),
+        'ec_coll_tab_gifting'  => array('label' => __('Tab 4 — Gift Boxes Label',        'everything-cacao'), 'type' => 'text', 'default' => 'GIFT BOXES'),
+    );
+
+    foreach ($coll_tab_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_coll_tabs_section',
+            'type'    => $data['type'],
+        ));
+    }
+
+    // -------------------------------------------------------------------------
+    // COLLECTIONS SECTION 3: PRODUCT CARD BADGES & LABELS
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_coll_badges_section', array(
+        'title'       => __('3. Product Card Badges & Labels', 'everything-cacao'),
+        'panel'       => 'theme_collections_page_panel',
+        'priority'    => 30,
+        'description' => __('These control the default badge/overlay text on product cards. The left badge shows the cacao content from the product record; the right badge shows the sub-brand. The hover overlay text is also editable here.', 'everything-cacao'),
+    ));
+
+    $coll_badge_controls = array(
+        'ec_coll_badge_dark_default'   => array(
+            'label'   => __('Dark Badge — Fallback Text (left badge if no cacao % set)', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => '100% RAW CACAO',
+        ),
+        'ec_coll_badge_light_cherelle' => array(
+            'label'   => __('Light Badge — Cherelle Fallback Sub-brand Label', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'CHERELLE',
+        ),
+        'ec_coll_badge_light_nahar'    => array(
+            'label'   => __('Light Badge — Nahar Fallback Sub-brand Label', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'NAHAR',
+        ),
+        'ec_coll_badge_light_gift'     => array(
+            'label'   => __('Light Badge — Gift Box Fallback Sub-brand Label', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'GIFT BOX',
+        ),
+        'ec_coll_hover_overlay_text'   => array(
+            'label'   => __('Hover Overlay Button Text (on product image)', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'View Details',
+        ),
+        'ec_coll_empty_title'          => array(
+            'label'   => __('Empty Filter State — Heading', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'No products in this collection yet',
+        ),
+        'ec_coll_empty_body'           => array(
+            'label'   => __('Empty Filter State — Description Text', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Check back soon or browse all collections.',
+        ),
+    );
+
+    foreach ($coll_badge_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_coll_badges_section',
+            'type'    => $data['type'],
+        ));
+    }
+    // =========================================================================
+    // END OUR COLLECTIONS MANAGEMENT PANEL
+    // =========================================================================
 }
 add_action('customize_register', 'ec_customize_register');
 

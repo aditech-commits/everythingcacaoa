@@ -6,7 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initQuickForms();
   initPaletteClubForm();
+  initFaqAccordion();
 });
+
+if (document.readyState !== "loading") {
+  initFaqAccordion();
+}
 
 function initMobileMenu() {
   const toggleBtn = document.getElementById("mobile-menu-btn");
@@ -19,6 +24,37 @@ function initMobileMenu() {
   if (closeBtn && mobileDrawer) {
     closeBtn.addEventListener("click", () => mobileDrawer.classList.add("translate-x-full"));
   }
+}
+
+function initFaqAccordion() {
+  if (window._ecFaqInitialized) return;
+  window._ecFaqInitialized = true;
+
+  document.addEventListener("click", (e) => {
+    const trigger = e.target.closest(".faq-trigger");
+    if (!trigger) return;
+
+    e.preventDefault();
+    const parent = trigger.closest(".faq-item") || trigger.parentElement;
+    if (!parent) return;
+
+    const content = parent.querySelector(".accordion-content");
+    const icon = trigger.querySelector(".faq-icon");
+
+    if (!content) return;
+
+    const isHidden = content.classList.contains("hidden");
+
+    if (isHidden) {
+      content.classList.remove("hidden");
+      if (icon) icon.textContent = "−";
+      parent.classList.add("border-accent-gold/40", "shadow-sm");
+    } else {
+      content.classList.add("hidden");
+      if (icon) icon.textContent = "+";
+      parent.classList.remove("border-accent-gold/40", "shadow-sm");
+    }
+  });
 }
 
 function initQuickForms() {

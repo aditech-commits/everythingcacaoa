@@ -229,11 +229,16 @@ get_header();
   </section>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const triggers = document.querySelectorAll('.faq-trigger');
-      triggers.forEach(function(trigger) {
-        trigger.addEventListener('click', function() {
+    (function() {
+      function initFaq() {
+        if (window._ecFaqPageBound) return;
+        window._ecFaqPageBound = true;
+        document.addEventListener('click', function(e) {
+          const trigger = e.target.closest('.faq-trigger');
+          if (!trigger) return;
+          e.preventDefault();
           const parent = trigger.closest('.faq-item') || trigger.parentElement;
+          if (!parent) return;
           const content = parent.querySelector('.accordion-content');
           const icon = trigger.querySelector('.faq-icon');
           if (!content) return;
@@ -248,8 +253,13 @@ get_header();
             parent.classList.remove('border-accent-gold/40', 'shadow-sm');
           }
         });
-      });
-    });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFaq);
+      } else {
+        initFaq();
+      }
+    })();
   </script>
 
   <!-- Elementor / WP Content Support Area -->

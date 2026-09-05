@@ -1663,6 +1663,377 @@ function ec_customize_register($wp_customize) {
     // =========================================================================
     // END STOCKISTS PAGE MANAGEMENT PANEL
     // =========================================================================
+
+    // =========================================================================
+    // CONTACT PAGE MANAGEMENT PANEL
+    // =========================================================================
+    $wp_customize->add_panel('theme_contact_page_panel', array(
+        'title'       => __('Contact Page Management', 'everything-cacao'),
+        'description' => __('Manage all hero text, enquiry cards, direct contact details, form labels, operating hours, social links, and FAQ items on the Contact page.', 'everything-cacao'),
+        'priority'    => 29,
+    ));
+
+    // Section 1: Hero Banner Section
+    $wp_customize->add_section('theme_contact_hero_section', array(
+        'title'    => __('Hero Banner Section', 'everything-cacao'),
+        'panel'    => 'theme_contact_page_panel',
+        'priority' => 10,
+    ));
+
+    $contact_hero_controls = array(
+        'ec_contact_hero_tagline' => array(
+            'label'   => __('Tagline / Top Subheading', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'WHOLESALE, CORPORATE GIFTING & CUSTOMER SUPPORT',
+        ),
+        'ec_contact_hero_title' => array(
+            'label'   => __('Main Page Title', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Get in Touch with Everything Cacao',
+        ),
+        'ec_contact_hero_desc' => array(
+            'label'   => __('Subtitle / Description Text', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => "Whether you're a chocolate lover with a question, a retailer interested in stocking our products, or a business looking for bespoke corporate gifting solutions — we'd love to hear from you.",
+        ),
+    );
+
+    foreach ($contact_hero_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_contact_hero_section',
+            'type'    => $data['type'],
+        ));
+    }
+
+    // Section 2: Enquiry Cards (Top Section)
+    $wp_customize->add_section('theme_contact_cards_section', array(
+        'title'    => __('Enquiry Cards (Top Section)', 'everything-cacao'),
+        'panel'    => 'theme_contact_page_panel',
+        'priority' => 20,
+    ));
+
+    $contact_card_controls = array(
+        // Card 1
+        'ec_contact_card1_tag' => array(
+            'label'   => __('Card 1 Tagline / Category', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'RETAIL PARTNERS',
+        ),
+        'ec_contact_card1_title' => array(
+            'label'   => __('Card 1 Title', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Wholesale & Retail Enquiries',
+        ),
+        'ec_contact_card1_desc' => array(
+            'label'   => __('Card 1 Description Text', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Interested in stocking Cherelle or Nahar in your store, supermarket, hotel or cafe? Get in touch with our partnership team for wholesale rates and distributor application.',
+        ),
+        // Card 2
+        'ec_contact_card2_tag' => array(
+            'label'   => __('Card 2 Tagline / Category', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'QUESTIONS & SUPPORT',
+        ),
+        'ec_contact_card2_title' => array(
+            'label'   => __('Card 2 Title', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'General Enquiries',
+        ),
+        'ec_contact_card2_desc' => array(
+            'label'   => __('Card 2 Description Text', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'For general questions about our 100% Ghanaian cacao bars, tasting event trips, ingredients, or order status, send us a email or message us directly on WhatsApp.',
+        ),
+    );
+
+    foreach ($contact_card_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_contact_cards_section',
+            'type'    => $data['type'],
+        ));
+    }
+
+    // Section 3: Get in Touch & Direct Contact Info
+    $wp_customize->add_section('theme_contact_direct_info_section', array(
+        'title'    => __('Get in Touch & Direct Contact Info', 'everything-cacao'),
+        'panel'    => 'theme_contact_page_panel',
+        'priority' => 30,
+    ));
+
+    $contact_direct_controls = array(
+        'ec_contact_phone_label' => array(
+            'label'   => __('Call / WhatsApp Label', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'CALL / WHATSAPP US',
+        ),
+        'ec_contact_phone_val' => array(
+            'label'   => __('Call / WhatsApp Number', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => '+233 240 661 866',
+        ),
+        'ec_contact_email_label' => array(
+            'label'   => __('Email Address Label', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'EMAIL ENQUIRIES',
+        ),
+        'ec_contact_email_val' => array(
+            'label'   => __('Email Address Value', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'info@everythingcacaogh.com',
+        ),
+    );
+
+    foreach ($contact_direct_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_contact_direct_info_section',
+            'type'    => $data['type'],
+        ));
+    }
+
+    // Section 4: Contact Form Placeholders & Button
+    $wp_customize->add_section('theme_contact_form_section', array(
+        'title'    => __('Contact Form Placeholders & Button', 'everything-cacao'),
+        'panel'    => 'theme_contact_page_panel',
+        'priority' => 40,
+    ));
+
+    $contact_form_controls = array(
+        'ec_contact_form_title' => array(
+            'label'   => __('Form Header Tagline', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Get in touch',
+        ),
+        'ec_contact_form_label_name' => array(
+            'label'   => __('Full Name Field Label', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Full Name',
+        ),
+        'ec_contact_form_placeholder_name' => array(
+            'label'   => __('Full Name Field Placeholder', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Kwame Mensah',
+        ),
+        'ec_contact_form_label_email' => array(
+            'label'   => __('Email Field Label', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Email Address',
+        ),
+        'ec_contact_form_placeholder_email' => array(
+            'label'   => __('Email Field Placeholder', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'kwame@domain.com',
+        ),
+        'ec_contact_form_label_phone' => array(
+            'label'   => __('Phone / WhatsApp Field Label', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Phone Number / WhatsApp',
+        ),
+        'ec_contact_form_placeholder_phone' => array(
+            'label'   => __('Phone / WhatsApp Field Placeholder', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => '+233 24 066 1866',
+        ),
+        'ec_contact_form_label_category' => array(
+            'label'   => __('Inquiry Category Field Label', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Inquiry Category',
+        ),
+        'ec_contact_form_label_message' => array(
+            'label'   => __('Message Field Label', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Your Message',
+        ),
+        'ec_contact_form_placeholder_message' => array(
+            'label'   => __('Message Field Placeholder', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Details about your order, quantity, target date, or custom request...',
+        ),
+        'ec_contact_form_btn_label' => array(
+            'label'   => __('Submit Button Label', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'SEND MESSAGE',
+        ),
+    );
+
+    foreach ($contact_form_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_contact_form_section',
+            'type'    => $data['type'],
+        ));
+    }
+
+    // Section 5: Operating Hours & Social Media
+    $wp_customize->add_section('theme_contact_hours_social_section', array(
+        'title'    => __('Operating Hours & Social Media', 'everything-cacao'),
+        'panel'    => 'theme_contact_page_panel',
+        'priority' => 50,
+    ));
+
+    $contact_social_controls = array(
+        'ec_contact_hours_label' => array(
+            'label'   => __('Operating Hours Label', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'OPERATING HOURS',
+        ),
+        'ec_contact_hours_val' => array(
+            'label'   => __('Operating Hours Value', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Monday – Saturday: 9:00 AM – 6:00 PM (GMT)',
+        ),
+        'ec_contact_social_tagline' => array(
+            'label'   => __('Social Section Subheading', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'OFFICIAL SOCIAL MEDIA',
+        ),
+        'ec_contact_social_title' => array(
+            'label'   => __('Social Section Title', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Connect With Us',
+        ),
+        'ec_contact_ig_label' => array(
+            'label'   => __('Instagram Label', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'INSTAGRAM',
+        ),
+        'ec_contact_ig_handle' => array(
+            'label'   => __('Instagram Handle', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => '@everythingcacaogh',
+        ),
+        'ec_contact_fb_label' => array(
+            'label'   => __('Facebook Label', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'FACEBOOK',
+        ),
+        'ec_contact_fb_name' => array(
+            'label'   => __('Facebook Page Name', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Everything Cacao GH',
+        ),
+    );
+
+    foreach ($contact_social_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_contact_hours_social_section',
+            'type'    => $data['type'],
+        ));
+    }
+
+    // Section 6: Frequently Asked Questions (FAQ Section)
+    $wp_customize->add_section('theme_contact_faq_section', array(
+        'title'    => __('Frequently Asked Questions (FAQ)', 'everything-cacao'),
+        'panel'    => 'theme_contact_page_panel',
+        'priority' => 60,
+    ));
+
+    $contact_faq_controls = array(
+        'ec_contact_faq_tagline' => array(
+            'label'   => __('FAQ Subheading', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'COMMON QUESTIONS',
+        ),
+        'ec_contact_faq_title' => array(
+            'label'   => __('FAQ Main Heading', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Frequently Asked Questions',
+        ),
+        'ec_contact_faq_desc' => array(
+            'label'   => __('FAQ Subtitle / Description Text', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Everything you need to know about our artisanal chocolate collections, shipping policies, stockist partnerships, and custom gifting.',
+        ),
+        // FAQ 1
+        'ec_contact_faq1_q' => array(
+            'label'   => __('FAQ 1 — Question', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'How do I place an order for chocolate bars or gift sets?',
+        ),
+        'ec_contact_faq1_a' => array(
+            'label'   => __('FAQ 1 — Answer Text', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'All purchases are processed directly via WhatsApp or our online concierge to ensure personalized service. Click any "Order via WhatsApp" button across our site to launch a pre-filled chat with our sales desk, who will confirm stock, local delivery in Ghana, or express international shipping options.',
+        ),
+        // FAQ 2
+        'ec_contact_faq2_q' => array(
+            'label'   => __('FAQ 2 — Question', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Do you ship internationally outside Ghana?',
+        ),
+        'ec_contact_faq2_a' => array(
+            'label'   => __('FAQ 2 — Answer Text', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Yes! We ship insulated, temperature-controlled micro-batches via express international courier to selected destinations in West Africa, Europe, North America, and the UK. Contact our concierge desk for direct international shipping rates and delivery timelines.',
+        ),
+        // FAQ 3
+        'ec_contact_faq3_q' => array(
+            'label'   => __('FAQ 3 — Question', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'What are the minimum wholesale order quantities for stockists?',
+        ),
+        'ec_contact_faq3_a' => array(
+            'label'   => __('FAQ 3 — Answer Text', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Our wholesale partnership program for hotels, cafes, and boutique outlets begins at 50 units minimum order. We offer tiered wholesale pricing, custom gold-embossed counter displays, and dedicated account management. Submit an inquiry through the form above to receive our wholesale catalog.',
+        ),
+        // FAQ 4
+        'ec_contact_faq4_q' => array(
+            'label'   => __('FAQ 4 — Question', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Can we request custom gold-foil branding for corporate events & weddings?',
+        ),
+        'ec_contact_faq4_a' => array(
+            'label'   => __('FAQ 4 — Answer Text', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Absolutely. We provide custom gold-embossed sleeves, bespoke wooden presentation hampers, and personalized wax seals for luxury corporate gifting and private events. Submit a request via our concierge form or WhatsApp us directly for a 24-hour custom quote.',
+        ),
+    );
+
+    foreach ($contact_faq_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_contact_faq_section',
+            'type'    => $data['type'],
+        ));
+    }
+    // =========================================================================
+    // END CONTACT PAGE MANAGEMENT PANEL
+    // =========================================================================
 }
 add_action('customize_register', 'ec_customize_register');
 

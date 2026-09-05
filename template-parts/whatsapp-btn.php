@@ -4,9 +4,13 @@
  *
  * @package EverythingCacao
  */
-$wa_number = get_option('ec_whatsapp_number', '233240000000');
+$wa_number   = get_option('ec_whatsapp_number', '233240661866');
+$default_msg = function_exists('ec_get_text_option') 
+    ? ec_get_text_option('ec_whatsapp_default_msg', "Hi Everything Cacao GH! I'd like to order artisanal chocolate.") 
+    : get_option('ec_whatsapp_default_msg', "Hi Everything Cacao GH! I'd like to order artisanal chocolate.");
+$encoded_msg = rawurlencode($default_msg);
 ?>
-<a href="https://wa.me/<?php echo esc_attr($wa_number); ?>?text=Hi%20Everything%20Cacao%20GH!%20I'd%20like%20to%20order%20artisanal%20chocolate." 
+<a href="https://wa.me/<?php echo esc_attr($wa_number); ?>?text=<?php echo esc_attr($encoded_msg); ?>" 
    target="_blank" 
    rel="noopener noreferrer"
    class="fixed bottom-6 right-6 z-40 bg-accent-whatsapp text-white p-4 rounded-full shadow-2xl animate-whatsapp flex items-center gap-3 group hover:scale-105 transition-transform" 

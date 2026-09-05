@@ -697,6 +697,9 @@ function ec_customize_register($wp_customize) {
     $wp_customize->add_setting('ec_whatsapp_number', array('default' => '233240661866', 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field'));
     $wp_customize->add_control('ec_whatsapp_number', array('label' => __('WhatsApp Concierge Number', 'everything-cacao'), 'section' => 'ec_brand_settings', 'type' => 'text'));
 
+    $wp_customize->add_setting('ec_whatsapp_default_msg', array('default' => "Hi Everything Cacao GH! I'd like to order artisanal chocolate.", 'type' => 'option', 'sanitize_callback' => 'sanitize_textarea_field'));
+    $wp_customize->add_control('ec_whatsapp_default_msg', array('label' => __('WhatsApp Floating Widget Default Message', 'everything-cacao'), 'description' => __('Pre-filled message when visitors click the floating WhatsApp button.', 'everything-cacao'), 'section' => 'ec_brand_settings', 'type' => 'textarea'));
+
     $wp_customize->add_setting('ec_concierge_email', array('default' => 'info@everythingcacaogh.com', 'type' => 'option', 'sanitize_callback' => 'sanitize_email'));
     $wp_customize->add_control('ec_concierge_email', array('label' => __('Concierge Email Address', 'everything-cacao'), 'section' => 'ec_brand_settings', 'type' => 'email'));
 
@@ -2139,19 +2142,23 @@ function ec_render_admin_settings_page() {
         if (isset($_POST['ec_whatsapp_number'])) {
             update_option('ec_whatsapp_number', sanitize_text_field($_POST['ec_whatsapp_number']));
         }
+        if (isset($_POST['ec_whatsapp_default_msg'])) {
+            update_option('ec_whatsapp_default_msg', sanitize_textarea_field($_POST['ec_whatsapp_default_msg']));
+        }
         if (isset($_POST['ec_concierge_email'])) {
             update_option('ec_concierge_email', sanitize_email($_POST['ec_concierge_email']));
         }
         echo '<div class="notice notice-success is-dismissible"><p><strong>Settings saved successfully!</strong></p></div>';
     }
 
-    $pixel_id = get_option('ec_pixel_id', '');
-    $whatsapp = get_option('ec_whatsapp_number', '233240661866');
-    $email    = get_option('ec_concierge_email', 'info@everythingcacaogh.com');
+    $pixel_id   = get_option('ec_pixel_id', '');
+    $whatsapp   = get_option('ec_whatsapp_number', '233240661866');
+    $wa_def_msg = get_option('ec_whatsapp_default_msg', "Hi Everything Cacao GH! I'd like to order artisanal chocolate.");
+    $email      = get_option('ec_concierge_email', 'info@everythingcacaogh.com');
     ?>
     <div class="wrap">
         <h1 style="font-family: Georgia, serif; color: #2C1A11;">🍫 Everything Cacao GH — Theme Settings</h1>
-        <p>Manage your Meta (Facebook) Pixel tracking, WhatsApp Concierge phone number, and Concierge email address below.</p>
+        <p>Manage your Meta (Facebook) Pixel tracking, WhatsApp Concierge phone number, floating widget default message, and Concierge email address below.</p>
         <hr style="margin: 20px 0;" />
 
         <form method="post" action="">
@@ -2169,6 +2176,13 @@ function ec_render_admin_settings_page() {
                     <td>
                         <input name="ec_whatsapp_number" type="text" id="ec_whatsapp_number" value="<?php echo esc_attr($whatsapp); ?>" class="regular-text" placeholder="233240000000" />
                         <p class="description">Enter your Ghana/International phone number without <code>+</code> or spaces (e.g., <code>233240000000</code>). All "Order via WhatsApp" buttons across the site will use this number.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="ec_whatsapp_default_msg">WhatsApp Floating Widget Default Message</label></th>
+                    <td>
+                        <textarea name="ec_whatsapp_default_msg" id="ec_whatsapp_default_msg" rows="3" class="large-text"><?php echo esc_textarea($wa_def_msg); ?></textarea>
+                        <p class="description">Pre-filled default message when visitors click the floating WhatsApp button.</p>
                     </td>
                 </tr>
                 <tr>

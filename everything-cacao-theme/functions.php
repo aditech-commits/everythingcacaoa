@@ -1013,6 +1013,158 @@ function ec_customize_register($wp_customize) {
     // =========================================================================
     // END ABOUT US MANAGEMENT PANEL
     // =========================================================================
+
+    // =========================================================================
+    // "CACAO JOURNAL MANAGEMENT" PANEL  (ID: theme_cacao_journal_panel)
+    // Controls all static header copy, labels, and section headings on the
+    // Blog / Cacao Journal archive page (home.php).
+    // Post content (titles, excerpts, thumbnails) stays 100% dynamic via
+    // WP_Query so posts are managed in Posts → All Posts in WP Dashboard.
+    // =========================================================================
+    $wp_customize->add_panel('theme_cacao_journal_panel', array(
+        'priority'    => 24,
+        'title'       => __('Cacao Journal Management', 'everything-cacao'),
+        'description' => __('Manage the header copy, section labels, button text, and featured post selection on the Cacao Journal / Blog archive page.', 'everything-cacao'),
+    ));
+
+    // -------------------------------------------------------------------------
+    // JOURNAL SECTION 1: HERO HEADER
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_journal_hero_section', array(
+        'title'    => __('1. Hero Header', 'everything-cacao'),
+        'panel'    => 'theme_cacao_journal_panel',
+        'priority' => 10,
+    ));
+
+    $journal_hero_controls = array(
+        'ec_journal_hero_tagline'  => array(
+            'label'   => __('Top Subheading / Tagline', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'DISPATCHES FROM THE CACAO HEARTLAND',
+        ),
+        'ec_journal_hero_title'    => array(
+            'label'   => __('Main Page Title', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'The Cacao Journal',
+        ),
+        'ec_journal_hero_subtitle' => array(
+            'label'   => __('Subtitle / Description Text', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Stories, recipes, pairing tips, and deep dives into the world of modern artisan chocolate.',
+        ),
+    );
+
+    foreach ($journal_hero_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_journal_hero_section',
+            'type'    => $data['type'],
+        ));
+    }
+
+    // -------------------------------------------------------------------------
+    // JOURNAL SECTION 2: FEATURED DISPATCH SPOTLIGHT
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_journal_featured_section', array(
+        'title'       => __('2. Featured Dispatch Spotlight', 'everything-cacao'),
+        'panel'       => 'theme_cacao_journal_panel',
+        'priority'    => 20,
+        'description' => __('Control the featured post shown at the top of the journal. Leave "Featured Post ID" blank to automatically use the most recent published post.', 'everything-cacao'),
+    ));
+
+    $journal_featured_controls = array(
+        'ec_journal_featured_label'    => array(
+            'label'   => __('Tagline / Label (above featured post)', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'FEATURED DISPATCH',
+        ),
+        'ec_journal_featured_post_id'  => array(
+            'label'   => __('Featured Post ID (leave blank = latest post)', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => '',
+        ),
+        'ec_journal_read_btn_text'     => array(
+            'label'   => __('Read Article Button Text', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'READ FULL ARTICLE →',
+        ),
+    );
+
+    foreach ($journal_featured_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_journal_featured_section',
+            'type'    => $data['type'],
+        ));
+    }
+
+    // -------------------------------------------------------------------------
+    // JOURNAL SECTION 3: RECENT ENTRIES GRID
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_journal_entries_section', array(
+        'title'    => __('3. Recent Entries Grid', 'everything-cacao'),
+        'panel'    => 'theme_cacao_journal_panel',
+        'priority' => 30,
+    ));
+
+    $journal_entries_controls = array(
+        'ec_journal_entries_tagline' => array(
+            'label'   => __('Section Tagline / Eyebrow', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'FIELD NOTES & STORIES',
+        ),
+        'ec_journal_entries_heading' => array(
+            'label'   => __('Section Main Heading', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'Recent Journal Entries',
+        ),
+        'ec_journal_read_story_text' => array(
+            'label'   => __('Read Story Link Text', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'READ STORY →',
+        ),
+        'ec_journal_posts_per_page'  => array(
+            'label'   => __('Posts to Show Per Page (number)', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => '12',
+        ),
+        'ec_journal_empty_title'     => array(
+            'label'   => __('Empty-State Heading (no posts published)', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'No Journal Dispatches Yet',
+        ),
+        'ec_journal_empty_body'      => array(
+            'label'   => __('Empty-State Description Text', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'We are currently writing new stories, tasting guides, and recipes. Check back soon!',
+        ),
+    );
+
+    foreach ($journal_entries_controls as $id => $data) {
+        $wp_customize->add_setting($id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_journal_entries_section',
+            'type'    => $data['type'],
+        ));
+    }
+    // =========================================================================
+    // END CACAO JOURNAL MANAGEMENT PANEL
+    // =========================================================================
 }
 add_action('customize_register', 'ec_customize_register');
 

@@ -4,11 +4,10 @@
   <meta charset="<?php bloginfo('charset'); ?>"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- Google Fonts & Butler Font -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap"/>
-  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/butler"/>
 
   <!-- Tailwind CSS Engine & Brand Configuration -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -31,8 +30,8 @@
           fontFamily: {
             'serif-luxury': ['Playfair Display', 'serif'],
             'sans': ['Hanken Grotesk', 'sans-serif'],
-            'brand-logo': ['Butler', 'Fraunces', 'Playfair Display', 'serif'],
-            'butler': ['Butler', 'serif'],
+            'brand-logo': ['Playfair Display', 'serif'],
+            'butler': ['Playfair Display', 'serif'],
           }
         }
       }
@@ -42,16 +41,14 @@
   <!-- Luxury Nav Menu Hover & Active Indicator Styles -->
   <style>
     .font-brand-logo,
-    header,
-    header *,
-    footer,
-    footer *,
-    #mobile-drawer,
-    #mobile-drawer * {
-      font-family: 'Butler', 'Playfair Display', serif !important;
+    .site-title,
+    .logo-text,
+    .footer-logo-text,
+    .brand-heading {
+      font-family: 'Playfair Display', serif !important;
     }
     .font-brand-logo {
-      letter-spacing: 0.04em;
+      letter-spacing: 0.08em;
     }
     .nav-link {
       position: relative;
@@ -177,7 +174,7 @@
           <?php else : ?>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand/logo.png" alt="<?php bloginfo('name'); ?>" class="h-9 sm:h-10 md:h-12 w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105" />
           <?php endif; ?>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand/logo-text-butler.png" alt="EVERYTHING CACAO" class="h-6 sm:h-7 md:h-8 lg:h-9 w-auto shrink-0 object-contain logo-text site-title font-brand-logo transition-transform duration-300 group-hover:scale-105" />
+          <span class="text-lg sm:text-xl md:text-2xl lg:text-2xl font-bold tracking-wide text-cacao-dark logo-text site-title font-brand-logo transition-transform duration-300 group-hover:scale-105" style="font-family: 'Playfair Display', serif; letter-spacing: 0.08em;">EVERYTHING CACAO</span>
         </a>
       </div>
 

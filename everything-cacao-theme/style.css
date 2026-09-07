@@ -37,27 +37,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Header & Footer Butler Brand Font Rules */
+/* Header & Footer Brand Font Rules */
 header .site-title,
 header .logo-text,
 header .font-brand-logo,
 footer .footer-logo-text,
 footer .brand-heading,
-footer .font-brand-logo {
-  font-family: 'Butler', 'Cinzel', serif !important;
-  font-weight: 300;
-  letter-spacing: 0.04em;
+footer .font-brand-logo,
+.font-brand-logo {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.font-brand-logo,
-header,
-header *,
-footer,
-footer *,
-.glass-header,
-.glass-header *,
-#mobile-drawer,
-#mobile-drawer * {
-  font-family: 'Butler', 'Playfair Display', serif !important;
-}

@@ -171,13 +171,13 @@
     <nav class="flex items-center justify-between max-w-7xl mx-auto px-6 md:px-12 py-5">
       <!-- Brand Logo & Name -->
       <div class="flex items-center shrink-0">
-        <a href="<?php echo $link_home; ?>" class="flex items-center gap-3 group">
+        <a href="<?php echo $link_home; ?>" class="flex items-center gap-2 sm:gap-3 group shrink-0">
           <?php if (has_custom_logo()) : ?>
             <?php the_custom_logo(); ?>
           <?php else : ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand/logo.png" alt="<?php bloginfo('name'); ?>" class="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand/logo.png" alt="<?php bloginfo('name'); ?>" class="h-9 sm:h-10 md:h-12 w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105" />
           <?php endif; ?>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand/logo-text-butler.png" alt="EVERYTHING CACAO" class="h-6 md:h-8 w-auto object-contain logo-text site-title font-brand-logo transition-transform duration-300 group-hover:scale-105" />
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand/logo-text-butler.png" alt="EVERYTHING CACAO" class="h-5 sm:h-6 md:h-7 lg:h-8 w-auto shrink-0 object-contain logo-text site-title font-brand-logo transition-transform duration-300 group-hover:scale-105" />
         </a>
       </div>
 

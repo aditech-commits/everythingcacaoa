@@ -19,9 +19,9 @@ $link_contact    = ec_get_smart_page_link(array('contact', 'concierge'), '/conta
   <footer class="bg-cacao-dark text-canvas border-t border-canvas/10 mt-auto py-16 px-6 md:px-12">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
       <div class="space-y-4">
-        <a href="<?php echo $link_home; ?>" class="inline-block group">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand/logo.png" alt="<?php bloginfo('name'); ?>" class="h-20 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand/logo-text-butler-gold.png" alt="EVERYTHING CACAO" class="h-6 md:h-8 w-auto object-contain footer-logo-text brand-heading font-brand-logo mt-2 transition-transform duration-300 group-hover:scale-105" />
+        <a href="<?php echo $link_home; ?>" class="inline-block group shrink-0">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand/logo.png" alt="<?php bloginfo('name'); ?>" class="h-16 md:h-20 w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105" />
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand/logo-text-butler-gold.png" alt="EVERYTHING CACAO" class="h-5 sm:h-6 md:h-7 lg:h-8 w-auto shrink-0 object-contain footer-logo-text brand-heading font-brand-logo mt-2.5 transition-transform duration-300 group-hover:scale-105" />
         </a>
         <p class="text-xs text-canvas/50">© <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All Rights Reserved.</p>
       </div>

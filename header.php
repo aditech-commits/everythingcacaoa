@@ -4,10 +4,11 @@
   <meta charset="<?php bloginfo('charset'); ?>"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts & Butler Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/butler"/>
 
   <!-- Tailwind CSS Engine & Brand Configuration -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -30,7 +31,8 @@
           fontFamily: {
             'serif-luxury': ['Playfair Display', 'serif'],
             'sans': ['Hanken Grotesk', 'sans-serif'],
-            'brand-logo': ['Fraunces', 'Playfair Display', 'serif'],
+            'brand-logo': ['Butler', 'Fraunces', 'Playfair Display', 'serif'],
+            'butler': ['Butler', 'serif'],
           }
         }
       }
@@ -39,8 +41,16 @@
 
   <!-- Luxury Nav Menu Hover & Active Indicator Styles -->
   <style>
+    .font-brand-logo,
+    header,
+    header *,
+    footer,
+    footer *,
+    #mobile-drawer,
+    #mobile-drawer * {
+      font-family: 'Butler', 'Playfair Display', serif !important;
+    }
     .font-brand-logo {
-      font-family: 'Fraunces', 'Playfair Display', serif !important;
       letter-spacing: 0.04em;
     }
     .nav-link {

@@ -45,9 +45,8 @@ footer .footer-logo-text,
 footer .brand-heading,
 footer .font-brand-logo,
 .font-brand-logo {
-  font-family: 'Playfair Display', serif !important;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-family: 'Leckerli One', cursive !important;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 

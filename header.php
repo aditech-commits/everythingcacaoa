@@ -175,8 +175,10 @@
           if ( empty($ec_logo_url) ) {
             $ec_logo_url = 'https://everythingcacaogh.com/wp-content/uploads/2026/09/everything_cacao_header_logo.png';
           }
+          $ec_logo_h = get_option('ec_header_logo_height', '50');
+          $ec_logo_h_val = !empty($ec_logo_h) ? intval($ec_logo_h) : 50;
           ?>
-          <img src="<?php echo esc_url($ec_logo_url); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="h-9 sm:h-10 md:h-12 w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105" />
+          <img src="<?php echo esc_url($ec_logo_url); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" style="max-height: <?php echo $ec_logo_h_val; ?>px; height: auto;" class="w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105" />
         </a>
       </div>
 

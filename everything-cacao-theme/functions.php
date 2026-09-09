@@ -712,6 +712,24 @@ function ec_customize_register($wp_customize) {
         'settings'    => 'ec_header_logo_url',
     )));
 
+    $wp_customize->add_setting('ec_header_logo_height', array(
+        'default'           => '50',
+        'type'              => 'option',
+        'sanitize_callback' => 'absint',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('ec_header_logo_height', array(
+        'label'       => __('Header Logo Height (px)', 'everything-cacao'),
+        'description' => __('Adjust the maximum height of the header logo in pixels (e.g. 50, 65, 80, 100). Default: 50.', 'everything-cacao'),
+        'section'     => 'ec_brand_settings',
+        'type'        => 'number',
+        'input_attrs' => array(
+            'min'  => 25,
+            'max'  => 250,
+            'step' => 2,
+        ),
+    ));
+
     $wp_customize->add_setting('ec_whatsapp_default_msg', array('default' => "Hi Everything Cacao GH! I'd like to order artisanal chocolate.", 'type' => 'option', 'sanitize_callback' => 'sanitize_textarea_field'));
     $wp_customize->add_control('ec_whatsapp_default_msg', array('label' => __('WhatsApp Floating Widget Default Message', 'everything-cacao'), 'description' => __('Pre-filled message when visitors click the floating WhatsApp button.', 'everything-cacao'), 'section' => 'ec_brand_settings', 'type' => 'textarea'));
 

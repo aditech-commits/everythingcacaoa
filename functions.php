@@ -737,6 +737,90 @@ function ec_customize_register($wp_customize) {
     $wp_customize->add_control('ec_concierge_email', array('label' => __('Concierge Email Address', 'everything-cacao'), 'section' => 'ec_brand_settings', 'type' => 'email'));
 
     // =========================================================================
+    // DEDICATED FOOTER SETTINGS
+    // =========================================================================
+    $wp_customize->add_section('ec_footer_settings', array(
+        'title'       => __('Footer Settings', 'everything-cacao'),
+        'priority'    => 31,
+        'description' => __('Customize the footer logo image, logo height, brand title text, copyright notice, and address.', 'everything-cacao'),
+    ));
+
+    // Footer Logo URL
+    $wp_customize->add_setting('ec_footer_logo_url', array(
+        'default'           => '',
+        'type'              => 'option',
+        'sanitize_callback' => 'esc_url_raw',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'ec_footer_logo_url', array(
+        'label'       => __('Footer Logo Image', 'everything-cacao'),
+        'description' => __('Upload or select a custom logo for the footer. Leave empty to use default logo.', 'everything-cacao'),
+        'section'     => 'ec_footer_settings',
+        'settings'    => 'ec_footer_logo_url',
+    )));
+
+    // Footer Logo Height
+    $wp_customize->add_setting('ec_footer_logo_height', array(
+        'default'           => '75',
+        'type'              => 'option',
+        'sanitize_callback' => 'absint',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('ec_footer_logo_height', array(
+        'label'       => __('Footer Logo Height (px)', 'everything-cacao'),
+        'description' => __('Adjust the maximum height of the footer logo image in pixels. Default: 75.', 'everything-cacao'),
+        'section'     => 'ec_footer_settings',
+        'type'        => 'number',
+        'input_attrs' => array(
+            'min'  => 30,
+            'max'  => 300,
+            'step' => 2,
+        ),
+    ));
+
+    // Footer Brand Title Text
+    $wp_customize->add_setting('ec_footer_logo_text', array(
+        'default'           => 'EVERYTHING CACAO',
+        'type'              => 'option',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('ec_footer_logo_text', array(
+        'label'       => __('Footer Brand Text', 'everything-cacao'),
+        'description' => __('Text displayed underneath the footer logo image (e.g. EVERYTHING CACAO).', 'everything-cacao'),
+        'section'     => 'ec_footer_settings',
+        'type'        => 'text',
+    ));
+
+    // Footer Copyright Text
+    $wp_customize->add_setting('ec_footer_copyright_text', array(
+        'default'           => '© {year} Everything Cacao. All Rights Reserved.',
+        'type'              => 'option',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('ec_footer_copyright_text', array(
+        'label'       => __('Footer Copyright Line', 'everything-cacao'),
+        'description' => __('Copyright notice line at the bottom. Use {year} for dynamic current year.', 'everything-cacao'),
+        'section'     => 'ec_footer_settings',
+        'type'        => 'text',
+    ));
+
+    // Footer Address
+    $wp_customize->add_setting('ec_footer_address', array(
+        'default'           => 'Accra, Ghana',
+        'type'              => 'option',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('ec_footer_address', array(
+        'label'       => __('Showroom / Contact Address', 'everything-cacao'),
+        'description' => __('Location displayed under Contact & Showroom.', 'everything-cacao'),
+        'section'     => 'ec_footer_settings',
+        'type'        => 'text',
+    ));
+
+    // =========================================================================
     // OTHER PAGES CONTENT SETTINGS
     // =========================================================================
     $wp_customize->add_section('ec_craft_content', array(

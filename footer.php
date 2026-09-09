@@ -14,16 +14,34 @@ $link_gallery    = ec_get_smart_page_link(array('our-story', 'story', 'our-galle
 $link_journal    = ec_get_smart_page_link(array('cacao-journal', 'journal'), '/cacao-journal');
 $link_stockist   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock-lists'), '/stockist');
 $link_contact    = ec_get_smart_page_link(array('contact', 'concierge'), '/contact');
+
+// Customizer Footer Options
+$ec_footer_logo_url = get_option('ec_footer_logo_url', '');
+if ( empty( $ec_footer_logo_url ) ) {
+    $ec_footer_logo_url = get_template_directory_uri() . '/assets/images/brand/logo.png';
+}
+
+$ec_footer_logo_h     = get_option('ec_footer_logo_height', '75');
+$ec_footer_logo_h_val = !empty($ec_footer_logo_h) ? intval($ec_footer_logo_h) : 75;
+
+$ec_footer_logo_text  = get_option('ec_footer_logo_text', 'EVERYTHING CACAO');
+
+$ec_footer_copyright  = get_option('ec_footer_copyright_text', '© {year} Everything Cacao. All Rights Reserved.');
+$ec_footer_copyright  = str_replace('{year}', date('Y'), $ec_footer_copyright);
+
+$ec_footer_address    = get_option('ec_footer_address', 'Accra, Ghana');
 ?>
   <!-- Footer Component -->
   <footer class="bg-cacao-dark text-canvas border-t border-canvas/10 mt-auto py-16 px-6 md:px-12">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
       <div class="space-y-4">
         <a href="<?php echo $link_home; ?>" class="inline-block group shrink-0">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand/logo.png" alt="<?php bloginfo('name'); ?>" class="h-16 md:h-20 w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105" />
-          <span class="text-lg sm:text-xl md:text-2xl lg:text-2xl tracking-wider text-accent-gold footer-logo-text brand-heading font-brand-logo mt-2.5 block transition-transform duration-300 group-hover:scale-105" style="font-family: 'Leckerli One', cursive; letter-spacing: 0.04em;">EVERYTHING CACAO</span>
+          <img src="<?php echo esc_url($ec_footer_logo_url); ?>" alt="<?php bloginfo('name'); ?>" style="max-height: <?php echo $ec_footer_logo_h_val; ?>px; height: auto;" class="w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105" />
+          <?php if (!empty($ec_footer_logo_text)) : ?>
+            <span class="text-lg sm:text-xl md:text-2xl lg:text-2xl tracking-wider text-accent-gold footer-logo-text brand-heading font-brand-logo mt-2.5 block transition-transform duration-300 group-hover:scale-105" style="font-family: 'Leckerli One', cursive; letter-spacing: 0.04em;"><?php echo esc_html($ec_footer_logo_text); ?></span>
+          <?php endif; ?>
         </a>
-        <p class="text-xs text-canvas/50">© <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All Rights Reserved.</p>
+        <p class="text-xs text-canvas/50"><?php echo esc_html($ec_footer_copyright); ?></p>
       </div>
 
       <div class="space-y-3 text-xs uppercase tracking-widest font-semibold">
@@ -58,7 +76,7 @@ $link_contact    = ec_get_smart_page_link(array('contact', 'concierge'), '/conta
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
           </svg>
-          <span>Accra, Ghana</span>
+          <span><?php echo esc_html($ec_footer_address); ?></span>
         </p>
         <p class="text-canvas/80 flex items-center gap-2.5">
           <svg class="w-4 h-4 text-accent-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

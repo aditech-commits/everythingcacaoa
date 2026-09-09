@@ -699,6 +699,9 @@ function ec_customize_register($wp_customize) {
     $wp_customize->add_setting('ec_whatsapp_number', array('default' => '233240661866', 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field'));
     $wp_customize->add_control('ec_whatsapp_number', array('label' => __('WhatsApp Concierge Number', 'everything-cacao'), 'section' => 'ec_brand_settings', 'type' => 'text'));
 
+    $wp_customize->add_setting('ec_header_logo_url', array('default' => '', 'type' => 'option', 'sanitize_callback' => 'esc_url_raw'));
+    $wp_customize->add_control('ec_header_logo_url', array('label' => __('Header Logo Image URL', 'everything-cacao'), 'description' => __('Paste the full URL of the logo image from the WordPress Media Library. Leave blank to use the theme default.', 'everything-cacao'), 'section' => 'ec_brand_settings', 'type' => 'url'));
+
     $wp_customize->add_setting('ec_whatsapp_default_msg', array('default' => "Hi Everything Cacao GH! I'd like to order artisanal chocolate.", 'type' => 'option', 'sanitize_callback' => 'sanitize_textarea_field'));
     $wp_customize->add_control('ec_whatsapp_default_msg', array('label' => __('WhatsApp Floating Widget Default Message', 'everything-cacao'), 'description' => __('Pre-filled message when visitors click the floating WhatsApp button.', 'everything-cacao'), 'section' => 'ec_brand_settings', 'type' => 'textarea'));
 
@@ -2150,13 +2153,17 @@ function ec_render_admin_settings_page() {
         if (isset($_POST['ec_concierge_email'])) {
             update_option('ec_concierge_email', sanitize_email($_POST['ec_concierge_email']));
         }
+        if (isset($_POST['ec_header_logo_url'])) {
+            update_option('ec_header_logo_url', esc_url_raw($_POST['ec_header_logo_url']));
+        }
         echo '<div class="notice notice-success is-dismissible"><p><strong>Settings saved successfully!</strong></p></div>';
     }
 
-    $pixel_id   = get_option('ec_pixel_id', '');
-    $whatsapp   = get_option('ec_whatsapp_number', '233240661866');
-    $wa_def_msg = get_option('ec_whatsapp_default_msg', "Hi Everything Cacao GH! I'd like to order artisanal chocolate.");
-    $email      = get_option('ec_concierge_email', 'info@everythingcacaogh.com');
+    $pixel_id    = get_option('ec_pixel_id', '');
+    $whatsapp    = get_option('ec_whatsapp_number', '233240661866');
+    $wa_def_msg  = get_option('ec_whatsapp_default_msg', "Hi Everything Cacao GH! I'd like to order artisanal chocolate.");
+    $email       = get_option('ec_concierge_email', 'info@everythingcacaogh.com');
+    $logo_url    = get_option('ec_header_logo_url', '');
     ?>
     <div class="wrap">
         <h1 style="font-family: Georgia, serif; color: #2C1A11;">🍫 Everything Cacao GH — Theme Settings</h1>
@@ -2192,6 +2199,16 @@ function ec_render_admin_settings_page() {
                     <td>
                         <input name="ec_concierge_email" type="email" id="ec_concierge_email" value="<?php echo esc_attr($email); ?>" class="regular-text" placeholder="info@everythingcacaogh.com" />
                         <p class="description">Website contact form submissions will route directly to this email address.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="ec_header_logo_url">Header Logo Image URL</label></th>
+                    <td>
+                        <input name="ec_header_logo_url" type="url" id="ec_header_logo_url" value="<?php echo esc_attr($logo_url); ?>" class="large-text" placeholder="https://yoursite.com/wp-content/uploads/..." />
+                        <p class="description">Paste the full URL of your logo from the <a href="<?php echo admin_url('upload.php'); ?>" target="_blank">WordPress Media Library</a>. Go to <strong>Media &rarr; Library</strong>, click your logo image, and copy the <em>File URL</em>. Leave blank to use the theme file fallback.</p>
+                        <?php if (!empty($logo_url)) : ?>
+                            <p><img src="<?php echo esc_url($logo_url); ?>" alt="Current header logo preview" style="max-height:50px; margin-top:8px; border:1px solid #ddd; padding:4px; background:#FBF8F3;" /></p>
+                        <?php endif; ?>
                     </td>
                 </tr>
             </table>

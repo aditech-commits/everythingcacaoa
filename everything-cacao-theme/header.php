@@ -169,11 +169,14 @@
       <!-- Brand Logo & Name -->
       <div class="flex items-center shrink-0">
         <a href="<?php echo $link_home; ?>" class="flex items-center group shrink-0">
-          <?php if (has_custom_logo()) : ?>
-            <?php the_custom_logo(); ?>
-          <?php else : ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand/everything_cacao_header_logo_transparent.png" alt="<?php bloginfo('name'); ?>" class="h-9 sm:h-10 md:h-12 w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105" />
-          <?php endif; ?>
+          <?php
+          // Use media-library URL if set via WP options, else fall back to theme file path
+          $ec_logo_url = get_option('ec_header_logo_url', '');
+          if ( empty($ec_logo_url) ) {
+            $ec_logo_url = get_template_directory_uri() . '/assets/images/brand/everything_cacao_header_logo_transparent.png';
+          }
+          ?>
+          <img src="<?php echo esc_url($ec_logo_url); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="h-9 sm:h-10 md:h-12 w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105" />
         </a>
       </div>
 

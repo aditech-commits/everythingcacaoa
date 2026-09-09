@@ -699,6 +699,9 @@ function ec_customize_register($wp_customize) {
     $wp_customize->add_setting('ec_whatsapp_number', array('default' => '233240661866', 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field'));
     $wp_customize->add_control('ec_whatsapp_number', array('label' => __('WhatsApp Concierge Number', 'everything-cacao'), 'section' => 'ec_brand_settings', 'type' => 'text'));
 
+    $wp_customize->add_setting('ec_header_logo_url', array('default' => '', 'type' => 'option', 'sanitize_callback' => 'esc_url_raw'));
+    $wp_customize->add_control('ec_header_logo_url', array('label' => __('Header Logo Image URL', 'everything-cacao'), 'description' => __('Paste the full URL of the logo image from the WordPress Media Library. Leave blank to use the theme default.', 'everything-cacao'), 'section' => 'ec_brand_settings', 'type' => 'url'));
+
     $wp_customize->add_setting('ec_whatsapp_default_msg', array('default' => "Hi Everything Cacao GH! I'd like to order artisanal chocolate.", 'type' => 'option', 'sanitize_callback' => 'sanitize_textarea_field'));
     $wp_customize->add_control('ec_whatsapp_default_msg', array('label' => __('WhatsApp Floating Widget Default Message', 'everything-cacao'), 'description' => __('Pre-filled message when visitors click the floating WhatsApp button.', 'everything-cacao'), 'section' => 'ec_brand_settings', 'type' => 'textarea'));
 

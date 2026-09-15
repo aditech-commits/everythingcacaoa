@@ -6,7 +6,7 @@
  * Automatically loaded for page slug 'stockist' or 'stockists'
  * (URL: https://everythingcacaogh.com/stockist/)
  *
- * Exclusively features official retail partners:
+ * Exclusively features official retail partners & locations:
  * - MELCOM - ACCRA
  * - MELCOM - OUTSIDE ACCRA
  * - SHOPRITE
@@ -23,6 +23,12 @@
  * - EAST CANTONMENTS
  * - PANACEA
  * - PALACE PHARMACY
+ * - KUMASI
+ * - ANYINAM
+ * - TEMA
+ * - KOFORIDUA
+ * - ASAMANKESE
+ * - TAKORADI
  *
  * @package EverythingCacao
  */
@@ -31,7 +37,7 @@ get_header();
 
 $link_contact = ec_get_smart_page_link(array('contact', 'concierge'), '/contact');
 
-// Data arrays for retail partner outlets exactly as provided in Excel sheets
+// Data arrays for retail partner outlets exactly as provided in Excel & location lists
 $melcom_accra = array(
     'Accra Mall', 'Spintex Mall', 'Kaneshie', 'Achimota Mall', 'Achimota', 
     'Kass', 'Baatsona Mini', 'Madina', 'Nanakrom', 'Frafraha', 
@@ -104,6 +110,33 @@ $panacea = array(
 $palace_pharmacy = array(
     'Labone', 'Cantonments'
 );
+
+$kumasi = array(
+    'China Mall', 'FAD Shoprite', 'Day to Day Supermarket', 'ABC Mart', 
+    'A-Life', 'Opoku Trading', 'Continental Supermarket', 'Nadville Supermarket', 
+    'MTC Depot', 'Euroesse Supermarket'
+);
+
+$anyinam = array(
+    'Paradise Rest stop'
+);
+
+$tema = array(
+    'China Mall - Ashaiman', 'Evergreen Supermarket'
+);
+
+$koforidua = array(
+    'DNKA Supermarket'
+);
+
+$asamankese = array(
+    '3rd Force Supermarket'
+);
+
+$takoradi = array(
+    'Arisel', 'Agwils Supermarket', 'All Needs', 'Anaji Choice', 
+    'Garden Mart', 'Ko Ma Oye'
+);
 ?>
 
   <!-- Stockist Hero Banner -->
@@ -138,7 +171,7 @@ $palace_pharmacy = array(
       <!-- Partner Quick Filter Pills -->
       <div class="flex items-center gap-1.5 flex-wrap justify-center w-full md:w-auto" id="stockist-filter-pills">
         <button data-filter="all" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-cacao-dark text-canvas border border-cacao-dark">
-          All Outlets (92)
+          All Outlets (113)
         </button>
         <button data-filter="melcom-accra" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-canvas text-cacao-dark/70 hover:text-cacao-dark border border-cacao-dark/15 hover:border-cacao-dark/40">
           MELCOM - ACCRA
@@ -187,6 +220,24 @@ $palace_pharmacy = array(
         </button>
         <button data-filter="palace-pharmacy" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-canvas text-cacao-dark/70 hover:text-cacao-dark border border-cacao-dark/15 hover:border-cacao-dark/40">
           PALACE PHARMACY
+        </button>
+        <button data-filter="kumasi" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-canvas text-cacao-dark/70 hover:text-cacao-dark border border-cacao-dark/15 hover:border-cacao-dark/40">
+          Kumasi
+        </button>
+        <button data-filter="anyinam" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-canvas text-cacao-dark/70 hover:text-cacao-dark border border-cacao-dark/15 hover:border-cacao-dark/40">
+          Anyinam
+        </button>
+        <button data-filter="tema" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-canvas text-cacao-dark/70 hover:text-cacao-dark border border-cacao-dark/15 hover:border-cacao-dark/40">
+          Tema
+        </button>
+        <button data-filter="koforidua" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-canvas text-cacao-dark/70 hover:text-cacao-dark border border-cacao-dark/15 hover:border-cacao-dark/40">
+          Koforidua
+        </button>
+        <button data-filter="asamankese" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-canvas text-cacao-dark/70 hover:text-cacao-dark border border-cacao-dark/15 hover:border-cacao-dark/40">
+          Asamankese
+        </button>
+        <button data-filter="takoradi" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-canvas text-cacao-dark/70 hover:text-cacao-dark border border-cacao-dark/15 hover:border-cacao-dark/40">
+          Takoradi
         </button>
       </div>
 
@@ -604,6 +655,162 @@ $palace_pharmacy = array(
           <div class="stockist-card p-5 rounded-2xl bg-card-bg border border-cacao-dark/10 space-y-3 shadow-sm hover:shadow-md hover:border-accent-terracotta/50 transition-all duration-300 group relative" data-partner="palace-pharmacy" data-search="<?php echo esc_attr(strtolower($branch . ' palace pharmacy')); ?>">
             <div class="flex items-center justify-between">
               <span class="text-[11px] font-bold text-accent-terracotta uppercase tracking-wider block">PALACE PHARMACY</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            </div>
+            <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark group-hover:text-accent-terracotta transition-colors pt-1"><?php echo esc_html($branch); ?></h4>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+
+    <!-- 17. KUMASI -->
+    <div class="space-y-6 stockist-partner-group pt-8 border-t border-cacao-dark/10" id="group-kumasi">
+      <div class="flex items-center justify-between border-b border-cacao-dark/15 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="w-3.5 h-3.5 bg-accent-gold rounded-full shrink-0 shadow-sm"></span>
+          <h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark uppercase tracking-wider">Kumasi</h2>
+        </div>
+        <span class="text-xs font-bold uppercase tracking-widest text-accent-gold bg-accent-gold/10 px-3 py-1.5 rounded-full border border-accent-gold/20">
+          Kumasi
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <?php foreach ($kumasi as $branch) : ?>
+          <div class="stockist-card p-5 rounded-2xl bg-card-bg border border-cacao-dark/10 space-y-3 shadow-sm hover:shadow-md hover:border-accent-gold/50 transition-all duration-300 group relative" data-partner="kumasi" data-search="<?php echo esc_attr(strtolower($branch . ' kumasi')); ?>">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-accent-gold uppercase tracking-wider block">Kumasi</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            </div>
+            <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark group-hover:text-accent-gold transition-colors pt-1"><?php echo esc_html($branch); ?></h4>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+
+    <!-- 18. ANYINAM -->
+    <div class="space-y-6 stockist-partner-group pt-8 border-t border-cacao-dark/10" id="group-anyinam">
+      <div class="flex items-center justify-between border-b border-cacao-dark/15 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="w-3.5 h-3.5 bg-accent-terracotta rounded-full shrink-0 shadow-sm"></span>
+          <h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark uppercase tracking-wider">Anyinam</h2>
+        </div>
+        <span class="text-xs font-bold uppercase tracking-widest text-accent-terracotta bg-accent-terracotta/10 px-3 py-1.5 rounded-full border border-accent-terracotta/20">
+          Anyinam
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <?php foreach ($anyinam as $branch) : ?>
+          <div class="stockist-card p-5 rounded-2xl bg-card-bg border border-cacao-dark/10 space-y-3 shadow-sm hover:shadow-md hover:border-accent-terracotta/50 transition-all duration-300 group relative" data-partner="anyinam" data-search="<?php echo esc_attr(strtolower($branch . ' anyinam')); ?>">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-accent-terracotta uppercase tracking-wider block">Anyinam</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            </div>
+            <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark group-hover:text-accent-terracotta transition-colors pt-1"><?php echo esc_html($branch); ?></h4>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+
+    <!-- 19. TEMA -->
+    <div class="space-y-6 stockist-partner-group pt-8 border-t border-cacao-dark/10" id="group-tema">
+      <div class="flex items-center justify-between border-b border-cacao-dark/15 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="w-3.5 h-3.5 bg-accent-gold rounded-full shrink-0 shadow-sm"></span>
+          <h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark uppercase tracking-wider">Tema</h2>
+        </div>
+        <span class="text-xs font-bold uppercase tracking-widest text-accent-gold bg-accent-gold/10 px-3 py-1.5 rounded-full border border-accent-gold/20">
+          Tema
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <?php foreach ($tema as $branch) : ?>
+          <div class="stockist-card p-5 rounded-2xl bg-card-bg border border-cacao-dark/10 space-y-3 shadow-sm hover:shadow-md hover:border-accent-gold/50 transition-all duration-300 group relative" data-partner="tema" data-search="<?php echo esc_attr(strtolower($branch . ' tema')); ?>">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-accent-gold uppercase tracking-wider block">Tema</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            </div>
+            <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark group-hover:text-accent-gold transition-colors pt-1"><?php echo esc_html($branch); ?></h4>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+
+    <!-- 20. KOFORIDUA -->
+    <div class="space-y-6 stockist-partner-group pt-8 border-t border-cacao-dark/10" id="group-koforidua">
+      <div class="flex items-center justify-between border-b border-cacao-dark/15 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="w-3.5 h-3.5 bg-accent-terracotta rounded-full shrink-0 shadow-sm"></span>
+          <h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark uppercase tracking-wider">Koforidua</h2>
+        </div>
+        <span class="text-xs font-bold uppercase tracking-widest text-accent-terracotta bg-accent-terracotta/10 px-3 py-1.5 rounded-full border border-accent-terracotta/20">
+          Koforidua
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <?php foreach ($koforidua as $branch) : ?>
+          <div class="stockist-card p-5 rounded-2xl bg-card-bg border border-cacao-dark/10 space-y-3 shadow-sm hover:shadow-md hover:border-accent-terracotta/50 transition-all duration-300 group relative" data-partner="koforidua" data-search="<?php echo esc_attr(strtolower($branch . ' koforidua')); ?>">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-accent-terracotta uppercase tracking-wider block">Koforidua</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            </div>
+            <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark group-hover:text-accent-terracotta transition-colors pt-1"><?php echo esc_html($branch); ?></h4>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+
+    <!-- 21. ASAMANKESE -->
+    <div class="space-y-6 stockist-partner-group pt-8 border-t border-cacao-dark/10" id="group-asamankese">
+      <div class="flex items-center justify-between border-b border-cacao-dark/15 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="w-3.5 h-3.5 bg-accent-gold rounded-full shrink-0 shadow-sm"></span>
+          <h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark uppercase tracking-wider">Asamankese</h2>
+        </div>
+        <span class="text-xs font-bold uppercase tracking-widest text-accent-gold bg-accent-gold/10 px-3 py-1.5 rounded-full border border-accent-gold/20">
+          Asamankese
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <?php foreach ($asamankese as $branch) : ?>
+          <div class="stockist-card p-5 rounded-2xl bg-card-bg border border-cacao-dark/10 space-y-3 shadow-sm hover:shadow-md hover:border-accent-gold/50 transition-all duration-300 group relative" data-partner="asamankese" data-search="<?php echo esc_attr(strtolower($branch . ' asamankese')); ?>">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-accent-gold uppercase tracking-wider block">Asamankese</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            </div>
+            <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark group-hover:text-accent-gold transition-colors pt-1"><?php echo esc_html($branch); ?></h4>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+
+    <!-- 22. TAKORADI -->
+    <div class="space-y-6 stockist-partner-group pt-8 border-t border-cacao-dark/10" id="group-takoradi">
+      <div class="flex items-center justify-between border-b border-cacao-dark/15 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="w-3.5 h-3.5 bg-accent-terracotta rounded-full shrink-0 shadow-sm"></span>
+          <h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark uppercase tracking-wider">Takoradi</h2>
+        </div>
+        <span class="text-xs font-bold uppercase tracking-widest text-accent-terracotta bg-accent-terracotta/10 px-3 py-1.5 rounded-full border border-accent-terracotta/20">
+          Takoradi
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <?php foreach ($takoradi as $branch) : ?>
+          <div class="stockist-card p-5 rounded-2xl bg-card-bg border border-cacao-dark/10 space-y-3 shadow-sm hover:shadow-md hover:border-accent-terracotta/50 transition-all duration-300 group relative" data-partner="takoradi" data-search="<?php echo esc_attr(strtolower($branch . ' takoradi')); ?>">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-accent-terracotta uppercase tracking-wider block">Takoradi</span>
               <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
             </div>
             <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark group-hover:text-accent-terracotta transition-colors pt-1"><?php echo esc_html($branch); ?></h4>

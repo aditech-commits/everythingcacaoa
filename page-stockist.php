@@ -152,7 +152,7 @@ $takoradi = array(
   </section>
 
   <!-- Store Locator Search & Live Filter Bar -->
-  <section class="py-8 bg-card-bg border-b border-cacao-dark/10 sticky top-[72px] z-30 shadow-sm backdrop-blur-md bg-card-bg/95">
+  <section class="py-8 bg-card-bg border-b border-cacao-dark/10 shadow-sm">
     <div class="max-w-5xl mx-auto px-6 flex flex-col items-center justify-center gap-6 text-center">
       
       <!-- Live Search Box (Positioned at top above category pills) -->

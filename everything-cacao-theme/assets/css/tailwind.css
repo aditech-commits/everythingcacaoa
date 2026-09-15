@@ -105,10 +105,11 @@ h1, h2, h3, h4, .font-serif-luxury {
   will-change: opacity, transform;
 }
 
-/* Revealed state — triggered by IntersectionObserver */
-.ec-animate.ec-visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+/* Revealed state — triggered by IntersectionObserver or fallback */
+.ec-animate.ec-visible,
+html:not(.js) .ec-animate {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
 }
 
 /* Stagger delay utilities for grid children */

@@ -8,11 +8,36 @@ document.addEventListener("DOMContentLoaded", () => {
   initPaletteClubForm();
   initFaqAccordion();
   initStockistFilter();
+  initScrollAnimations();
 });
 
 if (document.readyState !== "loading") {
   initFaqAccordion();
   initStockistFilter();
+  initScrollAnimations();
+}
+
+function initScrollAnimations() {
+  const animatedElements = document.querySelectorAll(".ec-animate");
+  if (!animatedElements.length) return;
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("ec-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.05,
+      rootMargin: "0px 0px -20px 0px"
+    });
+
+    animatedElements.forEach(el => observer.observe(el));
+  } else {
+    animatedElements.forEach(el => el.classList.add("ec-visible"));
+  }
 }
 
 function initMobileMenu() {

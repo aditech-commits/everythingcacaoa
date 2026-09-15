@@ -16,6 +16,13 @@
  * - CM SUPER PLAZA
  * - SUPER SAVE
  * - PANDA MART
+ * - Total Mart
+ * - Shell Mart
+ * - ADDPHARMA
+ * - ORIGIN CHEMIST
+ * - EAST CANTONMENTS
+ * - PANACEA
+ * - PALACE PHARMACY
  *
  * @package EverythingCacao
  */
@@ -65,6 +72,38 @@ $super_save = array(
 $panda_mart = array(
     'Atomic'
 );
+
+$total_mart = array(
+    'All Total Mart Nationwide'
+);
+
+$shell_mart = array(
+    'All Shell Mart Nationwide'
+);
+
+$addpharma = array(
+    'East Legon', 'Spintex Rd', 'Tsea Addo', 'Ring Road', 
+    'Korle Bu', 'Tema', 'Pig Farm Junction', 'NIA'
+);
+
+$origin_chemist = array(
+    'East Legon - Jungle Avenue', 'Osu', 'Lashibi', 'Oyibi', 
+    'Community 18 Devtraco', 'Adneta Frafraha', 'Mataheko-Afienya', 'Spintex Coastal Down'
+);
+
+$east_cantonments = array(
+    'Cantonments Soul Clinic', 'East Legon', 'Circle', 'Adabraka', 
+    'West Airport', 'Spintex', 'Osu', 'Labone'
+);
+
+$panacea = array(
+    'North Industrial Area', 'North Kaneshie', 'Adenta', 'Westland', 
+    'Spintex', 'Tema'
+);
+
+$palace_pharmacy = array(
+    'Labone', 'Cantonments'
+);
 ?>
 
   <!-- Stockist Hero Banner -->
@@ -99,7 +138,7 @@ $panda_mart = array(
       <!-- Partner Quick Filter Pills -->
       <div class="flex items-center gap-1.5 flex-wrap justify-center w-full md:w-auto" id="stockist-filter-pills">
         <button data-filter="all" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-cacao-dark text-canvas border border-cacao-dark">
-          All Outlets (58)
+          All Outlets (92)
         </button>
         <button data-filter="melcom-accra" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-canvas text-cacao-dark/70 hover:text-cacao-dark border border-cacao-dark/15 hover:border-cacao-dark/40">
           MELCOM - ACCRA
@@ -127,6 +166,27 @@ $panda_mart = array(
         </button>
         <button data-filter="panda-mart" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-canvas text-cacao-dark/70 hover:text-cacao-dark border border-cacao-dark/15 hover:border-cacao-dark/40">
           PANDA MART
+        </button>
+        <button data-filter="total-mart" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-canvas text-cacao-dark/70 hover:text-cacao-dark border border-cacao-dark/15 hover:border-cacao-dark/40">
+          Total Mart
+        </button>
+        <button data-filter="shell-mart" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-canvas text-cacao-dark/70 hover:text-cacao-dark border border-cacao-dark/15 hover:border-cacao-dark/40">
+          Shell Mart
+        </button>
+        <button data-filter="addpharma" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-canvas text-cacao-dark/70 hover:text-cacao-dark border border-cacao-dark/15 hover:border-cacao-dark/40">
+          ADDPHARMA
+        </button>
+        <button data-filter="origin-chemist" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-canvas text-cacao-dark/70 hover:text-cacao-dark border border-cacao-dark/15 hover:border-cacao-dark/40">
+          ORIGIN CHEMIST
+        </button>
+        <button data-filter="east-cantonments" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-canvas text-cacao-dark/70 hover:text-cacao-dark border border-cacao-dark/15 hover:border-cacao-dark/40">
+          EAST CANTONMENTS
+        </button>
+        <button data-filter="panacea" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-canvas text-cacao-dark/70 hover:text-cacao-dark border border-cacao-dark/15 hover:border-cacao-dark/40">
+          PANACEA
+        </button>
+        <button data-filter="palace-pharmacy" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-canvas text-cacao-dark/70 hover:text-cacao-dark border border-cacao-dark/15 hover:border-cacao-dark/40">
+          PALACE PHARMACY
         </button>
       </div>
 
@@ -365,6 +425,188 @@ $panda_mart = array(
               <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
             </div>
             <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark group-hover:text-accent-gold transition-colors pt-1"><?php echo esc_html($branch); ?></h4>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+
+    <!-- 10. Total Mart -->
+    <div class="space-y-6 stockist-partner-group pt-8 border-t border-cacao-dark/10" id="group-total-mart">
+      <div class="flex items-center justify-between border-b border-cacao-dark/15 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="w-3.5 h-3.5 bg-accent-terracotta rounded-full shrink-0 shadow-sm"></span>
+          <h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark uppercase tracking-wider">Total Mart</h2>
+        </div>
+        <span class="text-xs font-bold uppercase tracking-widest text-accent-terracotta bg-accent-terracotta/10 px-3 py-1.5 rounded-full border border-accent-terracotta/20">
+          Total Mart
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <?php foreach ($total_mart as $branch) : ?>
+          <div class="stockist-card p-5 rounded-2xl bg-card-bg border border-cacao-dark/10 space-y-3 shadow-sm hover:shadow-md hover:border-accent-terracotta/50 transition-all duration-300 group relative" data-partner="total-mart" data-search="<?php echo esc_attr(strtolower($branch . ' total mart')); ?>">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-accent-terracotta uppercase tracking-wider block">Total Mart</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            </div>
+            <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark group-hover:text-accent-terracotta transition-colors pt-1"><?php echo esc_html($branch); ?></h4>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+
+    <!-- 11. Shell Mart -->
+    <div class="space-y-6 stockist-partner-group pt-8 border-t border-cacao-dark/10" id="group-shell-mart">
+      <div class="flex items-center justify-between border-b border-cacao-dark/15 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="w-3.5 h-3.5 bg-accent-gold rounded-full shrink-0 shadow-sm"></span>
+          <h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark uppercase tracking-wider">Shell Mart</h2>
+        </div>
+        <span class="text-xs font-bold uppercase tracking-widest text-accent-gold bg-accent-gold/10 px-3 py-1.5 rounded-full border border-accent-gold/20">
+          Shell Mart
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <?php foreach ($shell_mart as $branch) : ?>
+          <div class="stockist-card p-5 rounded-2xl bg-card-bg border border-cacao-dark/10 space-y-3 shadow-sm hover:shadow-md hover:border-accent-gold/50 transition-all duration-300 group relative" data-partner="shell-mart" data-search="<?php echo esc_attr(strtolower($branch . ' shell mart')); ?>">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-accent-gold uppercase tracking-wider block">Shell Mart</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            </div>
+            <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark group-hover:text-accent-gold transition-colors pt-1"><?php echo esc_html($branch); ?></h4>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+
+    <!-- 12. ADDPHARMA -->
+    <div class="space-y-6 stockist-partner-group pt-8 border-t border-cacao-dark/10" id="group-addpharma">
+      <div class="flex items-center justify-between border-b border-cacao-dark/15 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="w-3.5 h-3.5 bg-accent-terracotta rounded-full shrink-0 shadow-sm"></span>
+          <h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark uppercase tracking-wider">ADDPHARMA</h2>
+        </div>
+        <span class="text-xs font-bold uppercase tracking-widest text-accent-terracotta bg-accent-terracotta/10 px-3 py-1.5 rounded-full border border-accent-terracotta/20">
+          ADDPHARMA
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <?php foreach ($addpharma as $branch) : ?>
+          <div class="stockist-card p-5 rounded-2xl bg-card-bg border border-cacao-dark/10 space-y-3 shadow-sm hover:shadow-md hover:border-accent-terracotta/50 transition-all duration-300 group relative" data-partner="addpharma" data-search="<?php echo esc_attr(strtolower($branch . ' addpharma')); ?>">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-accent-terracotta uppercase tracking-wider block">ADDPHARMA</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            </div>
+            <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark group-hover:text-accent-terracotta transition-colors pt-1"><?php echo esc_html($branch); ?></h4>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+
+    <!-- 13. ORIGIN CHEMIST -->
+    <div class="space-y-6 stockist-partner-group pt-8 border-t border-cacao-dark/10" id="group-origin-chemist">
+      <div class="flex items-center justify-between border-b border-cacao-dark/15 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="w-3.5 h-3.5 bg-accent-gold rounded-full shrink-0 shadow-sm"></span>
+          <h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark uppercase tracking-wider">ORIGIN CHEMIST</h2>
+        </div>
+        <span class="text-xs font-bold uppercase tracking-widest text-accent-gold bg-accent-gold/10 px-3 py-1.5 rounded-full border border-accent-gold/20">
+          ORIGIN CHEMIST
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <?php foreach ($origin_chemist as $branch) : ?>
+          <div class="stockist-card p-5 rounded-2xl bg-card-bg border border-cacao-dark/10 space-y-3 shadow-sm hover:shadow-md hover:border-accent-gold/50 transition-all duration-300 group relative" data-partner="origin-chemist" data-search="<?php echo esc_attr(strtolower($branch . ' origin chemist')); ?>">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-accent-gold uppercase tracking-wider block">ORIGIN CHEMIST</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            </div>
+            <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark group-hover:text-accent-gold transition-colors pt-1"><?php echo esc_html($branch); ?></h4>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+
+    <!-- 14. EAST CANTONMENTS -->
+    <div class="space-y-6 stockist-partner-group pt-8 border-t border-cacao-dark/10" id="group-east-cantonments">
+      <div class="flex items-center justify-between border-b border-cacao-dark/15 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="w-3.5 h-3.5 bg-accent-terracotta rounded-full shrink-0 shadow-sm"></span>
+          <h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark uppercase tracking-wider">EAST CANTONMENTS</h2>
+        </div>
+        <span class="text-xs font-bold uppercase tracking-widest text-accent-terracotta bg-accent-terracotta/10 px-3 py-1.5 rounded-full border border-accent-terracotta/20">
+          EAST CANTONMENTS
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <?php foreach ($east_cantonments as $branch) : ?>
+          <div class="stockist-card p-5 rounded-2xl bg-card-bg border border-cacao-dark/10 space-y-3 shadow-sm hover:shadow-md hover:border-accent-terracotta/50 transition-all duration-300 group relative" data-partner="east-cantonments" data-search="<?php echo esc_attr(strtolower($branch . ' east cantonments')); ?>">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-accent-terracotta uppercase tracking-wider block">EAST CANTONMENTS</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            </div>
+            <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark group-hover:text-accent-terracotta transition-colors pt-1"><?php echo esc_html($branch); ?></h4>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+
+    <!-- 15. PANACEA -->
+    <div class="space-y-6 stockist-partner-group pt-8 border-t border-cacao-dark/10" id="group-panacea">
+      <div class="flex items-center justify-between border-b border-cacao-dark/15 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="w-3.5 h-3.5 bg-accent-gold rounded-full shrink-0 shadow-sm"></span>
+          <h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark uppercase tracking-wider">PANACEA</h2>
+        </div>
+        <span class="text-xs font-bold uppercase tracking-widest text-accent-gold bg-accent-gold/10 px-3 py-1.5 rounded-full border border-accent-gold/20">
+          PANACEA
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <?php foreach ($panacea as $branch) : ?>
+          <div class="stockist-card p-5 rounded-2xl bg-card-bg border border-cacao-dark/10 space-y-3 shadow-sm hover:shadow-md hover:border-accent-gold/50 transition-all duration-300 group relative" data-partner="panacea" data-search="<?php echo esc_attr(strtolower($branch . ' panacea')); ?>">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-accent-gold uppercase tracking-wider block">PANACEA</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            </div>
+            <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark group-hover:text-accent-gold transition-colors pt-1"><?php echo esc_html($branch); ?></h4>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+
+    <!-- 16. PALACE PHARMACY -->
+    <div class="space-y-6 stockist-partner-group pt-8 border-t border-cacao-dark/10" id="group-palace-pharmacy">
+      <div class="flex items-center justify-between border-b border-cacao-dark/15 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="w-3.5 h-3.5 bg-accent-terracotta rounded-full shrink-0 shadow-sm"></span>
+          <h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark uppercase tracking-wider">PALACE PHARMACY</h2>
+        </div>
+        <span class="text-xs font-bold uppercase tracking-widest text-accent-terracotta bg-accent-terracotta/10 px-3 py-1.5 rounded-full border border-accent-terracotta/20">
+          PALACE PHARMACY
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <?php foreach ($palace_pharmacy as $branch) : ?>
+          <div class="stockist-card p-5 rounded-2xl bg-card-bg border border-cacao-dark/10 space-y-3 shadow-sm hover:shadow-md hover:border-accent-terracotta/50 transition-all duration-300 group relative" data-partner="palace-pharmacy" data-search="<?php echo esc_attr(strtolower($branch . ' palace pharmacy')); ?>">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-accent-terracotta uppercase tracking-wider block">PALACE PHARMACY</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            </div>
+            <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark group-hover:text-accent-terracotta transition-colors pt-1"><?php echo esc_html($branch); ?></h4>
           </div>
         <?php endforeach; ?>
       </div>

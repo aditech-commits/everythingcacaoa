@@ -7,10 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
   initQuickForms();
   initPaletteClubForm();
   initFaqAccordion();
+  initStockistFilter();
 });
 
 if (document.readyState !== "loading") {
   initFaqAccordion();
+  initStockistFilter();
 }
 
 function initMobileMenu() {
@@ -189,6 +191,76 @@ function showToast(message, type = "success") {
   setTimeout(() => toast.remove(), 6000);
 }
 
+function initStockistFilter() {
+  const searchInput = document.getElementById("stockist-search-input");
+  const filterBtns  = document.querySelectorAll(".stockist-filter-btn");
+  const cards       = document.querySelectorAll(".stockist-card");
+  const noResults   = document.getElementById("stockist-no-results");
+  const partnerGroups = document.querySelectorAll(".stockist-partner-group");
+
+  if (!searchInput && filterBtns.length === 0) return;
+
+  let currentFilter = "all";
+
+  function filterStockists() {
+    const query = (searchInput?.value || "").toLowerCase().trim();
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const partner = card.dataset.partner;
+      const searchText = card.dataset.search || "";
+
+      const matchesFilter = (currentFilter === "all") || (partner === currentFilter);
+      const matchesSearch = !query || searchText.includes(query);
+
+      if (matchesFilter && matchesSearch) {
+        card.classList.remove("hidden");
+        visibleCount++;
+      } else {
+        card.classList.add("hidden");
+      }
+    });
+
+    partnerGroups.forEach(group => {
+      const visibleGroupCards = group.querySelectorAll(".stockist-card:not(.hidden)");
+      if (visibleGroupCards.length === 0) {
+        group.classList.add("hidden");
+      } else {
+        group.classList.remove("hidden");
+      }
+    });
+
+    if (noResults) {
+      if (visibleCount === 0) {
+        noResults.classList.remove("hidden");
+      } else {
+        noResults.classList.add("hidden");
+      }
+    }
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener("input", filterStockists);
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach(b => {
+        b.classList.remove("bg-cacao-dark", "text-canvas", "border-cacao-dark");
+        b.classList.add("bg-canvas", "text-cacao-dark/70", "border-cacao-dark/15");
+      });
+
+      btn.classList.remove("bg-canvas", "text-cacao-dark/70", "border-cacao-dark/15");
+      btn.classList.add("bg-cacao-dark", "text-canvas", "border-cacao-dark");
+
+      currentFilter = btn.dataset.filter || "all";
+      filterStockists();
+    });
+  });
+}
+
 window.EC_Theme = {
-  showToast
+  showToast,
+  initStockistFilter
 };
+

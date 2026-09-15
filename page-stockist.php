@@ -16,7 +16,6 @@
  * - CM SUPER PLAZA
  * - SUPER SAVE
  * - PANDA MART
- * - ERNEST CHEMIST
  *
  * @package EverythingCacao
  */
@@ -66,10 +65,6 @@ $super_save = array(
 $panda_mart = array(
     'Atomic'
 );
-
-$ernest_chemist = array(
-    'Airport', 'Spintex', 'East Legon', 'Dzorwulu'
-);
 ?>
 
   <!-- Stockist Hero Banner -->
@@ -104,7 +99,7 @@ $ernest_chemist = array(
       <!-- Partner Quick Filter Pills -->
       <div class="flex items-center gap-1.5 flex-wrap justify-center w-full md:w-auto" id="stockist-filter-pills">
         <button data-filter="all" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-cacao-dark text-canvas border border-cacao-dark">
-          All Outlets (62)
+          All Outlets (58)
         </button>
         <button data-filter="melcom-accra" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-canvas text-cacao-dark/70 hover:text-cacao-dark border border-cacao-dark/15 hover:border-cacao-dark/40">
           MELCOM - ACCRA
@@ -132,9 +127,6 @@ $ernest_chemist = array(
         </button>
         <button data-filter="panda-mart" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-canvas text-cacao-dark/70 hover:text-cacao-dark border border-cacao-dark/15 hover:border-cacao-dark/40">
           PANDA MART
-        </button>
-        <button data-filter="ernest-chemist" class="stockist-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-canvas text-cacao-dark/70 hover:text-cacao-dark border border-cacao-dark/15 hover:border-cacao-dark/40">
-          ERNEST CHEMIST
         </button>
       </div>
 
@@ -373,32 +365,6 @@ $ernest_chemist = array(
               <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
             </div>
             <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark group-hover:text-accent-gold transition-colors pt-1"><?php echo esc_html($branch); ?></h4>
-          </div>
-        <?php endforeach; ?>
-      </div>
-    </div>
-
-
-    <!-- 10. ERNEST CHEMIST -->
-    <div class="space-y-6 stockist-partner-group pt-8 border-t border-cacao-dark/10" id="group-ernest-chemist">
-      <div class="flex items-center justify-between border-b border-cacao-dark/15 pb-4">
-        <div class="flex items-center gap-3">
-          <span class="w-3.5 h-3.5 bg-accent-terracotta rounded-full shrink-0 shadow-sm"></span>
-          <h2 class="font-serif-luxury text-2xl md:text-3xl font-bold text-cacao-dark uppercase tracking-wider">ERNEST CHEMIST</h2>
-        </div>
-        <span class="text-xs font-bold uppercase tracking-widest text-accent-terracotta bg-accent-terracotta/10 px-3 py-1.5 rounded-full border border-accent-terracotta/20">
-          ERNEST CHEMIST
-        </span>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-        <?php foreach ($ernest_chemist as $branch) : ?>
-          <div class="stockist-card p-5 rounded-2xl bg-card-bg border border-cacao-dark/10 space-y-3 shadow-sm hover:shadow-md hover:border-accent-terracotta/50 transition-all duration-300 group relative" data-partner="ernest-chemist" data-search="<?php echo esc_attr(strtolower($branch . ' ernest chemist')); ?>">
-            <div class="flex items-center justify-between">
-              <span class="text-[11px] font-bold text-accent-terracotta uppercase tracking-wider block">ERNEST CHEMIST</span>
-              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-            </div>
-            <h4 class="font-serif-luxury text-xl font-bold text-cacao-dark group-hover:text-accent-terracotta transition-colors pt-1"><?php echo esc_html($branch); ?></h4>
           </div>
         <?php endforeach; ?>
       </div>

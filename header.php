@@ -9,6 +9,35 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Leckerli+One&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap"/>
 
+  <!-- Tailwind CSS Engine & Brand Configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'canvas': '#FBF8F3',
+            'card-bg': '#FFFFFF',
+            'cacao-dark': '#2C1A11',
+            'accent-gold': '#D4AF37',
+            'accent-terracotta': '#C86D51',
+            'accent-whatsapp': '#25D366',
+            'cherelle-caramel': '#E08E45',
+            'nahar-obsidian': '#18110D',
+            'text-primary': '#2C1A11',
+            'text-muted': '#7A685A',
+          },
+          fontFamily: {
+            'serif-luxury': ['Playfair Display', 'serif'],
+            'sans': ['Hanken Grotesk', 'sans-serif'],
+            'brand-logo': ['Leckerli One', 'cursive', 'serif'],
+            'leckerli': ['Leckerli One', 'cursive'],
+          }
+        }
+      }
+    }
+  </script>
+
   <?php
   $ec_pixel_id = get_option('ec_pixel_id', '');
   if (!empty($ec_pixel_id) && is_numeric($ec_pixel_id)) :

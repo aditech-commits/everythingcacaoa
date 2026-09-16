@@ -835,9 +835,6 @@ $takoradi = array(
     <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
       <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold"><?php echo esc_html(ec_get_text_option('ec_stockist_cta_tag', 'BESPOKE ORDERS & WHOLESALE')); ?></span>
       <h2 class="font-serif-luxury text-3xl md:text-4xl font-bold"><?php echo esc_html(ec_get_text_option('ec_stockist_cta_title', "Can't Find a Nearby Outlet or Looking for Bulk Ordering?")); ?></h2>
-      <p class="text-canvas/70 text-sm md:text-base leading-relaxed">
-        <?php echo esc_html(ec_get_text_option('ec_stockist_cta_body', 'Our Concierge Service delivers artisan Cherelle and Nahar chocolate boxes directly to your doorstep in Accra or ships custom wholesale orders nationwide.')); ?>
-      </p>
       <div class="pt-2 flex flex-wrap items-center justify-center gap-4">
         <a href="<?php echo esc_url(ec_get_text_option('ec_stockist_cta_btn_url', $link_contact)); ?>" class="inline-flex items-center gap-2 bg-accent-gold hover:bg-accent-gold/90 text-cacao-dark font-semibold text-xs uppercase tracking-widest px-8 py-3.5 rounded-full transition-all shadow-md hover:shadow-lg">
           <span><?php echo esc_html(ec_get_text_option('ec_stockist_cta_btn_text', 'CONTACT US')); ?></span>

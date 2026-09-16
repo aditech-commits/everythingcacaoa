@@ -9,120 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Leckerli+One&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap"/>
 
-  <!-- Tailwind CSS Engine & Brand Configuration -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'canvas': '#FBF8F3',
-            'card-bg': '#FFFFFF',
-            'cacao-dark': '#2C1A11',
-            'accent-gold': '#D4AF37',
-            'accent-terracotta': '#C86D51',
-            'accent-whatsapp': '#25D366',
-            'cherelle-caramel': '#E08E45',
-            'nahar-obsidian': '#18110D',
-            'text-primary': '#2C1A11',
-            'text-muted': '#7A685A',
-          },
-          fontFamily: {
-            'serif-luxury': ['Playfair Display', 'serif'],
-            'sans': ['Hanken Grotesk', 'sans-serif'],
-            'brand-logo': ['Leckerli One', 'cursive', 'serif'],
-            'leckerli': ['Leckerli One', 'cursive'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Luxury Nav Menu Hover & Active Indicator Styles -->
-  <style>
-    .font-brand-logo,
-    .site-title,
-    .logo-text,
-    .footer-logo-text,
-    .brand-heading {
-      font-family: 'Leckerli One', cursive !important;
-    }
-    .font-brand-logo {
-      letter-spacing: 0.04em;
-    }
-    .nav-link {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      padding-bottom: 4px;
-      transition: color 0.3s ease;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background-color: #C86D51;
-      transition: width 0.3s ease, left 0.3s ease;
-    }
-    .nav-link:hover::after {
-      width: 100%;
-      left: 0;
-    }
-    .nav-link:hover {
-      color: #C86D51;
-    }
-    .nav-link.active-page {
-      color: #C86D51 !important;
-      font-weight: 700 !important;
-    }
-    .nav-link.active-page::after {
-      width: 100% !important;
-      left: 0 !important;
-      background-color: #C86D51 !important;
-    }
-
-    /* WordPress Dynamic Menu Items */
-    .menu-item a {
-      position: relative;
-      display: inline-block;
-      padding-bottom: 4px;
-      transition: color 0.3s ease;
-    }
-    .menu-item a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background-color: #C86D51;
-      transition: width 0.3s ease, left 0.3s ease;
-    }
-    .menu-item a:hover::after {
-      width: 100%;
-      left: 0;
-    }
-    .menu-item a:hover {
-      color: #C86D51;
-    }
-    .current-menu-item > a,
-    .current-menu-ancestor > a,
-    .current_page_item > a {
-      color: #C86D51 !important;
-      font-weight: 700 !important;
-    }
-    .current-menu-item > a::after,
-    .current-menu-ancestor > a::after,
-    .current_page_item > a::after {
-      width: 100% !important;
-      left: 0 !important;
-      background-color: #C86D51 !important;
-    }
-  </style>
-
+  <?php
+  $ec_pixel_id = get_option('ec_pixel_id', '');
+  if (!empty($ec_pixel_id) && is_numeric($ec_pixel_id)) :
+  ?>
   <!-- Meta Pixel Base Code -->
   <script>
     !function(f,b,e,v,n,t,s)
@@ -133,10 +23,11 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '<?php echo esc_js(get_option('ec_pixel_id', 'YOUR_PIXEL_ID_HERE')); ?>');
+    fbq('init', '<?php echo esc_js($ec_pixel_id); ?>');
     fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=<?php echo esc_attr(get_option('ec_pixel_id', 'YOUR_PIXEL_ID_HERE')); ?>&ev=PageView&noscript=1"/></noscript>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=<?php echo esc_attr($ec_pixel_id); ?>&ev=PageView&noscript=1"/></noscript>
+  <?php endif; ?>
 
   <?php wp_head(); ?>
 </head>

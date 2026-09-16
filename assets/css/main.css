@@ -1,0 +1,217 @@
+/* ═════════════════════════════════════════════════════════════════════
+   Everything Cacao GH — Main Compiled Theme Stylesheet (main.css)
+   Standalone CSS system replacing external CDN dependencies.
+   ═════════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Leckerli+One&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/butler');
+
+:root {
+  /* Canvas & Neutral Colors */
+  --bg-canvas: #FBF8F3;         /* Warm Cream Main Background */
+  --bg-card: #FFFFFF;           /* Pure White Card Containers */
+  --bg-dark: #2C1A11;           /* Deep Roasted Cacao Dark Brown */
+
+  /* Primary Brand Accents */
+  --accent-gold: #D4AF37;       /* Metallic Gold */
+  --accent-terracotta: #C86D51; /* Soft Terracotta */
+  --accent-whatsapp: #25D366;   /* Official WhatsApp Green */
+
+  /* Sub-brand Accent Colors */
+  --cherelle-caramel: #E08E45;  /* Warm Caramel */
+  --nahar-obsidian: #18110D;    /* Dark Obsidian */
+
+  /* Typography Colors */
+  --text-primary: #2C1A11;
+  --text-muted: #7A685A;
+  --text-inverse: #FFFFFF;
+}
+
+/* ── Base Styles ────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif-luxury {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-brand-logo,
+.site-title,
+.logo-text,
+.footer-logo-text,
+.brand-heading {
+  font-family: 'Leckerli One', cursive, serif !important;
+  letter-spacing: 0.04em;
+}
+
+/* ── Glassmorphism Header ───────────────────────────────────────────── */
+.glass-header {
+  background-color: rgba(251, 248, 243, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* ── Nav Hover & Active Indicators ───────────────────────────────────── */
+.nav-link,
+.menu-item a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after,
+.menu-item a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-terracotta);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-link:hover::after,
+.menu-item a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.nav-link:hover,
+.menu-item a:hover {
+  color: var(--accent-terracotta);
+}
+
+.nav-link.active-page,
+.current-menu-item > a,
+.current-menu-ancestor > a,
+.current_page_item > a {
+  color: var(--accent-terracotta) !important;
+  font-weight: 700 !important;
+}
+
+.nav-link.active-page::after,
+.current-menu-item > a::after,
+.current-menu-ancestor > a::after,
+.current_page_item > a::after {
+  width: 100% !important;
+  left: 0 !important;
+  background-color: var(--accent-terracotta) !important;
+}
+
+/* ── Sub-brand Styling ──────────────────────────────────────────────── */
+.subbrand-cherelle {
+  border-top: 4px solid var(--cherelle-caramel);
+}
+.subbrand-nahar {
+  border-top: 4px solid var(--nahar-obsidian);
+}
+
+/* ── WhatsApp Trigger Animation ─────────────────────────────────────── */
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.animate-whatsapp {
+  animation: whatsapp-pulse 2s infinite;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--accent-whatsapp);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.btn-whatsapp:hover {
+  background-color: #059669;
+}
+
+/* ── Scroll-Reveal & Hover Animation System ─────────────────────────── */
+.ec-animate {
+  opacity: 0;
+  transform: translateY(40px) scale(0.97);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.ec-animate.ec-visible,
+html:not(.js) .ec-animate {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.ec-animate.ec-delay-1 { transition-delay: 0.08s; }
+.ec-animate.ec-delay-2 { transition-delay: 0.16s; }
+.ec-animate.ec-delay-3 { transition-delay: 0.24s; }
+.ec-animate.ec-delay-4 { transition-delay: 0.32s; }
+.ec-animate.ec-delay-5 { transition-delay: 0.40s; }
+.ec-animate.ec-delay-6 { transition-delay: 0.48s; }
+
+.ec-card-hover {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.4s ease;
+}
+.ec-card-hover:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 20px 50px -12px rgba(44, 26, 17, 0.15),
+              0 8px 24px -8px rgba(44, 26, 17, 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ec-animate {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .ec-card-hover:hover {
+    transform: none !important;
+  }
+}
+
+/* ── Custom Scrollbar ───────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-terracotta);
+}

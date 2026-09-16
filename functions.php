@@ -133,8 +133,11 @@ add_action('elementor/frontend/after_enqueue_scripts', function() {
  * 2. Enqueue Scripts & Stylesheets
  */
 function ec_enqueue_assets() {
-    // Compiled Tailwind CSS
-    wp_enqueue_style('ec-tailwind', get_template_directory_uri() . '/assets/css/tailwind.css', array(), '1.0.0');
+    // Primary Enqueued Compiled Theme CSS
+    wp_enqueue_style('theme-styles', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.0');
+
+    // Utility & Layout Styling
+    wp_enqueue_style('ec-tailwind', get_template_directory_uri() . '/assets/css/tailwind.css', array('theme-styles'), '1.0.0');
 
     // Google Fonts & Butler Font
     wp_enqueue_style('ec-google-fonts', 'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap', array(), null);

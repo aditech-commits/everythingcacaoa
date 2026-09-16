@@ -2157,6 +2157,108 @@ function ec_customize_register($wp_customize) {
     // =========================================================================
     // END CONTACT PAGE MANAGEMENT PANEL
     // =========================================================================
+
+    // =========================================================================
+    // STOCKIST PAGE MANAGEMENT PANEL
+    // =========================================================================
+    $wp_customize->add_panel('theme_stockist_panel', array(
+        'priority'    => 55,
+        'title'       => __('Stockist Page Management', 'everything-cacao'),
+        'description' => __('Manage all text, headings, and the CTA section on the Stockists / Where To Buy page.', 'everything-cacao'),
+    ));
+
+    // -------------------------------------------------------------------------
+    // SECTION 1: HERO BANNER
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_stockist_hero_section', array(
+        'title'    => __('Section 1: Hero Banner', 'everything-cacao'),
+        'panel'    => 'theme_stockist_panel',
+        'priority' => 1,
+    ));
+
+    $stockist_hero_controls = array(
+        'ec_stockist_hero_tagline' => array(
+            'label'   => __('Hero Eyebrow / Tagline', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'RETAIL PARTNERS & OFFICIAL STOCKISTS',
+        ),
+        'ec_stockist_hero_title' => array(
+            'label'   => __('Hero Heading', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Where to Find Everything Cacao',
+        ),
+        'ec_stockist_hero_subtitle' => array(
+            'label'   => __('Hero Subtitle / Description', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Find Cherelle and Nahar artisanal chocolate bars stocked at official retail partners across Ghana.',
+        ),
+    );
+
+    foreach ($stockist_hero_controls as $setting_id => $data) {
+        $wp_customize->add_setting($setting_id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($setting_id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_stockist_hero_section',
+            'type'    => $data['type'],
+        ));
+    }
+
+    // -------------------------------------------------------------------------
+    // SECTION 2: BESPOKE ORDERS & CTA BANNER
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_stockist_cta_section', array(
+        'title'    => __('Section 2: Bespoke Orders & CTA Banner', 'everything-cacao'),
+        'panel'    => 'theme_stockist_panel',
+        'priority' => 2,
+    ));
+
+    $stockist_cta_controls = array(
+        'ec_stockist_cta_tag' => array(
+            'label'   => __('CTA Eyebrow / Tag', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'BESPOKE ORDERS & WHOLESALE',
+        ),
+        'ec_stockist_cta_title' => array(
+            'label'   => __('CTA Heading', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => "Can't Find a Nearby Outlet or Looking for Bulk Ordering?",
+        ),
+        'ec_stockist_cta_body' => array(
+            'label'   => __('CTA Body Text', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Our Concierge Service delivers artisan Cherelle and Nahar chocolate boxes directly to your doorstep in Accra or ships custom wholesale orders nationwide.',
+        ),
+        'ec_stockist_cta_btn_text' => array(
+            'label'   => __('CTA Button Label', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'CONTACT US',
+        ),
+        'ec_stockist_cta_btn_url' => array(
+            'label'   => __('CTA Button URL (leave blank to auto-resolve contact page)', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => '',
+        ),
+    );
+
+    foreach ($stockist_cta_controls as $setting_id => $data) {
+        $wp_customize->add_setting($setting_id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($setting_id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_stockist_cta_section',
+            'type'    => $data['type'],
+        ));
+    }
+    // =========================================================================
+    // END STOCKIST PAGE MANAGEMENT PANEL
+    // =========================================================================
 }
 add_action('customize_register', 'ec_customize_register');
 
@@ -2268,13 +2370,17 @@ function ec_render_admin_settings_page() {
         if (isset($_POST['ec_concierge_email'])) {
             update_option('ec_concierge_email', sanitize_email($_POST['ec_concierge_email']));
         }
+        if (isset($_POST['ec_header_logo_url'])) {
+            update_option('ec_header_logo_url', esc_url_raw($_POST['ec_header_logo_url']));
+        }
         echo '<div class="notice notice-success is-dismissible"><p><strong>Settings saved successfully!</strong></p></div>';
     }
 
-    $pixel_id   = get_option('ec_pixel_id', '');
-    $whatsapp   = get_option('ec_whatsapp_number', '233240661866');
-    $wa_def_msg = get_option('ec_whatsapp_default_msg', "Hi Everything Cacao GH! I'd like to order artisanal chocolate.");
-    $email      = get_option('ec_concierge_email', 'info@everythingcacaogh.com');
+    $pixel_id    = get_option('ec_pixel_id', '');
+    $whatsapp    = get_option('ec_whatsapp_number', '233240661866');
+    $wa_def_msg  = get_option('ec_whatsapp_default_msg', "Hi Everything Cacao GH! I'd like to order artisanal chocolate.");
+    $email       = get_option('ec_concierge_email', 'info@everythingcacaogh.com');
+    $logo_url    = get_option('ec_header_logo_url', '');
     ?>
     <div class="wrap">
         <h1 style="font-family: Georgia, serif; color: #2C1A11;">🍫 Everything Cacao GH — Theme Settings</h1>
@@ -2310,6 +2416,16 @@ function ec_render_admin_settings_page() {
                     <td>
                         <input name="ec_concierge_email" type="email" id="ec_concierge_email" value="<?php echo esc_attr($email); ?>" class="regular-text" placeholder="info@everythingcacaogh.com" />
                         <p class="description">Website contact form submissions will route directly to this email address.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="ec_header_logo_url">Header Logo Image URL</label></th>
+                    <td>
+                        <input name="ec_header_logo_url" type="url" id="ec_header_logo_url" value="<?php echo esc_attr($logo_url); ?>" class="large-text" placeholder="https://yoursite.com/wp-content/uploads/..." />
+                        <p class="description">Paste the full URL of your logo from the <a href="<?php echo admin_url('upload.php'); ?>" target="_blank">WordPress Media Library</a>. Go to <strong>Media &rarr; Library</strong>, click your logo image, and copy the <em>File URL</em>. Leave blank to use the theme file fallback.</p>
+                        <?php if (!empty($logo_url)) : ?>
+                            <p><img src="<?php echo esc_url($logo_url); ?>" alt="Current header logo preview" style="max-height:50px; margin-top:8px; border:1px solid #ddd; padding:4px; background:#FBF8F3;" /></p>
+                        <?php endif; ?>
                     </td>
                 </tr>
             </table>

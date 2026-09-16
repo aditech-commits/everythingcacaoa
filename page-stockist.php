@@ -146,7 +146,7 @@ $takoradi = array(
       <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold block"><?php echo esc_html(ec_get_text_option('ec_stockist_hero_tagline', 'RETAIL PARTNERS & OFFICIAL STOCKISTS')); ?></span>
       <h1 class="font-serif-luxury text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"><?php echo esc_html(ec_get_text_option('ec_stockist_hero_title', 'Where to Find Everything Cacao')); ?></h1>
       <p class="text-canvas/70 max-w-2xl mx-auto text-sm md:text-base leading-relaxed pt-2">
-        Find Cherelle and Nahar artisanal chocolate bars stocked at official retail partners across Ghana.
+        <?php echo esc_html(ec_get_text_option('ec_stockist_hero_subtitle', 'Find Cherelle and Nahar artisanal chocolate bars stocked at official retail partners across Ghana.')); ?>
       </p>
     </div>
   </section>
@@ -833,14 +833,14 @@ $takoradi = array(
   <!-- Direct Order / Concierge CTA Banner -->
   <section class="py-16 bg-cacao-dark text-canvas border-t border-canvas/10">
     <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
-      <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">BESPOKE ORDERS & WHOLESALE</span>
-      <h2 class="font-serif-luxury text-3xl md:text-4xl font-bold">Can't Find a Nearby Outlet or Looking for Bulk Ordering?</h2>
+      <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold"><?php echo esc_html(ec_get_text_option('ec_stockist_cta_tag', 'BESPOKE ORDERS & WHOLESALE')); ?></span>
+      <h2 class="font-serif-luxury text-3xl md:text-4xl font-bold"><?php echo esc_html(ec_get_text_option('ec_stockist_cta_title', "Can't Find a Nearby Outlet or Looking for Bulk Ordering?")); ?></h2>
       <p class="text-canvas/70 text-sm md:text-base leading-relaxed">
-        Our Concierge Service delivers artisan Cherelle and Nahar chocolate boxes directly to your doorstep in Accra or ships custom wholesale orders nationwide.
+        <?php echo esc_html(ec_get_text_option('ec_stockist_cta_body', 'Our Concierge Service delivers artisan Cherelle and Nahar chocolate boxes directly to your doorstep in Accra or ships custom wholesale orders nationwide.')); ?>
       </p>
       <div class="pt-2 flex flex-wrap items-center justify-center gap-4">
-        <a href="<?php echo $link_contact; ?>" class="inline-flex items-center gap-2 bg-accent-gold hover:bg-accent-gold/90 text-cacao-dark font-semibold text-xs uppercase tracking-widest px-8 py-3.5 rounded-full transition-all shadow-md hover:shadow-lg">
-          <span>Contact Concierge</span>
+        <a href="<?php echo esc_url(ec_get_text_option('ec_stockist_cta_btn_url', $link_contact)); ?>" class="inline-flex items-center gap-2 bg-accent-gold hover:bg-accent-gold/90 text-cacao-dark font-semibold text-xs uppercase tracking-widest px-8 py-3.5 rounded-full transition-all shadow-md hover:shadow-lg">
+          <span><?php echo esc_html(ec_get_text_option('ec_stockist_cta_btn_text', 'CONTACT US')); ?></span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>

@@ -2157,6 +2157,108 @@ function ec_customize_register($wp_customize) {
     // =========================================================================
     // END CONTACT PAGE MANAGEMENT PANEL
     // =========================================================================
+
+    // =========================================================================
+    // STOCKIST PAGE MANAGEMENT PANEL
+    // =========================================================================
+    $wp_customize->add_panel('theme_stockist_panel', array(
+        'priority'    => 55,
+        'title'       => __('Stockist Page Management', 'everything-cacao'),
+        'description' => __('Manage all text, headings, and the CTA section on the Stockists / Where To Buy page.', 'everything-cacao'),
+    ));
+
+    // -------------------------------------------------------------------------
+    // SECTION 1: HERO BANNER
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_stockist_hero_section', array(
+        'title'    => __('Section 1: Hero Banner', 'everything-cacao'),
+        'panel'    => 'theme_stockist_panel',
+        'priority' => 1,
+    ));
+
+    $stockist_hero_controls = array(
+        'ec_stockist_hero_tagline' => array(
+            'label'   => __('Hero Eyebrow / Tagline', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'RETAIL PARTNERS & OFFICIAL STOCKISTS',
+        ),
+        'ec_stockist_hero_title' => array(
+            'label'   => __('Hero Heading', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Where to Find Everything Cacao',
+        ),
+        'ec_stockist_hero_subtitle' => array(
+            'label'   => __('Hero Subtitle / Description', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Find Cherelle and Nahar artisanal chocolate bars stocked at official retail partners across Ghana.',
+        ),
+    );
+
+    foreach ($stockist_hero_controls as $setting_id => $data) {
+        $wp_customize->add_setting($setting_id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($setting_id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_stockist_hero_section',
+            'type'    => $data['type'],
+        ));
+    }
+
+    // -------------------------------------------------------------------------
+    // SECTION 2: BESPOKE ORDERS & CTA BANNER
+    // -------------------------------------------------------------------------
+    $wp_customize->add_section('theme_stockist_cta_section', array(
+        'title'    => __('Section 2: Bespoke Orders & CTA Banner', 'everything-cacao'),
+        'panel'    => 'theme_stockist_panel',
+        'priority' => 2,
+    ));
+
+    $stockist_cta_controls = array(
+        'ec_stockist_cta_tag' => array(
+            'label'   => __('CTA Eyebrow / Tag', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'BESPOKE ORDERS & WHOLESALE',
+        ),
+        'ec_stockist_cta_title' => array(
+            'label'   => __('CTA Heading', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => "Can't Find a Nearby Outlet or Looking for Bulk Ordering?",
+        ),
+        'ec_stockist_cta_body' => array(
+            'label'   => __('CTA Body Text', 'everything-cacao'),
+            'type'    => 'textarea',
+            'default' => 'Our Concierge Service delivers artisan Cherelle and Nahar chocolate boxes directly to your doorstep in Accra or ships custom wholesale orders nationwide.',
+        ),
+        'ec_stockist_cta_btn_text' => array(
+            'label'   => __('CTA Button Label', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => 'CONTACT US',
+        ),
+        'ec_stockist_cta_btn_url' => array(
+            'label'   => __('CTA Button URL (leave blank to auto-resolve contact page)', 'everything-cacao'),
+            'type'    => 'text',
+            'default' => '',
+        ),
+    );
+
+    foreach ($stockist_cta_controls as $setting_id => $data) {
+        $wp_customize->add_setting($setting_id, array(
+            'default'           => $data['default'],
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control($setting_id, array(
+            'label'   => $data['label'],
+            'section' => 'theme_stockist_cta_section',
+            'type'    => $data['type'],
+        ));
+    }
+    // =========================================================================
+    // END STOCKIST PAGE MANAGEMENT PANEL
+    // =========================================================================
 }
 add_action('customize_register', 'ec_customize_register');
 

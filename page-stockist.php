@@ -39,7 +39,7 @@ $link_contact = ec_get_smart_page_link(array('contact', 'concierge'), '/contact'
 
 // Data arrays for retail partner outlets exactly as provided in Excel & location lists
 $melcom_accra = array(
-    'Accra Mall', 'Spintex Mall', 'Kaneshie', 'Achimota Mall', 'Achimota', 
+    'Accra Mall', 'Spintex Mall', 'Kaneshie', 'Achimota', 
     'Kass', 'Baatsona Mini', 'Madina', 'Nanakrom', 'Frafraha', 
     'Labone Mini', 'Domi Mini', 'Weija', 'Kasoa', 'Kasoa Mini', 
     'Tema Comm 1', 'Tema Comm 25', 'Haatso', 'Matehko', 'Adenta', 

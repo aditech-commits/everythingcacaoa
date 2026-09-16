@@ -85,7 +85,7 @@
 
   <!-- Header Navigation Component -->
   <header class="glass-header border-b border-cacao-dark/10 sticky top-0 z-50 transition-all duration-300">
-    <nav class="flex items-center justify-between max-w-7xl mx-auto px-6 md:px-12 py-5">
+    <nav class="flex items-center justify-between max-w-7xl mx-auto px-4 md:px-12 py-3 md:py-5 w-full">
       <!-- Brand Logo & Name -->
       <div class="flex items-center shrink-0">
         <a href="<?php echo $link_home; ?>" class="flex items-center group shrink-0">
@@ -98,7 +98,7 @@
           $ec_logo_h = get_option('ec_header_logo_height', '50');
           $ec_logo_h_val = !empty($ec_logo_h) ? intval($ec_logo_h) : 50;
           ?>
-          <img src="<?php echo esc_url($ec_logo_url); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" style="max-height: <?php echo $ec_logo_h_val; ?>px; height: auto;" class="w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105" />
+          <img src="<?php echo esc_url($ec_logo_url); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" style="max-height: min(<?php echo $ec_logo_h_val; ?>px, 38px); height: auto;" class="w-auto max-h-[38px] md:max-h-[50px] shrink-0 object-contain transition-transform duration-300 group-hover:scale-105" />
         </a>
       </div>
 

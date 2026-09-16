@@ -32,8 +32,8 @@ $ec_footer_copyright  = str_replace('{year}', date('Y'), $ec_footer_copyright);
 $ec_footer_address    = get_option('ec_footer_address', 'Accra, Ghana');
 ?>
   <!-- Footer Component -->
-  <footer class="bg-cacao-dark text-canvas border-t border-canvas/10 mt-auto py-16 px-6 md:px-12">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+  <footer class="bg-cacao-dark text-canvas border-t border-canvas/10 mt-auto pt-10 pb-20 md:pb-16 px-5 md:px-12 w-full box-border">
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
       <div class="space-y-4">
         <a href="<?php echo $link_home; ?>" class="inline-block group shrink-0">
           <img src="<?php echo esc_url($ec_footer_logo_url); ?>" alt="<?php bloginfo('name'); ?>" style="max-height: <?php echo $ec_footer_logo_h_val; ?>px; height: auto;" class="w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105" />

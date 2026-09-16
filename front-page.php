@@ -18,10 +18,10 @@ $link_craft_fallback       = esc_url(home_url('/about-us/'));
 
   <!-- 1. Hero Section -->
   <section class="relative min-h-[85vh] flex items-center overflow-hidden py-16">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+    <div class="max-w-7xl mx-auto px-5 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center w-full">
       <!-- Text Content -->
       <div class="lg:col-span-6 z-10 space-y-8 ec-animate">
-        <h1 class="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-cacao-dark">
+        <h1 class="font-serif-luxury text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight text-cacao-dark">
           <?php echo esc_html(ec_get_text_option('ec_hero_title', "Ghana's Finest Chocolate — Crafted from Local Cacao")); ?>
         </h1>
 
@@ -29,7 +29,7 @@ $link_craft_fallback       = esc_url(home_url('/about-us/'));
           <?php echo esc_html(ec_get_text_option('ec_hero_subtitle', "Everything Cacao GH makes premium chocolate from Ghana's finest locally sourced cacao. Our two iconic ranges — Nahar for luxury occasions and Cherelle for everyday delight — bring world-class Ghanaian chocolate to your table.")); ?>
         </p>
 
-        <div class="flex flex-wrap gap-4 pt-4">
+        <div class="flex flex-col sm:flex-row flex-wrap gap-3 pt-4 w-full sm:w-auto">
           <a href="<?php echo esc_url(ec_get_text_option('ec_hero_btn1_url', $link_collections_fallback)); ?>" class="px-8 py-4 bg-cacao-dark text-canvas font-semibold text-xs uppercase tracking-widest hover:bg-accent-terracotta transition-all duration-300 shadow-xl">
             <?php echo esc_html(ec_get_text_option('ec_hero_btn1_label', 'SHOP ALL CHOCOLATE')); ?>
           </a>

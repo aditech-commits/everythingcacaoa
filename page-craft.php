@@ -17,11 +17,11 @@ get_header();
        Customizer: About Us Management → 1. Hero Banner
        ======================================================================== -->
   <section class="py-10 md:py-14 bg-cacao-dark text-canvas border-b border-canvas/10">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 text-center space-y-6">
+    <div class="max-w-7xl mx-auto px-5 md:px-12 text-center space-y-5 md:space-y-6">
       <span class="text-xs font-semibold uppercase tracking-widest text-accent-gold">
         <?php echo esc_html( ec_get_text_option( 'ec_about_hero_tagline', 'Official Brand Story &amp; Vision' ) ); ?>
       </span>
-      <h1 class="font-serif-luxury text-4xl md:text-6xl font-bold leading-tight">
+      <h1 class="font-serif-luxury text-3xl md:text-6xl font-bold leading-tight">
         <?php echo esc_html( ec_get_text_option( 'ec_about_hero_title', 'Everything Cacao' ) ); ?>
       </h1>
       <p class="text-canvas/80 text-base max-w-3xl mx-auto leading-relaxed">
@@ -37,7 +37,7 @@ get_header();
   <section id="about" class="py-10 md:py-14 max-w-7xl mx-auto px-6 md:px-12">
     <div class="text-center max-w-3xl mx-auto space-y-5 mb-8 md:mb-10 ec-animate">
       <span class="text-sm font-semibold uppercase tracking-widest text-accent-terracotta">Our Journey</span>
-      <h2 class="font-serif-luxury text-4xl md:text-5xl lg:text-6xl font-bold text-cacao-dark leading-tight">
+      <h2 class="font-serif-luxury text-2xl md:text-5xl lg:text-6xl font-bold text-cacao-dark leading-tight">
         <?php echo esc_html( ec_get_text_option( 'ec_about_values_title', "Ghana's Chocolate Story — Grown Here, Made Here" ) ); ?>
       </h2>
       <p class="text-cacao-dark/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">

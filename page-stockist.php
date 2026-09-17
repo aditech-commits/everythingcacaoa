@@ -52,7 +52,7 @@ $melcom_outside = array(
 );
 
 $shoprite = array(
-    'Accra Mall', 'Junction Mall', 'West Hill Mall', 'Achimota Mall'
+    'Accra Mall', 'Junction Mall', 'West Hill Mall', 'Achimota Mall', 'Osu'
 );
 
 $marina_mall = array(
@@ -88,7 +88,7 @@ $shell_mart = array(
 );
 
 $addpharma = array(
-    'East Legon', 'Spintex Rd', 'Tsea Addo', 'Ring Road', 
+    'East Legon', 'Spintex Rd', 'Tse Addo', 'Ring Road', 
     'Korle Bu', 'Tema', 'Pig Farm Junction', 'NIA'
 );
 

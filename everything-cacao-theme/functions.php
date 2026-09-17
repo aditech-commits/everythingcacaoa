@@ -716,14 +716,14 @@ function ec_customize_register($wp_customize) {
     )));
 
     $wp_customize->add_setting('ec_header_logo_height', array(
-        'default'           => '65',
+        'default'           => '50',
         'type'              => 'option',
         'sanitize_callback' => 'absint',
         'transport'         => 'refresh',
     ));
     $wp_customize->add_control('ec_header_logo_height', array(
         'label'       => __('Header Logo Height (px)', 'everything-cacao'),
-        'description' => __('Adjust the maximum height of the header logo in pixels (e.g. 65, 80, 95, 120). Default: 65.', 'everything-cacao'),
+        'description' => __('Adjust the maximum height of the header logo in pixels (e.g. 50, 60, 75). Default: 50.', 'everything-cacao'),
         'section'     => 'ec_brand_settings',
         'type'        => 'number',
         'input_attrs' => array(
@@ -734,14 +734,14 @@ function ec_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('ec_header_menu_font_size', array(
-        'default'           => '14',
+        'default'           => '13',
         'type'              => 'option',
         'sanitize_callback' => 'absint',
         'transport'         => 'refresh',
     ));
     $wp_customize->add_control('ec_header_menu_font_size', array(
         'label'       => __('Header Menu Font Size (px)', 'everything-cacao'),
-        'description' => __('Adjust the font size of the header navigation menu links in pixels (e.g. 13, 14, 15, 16, 18). Default: 14.', 'everything-cacao'),
+        'description' => __('Adjust the font size of the header navigation menu links in pixels (e.g. 12, 13, 14, 15). Default: 13.', 'everything-cacao'),
         'section'     => 'ec_brand_settings',
         'type'        => 'number',
         'input_attrs' => array(
@@ -2405,8 +2405,8 @@ function ec_render_admin_settings_page() {
     $wa_def_msg  = get_option('ec_whatsapp_default_msg', "Hi Everything Cacao GH! I'd like to order artisanal chocolate.");
     $email       = get_option('ec_concierge_email', 'info@everythingcacaogh.com');
     $logo_url    = get_option('ec_header_logo_url', '');
-    $logo_height = get_option('ec_header_logo_height', '65');
-    $menu_size   = get_option('ec_header_menu_font_size', '14');
+    $logo_height = get_option('ec_header_logo_height', '50');
+    $menu_size   = get_option('ec_header_menu_font_size', '13');
     ?>
     <div class="wrap">
         <h1 style="font-family: Georgia, serif; color: #2C1A11;">🍫 Everything Cacao GH — Theme Settings</h1>

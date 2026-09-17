@@ -85,9 +85,9 @@
 
   <!-- Header Navigation Component -->
   <header class="glass-header border-b border-cacao-dark/10 sticky top-0 z-50 transition-all duration-300">
-    <nav class="flex items-center justify-between max-w-7xl mx-auto px-4 md:px-12 py-3 md:py-5 w-full">
+    <nav class="flex items-center justify-between max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-3 md:py-4 w-full">
       <!-- Brand Logo & Name -->
-      <div class="flex items-center shrink-0">
+      <div class="flex items-center shrink-0 pr-2 md:pr-4">
         <a href="<?php echo $link_home; ?>" class="flex items-center group shrink-0">
           <?php
           // Check Customizer option first, then fall back to the uploaded media library URL
@@ -95,19 +95,19 @@
           if ( empty($ec_logo_url) ) {
             $ec_logo_url = 'https://everythingcacaogh.com/wp-content/uploads/2026/09/everything_cacao_header_logo.png';
           }
-          $ec_logo_h = get_option('ec_header_logo_height', '65');
-          $ec_logo_h_val = !empty($ec_logo_h) ? intval($ec_logo_h) : 65;
-          $ec_logo_mobile_val = min($ec_logo_h_val, 48);
+          $ec_logo_h = get_option('ec_header_logo_height', '50');
+          $ec_logo_h_val = !empty($ec_logo_h) ? intval($ec_logo_h) : 50;
+          $ec_logo_mobile_val = min($ec_logo_h_val, 42);
 
-          $ec_menu_size = get_option('ec_header_menu_font_size', '14');
-          $ec_menu_size_val = !empty($ec_menu_size) ? intval($ec_menu_size) : 14;
+          $ec_menu_size = get_option('ec_header_menu_font_size', '13');
+          $ec_menu_size_val = !empty($ec_menu_size) ? intval($ec_menu_size) : 13;
           ?>
           <img src="<?php echo esc_url($ec_logo_url); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" style="--logo-h-desktop: <?php echo $ec_logo_h_val; ?>px; --logo-h-mobile: <?php echo $ec_logo_mobile_val; ?>px;" class="site-header-logo shrink-0 transition-transform duration-300 group-hover:scale-105" />
         </a>
       </div>
 
       <!-- Desktop Navigation Menu -->
-      <div class="hidden md:flex items-center gap-5 lg:gap-8 uppercase tracking-widest font-bold text-cacao-dark" style="font-size: <?php echo $ec_menu_size_val; ?>px;">
+      <div class="hidden md:flex items-center gap-4 lg:gap-7 xl:gap-8 uppercase tracking-widest font-bold text-cacao-dark shrink-0" style="font-size: <?php echo $ec_menu_size_val; ?>px;">
         <!-- ABOUT US -->
         <a href="<?php echo $link_craft; ?>" class="nav-link whitespace-nowrap <?php echo ($is_craft || is_page('meet-the-team')) ? 'active-page' : ''; ?>">
           <?php if ($is_craft || is_page('meet-the-team')) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>

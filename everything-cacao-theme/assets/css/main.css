@@ -72,13 +72,13 @@ h1, h2, h3, h4, h5, h6, .font-serif-luxury {
 .site-header-logo {
   height: auto;
   width: auto;
-  max-height: var(--logo-h-mobile, 48px);
+  max-height: var(--logo-h-mobile, 42px);
   object-fit: contain;
 }
 
 @media (min-width: 768px) {
   .site-header-logo {
-    max-height: var(--logo-h-desktop, 65px);
+    max-height: var(--logo-h-desktop, 50px);
   }
 }
 

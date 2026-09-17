@@ -87,8 +87,8 @@
   <header class="glass-header border-b border-cacao-dark/10 sticky top-0 z-50 transition-all duration-300">
     <nav class="flex items-center justify-between max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-3 md:py-4 w-full">
       <!-- Brand Logo & Name -->
-      <div class="flex items-center shrink-0 pr-2 md:pr-4">
-        <a href="<?php echo $link_home; ?>" class="flex items-center group shrink-0">
+      <div class="flex items-center min-w-0 max-w-[calc(100%-48px)] md:max-w-none pr-2 md:pr-4">
+        <a href="<?php echo $link_home; ?>" class="flex items-center group min-w-0 max-w-full">
           <?php
           // Check Customizer option first, then fall back to the uploaded media library URL
           $ec_logo_url = get_option('ec_header_logo_url', '');
@@ -97,7 +97,7 @@
           }
           $ec_logo_h = get_option('ec_header_logo_height', '50');
           $ec_logo_h_val = !empty($ec_logo_h) ? intval($ec_logo_h) : 50;
-          $ec_logo_mobile_val = min($ec_logo_h_val, 42);
+          $ec_logo_mobile_val = min($ec_logo_h_val, 34);
 
           $ec_menu_size = get_option('ec_header_menu_font_size', '13');
           $ec_menu_size_val = !empty($ec_menu_size) ? intval($ec_menu_size) : 13;

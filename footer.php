@@ -18,13 +18,14 @@ $link_contact    = ec_get_smart_page_link(array('contact', 'concierge'), '/conta
 // Customizer Footer Options
 $ec_footer_logo_url = get_option('ec_footer_logo_url', '');
 if ( empty( $ec_footer_logo_url ) ) {
-    $ec_footer_logo_url = get_template_directory_uri() . '/assets/images/brand/logo.png';
+    $ec_footer_logo_url = get_option('ec_header_logo_url', '');
+    if ( empty( $ec_footer_logo_url ) ) {
+        $ec_footer_logo_url = 'https://everythingcacaogh.com/wp-content/uploads/2026/09/everything_cacao_header_logo.png';
+    }
 }
 
-$ec_footer_logo_h     = get_option('ec_footer_logo_height', '75');
-$ec_footer_logo_h_val = !empty($ec_footer_logo_h) ? intval($ec_footer_logo_h) : 75;
-
-$ec_footer_logo_text  = get_option('ec_footer_logo_text', 'EVERYTHING CACAO');
+$ec_footer_logo_h     = get_option('ec_footer_logo_height', '52');
+$ec_footer_logo_h_val = !empty($ec_footer_logo_h) ? intval($ec_footer_logo_h) : 52;
 
 $ec_footer_copyright  = get_option('ec_footer_copyright_text', '© {year} Everything Cacao. All Rights Reserved.');
 $ec_footer_copyright  = str_replace('{year}', date('Y'), $ec_footer_copyright);
@@ -36,12 +37,9 @@ $ec_footer_address    = get_option('ec_footer_address', 'Accra, Ghana');
     <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
       <div class="space-y-4">
         <a href="<?php echo $link_home; ?>" class="inline-block group shrink-0">
-          <img src="<?php echo esc_url($ec_footer_logo_url); ?>" alt="<?php bloginfo('name'); ?>" style="max-height: <?php echo $ec_footer_logo_h_val; ?>px; height: auto;" class="w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105" />
-          <?php if (!empty($ec_footer_logo_text)) : ?>
-            <span class="text-lg sm:text-xl md:text-2xl lg:text-2xl tracking-wider text-accent-gold footer-logo-text brand-heading font-brand-logo mt-2.5 block transition-transform duration-300 group-hover:scale-105" style="font-family: 'Leckerli One', cursive; letter-spacing: 0.04em;"><?php echo esc_html($ec_footer_logo_text); ?></span>
-          <?php endif; ?>
+          <img src="<?php echo esc_url($ec_footer_logo_url); ?>" alt="<?php bloginfo('name'); ?>" class="site-footer-logo shrink-0 transition-transform duration-300 group-hover:scale-105" />
         </a>
-        <p class="text-xs text-canvas/50"><?php echo esc_html($ec_footer_copyright); ?></p>
+        <p class="text-xs text-canvas/50 pt-1"><?php echo esc_html($ec_footer_copyright); ?></p>
       </div>
 
       <div class="space-y-3 text-xs uppercase tracking-widest font-semibold">

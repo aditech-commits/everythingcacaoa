@@ -68,6 +68,20 @@ h1, h2, h3, h4, h5, h6, .font-serif-luxury {
   -webkit-backdrop-filter: blur(16px);
 }
 
+/* ── Header Logo & Responsive Scaling ─────────────────────────────────── */
+.site-header-logo {
+  height: auto;
+  width: auto;
+  max-height: var(--logo-h-mobile, 48px);
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .site-header-logo {
+    max-height: var(--logo-h-desktop, 65px);
+  }
+}
+
 /* ── Nav Hover & Active Indicators ───────────────────────────────────── */
 .nav-link,
 .menu-item a {

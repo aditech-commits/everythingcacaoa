@@ -716,20 +716,38 @@ function ec_customize_register($wp_customize) {
     )));
 
     $wp_customize->add_setting('ec_header_logo_height', array(
-        'default'           => '50',
+        'default'           => '65',
         'type'              => 'option',
         'sanitize_callback' => 'absint',
         'transport'         => 'refresh',
     ));
     $wp_customize->add_control('ec_header_logo_height', array(
         'label'       => __('Header Logo Height (px)', 'everything-cacao'),
-        'description' => __('Adjust the maximum height of the header logo in pixels (e.g. 50, 65, 80, 100). Default: 50.', 'everything-cacao'),
+        'description' => __('Adjust the maximum height of the header logo in pixels (e.g. 65, 80, 95, 120). Default: 65.', 'everything-cacao'),
         'section'     => 'ec_brand_settings',
         'type'        => 'number',
         'input_attrs' => array(
             'min'  => 25,
             'max'  => 250,
             'step' => 2,
+        ),
+    ));
+
+    $wp_customize->add_setting('ec_header_menu_font_size', array(
+        'default'           => '14',
+        'type'              => 'option',
+        'sanitize_callback' => 'absint',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('ec_header_menu_font_size', array(
+        'label'       => __('Header Menu Font Size (px)', 'everything-cacao'),
+        'description' => __('Adjust the font size of the header navigation menu links in pixels (e.g. 13, 14, 15, 16, 18). Default: 14.', 'everything-cacao'),
+        'section'     => 'ec_brand_settings',
+        'type'        => 'number',
+        'input_attrs' => array(
+            'min'  => 11,
+            'max'  => 24,
+            'step' => 1,
         ),
     ));
 
@@ -2373,6 +2391,12 @@ function ec_render_admin_settings_page() {
         if (isset($_POST['ec_header_logo_url'])) {
             update_option('ec_header_logo_url', esc_url_raw($_POST['ec_header_logo_url']));
         }
+        if (isset($_POST['ec_header_logo_height'])) {
+            update_option('ec_header_logo_height', intval($_POST['ec_header_logo_height']));
+        }
+        if (isset($_POST['ec_header_menu_font_size'])) {
+            update_option('ec_header_menu_font_size', intval($_POST['ec_header_menu_font_size']));
+        }
         echo '<div class="notice notice-success is-dismissible"><p><strong>Settings saved successfully!</strong></p></div>';
     }
 
@@ -2381,10 +2405,12 @@ function ec_render_admin_settings_page() {
     $wa_def_msg  = get_option('ec_whatsapp_default_msg', "Hi Everything Cacao GH! I'd like to order artisanal chocolate.");
     $email       = get_option('ec_concierge_email', 'info@everythingcacaogh.com');
     $logo_url    = get_option('ec_header_logo_url', '');
+    $logo_height = get_option('ec_header_logo_height', '65');
+    $menu_size   = get_option('ec_header_menu_font_size', '14');
     ?>
     <div class="wrap">
         <h1 style="font-family: Georgia, serif; color: #2C1A11;">🍫 Everything Cacao GH — Theme Settings</h1>
-        <p>Manage your Meta (Facebook) Pixel tracking, WhatsApp Concierge phone number, floating widget default message, and Concierge email address below.</p>
+        <p>Manage your Meta (Facebook) Pixel tracking, WhatsApp Concierge phone number, floating widget default message, Concierge email address, and Header Logo / Menu sizes below.</p>
         <hr style="margin: 20px 0;" />
 
         <form method="post" action="">
@@ -2426,6 +2452,20 @@ function ec_render_admin_settings_page() {
                         <?php if (!empty($logo_url)) : ?>
                             <p><img src="<?php echo esc_url($logo_url); ?>" alt="Current header logo preview" style="max-height:50px; margin-top:8px; border:1px solid #ddd; padding:4px; background:#FBF8F3;" /></p>
                         <?php endif; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="ec_header_logo_height">Header Logo Height (px)</label></th>
+                    <td>
+                        <input name="ec_header_logo_height" type="number" id="ec_header_logo_height" value="<?php echo esc_attr($logo_height); ?>" min="25" max="250" step="1" class="small-text" /> px
+                        <p class="description">Set header logo height in pixels for desktop screens (e.g., 65, 80, 95). Automatically scales down responsively on mobile viewports. Default: 65.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="ec_header_menu_font_size">Header Navigation Font Size (px)</label></th>
+                    <td>
+                        <input name="ec_header_menu_font_size" type="number" id="ec_header_menu_font_size" value="<?php echo esc_attr($menu_size); ?>" min="11" max="24" step="1" class="small-text" /> px
+                        <p class="description">Set the font size for header menu links (e.g., 13, 14, 15, 16). Default: 14.</p>
                     </td>
                 </tr>
             </table>

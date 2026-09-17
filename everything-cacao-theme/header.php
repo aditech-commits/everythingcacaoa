@@ -95,41 +95,45 @@
           if ( empty($ec_logo_url) ) {
             $ec_logo_url = 'https://everythingcacaogh.com/wp-content/uploads/2026/09/everything_cacao_header_logo.png';
           }
-          $ec_logo_h = get_option('ec_header_logo_height', '50');
-          $ec_logo_h_val = !empty($ec_logo_h) ? intval($ec_logo_h) : 50;
+          $ec_logo_h = get_option('ec_header_logo_height', '65');
+          $ec_logo_h_val = !empty($ec_logo_h) ? intval($ec_logo_h) : 65;
+          $ec_logo_mobile_val = min($ec_logo_h_val, 48);
+
+          $ec_menu_size = get_option('ec_header_menu_font_size', '14');
+          $ec_menu_size_val = !empty($ec_menu_size) ? intval($ec_menu_size) : 14;
           ?>
-          <img src="<?php echo esc_url($ec_logo_url); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" style="max-height: min(<?php echo $ec_logo_h_val; ?>px, 38px); height: auto;" class="w-auto max-h-[38px] md:max-h-[50px] shrink-0 object-contain transition-transform duration-300 group-hover:scale-105" />
+          <img src="<?php echo esc_url($ec_logo_url); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" style="--logo-h-desktop: <?php echo $ec_logo_h_val; ?>px; --logo-h-mobile: <?php echo $ec_logo_mobile_val; ?>px;" class="site-header-logo shrink-0 transition-transform duration-300 group-hover:scale-105" />
         </a>
       </div>
 
       <!-- Desktop Navigation Menu -->
-      <div class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest font-semibold text-cacao-dark">
+      <div class="hidden md:flex items-center gap-5 lg:gap-8 uppercase tracking-widest font-bold text-cacao-dark" style="font-size: <?php echo $ec_menu_size_val; ?>px;">
         <!-- ABOUT US -->
-        <a href="<?php echo $link_craft; ?>" class="nav-link <?php echo ($is_craft || is_page('meet-the-team')) ? 'active-page' : ''; ?>">
+        <a href="<?php echo $link_craft; ?>" class="nav-link whitespace-nowrap <?php echo ($is_craft || is_page('meet-the-team')) ? 'active-page' : ''; ?>">
           <?php if ($is_craft || is_page('meet-the-team')) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
           ABOUT US
         </a>
 
         <!-- CACAO JOURNAL -->
-        <a href="<?php echo $link_journal; ?>" class="nav-link <?php echo $is_journal ? 'active-page' : ''; ?>">
+        <a href="<?php echo $link_journal; ?>" class="nav-link whitespace-nowrap <?php echo $is_journal ? 'active-page' : ''; ?>">
           <?php if ($is_journal) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
           CACAO JOURNAL
         </a>
 
         <!-- OUR COLLECTIONS -->
-        <a href="<?php echo $link_collections; ?>" class="nav-link <?php echo $is_collections ? 'active-page' : ''; ?>">
+        <a href="<?php echo $link_collections; ?>" class="nav-link whitespace-nowrap <?php echo $is_collections ? 'active-page' : ''; ?>">
           <?php if ($is_collections) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
           OUR COLLECTIONS
         </a>
 
         <!-- STOCKISTS -->
-        <a href="<?php echo $link_stockist; ?>" class="nav-link <?php echo $is_stockist ? 'active-page' : ''; ?>">
+        <a href="<?php echo $link_stockist; ?>" class="nav-link whitespace-nowrap <?php echo $is_stockist ? 'active-page' : ''; ?>">
           <?php if ($is_stockist) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
           STOCKISTS
         </a>
 
         <!-- CONTACT -->
-        <a href="<?php echo $link_contact; ?>" class="nav-link <?php echo $is_contact ? 'active-page' : ''; ?>">
+        <a href="<?php echo $link_contact; ?>" class="nav-link whitespace-nowrap <?php echo $is_contact ? 'active-page' : ''; ?>">
           <?php if ($is_contact) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
           CONTACT
         </a>
@@ -149,7 +153,7 @@
         <span class="font-brand-logo text-xl font-bold text-accent-gold">EVERYTHING CACAO GH</span>
         <button id="close-drawer-btn" class="text-canvas text-3xl font-light">&times;</button>
       </div>
-      <div class="flex flex-col space-y-4 text-xs uppercase tracking-widest font-semibold">
+      <div class="flex flex-col space-y-4 text-sm uppercase tracking-widest font-bold">
         <!-- 1. ABOUT US -->
         <div class="border-b border-canvas/10 pb-3">
           <a href="<?php echo $link_craft; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">ABOUT US</a>

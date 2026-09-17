@@ -827,6 +827,25 @@ function ec_customize_register($wp_customize) {
         'settings'    => 'ec_footer_logo_text_image_url',
     )));
 
+    // Footer Brand Text Image Height
+    $wp_customize->add_setting('ec_footer_logo_text_image_height', array(
+        'default'           => '55',
+        'type'              => 'option',
+        'sanitize_callback' => 'absint',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('ec_footer_logo_text_image_height', array(
+        'label'       => __('Footer Brand Text Image Height (px)', 'everything-cacao'),
+        'description' => __('Adjust the maximum height of the uploaded footer text image in pixels (e.g. 50, 65, 80, 100). Default: 55.', 'everything-cacao'),
+        'section'     => 'ec_footer_settings',
+        'type'        => 'number',
+        'input_attrs' => array(
+            'min'  => 15,
+            'max'  => 200,
+            'step' => 2,
+        ),
+    ));
+
     // Footer Copyright Text
     $wp_customize->add_setting('ec_footer_copyright_text', array(
         'default'           => '© {year} Everything Cacao. All Rights Reserved.',
@@ -2414,6 +2433,9 @@ function ec_render_admin_settings_page() {
         if (isset($_POST['ec_footer_logo_text_image_url'])) {
             update_option('ec_footer_logo_text_image_url', esc_url_raw($_POST['ec_footer_logo_text_image_url']));
         }
+        if (isset($_POST['ec_footer_logo_text_image_height'])) {
+            update_option('ec_footer_logo_text_image_height', intval($_POST['ec_footer_logo_text_image_height']));
+        }
         echo '<div class="notice notice-success is-dismissible"><p><strong>Settings saved successfully!</strong></p></div>';
     }
 
@@ -2425,6 +2447,7 @@ function ec_render_admin_settings_page() {
     $logo_height       = get_option('ec_header_logo_height', '50');
     $menu_size         = get_option('ec_header_menu_font_size', '13');
     $footer_text_img   = get_option('ec_footer_logo_text_image_url', '');
+    $footer_text_img_h = get_option('ec_footer_logo_text_image_height', '55');
     ?>
     <div class="wrap">
         <h1 style="font-family: Georgia, serif; color: #2C1A11;">🍫 Everything Cacao GH — Theme Settings</h1>
@@ -2480,6 +2503,13 @@ function ec_render_admin_settings_page() {
                         <?php if (!empty($footer_text_img)) : ?>
                             <p><img src="<?php echo esc_url($footer_text_img); ?>" alt="Current footer brand text image preview" style="max-height:35px; margin-top:8px; border:1px solid #ddd; padding:4px; background:#2C1A11;" /></p>
                         <?php endif; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="ec_footer_logo_text_image_height">Footer Brand Text Image Height (px)</label></th>
+                    <td>
+                        <input name="ec_footer_logo_text_image_height" type="number" id="ec_footer_logo_text_image_height" value="<?php echo esc_attr($footer_text_img_h); ?>" min="15" max="200" step="1" class="small-text" /> px
+                        <p class="description">Set the maximum height of the uploaded footer brand text image in pixels (e.g., 50, 65, 80, 100). Default: 55.</p>
                     </td>
                 </tr>
                 <tr>

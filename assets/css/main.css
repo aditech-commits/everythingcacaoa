@@ -95,9 +95,16 @@ h1, h2, h3, h4, h5, h6, .font-serif-luxury {
 .footer-brand-text-img {
   height: auto;
   width: auto;
-  max-height: 36px;
-  max-width: 250px;
+  max-height: var(--footer-text-img-h, 55px);
+  max-width: min(calc(100vw - 60px), 320px);
   object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .footer-brand-text-img {
+    max-height: var(--footer-text-img-h, 55px);
+    max-width: 360px;
+  }
 }
 
 /* ── Nav Hover & Active Indicators ───────────────────────────────────── */

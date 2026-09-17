@@ -35,18 +35,18 @@ $ec_footer_copyright          = str_replace('{year}', date('Y'), $ec_footer_copy
 $ec_footer_address            = get_option('ec_footer_address', 'Accra, Ghana');
 ?>
   <!-- Footer Component -->
-  <footer class="bg-cacao-dark text-canvas border-t border-canvas/10 mt-auto pt-8 pb-16 md:py-10 px-5 md:px-12 w-full box-border">
-    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start">
-      <div class="flex flex-col items-start space-y-1">
-        <a href="<?php echo $link_home; ?>" class="flex flex-col items-start group shrink-0 space-y-0.5 m-0 p-0">
-          <img src="<?php echo esc_url($ec_footer_logo_url); ?>" alt="<?php bloginfo('name'); ?>" style="max-height: <?php echo min($ec_footer_logo_h_val, 58); ?>px; height: auto;" class="w-auto shrink-0 object-contain block m-0 p-0 transition-transform duration-300 group-hover:scale-105" />
+  <footer class="bg-cacao-dark text-canvas border-t border-canvas/10 mt-auto pt-10 pb-20 md:pb-16 px-5 md:px-12 w-full box-border">
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+      <div class="flex flex-col items-start space-y-2">
+        <a href="<?php echo $link_home; ?>" class="flex flex-col items-start group shrink-0 space-y-1">
+          <img src="<?php echo esc_url($ec_footer_logo_url); ?>" alt="<?php bloginfo('name'); ?>" style="max-height: <?php echo $ec_footer_logo_h_val; ?>px; height: auto;" class="w-auto shrink-0 object-contain block mb-0 transition-transform duration-300 group-hover:scale-105" />
           <?php if (!empty($ec_footer_logo_text_img)) : ?>
-            <img src="<?php echo esc_url($ec_footer_logo_text_img); ?>" alt="<?php echo esc_attr($ec_footer_logo_text); ?>" style="--footer-text-img-h: <?php echo $ec_footer_logo_text_img_h_v; ?>px;" class="footer-brand-text-img shrink-0 block m-0 p-0 transition-transform duration-300 group-hover:scale-105" />
+            <img src="<?php echo esc_url($ec_footer_logo_text_img); ?>" alt="<?php echo esc_attr($ec_footer_logo_text); ?>" style="--footer-text-img-h: <?php echo $ec_footer_logo_text_img_h_v; ?>px;" class="footer-brand-text-img shrink-0 block transition-transform duration-300 group-hover:scale-105" />
           <?php elseif (!empty($ec_footer_logo_text)) : ?>
-            <span class="text-base sm:text-lg md:text-xl font-bold tracking-widest text-accent-gold uppercase font-serif-luxury footer-brand-title block m-0 p-0 transition-transform duration-300 group-hover:scale-105"><?php echo esc_html($ec_footer_logo_text); ?></span>
+            <span class="text-base sm:text-lg md:text-xl font-bold tracking-widest text-accent-gold uppercase font-serif-luxury footer-brand-title mt-1 block transition-transform duration-300 group-hover:scale-105"><?php echo esc_html($ec_footer_logo_text); ?></span>
           <?php endif; ?>
         </a>
-        <p class="text-xs text-canvas/50 m-0 p-0 mt-1.5"><?php echo esc_html($ec_footer_copyright); ?></p>
+        <p class="text-xs text-canvas/50 pt-0.5"><?php echo esc_html($ec_footer_copyright); ?></p>
       </div>
 
       <div class="space-y-3 text-xs uppercase tracking-widest font-semibold">

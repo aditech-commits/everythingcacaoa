@@ -98,12 +98,14 @@ h1, h2, h3, h4, h5, h6, .font-serif-luxury {
   max-height: var(--footer-text-img-h, 55px);
   max-width: min(calc(100vw - 60px), 320px);
   object-fit: contain;
+  margin-top: 2px !important;
 }
 
 @media (min-width: 768px) {
   .footer-brand-text-img {
     max-height: var(--footer-text-img-h, 55px);
     max-width: 360px;
+    margin-top: 2px !important;
   }
 }
 

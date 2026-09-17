@@ -813,6 +813,20 @@ function ec_customize_register($wp_customize) {
         'type'        => 'text',
     ));
 
+    // Footer Brand Text Image (Optional Image Text replacement)
+    $wp_customize->add_setting('ec_footer_logo_text_image_url', array(
+        'default'           => '',
+        'type'              => 'option',
+        'sanitize_callback' => 'esc_url_raw',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'ec_footer_logo_text_image_url', array(
+        'label'       => __('Footer Brand Text Image (Optional)', 'everything-cacao'),
+        'description' => __('Upload an image logotype of the brand text to display below the emblem icon (e.g. transparent PNG of "EVERYTHING CACAO" text). Leave empty to use text.', 'everything-cacao'),
+        'section'     => 'ec_footer_settings',
+        'settings'    => 'ec_footer_logo_text_image_url',
+    )));
+
     // Footer Copyright Text
     $wp_customize->add_setting('ec_footer_copyright_text', array(
         'default'           => '© {year} Everything Cacao. All Rights Reserved.',
@@ -2397,20 +2411,24 @@ function ec_render_admin_settings_page() {
         if (isset($_POST['ec_header_menu_font_size'])) {
             update_option('ec_header_menu_font_size', intval($_POST['ec_header_menu_font_size']));
         }
+        if (isset($_POST['ec_footer_logo_text_image_url'])) {
+            update_option('ec_footer_logo_text_image_url', esc_url_raw($_POST['ec_footer_logo_text_image_url']));
+        }
         echo '<div class="notice notice-success is-dismissible"><p><strong>Settings saved successfully!</strong></p></div>';
     }
 
-    $pixel_id    = get_option('ec_pixel_id', '');
-    $whatsapp    = get_option('ec_whatsapp_number', '233240661866');
-    $wa_def_msg  = get_option('ec_whatsapp_default_msg', "Hi Everything Cacao GH! I'd like to order artisanal chocolate.");
-    $email       = get_option('ec_concierge_email', 'info@everythingcacaogh.com');
-    $logo_url    = get_option('ec_header_logo_url', '');
-    $logo_height = get_option('ec_header_logo_height', '50');
-    $menu_size   = get_option('ec_header_menu_font_size', '13');
+    $pixel_id          = get_option('ec_pixel_id', '');
+    $whatsapp          = get_option('ec_whatsapp_number', '233240661866');
+    $wa_def_msg        = get_option('ec_whatsapp_default_msg', "Hi Everything Cacao GH! I'd like to order artisanal chocolate.");
+    $email             = get_option('ec_concierge_email', 'info@everythingcacaogh.com');
+    $logo_url          = get_option('ec_header_logo_url', '');
+    $logo_height       = get_option('ec_header_logo_height', '50');
+    $menu_size         = get_option('ec_header_menu_font_size', '13');
+    $footer_text_img   = get_option('ec_footer_logo_text_image_url', '');
     ?>
     <div class="wrap">
         <h1 style="font-family: Georgia, serif; color: #2C1A11;">🍫 Everything Cacao GH — Theme Settings</h1>
-        <p>Manage your Meta (Facebook) Pixel tracking, WhatsApp Concierge phone number, floating widget default message, Concierge email address, and Header Logo / Menu sizes below.</p>
+        <p>Manage your Meta (Facebook) Pixel tracking, WhatsApp Concierge phone number, floating widget default message, Concierge email address, and Header / Footer Logo sizes and images below.</p>
         <hr style="margin: 20px 0;" />
 
         <form method="post" action="">
@@ -2451,6 +2469,16 @@ function ec_render_admin_settings_page() {
                         <p class="description">Paste the full URL of your logo from the <a href="<?php echo admin_url('upload.php'); ?>" target="_blank">WordPress Media Library</a>. Go to <strong>Media &rarr; Library</strong>, click your logo image, and copy the <em>File URL</em>. Leave blank to use the theme file fallback.</p>
                         <?php if (!empty($logo_url)) : ?>
                             <p><img src="<?php echo esc_url($logo_url); ?>" alt="Current header logo preview" style="max-height:50px; margin-top:8px; border:1px solid #ddd; padding:4px; background:#FBF8F3;" /></p>
+                        <?php endif; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="ec_footer_logo_text_image_url">Footer Brand Text Image URL (Optional)</label></th>
+                    <td>
+                        <input name="ec_footer_logo_text_image_url" type="url" id="ec_footer_logo_text_image_url" value="<?php echo esc_attr($footer_text_img); ?>" class="large-text" placeholder="https://yoursite.com/wp-content/uploads/..." />
+                        <p class="description">Upload an image logotype of the brand text to display below the footer emblem icon (e.g. transparent PNG of "EVERYTHING CACAO" text). Leave empty to use text.</p>
+                        <?php if (!empty($footer_text_img)) : ?>
+                            <p><img src="<?php echo esc_url($footer_text_img); ?>" alt="Current footer brand text image preview" style="max-height:35px; margin-top:8px; border:1px solid #ddd; padding:4px; background:#2C1A11;" /></p>
                         <?php endif; ?>
                     </td>
                 </tr>

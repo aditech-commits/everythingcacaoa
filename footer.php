@@ -24,12 +24,13 @@ if ( empty( $ec_footer_logo_url ) ) {
 $ec_footer_logo_h     = get_option('ec_footer_logo_height', '75');
 $ec_footer_logo_h_val = !empty($ec_footer_logo_h) ? intval($ec_footer_logo_h) : 75;
 
-$ec_footer_logo_text  = get_option('ec_footer_logo_text', 'EVERYTHING CACAO');
+$ec_footer_logo_text      = get_option('ec_footer_logo_text', 'EVERYTHING CACAO');
+$ec_footer_logo_text_img  = get_option('ec_footer_logo_text_image_url', '');
 
-$ec_footer_copyright  = get_option('ec_footer_copyright_text', '© {year} Everything Cacao. All Rights Reserved.');
-$ec_footer_copyright  = str_replace('{year}', date('Y'), $ec_footer_copyright);
+$ec_footer_copyright      = get_option('ec_footer_copyright_text', '© {year} Everything Cacao. All Rights Reserved.');
+$ec_footer_copyright      = str_replace('{year}', date('Y'), $ec_footer_copyright);
 
-$ec_footer_address    = get_option('ec_footer_address', 'Accra, Ghana');
+$ec_footer_address        = get_option('ec_footer_address', 'Accra, Ghana');
 ?>
   <!-- Footer Component -->
   <footer class="bg-cacao-dark text-canvas border-t border-canvas/10 mt-auto pt-10 pb-20 md:pb-16 px-5 md:px-12 w-full box-border">
@@ -37,7 +38,9 @@ $ec_footer_address    = get_option('ec_footer_address', 'Accra, Ghana');
       <div class="space-y-4">
         <a href="<?php echo $link_home; ?>" class="inline-block group shrink-0">
           <img src="<?php echo esc_url($ec_footer_logo_url); ?>" alt="<?php bloginfo('name'); ?>" style="max-height: <?php echo $ec_footer_logo_h_val; ?>px; height: auto;" class="w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-105" />
-          <?php if (!empty($ec_footer_logo_text)) : ?>
+          <?php if (!empty($ec_footer_logo_text_img)) : ?>
+            <img src="<?php echo esc_url($ec_footer_logo_text_img); ?>" alt="<?php echo esc_attr($ec_footer_logo_text); ?>" class="footer-brand-text-img h-auto max-h-[30px] sm:max-h-[36px] w-auto object-contain mt-2.5 block transition-transform duration-300 group-hover:scale-105" />
+          <?php elseif (!empty($ec_footer_logo_text)) : ?>
             <span class="text-base sm:text-lg md:text-xl font-bold tracking-widest text-accent-gold uppercase font-serif-luxury footer-brand-title mt-2.5 block transition-transform duration-300 group-hover:scale-105"><?php echo esc_html($ec_footer_logo_text); ?></span>
           <?php endif; ?>
         </a>

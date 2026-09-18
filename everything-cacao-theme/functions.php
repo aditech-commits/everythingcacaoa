@@ -780,7 +780,7 @@ function ec_customize_register($wp_customize) {
         'settings'    => 'ec_footer_logo_url',
     )));
 
-    // Footer Logo Height
+    // Footer Logo Height (Desktop)
     $wp_customize->add_setting('ec_footer_logo_height', array(
         'default'           => '75',
         'type'              => 'option',
@@ -788,13 +788,32 @@ function ec_customize_register($wp_customize) {
         'transport'         => 'refresh',
     ));
     $wp_customize->add_control('ec_footer_logo_height', array(
-        'label'       => __('Footer Logo Height (px)', 'everything-cacao'),
-        'description' => __('Adjust the maximum height of the footer logo image in pixels. Default: 75.', 'everything-cacao'),
+        'label'       => __('Footer Logo Height (Desktop, px)', 'everything-cacao'),
+        'description' => __('Adjust maximum height of the footer logo emblem on desktop in pixels. Default: 75.', 'everything-cacao'),
         'section'     => 'ec_footer_settings',
         'type'        => 'number',
         'input_attrs' => array(
             'min'  => 30,
             'max'  => 300,
+            'step' => 2,
+        ),
+    ));
+
+    // Footer Logo Height (Mobile)
+    $wp_customize->add_setting('ec_footer_logo_mobile_height', array(
+        'default'           => '48',
+        'type'              => 'option',
+        'sanitize_callback' => 'absint',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('ec_footer_logo_mobile_height', array(
+        'label'       => __('Footer Logo Height (Mobile, px)', 'everything-cacao'),
+        'description' => __('Adjust maximum height of the footer logo emblem on mobile screens (< 768px) in pixels. Default: 48.', 'everything-cacao'),
+        'section'     => 'ec_footer_settings',
+        'type'        => 'number',
+        'input_attrs' => array(
+            'min'  => 20,
+            'max'  => 150,
             'step' => 2,
         ),
     ));
@@ -827,7 +846,7 @@ function ec_customize_register($wp_customize) {
         'settings'    => 'ec_footer_logo_text_image_url',
     )));
 
-    // Footer Brand Text Image Height
+    // Footer Brand Text Image Height (Desktop)
     $wp_customize->add_setting('ec_footer_logo_text_image_height', array(
         'default'           => '55',
         'type'              => 'option',
@@ -835,14 +854,33 @@ function ec_customize_register($wp_customize) {
         'transport'         => 'refresh',
     ));
     $wp_customize->add_control('ec_footer_logo_text_image_height', array(
-        'label'       => __('Footer Brand Text Image Height (px)', 'everything-cacao'),
-        'description' => __('Adjust the maximum height of the uploaded footer text image in pixels (e.g. 50, 65, 80, 100). Default: 55.', 'everything-cacao'),
+        'label'       => __('Footer Brand Text Image Height (Desktop, px)', 'everything-cacao'),
+        'description' => __('Adjust maximum height of the uploaded footer text image on desktop in pixels. Default: 55.', 'everything-cacao'),
         'section'     => 'ec_footer_settings',
         'type'        => 'number',
         'input_attrs' => array(
             'min'  => 15,
             'max'  => 200,
             'step' => 2,
+        ),
+    ));
+
+    // Footer Brand Text Image Height (Mobile)
+    $wp_customize->add_setting('ec_footer_logo_text_image_mobile_height', array(
+        'default'           => '22',
+        'type'              => 'option',
+        'sanitize_callback' => 'absint',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('ec_footer_logo_text_image_mobile_height', array(
+        'label'       => __('Footer Brand Text Image Height (Mobile, px)', 'everything-cacao'),
+        'description' => __('Adjust maximum height of the uploaded footer text image on mobile screens (< 768px) in pixels. Default: 22.', 'everything-cacao'),
+        'section'     => 'ec_footer_settings',
+        'type'        => 'number',
+        'input_attrs' => array(
+            'min'  => 10,
+            'max'  => 100,
+            'step' => 1,
         ),
     ));
 
@@ -2436,18 +2474,26 @@ function ec_render_admin_settings_page() {
         if (isset($_POST['ec_footer_logo_text_image_height'])) {
             update_option('ec_footer_logo_text_image_height', intval($_POST['ec_footer_logo_text_image_height']));
         }
+        if (isset($_POST['ec_footer_logo_mobile_height'])) {
+            update_option('ec_footer_logo_mobile_height', intval($_POST['ec_footer_logo_mobile_height']));
+        }
+        if (isset($_POST['ec_footer_logo_text_image_mobile_height'])) {
+            update_option('ec_footer_logo_text_image_mobile_height', intval($_POST['ec_footer_logo_text_image_mobile_height']));
+        }
         echo '<div class="notice notice-success is-dismissible"><p><strong>Settings saved successfully!</strong></p></div>';
     }
 
-    $pixel_id          = get_option('ec_pixel_id', '');
-    $whatsapp          = get_option('ec_whatsapp_number', '233240661866');
-    $wa_def_msg        = get_option('ec_whatsapp_default_msg', "Hi Everything Cacao GH! I'd like to order artisanal chocolate.");
-    $email             = get_option('ec_concierge_email', 'info@everythingcacaogh.com');
-    $logo_url          = get_option('ec_header_logo_url', '');
-    $logo_height       = get_option('ec_header_logo_height', '50');
-    $menu_size         = get_option('ec_header_menu_font_size', '13');
-    $footer_text_img   = get_option('ec_footer_logo_text_image_url', '');
-    $footer_text_img_h = get_option('ec_footer_logo_text_image_height', '55');
+    $pixel_id                  = get_option('ec_pixel_id', '');
+    $whatsapp                  = get_option('ec_whatsapp_number', '233240661866');
+    $wa_def_msg                = get_option('ec_whatsapp_default_msg', "Hi Everything Cacao GH! I'd like to order artisanal chocolate.");
+    $email                     = get_option('ec_concierge_email', 'info@everythingcacaogh.com');
+    $logo_url                  = get_option('ec_header_logo_url', '');
+    $logo_height               = get_option('ec_header_logo_height', '50');
+    $menu_size                 = get_option('ec_header_menu_font_size', '13');
+    $footer_text_img           = get_option('ec_footer_logo_text_image_url', '');
+    $footer_text_img_h         = get_option('ec_footer_logo_text_image_height', '55');
+    $footer_logo_mobile_h      = get_option('ec_footer_logo_mobile_height', '48');
+    $footer_text_img_mobile_h  = get_option('ec_footer_logo_text_image_mobile_height', '22');
     ?>
     <div class="wrap">
         <h1 style="font-family: Georgia, serif; color: #2C1A11;">🍫 Everything Cacao GH — Theme Settings</h1>
@@ -2506,10 +2552,24 @@ function ec_render_admin_settings_page() {
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row"><label for="ec_footer_logo_text_image_height">Footer Brand Text Image Height (px)</label></th>
+                    <th scope="row"><label for="ec_footer_logo_text_image_height">Footer Brand Text Image Height (Desktop, px)</label></th>
                     <td>
                         <input name="ec_footer_logo_text_image_height" type="number" id="ec_footer_logo_text_image_height" value="<?php echo esc_attr($footer_text_img_h); ?>" min="15" max="200" step="1" class="small-text" /> px
-                        <p class="description">Set the maximum height of the uploaded footer brand text image in pixels (e.g., 50, 65, 80, 100). Default: 55.</p>
+                        <p class="description">Set the maximum height of the uploaded footer brand text image on desktop in pixels (e.g., 50, 55, 65, 80). Default: 55.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="ec_footer_logo_text_image_mobile_height">Footer Brand Text Image Height (Mobile, px)</label></th>
+                    <td>
+                        <input name="ec_footer_logo_text_image_mobile_height" type="number" id="ec_footer_logo_text_image_mobile_height" value="<?php echo esc_attr($footer_text_img_mobile_h); ?>" min="10" max="100" step="1" class="small-text" /> px
+                        <p class="description">Set the maximum height of the uploaded footer brand text image on mobile screens (&lt; 768px) in pixels (e.g., 20, 22, 25). Default: 22.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="ec_footer_logo_mobile_height">Footer Emblem Logo Height (Mobile, px)</label></th>
+                    <td>
+                        <input name="ec_footer_logo_mobile_height" type="number" id="ec_footer_logo_mobile_height" value="<?php echo esc_attr($footer_logo_mobile_h); ?>" min="20" max="150" step="1" class="small-text" /> px
+                        <p class="description">Set the maximum height of the main footer emblem logo on mobile screens (&lt; 768px) in pixels (e.g., 40, 48, 55). Default: 48.</p>
                     </td>
                 </tr>
                 <tr>

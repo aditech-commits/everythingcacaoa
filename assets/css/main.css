@@ -84,7 +84,15 @@ h1, h2, h3, h4, h5, h6, .font-serif-luxury {
   }
 }
 
-/* ── Footer Brand Text Styling ────────────────────────────────────────── */
+/* ── Footer Brand Text & Logo Styling ───────────────────────────────────── */
+.footer-logo-img {
+  height: auto;
+  width: auto;
+  max-height: var(--footer-logo-h-mobile, 48px);
+  max-width: 140px;
+  object-fit: contain;
+}
+
 .footer-brand-title {
   font-family: 'Playfair Display', Georgia, serif;
   letter-spacing: 0.12em;
@@ -95,16 +103,21 @@ h1, h2, h3, h4, h5, h6, .font-serif-luxury {
 .footer-brand-text-img {
   height: auto;
   width: auto;
-  max-height: min(calc(var(--footer-text-img-h, 42px) * 0.6), 26px);
-  max-width: min(calc(100vw - 80px), 190px);
+  max-height: var(--footer-text-img-h-mobile, 22px);
+  max-width: min(calc(100vw - 80px), 180px);
   object-fit: contain;
   margin-top: 1px !important;
   margin-bottom: 0 !important;
 }
 
 @media (min-width: 768px) {
+  .footer-logo-img {
+    max-height: var(--footer-logo-h-desktop, 60px);
+    max-width: none;
+  }
+
   .footer-brand-text-img {
-    max-height: var(--footer-text-img-h, 42px);
+    max-height: var(--footer-text-img-h-desktop, 42px);
     max-width: 260px;
     margin-top: 2px !important;
   }

@@ -21,17 +21,13 @@ if ( empty( $ec_footer_logo_url ) ) {
     $ec_footer_logo_url = get_template_directory_uri() . '/assets/images/brand/logo.png';
 }
 
-$ec_footer_logo_h            = get_option('ec_footer_logo_height', '60');
-$ec_footer_logo_h_val        = !empty($ec_footer_logo_h) ? intval($ec_footer_logo_h) : 60;
-$ec_footer_logo_mobile_h     = get_option('ec_footer_logo_mobile_height', '48');
-$ec_footer_logo_mobile_h_val = !empty($ec_footer_logo_mobile_h) ? intval($ec_footer_logo_mobile_h) : 48;
+$ec_footer_logo_h     = get_option('ec_footer_logo_height', '60');
+$ec_footer_logo_h_val = !empty($ec_footer_logo_h) ? intval($ec_footer_logo_h) : 60;
 
-$ec_footer_logo_text                 = get_option('ec_footer_logo_text', 'EVERYTHING CACAO');
-$ec_footer_logo_text_img             = get_option('ec_footer_logo_text_image_url', '');
-$ec_footer_logo_text_img_h           = get_option('ec_footer_logo_text_image_height', '42');
-$ec_footer_logo_text_img_h_v         = !empty($ec_footer_logo_text_img_h) ? intval($ec_footer_logo_text_img_h) : 42;
-$ec_footer_logo_text_img_mobile_h    = get_option('ec_footer_logo_text_image_mobile_height', '22');
-$ec_footer_logo_text_img_mobile_h_v = !empty($ec_footer_logo_text_img_mobile_h) ? intval($ec_footer_logo_text_img_mobile_h) : 22;
+$ec_footer_logo_text          = get_option('ec_footer_logo_text', 'EVERYTHING CACAO');
+$ec_footer_logo_text_img      = get_option('ec_footer_logo_text_image_url', '');
+$ec_footer_logo_text_img_h    = get_option('ec_footer_logo_text_image_height', '42');
+$ec_footer_logo_text_img_h_v  = !empty($ec_footer_logo_text_img_h) ? intval($ec_footer_logo_text_img_h) : 42;
 
 $ec_footer_copyright          = get_option('ec_footer_copyright_text', '© {year} Everything Cacao. All Rights Reserved.');
 $ec_footer_copyright          = str_replace('{year}', date('Y'), $ec_footer_copyright);
@@ -43,9 +39,9 @@ $ec_footer_address            = get_option('ec_footer_address', 'Accra, Ghana');
     <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
       <div class="flex flex-col items-start space-y-2">
         <a href="<?php echo $link_home; ?>" class="flex flex-col items-start group shrink-0 space-y-1">
-          <img src="<?php echo esc_url($ec_footer_logo_url); ?>" alt="<?php bloginfo('name'); ?>" style="--footer-logo-h-desktop: <?php echo $ec_footer_logo_h_val; ?>px; --footer-logo-h-mobile: <?php echo $ec_footer_logo_mobile_h_val; ?>px;" class="footer-logo-img w-auto shrink-0 object-contain block mb-0 transition-transform duration-300 group-hover:scale-105" />
+          <img src="<?php echo esc_url($ec_footer_logo_url); ?>" alt="<?php bloginfo('name'); ?>" style="max-height: <?php echo $ec_footer_logo_h_val; ?>px; height: auto;" class="w-auto shrink-0 object-contain block mb-0 transition-transform duration-300 group-hover:scale-105" />
           <?php if (!empty($ec_footer_logo_text_img)) : ?>
-            <img src="<?php echo esc_url($ec_footer_logo_text_img); ?>" alt="<?php echo esc_attr($ec_footer_logo_text); ?>" style="--footer-text-img-h-desktop: <?php echo $ec_footer_logo_text_img_h_v; ?>px; --footer-text-img-h-mobile: <?php echo $ec_footer_logo_text_img_mobile_h_v; ?>px;" class="footer-brand-text-img shrink-0 block transition-transform duration-300 group-hover:scale-105" />
+            <img src="<?php echo esc_url($ec_footer_logo_text_img); ?>" alt="<?php echo esc_attr($ec_footer_logo_text); ?>" style="--footer-text-img-h: <?php echo $ec_footer_logo_text_img_h_v; ?>px;" class="footer-brand-text-img shrink-0 block transition-transform duration-300 group-hover:scale-105" />
           <?php elseif (!empty($ec_footer_logo_text)) : ?>
             <span class="text-base sm:text-lg md:text-xl font-bold tracking-widest text-accent-gold uppercase font-serif-luxury footer-brand-title mt-1 block transition-transform duration-300 group-hover:scale-105"><?php echo esc_html($ec_footer_logo_text); ?></span>
           <?php endif; ?>

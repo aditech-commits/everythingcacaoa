@@ -67,7 +67,7 @@ $ec_footer_address            = get_option('ec_footer_address', 'Accra, Ghana');
             <a href="<?php echo $link_gallery; ?>" class="block hover:text-accent-gold transition-colors">OUR STORY</a>
             <a href="<?php echo $link_journal; ?>" class="block hover:text-accent-gold transition-colors">Cacao Journal</a>
             <a href="<?php echo $link_collections; ?>" class="block hover:text-accent-gold transition-colors">OUR PRODUCTS</a>
-            <a href="<?php echo $link_stockist; ?>" class="block hover:text-accent-gold transition-colors">OUR OUTLETS</a>
+            <a href="<?php echo $link_stockist; ?>" class="block hover:text-accent-gold transition-colors">STOCKISTS</a>
             <a href="<?php echo $link_contact; ?>" class="block hover:text-accent-gold transition-colors">CONTACT US</a>
             <?php
         }

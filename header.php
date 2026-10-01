@@ -108,35 +108,48 @@
 
       <!-- Desktop Navigation Menu -->
       <div class="hidden md:flex items-center gap-4 lg:gap-7 xl:gap-8 uppercase tracking-widest font-bold text-cacao-dark shrink-0" style="font-size: <?php echo $ec_menu_size_val; ?>px;">
-        <!-- ABOUT US -->
-        <a href="<?php echo $link_craft; ?>" class="nav-link whitespace-nowrap <?php echo ($is_craft || is_page('meet-the-team')) ? 'active-page' : ''; ?>">
-          <?php if ($is_craft || is_page('meet-the-team')) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
-          ABOUT US
-        </a>
+        <?php
+        if (has_nav_menu('primary')) {
+            wp_nav_menu(array(
+                'theme_location' => 'primary',
+                'container'      => false,
+                'menu_class'     => 'hidden md:flex items-center gap-4 lg:gap-7 xl:gap-8 uppercase tracking-widest font-bold text-cacao-dark shrink-0',
+                'fallback_cb'    => false,
+            ));
+        } else {
+            ?>
+            <!-- ABOUT US -->
+            <a href="<?php echo $link_craft; ?>" class="nav-link whitespace-nowrap <?php echo ($is_craft || is_page('meet-the-team')) ? 'active-page' : ''; ?>">
+              <?php if ($is_craft || is_page('meet-the-team')) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
+              ABOUT US
+            </a>
 
-        <!-- CACAO JOURNAL -->
-        <a href="<?php echo $link_journal; ?>" class="nav-link whitespace-nowrap <?php echo $is_journal ? 'active-page' : ''; ?>">
-          <?php if ($is_journal) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
-          CACAO JOURNAL
-        </a>
+            <!-- CACAO JOURNAL -->
+            <a href="<?php echo $link_journal; ?>" class="nav-link whitespace-nowrap <?php echo $is_journal ? 'active-page' : ''; ?>">
+              <?php if ($is_journal) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
+              CACAO JOURNAL
+            </a>
 
-        <!-- OUR PRODUCTS -->
-        <a href="<?php echo $link_collections; ?>" class="nav-link whitespace-nowrap <?php echo $is_collections ? 'active-page' : ''; ?>">
-          <?php if ($is_collections) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
-          OUR PRODUCTS
-        </a>
+            <!-- OUR PRODUCTS -->
+            <a href="<?php echo $link_collections; ?>" class="nav-link whitespace-nowrap <?php echo $is_collections ? 'active-page' : ''; ?>">
+              <?php if ($is_collections) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
+              OUR PRODUCTS
+            </a>
 
-        <!-- OUR OUTLETS -->
-        <a href="<?php echo $link_stockist; ?>" class="nav-link whitespace-nowrap <?php echo $is_stockist ? 'active-page' : ''; ?>">
-          <?php if ($is_stockist) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
-          OUR OUTLETS
-        </a>
+            <!-- STOCKISTS -->
+            <a href="<?php echo $link_stockist; ?>" class="nav-link whitespace-nowrap <?php echo $is_stockist ? 'active-page' : ''; ?>">
+              <?php if ($is_stockist) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
+              STOCKISTS
+            </a>
 
-        <!-- CONTACT US -->
-        <a href="<?php echo $link_contact; ?>" class="nav-link whitespace-nowrap <?php echo $is_contact ? 'active-page' : ''; ?>">
-          <?php if ($is_contact) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
-          CONTACT US
-        </a>
+            <!-- CONTACT US -->
+            <a href="<?php echo $link_contact; ?>" class="nav-link whitespace-nowrap <?php echo $is_contact ? 'active-page' : ''; ?>">
+              <?php if ($is_contact) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
+              CONTACT US
+            </a>
+            <?php
+        }
+        ?>
       </div>
 
       <!-- Mobile Hamburger Button -->
@@ -154,30 +167,44 @@
         <button id="close-drawer-btn" class="text-canvas text-3xl font-light">&times;</button>
       </div>
       <div class="flex flex-col space-y-4 text-sm uppercase tracking-widest font-bold">
-        <!-- 1. ABOUT US -->
-        <div class="border-b border-canvas/10 pb-3">
-          <a href="<?php echo $link_craft; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">ABOUT US</a>
-        </div>
+        <?php
+        if (has_nav_menu('mobile')) {
+            wp_nav_menu(array(
+                'theme_location' => 'mobile',
+                'container'      => false,
+                'menu_class'     => 'flex flex-col space-y-4 text-sm uppercase tracking-widest font-bold text-canvas',
+                'fallback_cb'    => false,
+            ));
+        } else {
+            ?>
+            <!-- 1. ABOUT US -->
+            <div class="border-b border-canvas/10 pb-3">
+              <a href="<?php echo $link_craft; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">ABOUT US</a>
+            </div>
 
-        <!-- 2. CACAO JOURNAL -->
-        <div class="border-b border-canvas/10 pb-3">
-          <a href="<?php echo $link_journal; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">CACAO JOURNAL</a>
-        </div>
+            <!-- 2. CACAO JOURNAL -->
+            <div class="border-b border-canvas/10 pb-3">
+              <a href="<?php echo $link_journal; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">CACAO JOURNAL</a>
+            </div>
 
-        <!-- 3. OUR PRODUCTS -->
-        <div class="border-b border-canvas/10 pb-3">
-          <a href="<?php echo $link_collections; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">OUR PRODUCTS</a>
-        </div>
+            <!-- 3. OUR PRODUCTS -->
+            <div class="border-b border-canvas/10 pb-3">
+              <a href="<?php echo $link_collections; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">OUR PRODUCTS</a>
+            </div>
 
-        <!-- 4. OUR OUTLETS -->
-        <div class="border-b border-canvas/10 pb-3">
-          <a href="<?php echo $link_stockist; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">OUR OUTLETS</a>
-        </div>
+            <!-- 4. STOCKISTS -->
+            <div class="border-b border-canvas/10 pb-3">
+              <a href="<?php echo $link_stockist; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">STOCKISTS</a>
+            </div>
 
-        <!-- 5. CONTACT US -->
-        <div class="border-b border-canvas/10 pb-3">
-          <a href="<?php echo $link_contact; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">CONTACT US</a>
-        </div>
+            <!-- 5. CONTACT US -->
+            <div class="border-b border-canvas/10 pb-3">
+              <a href="<?php echo $link_contact; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">CONTACT US</a>
+            </div>
+            <?php
+        }
+        ?>
+      </div>
       </div>
 
       <div class="space-y-4 pt-6">

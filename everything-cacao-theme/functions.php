@@ -76,6 +76,49 @@ function ec_theme_setup() {
 add_action('after_setup_theme', 'ec_theme_setup');
 
 /**
+ * Sanitize and enforce exact Header Menu labels & links
+ * (ABOUT US, CACAO JOURNAL, OUR PRODUCTS, STOCKISTS, CONTACT US)
+ */
+function ec_sanitize_header_nav_menu_objects($items, $args) {
+    if (empty($items) || !is_array($items)) {
+        return $items;
+    }
+
+    if (isset($args->theme_location) && ($args->theme_location === 'primary' || $args->theme_location === 'mobile')) {
+        $cleaned_items = array();
+        $seen_labels   = array();
+
+        foreach ($items as $item) {
+            $title_lower = strtolower(trim($item->title));
+            $url_lower   = strtolower(trim($item->url));
+
+            if (strpos($title_lower, 'about') !== false || strpos($title_lower, 'craft') !== false || strpos($url_lower, 'about') !== false) {
+                $item->title = 'ABOUT US';
+            } elseif (strpos($title_lower, 'journal') !== false || strpos($url_lower, 'journal') !== false) {
+                $item->title = 'CACAO JOURNAL';
+            } elseif (strpos($title_lower, 'product') !== false || strpos($title_lower, 'collection') !== false || strpos($title_lower, 'stocklist') !== false || strpos($url_lower, 'product') !== false || strpos($url_lower, 'collection') !== false) {
+                $item->title = 'OUR PRODUCTS';
+            } elseif (strpos($title_lower, 'stockist') !== false || strpos($title_lower, 'outlet') !== false || strpos($url_lower, 'stockist') !== false || strpos($url_lower, 'outlet') !== false) {
+                $item->title = 'STOCKISTS';
+            } elseif (strpos($title_lower, 'contact') !== false || strpos($title_lower, 'concierge') !== false || strpos($url_lower, 'contact') !== false || strpos($url_lower, 'concierge') !== false) {
+                $item->title = 'CONTACT US';
+                $item->url   = esc_url(home_url('/contact/'));
+            }
+
+            if (!in_array($item->title, $seen_labels)) {
+                $seen_labels[]   = $item->title;
+                $cleaned_items[] = $item;
+            }
+        }
+
+        return $cleaned_items;
+    }
+
+    return $items;
+}
+add_filter('wp_nav_menu_objects', 'ec_sanitize_header_nav_menu_objects', 10, 2);
+
+/**
  * 1b. SEO: Dynamic Document Titles (replaces manual <title> tags in header.php)
  */
 function ec_seo_document_title($title) {

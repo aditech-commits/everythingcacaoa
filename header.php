@@ -52,7 +52,7 @@
   $link_team       = ec_get_smart_page_link(array('meet-the-team', 'our-team', 'team'), '/meet-the-team');
   $link_journal    = ec_get_smart_page_link(array('cacao-journal', 'journal'), '/cacao-journal');
   $link_stockist   = ec_get_smart_page_link(array('our-outlets', 'outlets', 'stockist', 'stockists', 'stock-lists'), '/our-outlets');
-  $link_contact    = ec_get_smart_page_link(array('contact-us', 'contact', 'concierge'), '/contact-us');
+  $link_contact    = ec_get_smart_page_link(array('contact', 'contact-us', 'concierge'), '/contact/');
   ?>
 
   <!-- Header Navigation Component -->

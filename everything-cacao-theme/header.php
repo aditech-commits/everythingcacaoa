@@ -120,22 +120,22 @@
           CACAO JOURNAL
         </a>
 
-        <!-- OUR COLLECTIONS -->
+        <!-- OUR PRODUCTS -->
         <a href="<?php echo $link_collections; ?>" class="nav-link whitespace-nowrap <?php echo $is_collections ? 'active-page' : ''; ?>">
           <?php if ($is_collections) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
-          OUR COLLECTIONS
+          OUR PRODUCTS
         </a>
 
-        <!-- STOCKISTS -->
+        <!-- OUR OUTLETS -->
         <a href="<?php echo $link_stockist; ?>" class="nav-link whitespace-nowrap <?php echo $is_stockist ? 'active-page' : ''; ?>">
           <?php if ($is_stockist) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
-          STOCKISTS
+          OUR OUTLETS
         </a>
 
-        <!-- CONTACT -->
+        <!-- CONTACT US -->
         <a href="<?php echo $link_contact; ?>" class="nav-link whitespace-nowrap <?php echo $is_contact ? 'active-page' : ''; ?>">
           <?php if ($is_contact) : ?><span class="w-1.5 h-1.5 bg-accent-gold rounded-full inline-block mr-1.5"></span><?php endif; ?>
-          CONTACT
+          CONTACT US
         </a>
       </div>
 
@@ -164,19 +164,19 @@
           <a href="<?php echo $link_journal; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">CACAO JOURNAL</a>
         </div>
 
-        <!-- 3. OUR COLLECTIONS -->
+        <!-- 3. OUR PRODUCTS -->
         <div class="border-b border-canvas/10 pb-3">
-          <a href="<?php echo $link_collections; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">OUR COLLECTIONS</a>
+          <a href="<?php echo $link_collections; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">OUR PRODUCTS</a>
         </div>
 
-        <!-- 4. STOCKISTS -->
+        <!-- 4. OUR OUTLETS -->
         <div class="border-b border-canvas/10 pb-3">
-          <a href="<?php echo $link_stockist; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">STOCKISTS</a>
+          <a href="<?php echo $link_stockist; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">OUR OUTLETS</a>
         </div>
 
-        <!-- 5. CONTACT -->
+        <!-- 5. CONTACT US -->
         <div class="border-b border-canvas/10 pb-3">
-          <a href="<?php echo $link_contact; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">CONTACT</a>
+          <a href="<?php echo $link_contact; ?>" class="block text-canvas hover:text-accent-gold py-1 font-bold tracking-wider">CONTACT US</a>
         </div>
       </div>
 

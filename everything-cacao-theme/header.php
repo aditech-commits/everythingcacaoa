@@ -48,7 +48,7 @@
   // Smart URL resolver for header links
   $link_home       = esc_url(home_url('/'));
   $link_collections= ec_get_smart_page_link(array('our-products', 'products', 'our-collections', 'collections'), '/our-products');
-  $link_craft      = ec_get_smart_page_link(array('about-us', 'about', 'our-craft', 'craft'), '/about-us');
+  $link_craft      = ec_get_smart_page_link(array('about-us', 'about', 'our-craft', 'craft'), '/about-us/');
   $link_team       = ec_get_smart_page_link(array('meet-the-team', 'our-team', 'team'), '/meet-the-team');
   $link_journal    = ec_get_smart_page_link(array('cacao-journal', 'journal'), '/cacao-journal');
   $link_stockist   = ec_get_smart_page_link(array('our-outlets', 'outlets', 'stockist', 'stockists', 'stock-lists'), '/our-outlets');

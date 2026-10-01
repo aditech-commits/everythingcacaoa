@@ -94,6 +94,7 @@ function ec_sanitize_header_nav_menu_objects($items, $args) {
 
             if (strpos($title_lower, 'about') !== false || strpos($title_lower, 'craft') !== false || strpos($url_lower, 'about') !== false) {
                 $item->title = 'ABOUT US';
+                $item->url   = esc_url(home_url('/about-us/'));
             } elseif (strpos($title_lower, 'journal') !== false || strpos($url_lower, 'journal') !== false) {
                 $item->title = 'CACAO JOURNAL';
             } elseif (strpos($title_lower, 'product') !== false || strpos($title_lower, 'collection') !== false || strpos($title_lower, 'stocklist') !== false || strpos($url_lower, 'product') !== false || strpos($url_lower, 'collection') !== false) {

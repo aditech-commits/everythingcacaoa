@@ -39,9 +39,9 @@ $ec_footer_address            = get_option('ec_footer_address', 'Accra, Ghana');
     <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
       <div class="flex flex-col items-start space-y-2">
         <a href="<?php echo $link_home; ?>" class="flex flex-col items-start group shrink-0 space-y-1">
-          <img src="<?php echo esc_url($ec_footer_logo_url); ?>" alt="<?php bloginfo('name'); ?>" style="max-height: <?php echo $ec_footer_logo_h_val; ?>px; height: auto;" class="w-auto shrink-0 object-contain block mb-0 transition-transform duration-300 group-hover:scale-105" />
+          <img src="<?php echo esc_url($ec_footer_logo_url); ?>" alt="<?php bloginfo('name'); ?>" width="200" height="40" loading="lazy" decoding="async" style="max-height: <?php echo $ec_footer_logo_h_val; ?>px; height: auto;" class="w-auto shrink-0 object-contain block mb-0 transition-transform duration-300 group-hover:scale-105" />
           <?php if (!empty($ec_footer_logo_text_img)) : ?>
-            <img src="<?php echo esc_url($ec_footer_logo_text_img); ?>" alt="<?php echo esc_attr($ec_footer_logo_text); ?>" style="--footer-text-img-h: <?php echo $ec_footer_logo_text_img_h_v; ?>px;" class="footer-brand-text-img shrink-0 block transition-transform duration-300 group-hover:scale-105" />
+            <img src="<?php echo esc_url($ec_footer_logo_text_img); ?>" alt="<?php echo esc_attr($ec_footer_logo_text); ?>" width="260" height="42" loading="lazy" decoding="async" style="--footer-text-img-h: <?php echo $ec_footer_logo_text_img_h_v; ?>px;" class="footer-brand-text-img shrink-0 block transition-transform duration-300 group-hover:scale-105" />
           <?php elseif (!empty($ec_footer_logo_text)) : ?>
             <span class="text-base sm:text-lg md:text-xl font-bold tracking-widest text-accent-gold uppercase font-serif-luxury footer-brand-title mt-1 block transition-transform duration-300 group-hover:scale-105"><?php echo esc_html($ec_footer_logo_text); ?></span>
           <?php endif; ?>

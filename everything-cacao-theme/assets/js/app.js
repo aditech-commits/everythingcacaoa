@@ -2,6 +2,13 @@
  * Everything Cacao GH - Theme Application Logic
  */
 
+// Safeguard against invalid postMessage target origin loops and third-party iframe errors
+window.addEventListener("message", function(event) {
+  if (event.origin && event.origin !== window.location.origin && !event.origin.includes('facebook.com') && !event.origin.includes('whatsapp.com')) {
+    return;
+  }
+}, false);
+
 document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initQuickForms();

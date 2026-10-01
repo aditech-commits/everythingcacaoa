@@ -117,7 +117,7 @@ add_action('wp_head', 'ec_seo_meta_description', 1);
  * so it looks identical to the live front-end.
  */
 add_action('elementor/editor/before_enqueue_scripts', function() {
-    wp_enqueue_style('ec-tailwind', get_template_directory_uri() . '/assets/css/tailwind.css', array(), '1.0.0');
+    wp_enqueue_style('everything-cacao-styles', get_template_directory_uri() . '/assets/css/style.min.css', array(), '1.0.0', 'all');
     wp_enqueue_style('ec-google-fonts', 'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap', array(), null);
     wp_enqueue_style('ec-butler-font', 'https://fonts.cdnfonts.com/css/butler', array(), null);
 });
@@ -126,18 +126,15 @@ add_action('elementor/editor/before_enqueue_scripts', function() {
  * Elementor: Load theme CSS in Elementor front-end widgets view
  */
 add_action('elementor/frontend/after_enqueue_scripts', function() {
-    wp_enqueue_style('ec-tailwind', get_template_directory_uri() . '/assets/css/tailwind.css', array(), '1.0.0');
+    wp_enqueue_style('everything-cacao-styles', get_template_directory_uri() . '/assets/css/style.min.css', array(), '1.0.0', 'all');
 });
 
 /**
  * 2. Enqueue Scripts & Stylesheets
  */
 function ec_enqueue_assets() {
-    // Primary Enqueued Compiled Theme CSS
-    wp_enqueue_style('theme-styles', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.0');
-
-    // Utility & Layout Styling
-    wp_enqueue_style('ec-tailwind', get_template_directory_uri() . '/assets/css/tailwind.css', array('theme-styles'), '1.0.0');
+    // Primary Enqueued Static Minified Theme CSS
+    wp_enqueue_style('everything-cacao-styles', get_template_directory_uri() . '/assets/css/style.min.css', array(), '1.0.0', 'all');
 
     // Google Fonts & Butler Font
     wp_enqueue_style('ec-google-fonts', 'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap', array(), null);
@@ -160,7 +157,7 @@ add_action('wp_enqueue_scripts', 'ec_enqueue_assets');
 
 // Prevent empty Elementor content containers from creating whitespace and provide continuous marquee animation
 add_action('wp_enqueue_scripts', function() {
-    wp_add_inline_style('ec-tailwind', '.elementor-content-container:empty { display:none; } .elementor-content-container { margin:0; padding:0; } @keyframes ecMarquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } } .ec-marquee-wrapper { display: flex; overflow: hidden; white-space: nowrap; user-select: none; } .ec-marquee-track { display: flex; flex-shrink: 0; min-width: 100%; animation: ecMarquee 25s linear infinite; } .ec-marquee-wrapper:hover .ec-marquee-track { animation-play-state: paused; }');
+    wp_add_inline_style('everything-cacao-styles', '.elementor-content-container:empty { display:none; } .elementor-content-container { margin:0; padding:0; } @keyframes ecMarquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } } .ec-marquee-wrapper { display: flex; overflow: hidden; white-space: nowrap; user-select: none; } .ec-marquee-track { display: flex; flex-shrink: 0; min-width: 100%; animation: ecMarquee 25s linear infinite; } .ec-marquee-wrapper:hover .ec-marquee-track { animation-play-state: paused; }');
 });
 
 

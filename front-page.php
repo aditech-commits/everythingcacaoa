@@ -45,6 +45,11 @@ $link_craft_fallback       = esc_url(home_url('/about-us/'));
         <div class="relative w-full h-full p-2 flex items-center justify-center bg-card-bg rounded-2xl shadow-xl z-10 border border-cacao-dark/10 overflow-hidden transform -rotate-3 transition-transform duration-700 group-hover:rotate-0">
           <img class="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105" 
                alt="Ghanaian Cocoa Farm" 
+               width="600"
+               height="600"
+               loading="eager"
+               fetchpriority="high"
+               decoding="async"
                src="<?php echo esc_url(ec_get_smart_image_url('ec_hero_image', 'https://everythingcacaogh.com/wp-content/uploads/2026/08/cocoa-farm.jpg')); ?>" />
         </div>
       </div>

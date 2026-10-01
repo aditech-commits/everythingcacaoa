@@ -111,12 +111,41 @@ function ec_sanitize_header_nav_menu_objects($items, $args) {
             }
         }
 
+        // Guarantee CONTACT US is present at the end of the menu if missing from WP Admin menu
+        if (!in_array('CONTACT US', $seen_labels)) {
+            $contact_item = new stdClass();
+            $contact_item->ID = 999999;
+            $contact_item->title = 'CONTACT US';
+            $contact_item->url = esc_url(home_url('/contact/'));
+            $contact_item->menu_order = 99;
+            $contact_item->post_type = 'nav_menu_item';
+            $contact_item->type = 'custom';
+            $contact_item->object = 'custom';
+            $contact_item->db_id = 999999;
+            $contact_item->menu_item_parent = 0;
+            $contact_item->classes = array('menu-item', 'menu-item-type-custom');
+            $cleaned_items[] = $contact_item;
+        }
+
         return $cleaned_items;
     }
 
     return $items;
 }
 add_filter('wp_nav_menu_objects', 'ec_sanitize_header_nav_menu_objects', 10, 2);
+
+/**
+ * Guarantee CONTACT US HTML item is appended to primary header menu HTML
+ */
+add_filter('wp_nav_menu_items', function($items, $args) {
+    if (isset($args->theme_location) && $args->theme_location === 'primary') {
+        if (strpos($items, 'CONTACT US') === false && strpos($items, '/contact/') === false) {
+            $contact_url = esc_url(home_url('/contact/'));
+            $items .= '<li class="menu-item menu-item-type-custom"><a href="' . $contact_url . '">CONTACT US</a></li>';
+        }
+    }
+    return $items;
+}, 10, 2);
 
 /**
  * 1b. SEO: Dynamic Document Titles (replaces manual <title> tags in header.php)

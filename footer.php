@@ -8,12 +8,12 @@
 // Call Smart Page Link Resolver (defined safely in functions.php)
 
 $link_home       = esc_url(home_url('/'));
-$link_collections= ec_get_smart_page_link(array('our-collections', 'collections'), '/our-collections');
+$link_collections= ec_get_smart_page_link(array('our-products', 'products', 'our-collections', 'collections'), '/our-products');
 $link_craft      = ec_get_smart_page_link(array('about-us', 'about', 'our-craft', 'craft'), '/about-us');
 $link_gallery    = ec_get_smart_page_link(array('our-story', 'story', 'our-gallery', 'gallery', 'meet-the-team', 'our-team', 'team'), '/our-story');
 $link_journal    = ec_get_smart_page_link(array('cacao-journal', 'journal'), '/cacao-journal');
-$link_stockist   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock-lists'), '/stockist');
-$link_contact    = ec_get_smart_page_link(array('contact', 'concierge'), '/contact');
+$link_stockist   = ec_get_smart_page_link(array('our-outlets', 'outlets', 'stockist', 'stockists', 'stock-lists'), '/our-outlets');
+$link_contact    = ec_get_smart_page_link(array('contact-us', 'contact', 'concierge'), '/contact-us');
 
 // Customizer Footer Options
 $ec_footer_logo_url = get_option('ec_footer_logo_url', '');

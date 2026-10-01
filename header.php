@@ -67,20 +67,20 @@
   // Determine current active page for fallback menu links
   $request_uri = sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI']));
   $is_home       = is_front_page() || $request_uri === '/' || strpos($request_uri, 'home') !== false;
-  $is_collections= is_page('collections') || is_page('our-collections') || strpos($request_uri, 'collections') !== false;
+  $is_collections= is_page('our-products') || is_page('products') || is_page('collections') || is_page('our-collections') || strpos($request_uri, 'products') !== false || strpos($request_uri, 'collections') !== false;
   $is_craft      = is_page('craft') || is_page('our-craft') || is_page('about') || strpos($request_uri, 'craft') !== false;
   $is_journal    = (is_home() && !is_front_page()) || is_singular('post') || strpos($request_uri, 'journal') !== false;
-  $is_stockist   = is_page('stockist') || is_page('stockists') || is_page('stock-lists') || strpos($request_uri, 'stock') !== false;
-  $is_contact    = is_page('contact') || is_page('concierge') || strpos($request_uri, 'contact') !== false || strpos($request_uri, 'concierge') !== false;
+  $is_stockist   = is_page('our-outlets') || is_page('outlets') || is_page('stockist') || is_page('stockists') || is_page('stock-lists') || strpos($request_uri, 'outlet') !== false || strpos($request_uri, 'stock') !== false;
+  $is_contact    = is_page('contact-us') || is_page('contact') || is_page('concierge') || strpos($request_uri, 'contact') !== false || strpos($request_uri, 'concierge') !== false;
 
   // Smart URL resolver for header links
   $link_home       = esc_url(home_url('/'));
-  $link_collections= ec_get_smart_page_link(array('our-collections', 'collections'), '/our-collections');
+  $link_collections= ec_get_smart_page_link(array('our-products', 'products', 'our-collections', 'collections'), '/our-products');
   $link_craft      = ec_get_smart_page_link(array('about-us', 'about', 'our-craft', 'craft'), '/about-us');
   $link_team       = ec_get_smart_page_link(array('meet-the-team', 'our-team', 'team'), '/meet-the-team');
   $link_journal    = ec_get_smart_page_link(array('cacao-journal', 'journal'), '/cacao-journal');
-  $link_stockist   = ec_get_smart_page_link(array('stockist', 'stockists', 'stock-lists'), '/stockist');
-  $link_contact    = ec_get_smart_page_link(array('contact', 'concierge'), '/contact');
+  $link_stockist   = ec_get_smart_page_link(array('our-outlets', 'outlets', 'stockist', 'stockists', 'stock-lists'), '/our-outlets');
+  $link_contact    = ec_get_smart_page_link(array('contact-us', 'contact', 'concierge'), '/contact-us');
   ?>
 
   <!-- Header Navigation Component -->

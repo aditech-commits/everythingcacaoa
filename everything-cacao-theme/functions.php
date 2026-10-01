@@ -184,11 +184,19 @@ add_filter('template_include', function($template) {
         }
     }
 
-    if ($path === 'stockist' || $path === 'stockists' || $path === 'stock-lists') {
+    if ($path === 'stockist' || $path === 'stockists' || $path === 'stock-lists' || $path === 'our-outlets' || $path === 'outlets') {
         $stockist_template = get_template_directory() . '/page-stockist.php';
         if (file_exists($stockist_template)) {
             status_header(200);
             return $stockist_template;
+        }
+    }
+
+    if ($path === 'our-products' || $path === 'products' || $path === 'our-collections' || $path === 'collections') {
+        $collections_template = get_template_directory() . '/page-collections.php';
+        if (file_exists($collections_template)) {
+            status_header(200);
+            return $collections_template;
         }
     }
 
